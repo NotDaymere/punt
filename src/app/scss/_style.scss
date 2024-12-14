@@ -1,0 +1,33 @@
+html {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+body {
+    background: linear-gradient(135deg, #FEFEFE 50%, #EEEEEE);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: $xxl + ($padding-xxl * 2);
+}
+
+.container {
+    width: 100%;
+    padding: 0 $padding-lg;
+    margin: 0 auto;
+}
+
+@include screen-lg {
+    .container {
+        padding: 0 $padding-xl
+    }
+}
+
+@include screen-xl {
+    .container {
+        padding: 0 $padding-xxl;
+    }
+}

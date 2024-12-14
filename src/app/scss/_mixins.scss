@@ -1,0 +1,202 @@
+@mixin createFontFace($name, $weight, $url, $ttf: true, $style: normal) {
+    @font-face {
+        font-family: $name;
+        font-weight: $weight;
+        font-style: $style;
+        @if $ttf {
+            src: url('#{$url}.woff2') format('woff2'), url('#{$url}.woff') format('woff'),
+                url('#{$url}.ttf') format('truetype'),
+                url('#{$url}.eot') format('embedded-opentype');
+        } @else {
+            src: url('#{$url}.woff2') format('woff2'), url('#{$url}.woff') format('woff'),
+                url('#{$url}.otf') format('opentype'),
+                url('#{$url}.eot') format('embedded-opentype');
+        }
+    }
+}
+
+@mixin setImageQuality {
+    image-rendering: -moz-crisp-edges; /* Firefox        */
+    image-rendering: -o-crisp-edges; /* Opera          */
+    image-rendering: -webkit-optimize-contrast; /* Safari         */
+    image-rendering: optimize-contrast; /* CSS3 Proposed  */
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+@mixin setCoveredImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+@mixin setAcceleration {
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+}
+
+@mixin setTextLinesOverflow($lines: 1) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin setTextGradient($bg-color) {
+    background: $bg-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin setStrokeGradient($bg-color: #fff, $stroke-color) {
+    border: 2px solid transparent;
+    background: $bg-color, $stroke-color;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+@mixin getMediaBetween($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@function getPercentSize($size, $per) {
+    @return $size * calc($per / 100);
+}
+
+@mixin setFlexedGrid($cols, $gap) {
+    flex: 0 0 calc(#{100% / $cols} - #{$gap * ($cols - 1) / $cols}px);
+    max-width: calc(#{100% / $cols} - #{$gap * ($cols - 1) / $cols}px);
+}
+
+@mixin setGrid($cols, $gapRow, $gapCol: $gapRow, $selector: li) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: #{$gapCol}px #{$gapRow}px;
+
+    > #{$selector} {
+        @include setFlexedGrid($cols, $gapRow);
+    }
+}
+
+/* Queries */
+@mixin screen-xs {
+    @media screen and (min-width: $xs) {
+        @content;
+    }
+}
+
+@mixin screen-sm {
+    @media screen and (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin screen-md {
+    @media screen and (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin screen-lg {
+    @media screen and (min-width: $lg) {
+        @content;
+    }
+}
+
+@mixin screen-xl {
+    @media screen and (min-width: $xl) {
+        @content;
+    }
+}
+
+@mixin screen-xxl {
+    @media screen and (min-width: $xxl) {
+        @content;
+    }
+}
+
+
+/* Queries min */
+
+@mixin -screen-xs {
+    @media screen and (max-width: ($xs - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-sm {
+    @media screen and (max-width: ($sm - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-md {
+    @media screen and (max-width: ($md - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-lg {
+    @media screen and (max-width: ($lg - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-xl {
+    @media screen and (max-width: ($xl - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-xxl {
+    @media screen and (max-width: ($xxl - 0.2)) {
+        @content;
+    }
+}
+
+// Colors
+
+@function getColorPrimary($opacity) {
+    @return rgba(#12DD7B, $opacity);
+}
+
+@function getColorSecondary($opacity) {
+    @return rgba(#595353, $opacity);
+}
+
+// Fonts
+
+@mixin setFontDefault(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 700 $font-size/#{$leading} $default-font;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+
+@mixin setFontInter(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 700 $font-size/#{$leading} var(--fontInter);
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}

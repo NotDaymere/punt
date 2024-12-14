@@ -1,0 +1,71 @@
+.input {
+    &._error {
+        input {
+            background: rgba(#ff0000, 5%);
+            border: 1px solid #ff0000 !important;
+
+            &::placeholder {
+                color: #ff0000;
+            }
+        }
+    }
+
+    &._legend {
+        .input_field {
+            min-height: 60px;
+            padding-top: 8px;
+        }
+    }
+}
+
+.input_wrapper {
+    position: relative;
+
+    &:focus-within .input_legend,
+    .input_legend._active {
+        top: 10px;
+        transform: translateY(0);
+        font-size: 10px;
+    }
+}
+
+.input_legend {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    // @include fontAspekta450(16px, 1.45, normal, #000000);
+    color: rgba(#7F899B, 80%);
+
+    transition: 200ms ease;
+    transition-property: font, transform, top;
+}
+
+.input_field {
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    min-height: 54px;
+    border-radius: 8px;
+    background: #f5f7fc;
+    padding: 0 16px;
+    border: 1.5px solid #EFF1F6;
+    transition: outline 200ms ease;
+    outline: 2px solid transparent;
+
+    // @include fontAspekta450(16px, 1.45, normal, #000000);
+
+    &::placeholder {
+        color: rgba(#7F899B, 80%);
+    }
+
+    &:focus-within {
+        // outline: 2px solid colorPrimary();
+    }
+}
+
+.input_error {
+    margin-top: 4px;
+    padding: 0 8px;
+    // @include fontTasaNormal(12px, 1.2, normal, #ff0000);
+}

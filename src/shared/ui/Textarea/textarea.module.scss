@@ -1,0 +1,34 @@
+.textarea_field {
+    padding: 22px 18px;
+    border-radius: 18px;
+    background: #F8F7F5;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    min-height: 54px;
+
+    // @include fontAspekta450(14px, 1.45, -0.03em, colorBlack());
+
+    &::placeholder {
+        color: colorBlack(30%);;
+    }
+}
+
+.textarea {
+    &._error {
+        textarea {
+            background: rgba(#FF0000, 5%);
+            border: 1px solid #FF0000 !important;
+
+            &::placeholder {
+                color: #FF0000;
+            }
+        }
+    }
+}
+
+.input_error {
+    margin-top: 4px;
+    padding: 0 8px;
+    // @include fontTasaNormal(12px, 1.2, normal, #FF0000);
+}
