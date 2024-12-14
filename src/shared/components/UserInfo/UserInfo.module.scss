@@ -1,0 +1,32 @@
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+}
+
+.user_img {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 1px solid getColorWhite(20%);
+
+    img {
+        @include setCoveredImage();
+    }
+}
+
+.user_col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user_name {
+    @include setFontPPMori600(16px, 1.05, normal, getColorWhite());
+}
+
+.user_username {
+    @include setFontPPMori400(14px, 1.05, normal, getColorGray());
+}

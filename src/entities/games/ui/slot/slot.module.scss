@@ -1,0 +1,38 @@
+.slot {
+    display: block;
+    aspect-ratio: 1 / 1.32;
+    background: url("/img/components/slot-frame.png");
+    background-position: center;
+    background-size: contain;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    &:hover {
+        .slot_glare {
+            opacity: 0;
+        }
+    }
+}
+
+.slot_img {
+    border-radius: 10px;
+    margin: auto;
+    width: 86%;
+    height: 89%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateY(1.5%);
+    overflow: hidden;
+}
+
+.slot_glare {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -48%);
+    width: 80%;
+    transition: opacity 500ms ease;
+}

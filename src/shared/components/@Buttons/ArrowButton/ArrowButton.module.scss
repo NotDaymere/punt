@@ -1,0 +1,33 @@
+.button {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #2F2F32;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background 100ms ease;
+
+    svg {
+        width: 56%;
+        aspect-ratio: 1;
+        stroke: getColorWhite();
+        transition: stroke 100ms ease;
+    }
+
+    &:hover:not(:disabled) {
+        background: getColorWhite();
+
+        svg {
+            stroke: getColorBlack();
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}

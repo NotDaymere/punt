@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { useClickOutside } from 'shared/hooks/use-click-outside';
 import css from './select.module.scss';
-import ArrowDownIcon from 'shared/icons/ArrowDown.icon';
+// import ArrowDownIcon from 'shared/icons/ArrowDown.icon';
 
 interface Props<T> {
     children: React.ReactNode;
@@ -95,7 +95,7 @@ export function Select<T>({
                         )}
                         {selected?.children || placeholder || 'Select'}
                     </span>
-                    <ArrowDownIcon className={css.select_btn_icon} />
+                    {/* <ArrowDownIcon className={css.select_btn_icon} /> */}
                 </button>
             )}
             {active && (

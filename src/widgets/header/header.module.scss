@@ -1,0 +1,145 @@
+.header {
+    border-bottom: 1px solid getColorWhite(0.2);
+    position: sticky;
+    top: 0;
+    background: #121411;
+    z-index: 50;
+}
+
+.header_wrapper {
+    display: flex;
+    // align-items: center;
+    min-height: 73px;
+    padding: 8px 0;
+    gap: 12px;
+}
+
+.header_progress {
+    padding: 5px;
+    padding-right: 6px;
+    border-radius: 18px;
+    // height: 68px;
+    max-width: 270px;
+    width: 100%;
+    background: linear-gradient(to bottom, #d5fd81, #b6d86e);
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        display: block;
+        z-index: -1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 80%;
+        border-radius: inherit;
+        background: getColorPrimary();
+        filter: blur(12px);
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: calc(100% + 3px);
+        height: calc(100% + 2px);
+        background: transparent;
+        border: 1px solid #121411;
+        border-right-width: 2px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        left: -1px;
+        top: -1px;
+        border-radius: inherit;
+        z-index: -1;
+    }
+}
+
+.header_progress_inner {
+    border-radius: 14px;
+    height: 100%;
+    background: url("/img/icons/rhombus.svg");
+    padding: 6px 8px;
+    padding-right: 12px;
+    border: 1px solid #0c0e08;
+    border-top-width: 3px;
+}
+
+/* Balance */
+.header_balance {
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header_balance_tabs {
+    background: #2f2f32;
+    border-radius: 100px;
+    display: flex;
+}
+
+.header_balance_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    padding-right: 8px;
+    border-radius: inherit;
+
+    @include setFontPPMori400(14px, 1.05, normal, getColorWhite(40%));
+
+    img {
+        width: 28px;
+        height: 28px;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        fill: getColorWhite();
+    }
+
+    &._active {
+        background: getColorWhite();
+        color: getColorBlack();
+
+        svg {
+            fill: getColorBlack();
+        }
+    }
+}
+
+.header_balance_wallet {
+    span {
+        background: url("/img/icons/wallet-bg.svg") !important;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+// Account
+
+.header_account {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.user_btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user_btn_arrow {
+    width: 16px;
+    height: 16px;
+    transform: rotate(90deg);
+    stroke: getColorWhite();
+}

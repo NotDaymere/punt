@@ -1,0 +1,10 @@
+.aside_nav {
+}
+
+.aside_nav_group {
+    + .aside_nav_group {
+        margin-top: 2px;
+        padding-top: 2px;
+        border-top: 1px solid getColorWhite(0.2);
+    }
+}

@@ -5,13 +5,12 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, #FEFEFE 50%, #EEEEEE);
-    background-size: 100vw 100vh;
-    background-attachment: fixed;
+    background: #121411;
+    @include setFontPPMori600(16px, 1.25, normal, getColorWhite());
 }
 
 .container {
-    max-width: $xxl + ($padding-xxl * 2);
+    max-width: 1165px + ($padding-xxl * 2);
 }
 
 .container {

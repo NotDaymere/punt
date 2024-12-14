@@ -1,0 +1,104 @@
+.link_btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    width: 100%;
+
+    transition: background 100ms ease;
+
+    &:hover:not(._active) {
+        background: rgba(#212121, 50%);
+    }
+
+    &._active {
+        background: #212121;
+    }
+}
+
+.link_btn_icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.link_btn_name {
+    @include setFontPPMori600(14px, 1, normal, getColorWhite());
+}
+
+.link_btn_arrow {
+    margin-left: auto;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    stroke: getColorGray();
+    transition: transform 100ms ease;
+}
+
+.link_dropdown {
+    overflow: hidden;
+    transition: height 200ms ease;
+}
+
+.link_dropdown_inner {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: calc(100% - 24px);
+        position: absolute;
+        top: 0;
+        left: 23px;
+        border-left: 2px solid #272B30;
+        border-bottom: 2px solid #272B30;
+        border-radius: 0 0 0 20px;
+    }
+}
+
+.link_dropdown_link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    width: calc(100% - 36px);
+    margin-left: auto;
+
+    transition: background 100ms ease;
+
+    position: relative;
+
+    &:hover:not(._active) {
+        background: rgba(#212121, 50%);
+    }
+
+    &:not(:last-child)::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 50%;
+        right: 100%;
+        width: 12px;
+        height: 12px;
+        
+        border-left: 2px solid #272B30;
+        border-bottom: 2px solid #272B30;
+        border-radius: 0 0 0 20px;
+    }
+}
+
+.link_dropdown_link_icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.link_dropdown_link_name {
+}

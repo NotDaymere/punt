@@ -1,0 +1,29 @@
+.title {
+    @include setFontHelveticaStd700(32px, 1.15, -0.02em, getColorWhite());
+    position: relative;
+    z-index: 1;
+
+    -webkit-text-stroke: 0.18em getColorBlack();
+    paint-order: stroke fill;
+
+    &::selection {
+        background: getColorPrimary(50%)
+    }
+
+    &:before {
+        content: attr(data-title);
+        display: block;
+        font: inherit;
+        color: getColorYellow();
+        position: absolute;
+        z-index: -1;
+        -webkit-text-stroke: 0.3em getColorPrimary();
+        paint-order: stroke fill;
+    }
+
+    &._yellow {
+        &::before {
+            -webkit-text-stroke: 0.4em getColorYellow();
+        }
+    }
+}

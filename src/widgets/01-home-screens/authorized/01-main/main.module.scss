@@ -1,0 +1,184 @@
+.main {
+    padding: 31px 0 23px;
+}
+
+.main_wrapper {
+    display: grid;
+    grid-template-columns: auto 61%;
+    gap: 22px;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.welcome_title_container {
+    position: relative;
+}
+
+.welcome_title {
+    font-size: 48px;
+}
+
+.welcome_label {
+    padding: 4px 8px;
+    border-radius: 100px;
+    height: 28px;
+
+    @include setFontDxGrafik600(12px, 1.1, -0.04em, #1c1d22);
+    text-transform: capitalize;
+
+    background: getColorSecondary();
+
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-25%, -95%) rotate(18deg);
+    z-index: 2;
+}
+
+.welcome_suits {
+    width: 66px;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(80%, -70%);
+    z-index: 2;
+}
+
+// News
+.news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+// Rank
+.rank {
+    padding: 24px;
+    border-radius: 24px;
+    background: #212121;
+}
+
+.rank_title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid getColorWhite(15%);
+
+    @include setFontPPMori400(14px, 1.05, normal, getColorGray());
+
+    &_icon {
+        width: 2.57em;
+        aspect-ratio: 1;
+        border-radius: 12px;
+    }
+
+    &_value {
+        margin-left: -4px;
+        @include setFontPPMori600(18px, 1.05, normal, getColorPrimary());
+    }
+}
+
+.rank_rank {
+    margin-top: 36px;
+}
+
+.rank_viewBtn {
+    margin-top: 24px;
+}
+
+// Winners
+.winners {
+    background: getColorWhite();
+    border-radius: 23px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.winners_content {
+    padding: 24px;
+    padding-bottom: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.winners_content_gameOn {
+    position: absolute;
+    right: 24px;
+    bottom: 50px;
+    z-index: -1;
+}
+
+.winners_content_label {
+    @include setFontPPMori600(12px, 1.25, -0.02em, #141414);
+    padding: 4px 6px;
+    border-radius: 8px;
+    border: 1px solid #141414;
+}
+
+.winners_content_title {
+    margin-top: -2px;
+    max-width: 260px;
+    @include setFontHelveticaStd700(30px, 1, -0.04em, #141414);
+}
+
+.winners_content_text {
+    max-width: 200px;
+    @include setFontPPMori600(12px, 1.25, -0.02em, #141414);
+}
+
+.winners_content_startBtn {
+    margin-top: auto;
+}
+
+.winners_winner {
+    background: getColorSecondary();
+    border-radius: 0 23px 23px 0;
+
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winners_winner_container {
+    height: 168px;
+    max-width: 204px;
+    width: 100%;
+    border-radius: 12px;
+    position: relative;
+
+    img {
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.winners_winner_img {
+    @include setCoveredImage();
+}
+
+.winners_winner_icons {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
+    flex-shrink: 0;
+    min-width: 142%;
+}

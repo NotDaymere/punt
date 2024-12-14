@@ -1,4 +1,4 @@
-@mixin createFontFace($name, $weight, $url, $ttf: true, $style: normal) {
+@mixin createFontFaceOptimized($name, $weight, $url, $ttf: true, $style: normal) {
     @font-face {
         font-family: $name;
         font-weight: $weight;
@@ -12,6 +12,16 @@
                 url('#{$url}.otf') format('opentype'),
                 url('#{$url}.eot') format('embedded-opentype');
         }
+    }
+}
+
+@mixin createFontFace($name, $weight, $src, $style: normal) {
+    @font-face {
+        font-family: $name;
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+        src: url($src);
     }
 }
 
@@ -29,7 +39,7 @@
     object-fit: cover;
     object-position: center;
     border-radius: inherit;
-    z-index: -1;
+    // z-index: -1;
 }
 
 @mixin setAcceleration {
@@ -164,12 +174,32 @@
 
 // Colors
 
-@function getColorPrimary($opacity) {
-    @return rgba(#12DD7B, $opacity);
+@function getColorPrimary($opacity: 1) {
+    @return rgba($colorGreenLight, $opacity);
 }
 
-@function getColorSecondary($opacity) {
-    @return rgba(#595353, $opacity);
+@function getColorSecondary($opacity: 1) {
+    @return rgba($colorBlueLight, $opacity);
+}
+
+@function getColorWhite($opacity: 1) {
+    @return rgba($colorWhite, $opacity);
+}
+
+@function getColorBlack($opacity: 1) {
+    @return rgba($colorBlack, $opacity);
+}
+
+@function getColorYellow($opacity: 1) {
+    @return rgba($colorYellowDark, $opacity);
+}
+
+@function getColorGray($opacity: 1) {
+    @return rgba($colorGray, $opacity);
+}
+
+@function getColorRed($opacity: 1) {
+    @return rgba($colorRed, $opacity);
 }
 
 // Fonts
@@ -187,14 +217,52 @@
     }
 }
 
-
-@mixin setFontInter(
+@mixin setFontPPMori400(
     $font-size: 16px,
     $leading: 1.25,
     $letterSpacing: normal,
     $color: false
 ) {
-    font: 700 $font-size/#{$leading} var(--fontInter);
+    font: 400 $font-size/#{$leading} $fontPpMori;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontPPMori600(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 600 $font-size/#{$leading} $fontPpMori;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontDxGrafik600(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 600 $font-size/#{$leading} $fontDxGrafik;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontHelveticaStd700(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 700 $font-size/#{$leading} $fontHelveticaRounded;
     letter-spacing: $letterSpacing;
     @if ($color) {
         color: $color;

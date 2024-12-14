@@ -1,0 +1,17 @@
+.games_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 38px;
+}
+.games_header_right {
+    display: flex;
+    gap: 12px;
+}
+.games_swiper {
+    overflow: visible;
+}
+.games_swiper_slide {
+    width: 198px;
+}

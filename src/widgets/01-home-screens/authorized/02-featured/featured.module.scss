@@ -1,0 +1,41 @@
+.featured {
+    border-top: 1px solid getColorWhite(20%);
+    padding: 26px 0 32px;
+    overflow: hidden;
+}
+
+.featured_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.featured_header_right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.featured_header_viewBtn {
+    margin-left: 16px;
+}
+
+.featured_swiper {
+    overflow: visible;
+
+    :global(.swiper-wrapper) {
+
+    }
+}
+
+.featured_swiper_item {
+    width: 170px;
+    display: flex;
+    height: auto;
+}
+
+.featured_swiper_img {
+    width: 100%;
+    object-fit: contain;
+}

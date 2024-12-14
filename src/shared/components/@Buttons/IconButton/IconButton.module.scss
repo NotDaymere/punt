@@ -1,0 +1,29 @@
+.button {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #212121;
+    border: 1px solid getColorWhite(15%);
+    position: relative;
+    
+    transition: background 100ms ease;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        fill: getColorWhite();
+        stroke: getColorWhite();
+    }
+
+    &:hover {
+        background: darken(#212121, 5%);
+    }
+}

@@ -1,9 +1,16 @@
 import MainLayout from "shared/layouts/MainLayout";
+import NavLayout from "shared/layouts/NavLayout";
+import { Authorized, Guests, General } from 'widgets/01-home-screens';
 
 const Home = () => {
   return (
       <MainLayout title="Home">
-          Home
+          <NavLayout>
+              <Authorized.Main />
+              <Authorized.Featured />
+              
+              <Authorized.Games />
+          </NavLayout>
       </MainLayout>
   );
 };

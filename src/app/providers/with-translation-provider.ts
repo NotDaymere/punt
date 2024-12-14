@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { GetServerSidePropsContext, PreviewData } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const withTranslationProvider = (callback: GetServerSideProps, locales?: string[]) => {
     return async (context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>) => {
@@ -10,14 +10,14 @@ export const withTranslationProvider = (callback: GetServerSideProps, locales?: 
         if(!result.redirect) {
             const defaultLocales = ["common", "header", "footer", "components"];
 
-            const translation = await serverSideTranslations(
-                context.locale as any,
-                [...new Set(defaultLocales.concat(locales || []))]
-            );
+            // const translation = await serverSideTranslations(
+            //     context.locale as any,
+            //     [...new Set(defaultLocales.concat(locales || []))]
+            // );
 
             result.props = { 
                 ...result.props, 
-                ...translation 
+                // ...translation 
             };
         }
 
