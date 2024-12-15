@@ -1,0 +1,25 @@
+.exclusives{
+    padding: 52px 0 32px;
+    border-top: 1px solid getColorWhite(20%);
+}
+
+.exclusives_content {
+    position: relative;
+}
+
+.exclusives_list {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.exclusives_join {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 117px;
+    transform: translateY(-55%);
+    z-index: 2;
+    pointer-events: none;
+}

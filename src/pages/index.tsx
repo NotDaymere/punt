@@ -9,6 +9,8 @@ const Home = () => {
               <Authorized.Main />
               <Authorized.Featured />
               
+              <Authorized.Exclusives />
+              <Authorized.QuickBuy />
               <Authorized.Games />
           </NavLayout>
       </MainLayout>

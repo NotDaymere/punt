@@ -4,6 +4,44 @@
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 38px;
+    position: relative;
+}
+.games_header_star {
+    position: absolute;
+    opacity: 0.4;
+    
+    // z-index: -1;
+    fill: #E9E9E9;
+    stroke: #26103D;
+
+    &._small {
+        width: 19px;
+        bottom: 0;
+        right: 23%;
+    }
+
+    &:not(._small) {
+        width: 24px;
+        top: 0;
+        right: 25%;
+    }
+}
+.games_header_title {
+    display: inline-block;
+    position: relative;
+}
+.games_header_clubs {
+    width: 63px;
+    position: absolute;
+    left: 120%;
+    top: 0;
+}
+.games_header_hearts {
+    width: 46px;
+    position: absolute;
+    left: 150%;
+    top: 0;
+    transform: translateY(25%);
 }
 .games_header_right {
     display: flex;

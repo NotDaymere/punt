@@ -1,0 +1,1 @@
+export { CoinsBuy } from './coins-buy';

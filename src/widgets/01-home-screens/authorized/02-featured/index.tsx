@@ -5,11 +5,17 @@ import { Slider } from "shared/components/Slider";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
 import css from "./featured.module.scss";
+import StarIcon from "shared/icons/Star.icon";
 
 export const Featured: React.FC = () => {
     return (
         <div className={css.featured}>
             <div className="container">
+                <Image.Default
+                    className={css.featured_light} 
+                    src="/img/home/featured-light.png"
+                    alt=""
+                />
                 <Slider
                     data={[
                         "/img/temp/featured-1.png",
@@ -36,10 +42,14 @@ export const Featured: React.FC = () => {
                     className={css.featured_swiper}
                     classNameSlide={css.featured_swiper_item}
                 >
-                    {({ Slider, isBegin, isEnd, swiperCore, prevSlide, nextSlide }) => (
+                    {({ Slider, isBegin, isEnd, prevSlide, nextSlide }) => (
                         <>
                             <div className={css.featured_header}>
-                                <Title text="Featured Games" />
+                                <div className={css.featured_header_title}>
+                                    <Title text="Featured Games" />
+                                    <StarIcon className={css.featured_header_star} />
+                                    <StarIcon className={`${css.featured_header_star} ${css._small}`} />
+                                </div>
                                 <div className={css.featured_header_right}>
                                     <ArrowButton
                                         onClick={prevSlide}

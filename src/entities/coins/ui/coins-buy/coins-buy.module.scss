@@ -1,0 +1,89 @@
+.coinBuy {
+    padding: 16px;
+    padding-bottom: 13px;
+    border-radius: 16px;
+    aspect-ratio: 1 / 1.03;
+    background: #212121;
+    display: flex;
+    flex-direction: column;
+}
+
+.coinBuy_img {
+    max-width: 142px;
+    width: 100%;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+    aspect-ratio: 1 / 0.87;
+    position: relative;
+}
+
+.coinBuy_img_coins {
+    @include setCoveredImage();
+    pointer-events: none;
+    user-select: none;
+}
+
+.coinBuy_img_discount {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(40%, 20%) rotate(20deg);
+}
+
+.coinBuy_img_discount_text {
+    img {
+        margin-left: 0.1em;
+        display: inline;
+        width: 1.3em;
+        flex-shrink: 0;
+        vertical-align: middle;
+    }
+}
+
+.coinBuy_amount {
+    margin-top: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid getColorWhite(0.15);
+}
+
+.coinBuy_amount_value {
+    @include setFontDxGrafik600(24px, 1.25, -0.04em, getColorWhite());
+}
+
+.coinBuy_amount_name {
+    margin-top: 2px;
+    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
+}
+
+.coinBuy_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+    gap: 4px;
+}
+
+.coinBuy_price {
+    padding: 1px 4px;
+    height: 25px;
+    background: getColorPrimary();
+    @include setFontPPMori600(24px, 1, -0.04em, #141414);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 0 16px getColorPrimary(50%);
+
+    span {
+        transform: translateY(0.1em);
+    }
+}
+
+.coinBuy_buyBtn {
+    > span {
+        min-width: auto;
+        height: 36px;
+    }
+}

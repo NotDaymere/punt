@@ -4,6 +4,7 @@ import { Title } from "shared/components/Title";
 import { ArrowButton } from "shared/components/@Buttons/ArrowButton";
 import { Slot } from "entities/games";
 import css from "./slots.module.scss";
+import Image from "shared/ui/Image";
 
 export const Slots: React.FC = () => {
     return (
@@ -29,7 +30,19 @@ export const Slots: React.FC = () => {
             {({ Slider, isBegin, isEnd, prevSlide, nextSlide }) => (
                 <div className={css.games}>
                     <div className={css.games_header}>
-                        <Title text="Slots" />
+                        <div className={css.games_header_title}>
+                            <Image.Default 
+                                className={css.games_header_bc}
+                                src="/img/home/blue-clubs.svg" 
+                                alt="" 
+                            />
+                            <Image.Default 
+                                className={css.games_header_gc}
+                                src="/img/home/green-clubs.svg" 
+                                alt="" 
+                            />
+                            <Title text="Slots" />
+                        </div>
                         <div className={css.games_header_right}>
                             <ArrowButton  
                                 disabled={isBegin}

@@ -1,0 +1,109 @@
+.quickBuy {
+    padding: 52px 0 26px;
+    border-top: 1px solid getColorWhite(20%);
+    overflow: hidden;
+}
+.quickBuy_header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+// Left
+.quickBuy_header_left {
+    max-width: 213px;
+}
+.quickBuy_header_title {
+    position: relative;
+    display: inline-block;
+}
+.quickBuy_header_label {
+    height: 28px;
+    border-radius: 100px;
+    background: getColorSecondary();
+    padding: 4px;
+    padding-right: 6px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include setFontPPMori600(14px, 1, normal, #121411);
+
+    span {
+        width: 1.43em;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: #212121;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: getColorSecondary();
+    }
+
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-30%, -75%) rotate(22.4deg);
+    z-index: 2;
+}
+.quickBuy_header_text {
+    margin-top: 12px;
+    @include setFontPPMori600(16px, 1.05, normal, getColorWhite());
+}
+
+// Center
+.quickBuy_header_center {
+    max-width: 376px;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 93px;
+        height: 37px;
+        border-radius: 50%;
+        background: getColorPrimary();
+        filter: blur(120px);
+        position: absolute;
+        right: 100%;
+        top: 0;
+        transform: translate(20%, -50%);
+        z-index: -1;
+    }
+}
+.quickBuy_header_buyStars {
+    width: 48px;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.quickBuy_header_platform {
+    @include setFontPPMori600(16px, 1.05, normal, getColorWhite());
+    span {
+        color: getColorGray();
+    }
+}
+.quickBuy_header_link {
+    margin-top: 22px;
+}
+
+// Right
+.quickBuy_header_right {
+    display: flex;
+    gap: 12px;
+}
+
+// Swiper
+.quickBuy_swiper {
+    overflow: visible;
+}
+.quickBuy_swiper_slide {
+    width: 248px;
+    flex-shrink: 0;
+}
