@@ -1,0 +1,83 @@
+.providers {
+    padding: 57px 0 22px;
+}
+
+.providers_title_container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    position: relative;
+}
+
+.providers_pocker_chip_1,
+.providers_pocker_chip_2,
+.providers_pocker_chip_3 {
+    // opacity: 0.5;
+    position: absolute;
+}
+
+.providers_pocker_chip_1 {
+    right: 12.5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.providers_pocker_chip_2 {
+    left: 21%;
+    top: 50%;
+    transform: translateY(-40%);
+}
+
+.providers_pocker_chip_3 {
+    left: 16.4%;
+    top: 0;
+    transform: translateY(22%);
+}
+
+.providers_list {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.providers_item {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        border-radius: 16px;
+        border: 1px solid #000;
+        background: linear-gradient(210deg, #544a00 40%, #fade66 40%, #fade66);
+    }
+
+    &:hover {
+        .providers_item_content {
+            transform: translate(0px, 0px);
+        }
+    }
+}
+
+.providers_item_content {
+    height: 90px;
+    border: 0.8px solid #000;
+    border-radius: 16px;
+    background: #212121;
+    position: relative;
+    z-index: 2;
+    transform: translate(-7px, -7px);
+    transition: transform 500ms ease;
+}
+
+.providers_item_img {
+    @include setCoveredImage();
+    object-fit: cover;
+}

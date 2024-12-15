@@ -1,15 +1,20 @@
 import React from "react";
-import css from "./slot.module.scss";
 import Link from "next/link";
+import clsx from "clsx";
 import Image from "shared/ui/Image";
+import css from "./slot.module.scss";
 
 interface Props {
     img: string;
+    className?: string;
 }
 
 export const Slot: React.FC<Props> = (props) => {
     return (
-        <Link href="/" className={css.slot}>
+        <Link 
+            className={clsx(css.slot, props.className)}
+            href="/" 
+        >
             <Image.Default 
                 className={css.slot_img}
                 src={props.img}

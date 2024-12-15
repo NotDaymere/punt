@@ -12,6 +12,11 @@ const Home = () => {
               <Authorized.Exclusives />
               <Authorized.QuickBuy />
               <Authorized.Games />
+              <Authorized.Jackpot />
+              <Authorized.TrendingSlots />
+              <Authorized.Providers />
+
+              <Authorized.Invitation />
           </NavLayout>
       </MainLayout>
   );

@@ -1,0 +1,115 @@
+.jackpot {
+    padding: 40px 0;
+}
+
+.jackpot_title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.jackpot_games {
+    position: absolute;
+    top: 50%;
+
+    display: flex;
+    gap: 15px;
+
+
+    &._left {
+        right: 100%;
+        transform: translate(-50px, -50%);
+        mask: linear-gradient(to left, black, transparent 80%);
+    }
+
+    &._right {
+        left: 100%;
+        transform: translate(50px, -50%);
+        mask: linear-gradient(to right, black, transparent 80%);
+    }
+}
+
+.jackpot_games_item {
+    width: 116px;
+    height: 144px;
+    border: 0.3px solid #121411;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #636B51, #303426);
+
+    display: flex;
+    flex-direction: column;
+
+    img {
+        margin: auto;
+        @include setCoveredImage();
+        width: calc(100% - 7px);
+        height: calc(100% - 7px);
+    }
+}
+
+.jackpot_block {
+    margin-top: 32px;
+    height: 294px;
+    border-radius: 32px;
+    background: url("/img/home/jackpot-bg.webp");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.jackpot_block_rays {
+    width: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: lighten;
+
+    img {
+        width: 100%;
+        aspect-ratio: 1;
+
+        animation: jackpotRotation 20s linear infinite;
+    }
+}
+.jackpot_coins {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+.jackpot_content {
+    max-width: 410px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding: 8px 10px 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.jackpot_content_img {
+    width: 100%;
+}
+.jackpot_content_text {
+    margin-top: -5px;
+    @include setFontCubano400(32px, 1, -0.04em, #fee425);
+    -webkit-text-stroke: 4px #000;
+    paint-order: stroke fill;
+}
+.jackpot_content_ribbon {
+    margin-top: 16px;
+}
+
+@keyframes jackpotRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
