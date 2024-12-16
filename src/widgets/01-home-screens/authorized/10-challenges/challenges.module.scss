@@ -1,0 +1,21 @@
+.challenges {
+    padding: 43px 0 34px;
+    overflow: hidden;
+}
+.challenges_header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+.challenges_header_arrows {
+    margin-left: auto;
+    display: flex;
+    gap: 12px;
+}
+.challenges_swiper {
+    overflow: visible;
+}
+.challenges_swiper_slide {
+    width: 331px;
+}

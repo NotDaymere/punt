@@ -4,6 +4,9 @@
     position: relative;
     z-index: 1;
 
+    @include setFontPPMori600(14px, 1, normal, getColorBlack());
+
+
     &::after {
         content: "";
         display: block;
@@ -15,7 +18,7 @@
         position: absolute;
         left: 0;
         top: 0;
-        transform: translateY(5px);
+        // transform: translateY(5px);
     }
 
     span {
@@ -34,6 +37,8 @@
         gap: 8px;
 
         transition: transform 200ms ease;
+        
+        transform: translateY(-5px);
 
         svg {
             width: 24px;
@@ -45,7 +50,7 @@
     }
 
     &:hover span {
-        transform: translateY(5px);
+        transform: translateY(0px);
     }
 
     &._circle > span {
@@ -56,6 +61,7 @@
             height: 8px;
             border-radius: 50%;
             background: #141414;
+            transform: translateY(-0.1em);
         }
     }
 

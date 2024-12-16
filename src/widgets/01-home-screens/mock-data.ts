@@ -25,4 +25,32 @@ export const coins = [
         amount: 2000000,
         price: '$200',
     },
-]
+];
+
+export const challenges = [
+    {
+        id: 1,
+        name: "Candy Blitz",
+        description: "First to hit 12000.00x with min <span>10.00</span> <img src=\"/img/icons/gc.svg\" alt=\"\" /> play",
+        prize: '3000.00',
+        img: '/img/temp/games-1.jpg'
+    }, {
+        id: 2,
+        name: "Candy Blitz",
+        description: "First to hit 12000.00x with min <span>10.00</span> <img src=\"/img/icons/gc.svg\" alt=\"\" /> play",
+        prize: '3000.00',
+        img: '/img/temp/games-4.jpg'
+    }, {
+        id: 3,
+        name: "Candy Blitz",
+        description: "First to hit 12000.00x with min <span>10.00</span> <img src=\"/img/icons/gc.svg\" alt=\"\" /> play",
+        prize: '3000.00',
+        img: '/img/temp/games-6.jpg'
+    }, {
+        id: 4,
+        name: "Candy Blitz",
+        description: "First to hit 12000.00x with min <span>10.00</span> <img src=\"/img/icons/gc.svg\" alt=\"\" /> play",
+        prize: '3000.00',
+        img: '/img/temp/games-3.jpg'
+    }
+];
