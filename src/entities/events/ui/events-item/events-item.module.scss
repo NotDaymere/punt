@@ -1,0 +1,122 @@
+.event {
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 1px solid getColorWhite(0.15);
+
+    > * {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.event_col {
+
+    &_main {
+        min-width: 214px;
+        flex-grow: 1;
+    }
+    &_date {
+        min-width: 200px;
+    }
+    &_type {
+        min-width: 160px;
+    }
+    &_prize {
+        min-width: 164px;
+    }
+    &_status {
+        min-width: 164px;
+    }
+    &_action {
+        min-width: 134px;
+    }
+}
+
+.event_main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include setFontPPMori400(14px, 1.05, normal, getColorwhite());
+
+    img,
+    svg {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+.event_date {
+    @include setFontPPMori400(14px, 1.05, normal, getColorWhite());
+    span {
+        color: getColorGray();
+    }
+}
+.event_type {
+    margin: 0 auto;
+    max-width: 128px;
+    width: 100%;
+    text-align: center;
+    height: 26px;
+    border-radius: 100px;
+
+    @include setFontPPMori400(14px, 26px, normal, getColorWhite());
+
+    background: #2F2F32;
+}
+.event_prize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    @include setFontPPMori600(16px, 1.05, normal, getColorWhite());
+
+    img {
+        width: 1em;
+    }
+}
+.event_status {
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 100px;
+    @include setFontPPMori400(14px, 1.05, normal);
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+
+    &::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        flex-shrink: 0;
+        border-radius: 50%;
+    }
+
+    &._upcoming {
+        color: getColorYellow();
+        background: getColorYellow(20%);
+    
+        &::before {
+            background: getColorYellow();
+        }
+    }
+}
+
+.event_action {
+    margin-left: auto;
+
+    > span {
+        padding-left: 8px;
+        padding-right: 8px;
+        min-width: auto;
+        height: 26px;
+    }
+}

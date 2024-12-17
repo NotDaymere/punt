@@ -1,7 +1,7 @@
 .featured {
-    border-top: 1px solid getColorWhite(20%);
     padding: 26px 0 32px;
     overflow: hidden;
+    border-bottom: 1px solid getColorWhite(20%);
 
     :global(.container) {
         position: relative;

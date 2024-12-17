@@ -54,3 +54,91 @@ export const challenges = [
         img: '/img/temp/games-3.jpg'
     }
 ];
+
+export const winners = [
+    {
+        id: 1,
+        img: "/img/temp/winner-1.png",
+        username: "VTRAIN83",
+        text: "Book of Cats",
+        win_amount: "4,000 GC"
+    }, {
+        id: 2,
+        img: "/img/temp/winner-2.png",
+        username: "VTRAIN83",
+        text: "Book of Cats",
+        win_amount: "4,000 GC"
+    }, {
+        id: 3,
+        img: "/img/temp/winner-3.png",
+        username: "VTRAIN83",
+        text: "Book of Cats",
+        win_amount: "4,000 GC"
+    }, {
+        id: 4,
+        img: "/img/temp/winner-1.png",
+        username: "VTRAIN83",
+        text: "Book of Cats",
+        win_amount: "4,000 GC"
+    }
+];
+
+export const events = [
+    {
+        img: "/img/temp/events/e-1.jpg",
+        name: "Halloween Bash",
+        date: "2024-12-17T18:34:51.762Z",
+        type: "Tournament",
+        prizePool: "3000.00",
+        status: "Upcoming",
+        btn: "join"
+    }, {
+        img: "/img/temp/events/e-2.jpg",
+        name: "Weekend Giveaway",
+        date: "2024-12-17T18:34:51.762Z",
+        type: "Raffle",
+        prizePool: "3000.00",
+        status: "Upcoming",
+        btn: "join"
+    }, {
+        img: "/img/temp/events/e-3.jpg",
+        name: "Double Points Day",
+        date: "2024-12-17T18:34:51.762Z",
+        type: "Promotion",
+        prizePool: "3000.00",
+        status: "Upcoming",
+        btn: "learn"
+    }, {
+        img: "/img/temp/events/e-4.jpg",
+        name: "VIP Night",
+        date: "2024-12-17T18:34:51.762Z",
+        type: "Exclusive",
+        prizePool: "3000.00",
+        status: "Upcoming",
+        btn: "learn"
+    }, {
+        img: "/img/temp/events/e-5.jpg",
+        name: "Double Points Day",
+        date: "2024-12-17T18:34:51.762Z",
+        type: "Promotion",
+        prizePool: "3000.00",
+        status: "Upcoming",
+        btn: "learn"
+    }, {
+        img: "/img/temp/events/e-6.jpg",
+        name: "VIP Night",
+        date: "2024-12-17T18:34:51.762Z",
+        type: "Exclusive",
+        prizePool: "3000.00",
+        status: "Upcoming",
+        btn: "learn"
+    }, {
+        img: "/img/temp/events/e-7.jpg",
+        name: "Weekend Giveaway",
+        date: "2024-12-17T18:34:51.762Z",
+        type: "Exclusive",
+        prizePool: "3000.00",
+        status: "Upcoming",
+        btn: "join"
+    }
+]

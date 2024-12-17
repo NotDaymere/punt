@@ -6,12 +6,12 @@ import { UserInfo } from "shared/components/UserInfo";
 import InfoIcon from "shared/icons/Info.icon";
 import NotificationIcon from "shared/icons/Notification.icon";
 import WalletIcon from "shared/icons/Wallet.icon";
-import css from "./header.module.scss";
 import ArrowRightIcon from "shared/icons/ArrowRight.icon";
+import css from "./header.module.scss";
 
 export const Header: React.FC = () => {
     return (
-        <header className={css.header}>
+        <header className={css.header} id="header">
             <div className="container">
                 <div className={css.header_wrapper}>
                     {/* Progress */}
