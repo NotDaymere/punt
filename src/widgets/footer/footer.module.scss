@@ -1,0 +1,90 @@
+.footer {
+    padding: 55px 36px 40px;
+    background: #171916;
+    border-top: 1px solid #000;
+}
+.footer_container {
+    max-width: 1510px;
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+.footer_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.footer_left {
+    max-width: 360px;
+}
+.footer_right {
+    display: flex;
+    justify-content: space-between;
+    max-width: 680px;
+    width: 100%;
+    gap: 16px;
+}
+.footer_logo {
+    width: 82px;
+    flex-shrink: 0;
+}
+.footer_18 {
+    margin-top: 24px;
+    @include setFontPPMori600(11px, 1, normal, getColorWhite(0.6));
+    text-transform: uppercase;
+}
+.footer_text {
+    margin-top: 12px;
+    @include setFontPPMori400(12px, 1.2, -0.04em, getColorWhite(0.4));
+
+    a {
+        text-decoration: underline;
+    }
+}
+.footer_column {
+    display: flex;
+    flex-direction: column;
+}
+.footer_column_suptitle {
+    margin-bottom: 4px;
+    @include setFontPPMori600(16.6px, 1.45, -0.04em, getColorWhite());
+
+    + .footer_column_link {
+        opacity: 0.4;
+    }
+}
+.footer_column_title {
+    @include setFontPPMori600(15px, 1.15, -0.04em, getColorWhite(0.4));
+    text-transform: uppercase;
+    margin-bottom: 27px;
+}
+.footer_column_item {
+    @include setFontPPMori600(16.6px, 1.45, -0.04em, getColorWhite());
+
+    + .footer_column_item {
+        margin-top: 9px;
+    }
+}
+.footer_row {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.footer_row_copy {
+    @include setFontPPMori600(13px, 1.2, -0.04em, getColorWhite(0.4));
+}
+.footer_row_upBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @include setFontPPMori600(12px, 1.1, -0.02em, getColorWhite());
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        stroke: getColorWhite();
+    }
+}

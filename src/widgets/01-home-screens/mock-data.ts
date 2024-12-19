@@ -141,4 +141,56 @@ export const events = [
         status: "Upcoming",
         btn: "join"
     }
+];
+
+export const leaders = [
+    {
+        position: 4,
+        img: "/img/temp/players/p-1.jpg",
+        username: "fun_gamer",
+        wager: "3000.00",
+        prize: "3000.00"
+    }, 
+    {
+        position: 5,
+        img: "/img/temp/players/p-2.jpg",
+        username: "fun_gamer",
+        wager: "3000.00",
+        prize: "3000.00"
+    }, 
+    {
+        position: 6,
+        img: "/img/temp/players/p-3.jpg",
+        username: "fun_gamer",
+        wager: "3000.00",
+        prize: "3000.00"
+    }, 
+    {
+        position: 7,
+        img: "/img/temp/players/p-5.jpg",
+        username: "fun_gamer",
+        wager: "3000.00",
+        prize: "3000.00"
+    }, 
+    {
+        position: 8,
+        img: "/img/temp/players/p-6.jpg",
+        username: "fun_gamer",
+        wager: "3000.00",
+        prize: "3000.00"
+    }, 
+    {
+        position: 9,
+        img: "/img/temp/players/p-7.jpg",
+        username: "fun_gamer",
+        wager: "3000.00",
+        prize: "3000.00"
+    }, 
+    {
+        position: 10,
+        img: "/img/temp/players/p-8.jpg",
+        username: "fun_gamer",
+        wager: "3000.00",
+        prize: "3000.00"
+    }
 ]

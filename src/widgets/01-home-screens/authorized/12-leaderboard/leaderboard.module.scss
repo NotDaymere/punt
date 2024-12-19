@@ -1,0 +1,45 @@
+.leaderboard {
+    padding: 30px 0 36px;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 270px;
+        height: 100px;
+        border-radius: 50%;
+        background: getColorPrimary(0.5);
+        filter: blur(180px);
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 200%);
+    }
+}
+.leaderboard_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.leaderboard_list {
+    margin-top: 46px;
+    padding: 24px 20px;
+    border-radius: 24px;
+    background: #171916;
+}
+.podium {
+    max-width: 1016px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.podium_item {
+
+    &:nth-child(1),
+    &:nth-child(3) {
+        margin-top: 56px;
+    }
+}

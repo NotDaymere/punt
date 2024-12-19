@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
+import { EventsItem } from "../events-item";
 import css from "./events-list.module.scss";
 import { events } from "widgets/01-home-screens/mock-data";
-import { EventsItem } from "../events-item";
 
 interface Props {
     className?: string;
@@ -19,7 +19,7 @@ export const EventsList: React.FC<Props> = ({ className }) => {
                 <li className={css.events_title_status}>Status</li>
                 <li className={css.events_title_action}>Action</li>
             </ul>
-            <ul className={css.events_list}>
+            <div className={css.events_list}>
                 {events.map((item) => (
                     <EventsItem
                         date={item.date}
@@ -32,7 +32,7 @@ export const EventsList: React.FC<Props> = ({ className }) => {
                         key={item.name + item.type + item.status}
                     />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };

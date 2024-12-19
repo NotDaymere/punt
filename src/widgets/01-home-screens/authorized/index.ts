@@ -11,5 +11,5 @@ export { TrendingSlots } from './08-trending-slots';
 export { Providers } from './09-providers';
 export { Challenges } from "./10-challenges";
 export { Invitation } from './11-invitation';
-
+export { Leaderboard } from './12-leaderboard';
 export { Events } from './13-events';

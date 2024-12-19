@@ -1,8 +1,9 @@
 import { Authorized, General, Guests } from "widgets/01-home-screens";
-import MainLayout from "shared/layouts/MainLayout";
-import NavLayout from "shared/layouts/NavLayout";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import MainLayout from "shared/layouts/MainLayout";
+import NavLayout from "shared/layouts/NavLayout";
+import { Footer } from "widgets/footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,9 +22,10 @@ const Home = () => {
                 <Authorized.Providers />
                 <Authorized.Challenges />
                 <Authorized.Invitation />
-
+                <Authorized.Leaderboard />
                 <Authorized.Events />
             </NavLayout>
+            <Footer />
         </MainLayout>
     );
 };
