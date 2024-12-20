@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "shared/ui/Image";
 import css from "./podium-side.module.scss";
+import PodiumFrameIcon from "shared/icons/PodiumFrame.icon";
+import { Discount } from "shared/components/Discount";
+import clsx from "clsx";
 
 interface Props {
     name: string;
@@ -13,12 +16,23 @@ export const PodiumSide: React.FC<Props> = ({ img, name, place, prize }) => {
     return (
         <div className={css.podium}>
             <div className={css.podium_user}>
-                {/* <Image.Default
+                <Image.Default
                     className={css.podium_user_frame}
                     src="/img/home/podium-frame.png"
                     alt=""
-                /> */}
-                <Image.Default className={css.podium_user_img} src={img} alt="" />
+                />
+                <PodiumFrameIcon
+                    id={"podium-frame-" + place}
+                    className={css.podium_user_clip}
+                />
+                <Image.Default 
+                    style={{
+                        clipPath: `url(#podium-frame-${place})`
+                    }}
+                    className={css.podium_user_img} 
+                    src={img} 
+                    alt="" 
+                />
                 <p className={css.podium_user_name}>{name}</p>
             </div>
             <div className={css.podium_podium}>
@@ -34,6 +48,15 @@ export const PodiumSide: React.FC<Props> = ({ img, name, place, prize }) => {
                         : "/img/home/podium-third.png"}
                     alt=""
                 />
+                <Discount className={clsx(
+                    css.podium_prize,
+                    css['_place-' + place]
+                )}>
+                    <span className={css.podium_prize_up}>
+                        Prize <Image.Default src="/img/icons/gc.svg" alt="" />
+                    </span>
+                    <span className={css.podium_prize_down}>{prize}</span>
+                </Discount>
             </div>
         </div>
     );

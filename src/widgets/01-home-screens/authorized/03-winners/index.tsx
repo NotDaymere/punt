@@ -1,11 +1,11 @@
 import React from "react";
-import { Title } from "shared/components/Title";
-import { winners } from "widgets/01-home-screens/mock-data";
-import Image from "shared/ui/Image";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import css from "./winners.module.scss";
+import { winners } from "widgets/01-home-screens/mock-data";
 import { Button } from "shared/components/@Buttons/Button";
+import { Title } from "shared/components/Title";
+import Image from "shared/ui/Image";
+import css from "./winners.module.scss";
 
 export const Winners: React.FC = () => {
     const rootRef = React.useRef<HTMLDivElement>(null);
@@ -13,15 +13,9 @@ export const Winners: React.FC = () => {
     const WinnersList = () => (
         <ul className={css.winners_list}>
             {winners.map((item) => (
-                <li
-                    className={css.winners_list_item}
-                    key={item.id}
-                >
+                <li className={css.winners_list_item} key={item.id}>
                     <div className={css.winners_list_img}>
-                        <Image.Default
-                            src={item.img} 
-                            alt=""
-                        />
+                        <Image.Default src={item.img} alt="" />
                     </div>
                     <div className={css.winners_list_col}>
                         <p className={css.winners_list_name}>{item.username}</p>
@@ -39,7 +33,7 @@ export const Winners: React.FC = () => {
     const setSticky = () => {
         const header = document.getElementById("header");
         const root = rootRef.current;
-        if(header && root) {
+        if (header && root) {
             root.style.top = header.offsetHeight + "px";
         }
     };
@@ -58,8 +52,16 @@ export const Winners: React.FC = () => {
             trigger: rootRef.current,
             start: "top 90px",
             markers: false,
-            onEnter: () => rootRef.current?.classList.add('_fixed'),
-            onLeaveBack: () => rootRef.current?.classList.remove('_fixed'),
+            onEnter: () => {
+                if(!rootRef.current?.classList.contains('_fixed')) {
+                    rootRef.current?.classList.add('_fixed')
+                }
+            },
+            onLeaveBack: () => {
+                if(rootRef.current?.classList.contains('_fixed')) {
+                    rootRef.current?.classList.remove('_fixed')
+                }
+            },
         })
     });
 
@@ -72,35 +74,26 @@ export const Winners: React.FC = () => {
                     <span className={css.winners_garland} />
                     <span className={css.winners_garland} />
                     <div className={css.winners_content}>
-                        <Image.Default 
+                        <Image.Default
                             className={css.winners_content_animation}
                             src="/img/temp/winners-animation.png"
                             alt=""
                         />
-                        <Button 
-                            className={css.winners_content_live} 
-                            circle
-                        >
+                        <Button className={css.winners_content_live} circle>
                             Live
                         </Button>
-                        
+
                         <div className={css.winners_content_h}>
-                            <Title 
-                                className={css.winners_content_title}
-                                text="Live Winners Feed" 
-                            />
+                            <Title className={css.winners_content_title} text="Live Winners Feed" />
                         </div>
-                        
+
                         <div className={css.winners_content_block}>
                             <div className={css.winners_marquee}>
                                 <WinnersList />
                                 <WinnersList />
                                 <WinnersList />
                             </div>
-                            <Button 
-                                className={css.winners_content_livePinned} 
-                                circle
-                            >
+                            <Button className={css.winners_content_livePinned} circle>
                                 Live
                             </Button>
                         </div>

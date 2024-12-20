@@ -2,17 +2,20 @@ import React from "react";
 import { Title } from "shared/components/Title";
 import { Tabs } from "shared/components/Tabs";
 import { LeaderList } from "entities/leaders";
-import css from "./leaderboard.module.scss";
 import PodiumFrameIcon from "shared/icons/PodiumFrame.icon";
-import Image from "shared/ui/Image";
 import { PodiumCenter } from "../12.02-podium-center";
 import { PodiumSide } from "../12.01-podium-side";
+import LightIcon from "shared/icons/Light.icon";
+import css from "./leaderboard.module.scss";
 
 export const Leaderboard: React.FC = () => {
     const [active, setActive] = React.useState({ name: "Daily", value: 'daily' });
     
     return (
         <section className={css.leaderboard} id="leaderboard">
+            <div className={css.leaderboard_back}>
+                <LightIcon />
+            </div>
             <div className="container">
                 <PodiumFrameIcon 
                     id="podium-frame-icon"
@@ -45,7 +48,7 @@ export const Leaderboard: React.FC = () => {
                         <PodiumSide 
                             name="highroller88"
                             prize="10 000.00"
-                            img="/img/temp/l-2.png"
+                            img="/img/temp/leader-2.jpg"
                             place={2}
                         />
                     </div>
@@ -53,14 +56,14 @@ export const Leaderboard: React.FC = () => {
                         <PodiumCenter 
                             name="lucky_player" 
                             prize="20 000.00"
-                            img="/img/temp/l-1.png"
+                            img="/img/temp/leader-1.jpg"
                         />
                     </div>
                     <div className={css.podium_item}>
                         <PodiumSide 
                             name="spin_master"
                             prize="5000.00"
-                            img="/img/temp/l-3.png"
+                            img="/img/temp/leader-3.jpg"
                             place={3}
                         />
                     </div>
