@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { Header } from "widgets/header";
 import { Sidebar } from "widgets/sidebar";
 import { PlayFree } from "shared/components/PlayFree";
 import Image from "shared/ui/Image";
@@ -24,7 +23,6 @@ const NavLayout: React.FC<Props> = ({ children }) => {
                     </div>
                 </div>
                 <div className={css.nav_content}>
-                    <Header />
                     {children}
                 </div>
             </div>

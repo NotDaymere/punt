@@ -18,7 +18,7 @@ interface Button {
 
 type Props = (Anchor | Button) & {
     className?: string;
-    variant?: "white" | "green";
+    variant?: "white" | "green" | "black";
     circle?: boolean;
     children?: React.ReactNode;
 };

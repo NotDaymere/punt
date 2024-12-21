@@ -4,6 +4,8 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import MainLayout from "shared/layouts/MainLayout";
 import NavLayout from "shared/layouts/NavLayout";
 import { Footer } from "widgets/footer";
+import { Header } from "widgets/header";
+import css from './home.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,19 +13,12 @@ const Home = () => {
     return (
         <MainLayout title="Home">
             <NavLayout>
-                <Authorized.Main />
-                <Authorized.Featured />
-                <Authorized.Winners />
-                <Authorized.Exclusives />
-                <Authorized.QuickBuy />
-                <Authorized.Games />
-                <Authorized.Jackpot />
-                <Authorized.TrendingSlots />
-                <Authorized.Providers />
-                <Authorized.Challenges />
-                <Authorized.Invitation />
-                <Authorized.Leaderboard />
-                <Authorized.Events />
+                <Header />
+                <div className={css.main}>
+                    <Guests.Hero />
+                    <Guests.SpinWheel />
+                    <Guests.Winners />
+                </div>
             </NavLayout>
             <Footer />
         </MainLayout>

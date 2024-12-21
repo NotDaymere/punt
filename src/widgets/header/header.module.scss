@@ -4,6 +4,7 @@
     top: 0;
     background: #121411;
     z-index: 50;
+    overflow: hidden;
 }
 
 .header_wrapper {
@@ -142,4 +143,39 @@
     height: 16px;
     transform: rotate(90deg);
     stroke: getColorWhite();
+}
+
+// Auth
+.header_auth {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    position: relative;
+}
+
+.header_stars {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translate(-18px, -50%);
+    width: 40px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 47px;
+        border-radius: 50%;
+        background: getColorPrimary();
+        filter: blur(160px);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    img {
+        width: 100%;
+    }
 }

@@ -74,4 +74,18 @@
             background: #97BA4A;
         }
     }
+
+    &._black {
+        span {
+            background: #2F2F32;
+            color: getColorWhite();
+
+            &::before {
+                background: getColorYellow();
+            }
+        }
+        &::after {
+            background: #212121;
+        }
+    }
 }
