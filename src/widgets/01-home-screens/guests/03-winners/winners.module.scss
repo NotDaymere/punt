@@ -1,0 +1,101 @@
+.winners {
+    padding: 36px 0;
+    background: #121411;
+}
+.winners_box {
+    height: 432px;
+    padding: 50px;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 100%;
+        background: url("/img/home/winner-lights-left.webp");
+        background-size: 612px 432px;
+        position: absolute;
+        top: 0;
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        right: 0;
+        transform: scaleX(-1);
+    }
+}
+.winners_content {
+    height: 100%;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid getColorWhite(15%);
+    background: url("/img/home/rhombus-winner.svg");
+    background-size: 34px 46px;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 341px;
+        height: 134px;
+        border-radius: 50%;
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: getColorPrimary(0.4);
+        filter: blur(160px);
+    }
+}
+.winners_title {
+    margin-top: 40px;
+    font-size: 60px;
+}
+.winners_liveBtn {
+    margin-top: 30px;
+
+    > span {
+        min-height: 32px;
+        min-width: 85px;
+
+        &::before {
+            background: #91C1FF !important;
+        }
+    }
+}
+.winners_marquee {
+    margin-top: 50px;
+    display: flex;
+    border-top: 1px solid getColorWhite(0.15);
+    border-bottom: 1px solid getColorWhite(0.15);
+    background: #121411;
+}
+.winners_marquee_list {
+    animation: winnersMarquee 20s linear infinite;
+}
+.winners_content_anim {
+    width: 1046px;
+    min-width: 1046px;
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    transform: translateX(-50%);
+    z-index: -1;
+    flex-shrink: 0;
+}
+@keyframes winnersMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

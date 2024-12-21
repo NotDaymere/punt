@@ -1,0 +1,44 @@
+
+.winners_list {
+    display: flex;
+}
+.winners_list_item {
+    padding: 8px 24px;
+    flex-shrink: 0;
+    width: 328px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    border-left: 1px solid getColorWhite(0.15);
+}
+.winners_list_img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    img {
+        @include setCoveredImage();
+    }
+}
+.winners_list_col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.winners_list_name {
+    @include setFontPPMori600(16px, 1.05, normal, getColorWhite());
+}
+.winners_list_text {
+    @include setFontPPMori400(14px, 1.05, normal, getColorGray());
+}
+.winners_list_prize {
+    margin-left: auto;
+    text-align: right;
+}
+.winners_list_total {
+    @include setFontPPMori400(14px, 1.05, normal, getColorGray());
+}
+.winners_list_amount {
+    margin-top: 4px;
+    @include setFontPPMori600(16px, 1.05, normal, getColorWhite());
+}

@@ -81,11 +81,11 @@ export const SpinWheel: React.FC = () => {
         }
         setActiveButton(false);
 
-        const DURATION = 9;
-        const RESUME_DELAY = 5;
-        const MINIMAL_ROTATION = 360 * 8;
-        const CELL_DEGREE = 360 / 5;
-        const RANDOM_CELL = Math.floor(Math.random() * 5);
+        const DURATION = 9; // seconds
+        const RESUME_DELAY = 3; // seconds
+        const MINIMAL_ROTATION = 360 * 8; // * count wheel revolution 
+        const CELL_DEGREE = 360 / 5; // / count cells (games)
+        const RANDOM_CELL = Math.floor(Math.random() * 5); // Get random cell
 
         const rotation = MINIMAL_ROTATION + (CELL_DEGREE * RANDOM_CELL);
 

@@ -18,6 +18,7 @@ const Home = () => {
                     <Guests.Hero />
                     <Guests.SpinWheel />
                     <Guests.Winners />
+                    <Guests.RealWins />
                 </div>
             </NavLayout>
             <Footer />
