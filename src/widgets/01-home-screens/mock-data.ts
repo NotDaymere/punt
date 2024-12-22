@@ -194,3 +194,16 @@ export const leaders = [
         prize: "3000.00"
     }
 ]
+
+export const exclusives = {
+    left: [
+        ["Clover", "Cross"],
+        ["Later", "Gator"], 
+        ["Chosen", "One"],
+    ],
+    right: [
+        "/img/temp/e-1.jpg",
+        "/img/temp/e-2.jpg",
+        "/img/temp/e-3.jpg",
+    ]
+}

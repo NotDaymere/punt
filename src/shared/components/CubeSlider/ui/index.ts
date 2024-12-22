@@ -1,0 +1,1 @@
+export { CubeSlide } from './CubeSlide';

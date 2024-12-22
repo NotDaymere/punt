@@ -2,3 +2,4 @@ export { Hero } from "./01-hero";
 export { SpinWheel } from "./02-spin-wheel";
 export { Winners } from './03-winners';
 export { RealWins } from './04-real-wins';
+export { Exclusives } from './05-exclusives';

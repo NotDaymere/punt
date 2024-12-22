@@ -1,5 +1,4 @@
 .wins {
-    overflow: hidden;
 }
 .wins_content {
     padding-top: 73px;
@@ -8,6 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
 }
 .wins_back {
     margin-top: 73px;
