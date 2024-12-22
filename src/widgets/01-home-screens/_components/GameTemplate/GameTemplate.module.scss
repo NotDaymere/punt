@@ -1,0 +1,104 @@
+.game {
+}
+.game_wrapper {
+    position: relative;
+    padding: 95px 0 42px;
+}
+.game_background {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1176px;
+    flex-shrink: 0;
+}
+.game_title_stars_1 {
+    position: absolute;
+    left: 0 ;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 147px;
+}
+.game_title_stars_2 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(70%, -50%) rotate(190deg);
+    width: 143px;
+}
+.game_title_container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+.game_title_box {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 178px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 30%);
+        background: getColorPrimary(0.4);
+        filter: blur(100px);
+    }
+}
+.game_title {
+    font-size: 60px;
+    text-align: center;
+}
+.game_content {
+    margin-top: 46px;
+    position: relative;
+    z-index: 2;
+}
+
+// Figures
+.game_box_clubs {
+    width: 90px;
+    position: absolute;
+    bottom: 0;
+    right: 130%;
+    transform: translateY(20%) rotate(30deg);
+}
+.game_box_hearts {
+    width: 65px;
+    position: absolute;
+    left: 128%;
+    top: 0;
+    transform: translateY(-20%) rotate(-20deg);
+}
+.game_box_blueChip {
+    position: absolute;
+    right: 200%;
+    bottom: 0;
+    transform: translateY(45%);
+    width: 65px;
+}
+.game_box_greenChip {
+    position: absolute;
+    left: 210%;
+    top: 0;
+    transform: translateY(-60%);
+    width: 65px;
+}
+.game_box_clubsRight {
+    position: absolute;
+    width: 90px;
+    left: 120%;
+    top: 0;
+    transform: translateY(-30%) rotate(30deg);
+}
+.game_box_square {
+    width: 80px;
+    position: absolute;
+    right: 130%;
+    top: 0;
+    transform: translateY(-25%) rotate(-30deg);
+}

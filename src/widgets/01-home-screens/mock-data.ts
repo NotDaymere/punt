@@ -200,10 +200,22 @@ export const exclusives = {
         ["Clover", "Cross"],
         ["Later", "Gator"], 
         ["Chosen", "One"],
+        ["Clover", "Cross"],
     ],
     right: [
         "/img/temp/e-1.jpg",
         "/img/temp/e-2.jpg",
         "/img/temp/e-3.jpg",
+        "/img/temp/e-1.jpg",
     ]
 }
+
+export const featuredGames = [
+    "/img/temp/featured-1.png",
+    "/img/temp/featured-2.png",
+    "/img/temp/featured-3.png",
+    "/img/temp/featured-4.png",
+    "/img/temp/featured-5.png",
+    "/img/temp/featured-6.png",
+    "/img/temp/featured-7.png",
+];

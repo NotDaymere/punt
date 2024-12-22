@@ -23,7 +23,7 @@ export const RealWins: React.FC = () => {
             scrollTrigger: {
                 trigger: rootRef.current,
                 start: "top-=35% top",
-                end: "bottom+=180% bottom",
+                end: "bottom+=110% bottom",
                 scrub: 1
             },
             y: 0

@@ -12,7 +12,7 @@ export const CubeSlide: React.FC<Props> = ({
     className
 }) => {
     return (
-        <div className={clsx("cube-slide",css.slide, className)}>
+        <div className={clsx("cube-slide", css.slide, className)}>
             {children}
         </div>
     );

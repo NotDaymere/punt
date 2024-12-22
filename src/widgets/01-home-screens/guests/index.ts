@@ -3,3 +3,7 @@ export { SpinWheel } from "./02-spin-wheel";
 export { Winners } from './03-winners';
 export { RealWins } from './04-real-wins';
 export { Exclusives } from './05-exclusives';
+export { Checkouts } from './06-checkouts';
+export { Featured } from './07-featured';
+export { Games } from './08-games';
+export { ClaimCoins } from './09-claim-coins';

@@ -223,6 +223,18 @@
     }
 }
 
+.test {
+    width: 100%;
+    height: 100%;
+    background: getColorWhite();
+    color: getColorBlack();
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 418px;
+}
+
 @keyframes marqueeToLeft {
     0% {
         transform: translateX(0%);

@@ -20,6 +20,10 @@ const Home = () => {
                     <Guests.Winners />
                     <Guests.RealWins />
                     <Guests.Exclusives />
+                    <Guests.Checkouts />
+                    <Guests.Featured />
+                    <Guests.Games />
+                    <Guests.ClaimCoins />
                 </div>
             </NavLayout>
             <Footer />

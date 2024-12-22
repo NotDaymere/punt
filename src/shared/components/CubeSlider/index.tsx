@@ -1,6 +1,6 @@
 import React from "react";
-import { CubeSlide } from "./ui";
 import clsx from "clsx";
+import { CubeSlide } from "./ui";
 import { CubeSliderCore } from "./lib/CubeSliderCore";
 import css from "./CubeSlider.module.scss";
 
@@ -23,6 +23,7 @@ const CubeSlider: React.FC<Props> = ({
 }) => {
     const controllerRef = React.useRef<CubeSliderCore>(null);
     const wrapperRef = React.useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = React.useState(0);
 
     const childrens = React.Children
         .toArray(children)
@@ -30,7 +31,15 @@ const CubeSlider: React.FC<Props> = ({
 
     React.useEffect(() => {
         if(wrapperRef.current) {
-            const controller = new CubeSliderCore(wrapperRef.current);
+            const controller = new CubeSliderCore(
+                wrapperRef.current,
+                {
+                    onSlideChange(core) {
+                        setActiveIndex(core.activeIndex);
+                    },
+                    countSlides: childrens.length
+                }
+            );
             if(onInitController) {
                 onInitController(controller);
             }
@@ -44,16 +53,31 @@ const CubeSlider: React.FC<Props> = ({
         }
     }, [onInitController]);
 
+    const slides = React.useMemo(() => {
+        const length = childrens.length;
+        const fill = [...childrens, ...childrens];
+        // return fill.slice(length + activeIndex - 3, length + activeIndex + 1);
+        return fill.slice(length + activeIndex - 1, length + activeIndex + 3);
+    }, [activeIndex, childrens]);
+
+    // [1,2,3,4,5,6,1,2,3,4,5,6]
+
+    const Wrapper = (
+        <div 
+            className={clsx(css.slider_wrapper, classNameWrapper)} 
+            ref={wrapperRef}
+        >
+            {childrens}
+        </div>
+    );
+
     if(onlyWrapper) {
-        return (
-            <div className={clsx(css.slider_wrapper, classNameWrapper)} ref={wrapperRef}>
-                {childrens}
-            </div>
-        )
+        return Wrapper;
     }
 
     return (
         <div className={clsx(css.slider, className)}>
+            {Wrapper}
         </div>
     );
 };;

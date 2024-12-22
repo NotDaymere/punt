@@ -1,0 +1,14 @@
+.slide {
+    position: relative;
+    z-index: 1;
+
+    &:global(.cube-prev-slide) {
+        z-index: 2;
+    }
+    &:global(.cube-active-slide) {
+        z-index: 3;
+    }
+    &:global(.cube-next-slide) {
+        z-index: 2;
+    }
+}
