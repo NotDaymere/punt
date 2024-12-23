@@ -7,3 +7,6 @@ export { Checkouts } from './06-checkouts';
 export { Featured } from './07-featured';
 export { Games } from './08-games';
 export { ClaimCoins } from './09-claim-coins';
+export { Testimontials } from './10-testimontials';
+export { Sale } from './11-sale';
+export { Payments } from './12-payments';

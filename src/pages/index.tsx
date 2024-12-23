@@ -24,6 +24,9 @@ const Home = () => {
                     <Guests.Featured />
                     <Guests.Games />
                     <Guests.ClaimCoins />
+                    <Guests.Testimontials />
+                    <Guests.Sale />
+                    <Guests.Payments />
                 </div>
             </NavLayout>
             <Footer />

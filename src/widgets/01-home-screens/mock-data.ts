@@ -219,3 +219,37 @@ export const featuredGames = [
     "/img/temp/featured-6.png",
     "/img/temp/featured-7.png",
 ];
+
+export const testimontials = [
+    {
+        rate: 5,
+        review: "Great service! I played 5 games with Aptu and I finally had a jungler that ganks me all the time and win the whole lane for me, easiest wins of my life",
+        name: "Nayat",
+        location: "France",
+        img: "/img/temp/nayat.jpg"
+    },{
+        rate: 5,
+        review: "Great service! I played 5 games with Aptu and I finally had a jungler that ganks me all the time and win the whole lane for me, easiest wins of my life",
+        name: "Nayat",
+        location: "France",
+        img: "/img/temp/nayat.jpg"
+    },{
+        rate: 5,
+        review: "Great service! I played 5 games with Aptu and I finally had a jungler that ganks me all the time and win the whole lane for me, easiest wins of my life",
+        name: "Nayat",
+        location: "France",
+        img: "/img/temp/nayat.jpg"
+    },{
+        rate: 4,
+        review: "Great service! I played 5 games with Aptu and I finally had a jungler that ganks me all the time and win the whole lane for me, easiest wins of my life",
+        name: "Nayat",
+        location: "France",
+        img: "/img/temp/nayat.jpg"
+    },{
+        rate: 4,
+        review: "Great service! I played 5 games with Aptu and I finally had a jungler that ganks me all the time and win the whole lane for me, easiest wins of my life",
+        name: "Nayat",
+        location: "France",
+        img: "/img/temp/nayat.jpg"
+    },
+]

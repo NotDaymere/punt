@@ -1,0 +1,111 @@
+.testimontial {
+    padding: 32px 21px 26px;
+    // height: 332px;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    @mixin setTestimontialBg($bg) {
+        background: linear-gradient(
+            to bottom,
+            $bg,
+            $bg calc(100% - 97px),
+            transparent calc(100% - 97px),
+            transparent
+        );
+        .testimontial_bottom { fill: $bg; }
+    }
+
+    &._black {
+        @include setTestimontialBg(#2F2F32);
+        .testimontial_rate_item._active { fill: #D7FF82 }
+        .testimontial_review { color: getColorWhite() }
+        .testimontial_person_name { color: getColorWhite() }
+    }
+
+    &._light-green {
+        @include setTestimontialBg(#D7FF82);
+        .testimontial_rate_item._active { fill: #2F2F32 }
+    }
+
+    &._white {
+        @include setTestimontialBg(#FFFFFF);
+        .testimontial_rate_item._active { fill: #101012 }
+        .testimontial_review { color: getColorGray() }
+    }
+
+    &._light-blue {
+        @include setTestimontialBg(#BFDBFF);
+        .testimontial_rate_item._active { fill: #292E26 }
+    }
+
+    &._light-gray {
+        @include setTestimontialBg(#F9F9F9);
+        .testimontial_rate_item._active { fill: #BFDBFF }
+        .testimontial_review { color: getColorGray() }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        bottom: 85px;
+        left: 11px;
+        width: calc(100% - 22px);
+        border-top: 2px dashed #121411;
+        position: absolute;
+    }
+}
+.testimontial_bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 97px;
+    width: 100%;
+    z-index: -1;
+}
+.testimontial_rate {
+    display: flex;
+    gap: 4px;
+}
+.testimontial_rate_item {
+    width: 22px;
+    height: 22px;
+    fill: getColorBlack(0.5);
+}
+.testimontial_review {
+    margin-top: 24px;
+    @include setFontPPMori600(16px, 1.1, normal, getColorBlack());
+}
+.testimontial_person {
+    margin-top: auto;
+    padding-top: 75px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.testimontial_person_img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    img {
+        @include setCoveredImage()
+    }
+}
+.testimontial_person_col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.testimontial_person_name {
+    @include setFontPPMori600(16px, 1.1, normal, getColorBlack());
+}
+.testimontial_person_location {
+    @include setFontPPMori600(12px, 1.25, 0.02em, getColorGray(0.6));
+
+}
