@@ -6,6 +6,7 @@ import Image from "shared/ui/Image";
 import { Button } from "shared/components/@Buttons/Button";
 import css from "./sale.module.scss";
 import testimontialCSS from "../10-testimontials/testimontials.module.scss";
+import { Starfield } from "shared/animation/Starfield";
 
 export const Sale: React.FC = () => {
     const { typingValue, value, handleValue } = useInput();
@@ -18,6 +19,12 @@ export const Sale: React.FC = () => {
         <section className={css.sale} id="sale">
             <div className={testimontialCSS.testimontials_container}>
                 <div className={css.sale_wrapper}>
+                    {/* <Starfield className={css.sale_starfield} /> */}
+                    <Image.Default 
+                        className={css.sale_starfield}
+                        src="/img/temp/sale-bg.webp"
+                        alt=""
+                    />
                     <Image.Default 
                         className={css.sale_wheel}
                         src="/img/home/sale-wheel.webp"

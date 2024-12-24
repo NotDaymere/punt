@@ -1,0 +1,17 @@
+.marquee {
+    overflow: hidden;
+
+    &._utd,
+    &._dtu {
+        .marquee_wrapper {
+            flex-direction: column;
+        }
+    }
+}
+.marquee_wrapper {
+    display: flex;
+    flex-shrink: 1;
+}
+.marquee_item {
+    flex-shrink: 1;
+}

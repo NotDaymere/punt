@@ -10,6 +10,15 @@
 
     position: relative;
 }
+.sale_starfield {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 .sale_wheel {
     position: absolute;
     left: 50%;
@@ -23,6 +32,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 .sale_title {
     font-size: 60px;
