@@ -59,11 +59,10 @@
     height: 494px;
     border-radius: 24px;
 
-    transform: translateY(-82vh);
+    transform: translateY(calc((1vw + 1vh) * -30));
 
     &:nth-child(odd) {
-        
-    transform: translateY(82vh);
+        transform: translateY(calc((1vw + 1vh) * 30));
     }
 
     img {

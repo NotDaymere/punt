@@ -78,3 +78,15 @@
     max-width: 271px;
     @include setFontPPMori600(20px, 1.2, normal, getColorWhite());
 }
+
+@include -screen-xxxl {
+    .checkouts {
+        padding-bottom: 250px;
+    }
+    .checkouts_title_container {
+        font-size: 150px;
+    }
+    .checkouts_hand {
+        width: 700px;
+    }
+}

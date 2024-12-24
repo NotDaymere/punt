@@ -246,3 +246,12 @@
         transform: translateX(-100%);
     }
 }
+
+@include -screen-xxxl {
+    .exclusives_title_container {
+        font-size: 52px;
+    }
+    .exclusives_content {
+        max-width: 860px;
+    }
+}

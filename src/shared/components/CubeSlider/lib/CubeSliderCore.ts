@@ -28,7 +28,7 @@ export class CubeSliderCore {
 
     config: SliderConfig = {
         delay: 0.2,
-        duration: 0.4,
+        duration: 0.5,
         direction: "horizontal",
         onSlideChange: () => {},
     };
@@ -62,6 +62,7 @@ export class CubeSliderCore {
 
     slidePrev() {
         if ((this._inAnimation && this._inAnimation.isActive()) || !this._isActive) {
+            this._accelerate();
             return;
         }
         this.slideTo(this.activeIndex - 1);
@@ -69,6 +70,7 @@ export class CubeSliderCore {
 
     slideNext() {
         if ((this._inAnimation && this._inAnimation.isActive()) || !this._isActive) {
+            this._accelerate();
             return;
         }
         this.slideTo(this.activeIndex + 1);
@@ -153,6 +155,11 @@ export class CubeSliderCore {
 
     _setAlpha(element: HTMLElement) {
         gsap.set(element, { autoAlpha: 0 });
+    }
+
+    _accelerate() {
+        this._inAnimation?.timeScale(2);
+        this._outAnimation?.timeScale(2);
     }
 
     enable() {

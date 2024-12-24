@@ -102,3 +102,20 @@
     }
 
 }
+
+@include -screen-xxxl {
+    .sale_wrapper {
+        padding: 300px 0 100px;
+    }
+    .sale_title {
+        font-size: 52px;
+    }
+    .sale_text,
+    .sale_or_login,
+    .socials {
+        margin-top: 26px;
+    }
+    .sale_form {
+        margin-top: 40px;
+    }
+}

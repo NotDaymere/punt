@@ -102,3 +102,9 @@
     top: 0;
     transform: translateY(-25%) rotate(-30deg);
 }
+
+@include -screen-xxxl {
+    .game_title {
+        font-size: 52px;
+    }
+}

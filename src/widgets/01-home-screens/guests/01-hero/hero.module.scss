@@ -150,3 +150,25 @@
         background-repeat: no-repeat !important;
     }
 }
+
+@include -screen-xxxl {
+    .hero {
+        padding-top: 120px;
+    }
+    .hero_title {
+        font-size: 66px;
+    }
+    .hero_button {
+        > span {
+            font-size: 22px;
+            padding: 2px 34px;
+            height: 52px;
+        }
+    }
+    .hero_button_smile {
+        width: 120px;
+    }
+    .hero_figure_square {
+        left: 5%;
+    }
+}

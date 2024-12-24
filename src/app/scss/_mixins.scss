@@ -133,6 +133,12 @@
     }
 }
 
+@mixin screen-xxxl {
+    @media screen and (min-width: $xxxl) {
+        @content;
+    }
+}
+
 
 /* Queries min */
 
@@ -168,6 +174,12 @@
 
 @mixin -screen-xxl {
     @media screen and (max-width: ($xxl - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-xxxl {
+    @media screen and (max-width: ($xxxl - 0.2)) {
         @content;
     }
 }
