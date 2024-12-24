@@ -16,8 +16,6 @@ interface Props {
 const CubeSlider: React.FC<Props> = ({ 
     children, 
     className,
-    classNameWrapper,
-    onlyWrapper,
     direction = "vertical",
     onInitController
 }) => {
@@ -37,7 +35,7 @@ const CubeSlider: React.FC<Props> = ({
                     onSlideChange(core) {
                         setActiveIndex(core.activeIndex);
                     },
-                    countSlides: childrens.length
+                    direction
                 }
             );
             if(onInitController) {
@@ -45,39 +43,17 @@ const CubeSlider: React.FC<Props> = ({
             }
             return () => controller.destroy();
         }
-    }, []);
+    }, [direction]);
 
     React.useEffect(() => {
         if(onInitController && controllerRef.current) {
             onInitController(controllerRef.current);
         }
-    }, [onInitController]);
-
-    const slides = React.useMemo(() => {
-        const length = childrens.length;
-        const fill = [...childrens, ...childrens];
-        // return fill.slice(length + activeIndex - 3, length + activeIndex + 1);
-        return fill.slice(length + activeIndex - 1, length + activeIndex + 3);
-    }, [activeIndex, childrens]);
-
-    // [1,2,3,4,5,6,1,2,3,4,5,6]
-
-    const Wrapper = (
-        <div 
-            className={clsx(css.slider_wrapper, classNameWrapper)} 
-            ref={wrapperRef}
-        >
-            {childrens}
-        </div>
-    );
-
-    if(onlyWrapper) {
-        return Wrapper;
-    }
+    });
 
     return (
-        <div className={clsx(css.slider, className)}>
-            {Wrapper}
+        <div className={clsx(css.slider, className)} ref={wrapperRef}>
+            {childrens}
         </div>
     );
 };;

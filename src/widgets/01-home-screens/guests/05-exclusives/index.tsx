@@ -16,19 +16,19 @@ export const Exclusives: React.FC = () => {
 
     const handlePrev = () => {
         if (cubeControllerUp.current) {
-            cubeControllerUp.current.prevSlide();
+            cubeControllerUp.current.slidePrev();
         }
         if (cubeControllerDown.current) {
-            cubeControllerDown.current.nextSlide();
+            cubeControllerDown.current.slideNext();
         }
     };
 
     const handleNext = () => {
         if (cubeControllerUp.current) {
-            cubeControllerUp.current.nextSlide();
+            cubeControllerUp.current.slideNext();
         }
         if (cubeControllerDown.current) {
-            cubeControllerDown.current.prevSlide();
+            cubeControllerDown.current.slidePrev();
         }
     };
 
@@ -47,11 +47,9 @@ export const Exclusives: React.FC = () => {
                             <div className={css.exclusives_sliders_slider}>
                                 <CubeSlider
                                     className={css.exclusives_slider}
-                                    classNameWrapper={css.exclusives_slider_left}
                                     onInitController={(controller) =>
                                         (cubeControllerUp.current = controller)
                                     }
-                                    onlyWrapper
                                 >
                                     {exclusives.left.map((item) => (
                                         <CubeSlide className={css.slide} key={item.join()}>
@@ -86,18 +84,10 @@ export const Exclusives: React.FC = () => {
                             <div className={css.exclusives_sliders_slider}>
                                 <CubeSlider
                                     className={css.exclusives_slider}
-                                    classNameWrapper={css.exclusives_slider_right}
                                     onInitController={(controller) =>
                                         (cubeControllerDown.current = controller)
                                     }
-                                    onlyWrapper
                                 >
-                                    {/* <CubeSlide className={css.test}>Slide 1</CubeSlide>
-                                    <CubeSlide className={css.test}>Slide 2</CubeSlide>
-                                    <CubeSlide className={css.test}>Slide 3</CubeSlide>
-                                    <CubeSlide className={css.test}>Slide 4</CubeSlide> */}
-                                    {/* <CubeSlide className={css.test}>Slide 5</CubeSlide>
-                                    <CubeSlide className={css.test}>Slide 6</CubeSlide> */}
                                     {exclusives.right.map((item) => (
                                         <CubeSlide className={clsx(css.slide, css._bg)} key={item}>
                                             <div className={css.slide_image}>

@@ -25,13 +25,16 @@
 .exclusives_sliders {
     display: flex;
     perspective: 1000px;
-    // overflow: hidden;
-    border-radius: 20px;
 }
 .exclusives_content {
     max-width: 966px;
     margin: 42px auto 0;
     position: relative;
+}
+.exclusives_slider {
+    perspective: none !important;
+    // height: 483px;
+    aspect-ratio: 1;
 }
 .exclusives_sliders_slider {
     width: 50%;
@@ -51,7 +54,6 @@
 
 // Slide
 .slide {
-    height: 418px;
     background: #212121;
 
     display: flex;
@@ -59,6 +61,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    // position: relative;
 
     &::before {
         content: "";

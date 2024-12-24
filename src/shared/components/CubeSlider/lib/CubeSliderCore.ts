@@ -1,83 +1,189 @@
+import gsap from "gsap";
+
 type SliderListener = (core: CubeSliderCore) => void;
 
-interface SliderOptions {
-    onSlideChange?: SliderListener;
-    countSlides?: number;
+interface SliderConfig {
+    onSlideChange: SliderListener;
+    delay: number;
+    duration: number;
+    direction: "vertical" | "horizontal";
 }
 
+type SliderCustomOptions = {
+    [K in keyof SliderConfig]?: SliderConfig[K];
+};
+
 export class CubeSliderCore {
-    readIndex = 0;
     activeIndex = 0;
-    rotate = 0;
 
-    _countSlides = 4;
+    _isActive = true;
+    _prevIndex = 0;
+    _slides: HTMLElement[] = [];
     _wrapper: HTMLElement;
-
     _onSlideChange: SliderListener;
+    _wrapperWidth = 0;
 
-    constructor(
-        wrapper: HTMLElement,
-        options: SliderOptions = {}
-    ) {
+    _inAnimation: gsap.core.Tween | null = null;
+    _outAnimation: gsap.core.Tween | null = null;
+
+    config: SliderConfig = {
+        delay: 0.2,
+        duration: 0.4,
+        direction: "horizontal",
+        onSlideChange: () => {},
+    };
+
+    constructor(wrapper: HTMLElement, options: SliderCustomOptions = {}) {
         this._wrapper = wrapper;
-        this._countSlides = options.countSlides || 4;
         this._onSlideChange = options.onSlideChange || (() => null);
+
+        this.onResize = this.onResize.bind(this);
+
+        this.setup(options);
+    }
+
+    setup(options: SliderCustomOptions = {}) {
+        this.config = Object.assign(this.config, options);
+        this._wrapperWidth = this._wrapper.offsetWidth;
+        this._slides = Array.from(this._wrapper.querySelectorAll(".cube-slide"));
+
+        window.addEventListener("resize", this.onResize);
+
+        gsap.set(this._wrapper, { perspective: this._wrapperWidth * 1.5 });
+        gsap.set(".cube-slide", {
+            backfaceVisibility: "hidden",
+            transformOrigin: `50% 50% -${this._wrapperWidth / 2}px`,
+        });
+
+        this._slides.forEach((slide, id) => {
+            gsap.set(slide, { autoAlpha: id === 0 ? 1 : 0 });
+        });
+    }
+
+    slidePrev() {
+        if ((this._inAnimation && this._inAnimation.isActive()) || !this._isActive) {
+            return;
+        }
+        this.slideTo(this.activeIndex - 1);
+    }
+
+    slideNext() {
+        if ((this._inAnimation && this._inAnimation.isActive()) || !this._isActive) {
+            return;
+        }
+        this.slideTo(this.activeIndex + 1);
+    }
+
+    slideTo(slideIndex: number) {
+        if (slideIndex === this.activeIndex) {
+            return;
+        }
+
+        this._prevIndex = this.activeIndex;
+        this.activeIndex =
+            slideIndex < 0
+                ? this._slides.length - 1
+                : slideIndex > this._slides.length - 1
+                  ? 0
+                  : slideIndex;
+
+        this.update();
     }
 
     update() {
-        this.draw(true);
-    }
+        const currentSlide = this._slides[this.activeIndex];
+        const prevSlide = this._slides[this._prevIndex];
 
-    draw(smooth = false) {
-        if(smooth) {
-            this._wrapper.style.transitionDuration = "400ms";
-            this._wrapper.addEventListener("transitionend", () => {
-                this._wrapper.style.transitionDuration = "0s";
-            }, { once: true })
+        if (this._prevIndex === 0 && this.activeIndex === this._slides.length - 1) {
+            this._setPrevInactive(prevSlide);
+            this._setPrevActive(currentSlide);
+        } else if (this._prevIndex === this._slides.length - 1 && this.activeIndex === 0) {
+            this._setInactive(prevSlide);
+            this._setActive(currentSlide);
+        } else if (this.activeIndex < this._prevIndex) {
+            this._setPrevInactive(prevSlide);
+            this._setPrevActive(currentSlide);
+        } else {
+            this._setInactive(prevSlide);
+            this._setActive(currentSlide);
         }
-        this._wrapper.style.transform = `rotateX(${this.rotate}deg)`;
     }
 
-    prevSlide() {
-        this.readIndex -= 1;
-        this.activeIndex = Math.abs(this.readIndex % this._countSlides);
-        this.rotate -= 90;
-        this.update();
-        this._onSlideChange(this);
+    _setActive(element: HTMLElement) {
+        this._inAnimation = gsap.fromTo(
+            element,
+            this.config.duration,
+            { 
+                rotationX: -90, 
+                autoAlpha: 1 
+            },
+            { 
+                rotationX: 0,
+            }
+        );
     }
 
-    nextSlide() {
-        this.readIndex += 1;
-        this.activeIndex = Math.abs(this.readIndex % this._countSlides);
-        this.rotate += 90;
-        this.update();
-        this._onSlideChange(this);
+    _setInactive(element: HTMLElement) {
+        this._outAnimation = gsap.to(element, this.config.duration, {
+            rotationX: 90,
+            onComplete: () => this._setAlpha(element),
+        });
+    }
+
+    _setPrevActive(element: HTMLElement) {
+        this._inAnimation = gsap.fromTo(
+            element,
+            this.config.duration,
+            { 
+                rotationX: 90, 
+                autoAlpha: 1 
+            },
+            { 
+                rotationX: 0 
+            }
+        );
+    }
+
+    _setPrevInactive(element: HTMLElement) {
+        this._outAnimation = gsap.to(element, this.config.duration, {
+            rotationX: -90,
+            onComplete: () => this._setAlpha(element),
+        });
+    }
+
+    _setAlpha(element: HTMLElement) {
+        gsap.set(element, { autoAlpha: 0 });
+    }
+
+    enable() {
+        this._isActive = true;
+    }
+
+    disable() {
+        this._isActive = false;
+    }
+
+    onResize() {
+        this._wrapperWidth = this._wrapper.offsetWidth;
+        gsap.set("#container", { perspective: this._wrapperWidth * 1.5 });
+        gsap.set(".slide", { transformOrigin: "50% 50% -" + this._wrapperWidth / 2 });
     }
 
     destroy() {
-        this._wrapper.style.transform = "";
+        this._wrapperWidth = 0;
+
+        window.removeEventListener("resize", this.onResize);
+
+        gsap.set(this._wrapper, { perspective: undefined });
+
+        this._slides.forEach((slide) => {
+            gsap.set(slide, { 
+                autoAlpha: undefined,
+                backfaceVisibility: undefined,
+                transformOrigin: undefined, 
+            });
+        });
+
+        this._slides = []
     }
 }
-
-
-// -10 = 2
-// -9 = 3
-// -8 = 0
-// -7 = 1
-// -6 = 2
-// -5 = 3
-// -4 = 0
-// -3 = 1
-// -2 = 2
-// -1 = 3
-// 0 = 0
-// 1 = 1
-// 2 = 2
-// 3 = 3
-// 4 = 0
-// 5 = 1
-// 6 = 2
-// 7 = 3
-// 8 = 0
-// 9 = 1
-// 10 = 2
