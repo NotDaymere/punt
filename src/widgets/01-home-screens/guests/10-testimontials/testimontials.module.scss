@@ -1,5 +1,11 @@
 .testimontials {
     padding-top: 68px;
+
+    &:global(._animated) {
+        .testimontials_item {
+            transform: translate(0,0) rotate(0deg) !important;
+        }
+    }
 }
 .testimontials_container {
     max-width: 1373px;
@@ -10,6 +16,7 @@
 }
 .testimontials_wrapper {
     position: relative;
+    height: 880px;
 
     background: #1F1F21;
     background-image: url("/img/home/testimontials-bg.webp");
@@ -75,7 +82,44 @@
 }
 .testimontials_swiper {
     margin-top: 94px;
+    overflow: visible;
 }
 .testimontials_swiper_slide {
     width: 218px;
+
+    &:nth-child(1) .testimontials_item {
+        transform: translate(115%, 12%) rotate(-22deg);
+    }
+
+    &:nth-child(2) {
+        position: relative;
+        z-index: 1;
+        .testimontials_item {
+            transform: translate(95%, -25%) rotate(-13deg);
+        }
+    }
+
+    &:nth-child(3) {
+        position: relative;
+        z-index: 1;
+        .testimontials_item {
+            transform: translate(-50%, 22%);
+        }
+    }
+
+    &:nth-child(4) {
+        position: relative;
+        z-index: 1;
+        .testimontials_item {
+            transform: translate(-75%, 17%) rotate(22deg);
+        }
+    }
+
+    &:nth-child(5) .testimontials_item {
+        transform: translate(-160%, -15%) rotate(15deg);
+    }
+}
+
+.testimontials_item {
+    transition: transform 1s ease;
 }

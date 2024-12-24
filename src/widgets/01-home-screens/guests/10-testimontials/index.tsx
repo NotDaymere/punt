@@ -1,4 +1,6 @@
 import React from "react";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "shared/ui/Image";
 import { Title } from "shared/components/Title";
@@ -15,6 +17,16 @@ const colors = [
 ] as const;
 
 export const Testimontials: React.FC = () => {
+    useGSAP(() => {
+        ScrollTrigger.create({
+            trigger: "#testimontials",
+            start: "top 30%",
+            once: true,
+            onEnter: function() {
+                document.getElementById("testimontials")?.classList.add("_animated");
+            }
+        })
+    }, []);
     return (
         <section className={css.testimontials} id="testimontials">
             <div className={css.testimontials_container}>
@@ -64,6 +76,7 @@ export const Testimontials: React.FC = () => {
                                 key={id}
                             >
                                 <TestimontialItem 
+                                    className={css.testimontials_item}
                                     person_img={review.img}
                                     person_location={review.location}
                                     person_name={review.name}
