@@ -1,8 +1,8 @@
 .marquee {
     overflow: hidden;
 
-    &._utd,
-    &._dtu {
+    &:global(._utd),
+    &:global(._dtu) {
         .marquee_wrapper {
             flex-direction: column;
         }

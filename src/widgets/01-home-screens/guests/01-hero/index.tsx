@@ -2,8 +2,8 @@ import React from "react";
 import { Title } from "shared/components/Title";
 import { Button } from "shared/components/@Buttons/Button";
 import Image from "shared/ui/Image";
-import css from "./hero.module.scss";
 import StarIcon from "shared/icons/Star.icon";
+import css from "./hero.module.scss";
 
 export const Hero: React.FC = () => {
     return (
@@ -31,17 +31,19 @@ export const Hero: React.FC = () => {
                 <StarIcon className={css.hero_figure_star_4}/>
                 {/* Content */}
                 <div className={css.hero_wrapper}>
-                    <Title 
-                        level={1}
-                        className={css.hero_title}
-                        text="#1 Free -To - Play"
-                    />
-                    <Title 
-                        level={2}
-                        className={css.hero_casino}
-                        text="Social Casino"
-                        variant="yellow"
-                    />
+                    <div className={css.hero_title_box}>
+                        <Title 
+                            level={1}
+                            className={css.hero_title}
+                            text="#1 Free -To - Play"
+                        />
+                        <Title 
+                            level={2}
+                            className={css.hero_casino}
+                            text="Social Casino"
+                            variant="yellow"
+                        />
+                    </div>
                     <div className={css.hero_button_container}>
                         <Button 
                             className={css.hero_button} 

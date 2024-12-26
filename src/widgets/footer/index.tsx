@@ -64,7 +64,8 @@ export const Footer: React.FC = () => {
                 </div>
                 <div className={css.footer_row}>
                     <p className={css.footer_row_copy}>
-                        {new Date().getFullYear()} Punt &copy; All rights reserved.
+                        <span>{new Date().getFullYear()} Punt</span>{' '}
+                        <span>&copy; All rights reserved.</span>
                     </p>
                     <button 
                         className={css.footer_row_upBtn}

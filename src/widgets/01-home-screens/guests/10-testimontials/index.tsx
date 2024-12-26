@@ -69,6 +69,7 @@ export const Testimontials: React.FC = () => {
                         className={css.testimontials_swiper}
                         spaceBetween={24}
                         slidesPerView="auto"
+                        allowTouchMove
                     >
                         {testimontials.map((review, id) => (
                             <SwiperSlide 

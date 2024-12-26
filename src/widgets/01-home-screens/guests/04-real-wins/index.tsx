@@ -22,8 +22,8 @@ export const RealWins: React.FC = () => {
         gsap.to(`.${css.wins_cards_item}`, {
             scrollTrigger: {
                 trigger: rootRef.current,
-                start: "top-=35% top",
-                end: "bottom+=110% bottom",
+                start: "top bottom",
+                end: "bottom+=150% bottom",
                 scrub: 1
             },
             y: 0

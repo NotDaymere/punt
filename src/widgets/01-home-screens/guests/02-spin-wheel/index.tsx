@@ -1,13 +1,13 @@
 import React from "react";
+import clsx from "clsx";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Wheel } from "widgets/01-home-screens/_components/Wheel";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
-import css from "./spin-wheel.module.scss";
-import clsx from "clsx";
 import LightIcon from "shared/icons/Light.icon";
+import css from "./spin-wheel.module.scss";
 
 export const SpinWheel: React.FC = () => {
     const imageRef = React.useRef<HTMLImageElement>(null);

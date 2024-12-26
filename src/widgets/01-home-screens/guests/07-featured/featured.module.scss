@@ -127,3 +127,18 @@
         background-repeat: no-repeat !important;
     }
 }
+
+@include -screen-xl {
+    .featured_content_title {
+        font-size: 52px;
+    }
+}
+
+@include -screen-sm {
+    .featured_content_text {
+        max-width: 342px;
+    }
+    .featured_content_title {
+        font-size: 32px;
+    }
+}

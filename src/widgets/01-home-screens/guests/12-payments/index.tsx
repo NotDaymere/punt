@@ -4,6 +4,7 @@ import Image from "shared/ui/Image";
 import testimontialCSS from "../10-testimontials/testimontials.module.scss";
 import css from "./payments.module.scss";
 import { Marquee } from "shared/ui/marquee";
+import { useViewport } from "shared/hooks/use-viewport";
 
 const paymentsImages = [
     "/img/payments/p-1.svg",
@@ -14,6 +15,10 @@ const paymentsImages = [
 ];
 
 export const Payments: React.FC = () => {
+    const { screenWidth } = useViewport();
+
+    console.log(screenWidth)
+
     return (
         <div className={css.payments}>
             <div className={testimontialCSS.testimontials_container}>
@@ -39,12 +44,16 @@ export const Payments: React.FC = () => {
                             {[1, 2].map((item) => (
                                 <Marquee
                                     className={css.payments_marquee}
-                                    direction={item === 1 ? "utd" : "dtu"}
+                                    direction={
+                                        screenWidth > 991 
+                                            ? (item === 1 ? "utd" : "dtu")
+                                            : (item === 1 ? "ltr" : "rtl")
+                                    }
                                     speed={0.7}
-                                    key={item}
+                                    key={item + "" + screenWidth}
                                 >
                                     <ul className={css.payments_list}>
-                                        {paymentsImages.map((item) => (
+                                        {[...paymentsImages, ...paymentsImages].map((item) => (
                                             <li className={css.payments_list_item} key={item}>
                                                 <div className={css.payments_list_content}>
                                                     <Image.Default src={item} alt="" />

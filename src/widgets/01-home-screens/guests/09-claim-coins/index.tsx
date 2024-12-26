@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "shared/components/@Buttons/Button";
-import css from "./claim-coins.module.scss";
 import Image from "shared/ui/Image";
+import css from "./claim-coins.module.scss";
 
 export const ClaimCoins: React.FC = () => {
     return (
@@ -13,7 +13,7 @@ export const ClaimCoins: React.FC = () => {
                             <span>No purchase</span> necessary
                         </h2>
                         <p className={css.claim_content_text}>Claim your free coins today!</p>
-                        <Button className={css.claim_content_btn} variant="black">
+                        <Button className={css.claim_content_btn} variant="black" circle>
                             Play for Free!
                         </Button>
                         <p className={css.claim_bottom_text}>

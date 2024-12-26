@@ -16,6 +16,7 @@ type SliderCustomOptions = {
 export class CubeSliderCore {
     activeIndex = 0;
 
+    _dir = "rotationY";
     _isActive = true;
     _prevIndex = 0;
     _slides: HTMLElement[] = [];
@@ -46,6 +47,7 @@ export class CubeSliderCore {
         this.config = Object.assign(this.config, options);
         this._wrapperWidth = this._wrapper.offsetWidth;
         this._slides = Array.from(this._wrapper.querySelectorAll(".cube-slide"));
+        this._dir = this.config.direction === "vertical" ? "rotationX" : "rotationY";
 
         window.addEventListener("resize", this.onResize);
 
@@ -116,18 +118,18 @@ export class CubeSliderCore {
             element,
             this.config.duration,
             { 
-                rotationX: -90, 
+                [this._dir]: -90, 
                 autoAlpha: 1 
             },
             { 
-                rotationX: 0,
+                [this._dir]: 0,
             }
         );
     }
 
     _setInactive(element: HTMLElement) {
         this._outAnimation = gsap.to(element, this.config.duration, {
-            rotationX: 90,
+            [this._dir]: 90,
             onComplete: () => this._setAlpha(element),
         });
     }
@@ -137,18 +139,18 @@ export class CubeSliderCore {
             element,
             this.config.duration,
             { 
-                rotationX: 90, 
+                [this._dir]: 90, 
                 autoAlpha: 1 
             },
             { 
-                rotationX: 0 
+                [this._dir]: 0 
             }
         );
     }
 
     _setPrevInactive(element: HTMLElement) {
         this._outAnimation = gsap.to(element, this.config.duration, {
-            rotationX: -90,
+            [this._dir]: -90,
             onComplete: () => this._setAlpha(element),
         });
     }
@@ -181,15 +183,9 @@ export class CubeSliderCore {
 
         window.removeEventListener("resize", this.onResize);
 
-        gsap.set(this._wrapper, { perspective: undefined });
+        this._wrapper.removeAttribute("style");
 
-        this._slides.forEach((slide) => {
-            gsap.set(slide, { 
-                autoAlpha: undefined,
-                backfaceVisibility: undefined,
-                transformOrigin: undefined, 
-            });
-        });
+        this._slides.forEach((slide) => slide.removeAttribute("style"));
 
         this._slides = []
     }

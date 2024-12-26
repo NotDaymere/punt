@@ -119,3 +119,36 @@
         margin-top: 40px;
     }
 }
+
+@include -screen-lg {
+    .sale_title {
+        font-size: 46px;
+    }
+    .sale_wheel {
+        max-width: 450px;
+    }
+    .sale_text {
+        margin-top: 26px;
+        font-size: 18px;
+    }
+    .sale_form {
+        margin-top: 40px;
+    }
+}
+
+@include -screen-sm {
+    .sale_wrapper {
+        padding-top: 380px 0 70px;
+    }
+    .socials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        max-width: 248px;
+    }
+    .sale_form {
+        padding: 0 16px;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

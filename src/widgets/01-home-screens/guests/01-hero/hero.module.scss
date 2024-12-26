@@ -3,6 +3,7 @@
     padding-bottom: 40px;
     position: relative;
     z-index: 2;
+    font-size: 20px;
     // overflow: hidden;
 
     > :global(.container) {
@@ -10,6 +11,7 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+        font-size: inherit;
     }
 }
 .hero_figure_square {
@@ -27,23 +29,23 @@
     position: absolute;
 }
 .hero_figure_star_1 {
-    width: 19px;
+    width: 0.95em;
     left: 10%;
     top: 20%;
 }
 .hero_figure_star_2 {
-    width: 24px;
+    width: 1.2em;
     left: 0;
     bottom: 0;
 }
 .hero_figure_star_3 {
-    width: 24px;
+    width: 1.2em;
     right: 6%;
     top: 0;
     transform: translateY(-100%);
 }
 .hero_figure_star_4 {
-    width: 19px;
+    width: 0.95em;
     right: 20%;
     top: 55%;
 }
@@ -51,14 +53,14 @@
     position: absolute;
     left: 8%;
     bottom: 20%;
-    width: 104px;
+    width: 5.2em;
     transform: rotate(20deg);
 }
 .hero_figure_hearts {
     position: absolute;
     right: 0;
     top: 30%;
-    width: 66px;
+    width: 3.3em;
     transform: rotate(-18deg);
 }
 .hero_wrapper {
@@ -68,39 +70,45 @@
     text-align: center;
     position: relative;
 }
-.hero_title {
+.hero_title_box {
+    display: flex;
+    flex-direction: column;
     font-size: 88px;
+}
+.hero_title {
+    font-size: 1em !important;
     transform: rotate(-2deg);
 }
 .hero_casino {
     align-self: flex-end;
-    font-size: 48px;
+    font-size: 0.5454em !important;
     margin-right: 55px;
     transform: rotate(-2deg);
 }
 .hero_button_container {
     margin-top: 60px;
     transform: rotate(-6deg);
+    font-size: 28px;
 
     position: relative;
 
     &::before {
         content: "";
         display: block;
-        width: 232px;
-        height: 91px;
+        width: 8.28em;
+        height: 3.25em;
         border-radius: 50%;
         background: getColorPrimary();
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        filter: blur(170px);
+        filter: blur(6.07em);
     }
 }
 .hero_button_smile {
     position: absolute;
-    width: 157px;
+    width: 5.60em;
     left: 100%;
     top: 100%;
     pointer-events: none;
@@ -108,7 +116,7 @@
     transform: translate(-40%, -50%);
 }
 .hero_button_outlines {
-    outline-offset: 4px;
+    outline-offset: 0.143em;
 
     &,
     &::after,
@@ -118,8 +126,8 @@
         top: 0;
         width: 100%;
         height: 100%;
-        border-radius: 100px;
-        outline: 0.62 solid getColorPrimary();
+        border-radius: 3.57em;
+        outline: 0.62px solid getColorPrimary();
     }
 
     &::after,
@@ -129,21 +137,22 @@
     }
 
     &::after {
-        outline-offset: 12px;
+        outline-offset: 0.43em;
         opacity: 0.3;
     }
 
     &::before {
-        outline-offset: 16px;
+        outline-offset: 0.5714em;
         opacity: 0.1;
     }
 }
 
 .hero_button {
+    font-size: inherit;
     > span {
-        @include setFontPPMori600(28px, 1.05, normal, getColorBlack());
-        padding: 2px 50px;
-        height: 60px;
+        @include setFontPPMori600(inherit, 1.05, normal, getColorBlack());
+        padding: 2px 1.78em;
+        height: 2.14em;
         background-image: url("/img/home/button-stars.png") !important;
         background-size: contain !important;
         background-position: left center !important;
@@ -155,20 +164,63 @@
     .hero {
         padding-top: 120px;
     }
-    .hero_title {
+    .hero_title_box {
         font-size: 66px;
     }
-    .hero_button {
-        > span {
-            font-size: 22px;
-            padding: 2px 34px;
-            height: 52px;
-        }
+    .hero_button_container {
+        font-size: 22px;
     }
     .hero_button_smile {
         width: 120px;
     }
     .hero_figure_square {
         left: 5%;
+    }
+}
+@include -screen-xl {
+    .hero {
+        font-size: 16px;
+    }
+    .hero_title_box {
+        font-size: 54px;
+    }
+}
+@include -screen-sm {
+    .hero_title_box {
+        font-size: 44px;
+    }
+    .hero_button_container {
+        font-size: 18px;
+    }
+    .hero_button {
+        > span {
+            min-height: 44px;
+        }
+    }
+    .hero_title {
+        &::before {
+            -webkit-text-stroke: 18px getColorPrimary() !important;
+        }
+    }
+    .hero_casino {
+        margin-top: 12px;
+        &::before {
+            -webkit-text-stroke: 12px getColorYellow() !important;
+        }
+    }
+    .hero_figure_hearts {
+        top: 0;
+        transform: translate(30%, -100%) rotate(12deg);
+    }
+    .hero_figure_square {
+        display: none;
+    }
+    .hero_figure_clubs {
+        transform: translateX(-73%) rotate(20deg);
+    }
+}
+@include -screen-xs {
+    .hero_title_box {
+        font-size: 34px;
     }
 }

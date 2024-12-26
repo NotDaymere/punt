@@ -1,15 +1,16 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Button } from "shared/components/@Buttons/Button";
 import { IconButton } from "shared/components/@Buttons/IconButton";
 import { Progress } from "shared/components/Progress";
 import { UserInfo } from "shared/components/UserInfo";
+import Image from "shared/ui/Image";
 import InfoIcon from "shared/icons/Info.icon";
 import NotificationIcon from "shared/icons/Notification.icon";
 import WalletIcon from "shared/icons/Wallet.icon";
 import ArrowRightIcon from "shared/icons/ArrowRight.icon";
 import css from "./header.module.scss";
-import Image from "shared/ui/Image";
 
 export const Header: React.FC = () => {
     const router = useRouter();
@@ -19,6 +20,9 @@ export const Header: React.FC = () => {
             <header className={css.header} id="header">
                 <div className="container">
                     <div className={css.header_wrapper}>
+                        <Link className={css.header_logo} href="/">
+                            <Image.Default src="/img/logo.png" alt="logo" />
+                        </Link>
                         <div className={css.header_auth}>
                             <div className={css.header_stars}>
                                 <Image.Default 

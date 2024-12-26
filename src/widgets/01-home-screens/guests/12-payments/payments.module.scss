@@ -19,6 +19,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
+    z-index: 2;
 }
 .payments_content_icon {
     width: 64px;
@@ -99,7 +101,7 @@
         z-index: 1;
         left: 0;
         top: 0;
-        background: linear-gradient(210deg, #544A00 40%, #FADE66 40%, #FADE66);
+        background: linear-gradient(210deg, #544a00 40%, #fade66 40%, #fade66);
     }
 
     &:hover {
@@ -126,5 +128,68 @@
 
     img {
         width: 76.16%;
+    }
+}
+
+@media screen and (max-width: 1084px) {
+    .payments_box {
+        border-radius: 0;
+    }
+    .payments_content_title {
+        font-size: 52px;
+    }
+}
+
+@include -screen-lg {
+    .payments_box {
+        padding: 24px;
+        padding-top: 260px;
+        display: block;
+    }
+    .payments_content_icon {
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+    }
+    .payments_content_title {
+        font-size: 44px;
+        max-width: 400px;
+    }
+    .payments_content_text {
+        max-width: 600px;
+    }
+    .payments_list_content {
+        width: 103px;
+        height: 67px;
+        border-radius: 10px;
+    }
+    .payments_back {
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        top: 37px;
+        gap: 0px;
+    }
+    .payments_list {
+        flex-direction: row;
+        padding: 11px 10px;
+    }
+    .payments_content_bottom {
+        margin-top: 80px;
+    }
+}
+
+@include -screen-sm {
+    .payments_content_title {
+        font-size: 32px;
+        max-width: 305px;
+    }
+    .payments_content_text {
+        margin-top: 24px;
+        max-width: 305px;
+        font-size: 16px;
     }
 }

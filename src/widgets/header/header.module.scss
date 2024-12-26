@@ -15,6 +15,17 @@
     gap: 12px;
 }
 
+.header_logo {
+    width: 67px;
+    flex-shrink: 0;
+    display: none;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
 .header_progress {
     padding: 5px;
     padding-right: 6px;
@@ -177,5 +188,28 @@
 
     img {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .header_logo {
+        display: block;
+    }
+}
+
+@include -screen-sm {
+    .header_stars {
+        display: none;
+    }
+
+    .header_auth {
+        gap: 8px;
+        button,
+        a {
+            > span {
+                min-width: 78px;
+                font-size: 12px;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { MarqueeConfig, Marquee as MarqueeInstance } from './lib';
-import css from './marquee.module.scss';
 import clsx from 'clsx';
+import css from './marquee.module.scss';
 
 type Props = {
     children: React.ReactNode;
@@ -25,15 +25,17 @@ export const Marquee: React.FC<Props> = ({ children, className, ...options }) =>
     }, []);
 
     useEffect(() => {
-        instanceRef.current?.toConfig(options);
+        instanceRef.current?.toConfig(options); 
     }, [options]);
 
     return (
-        <div className={clsx(
-            css.marquee,
-            css['_' + (options.direction || "ltr")], 
-            className
-        )}>
+        <div 
+            className={clsx(
+                css.marquee,
+                '_' + (options.direction || "ltr"), 
+                className
+            )}
+        >
             <ul className={css.marquee_wrapper} ref={wrapperRef}>
                 <li className={css.marquee_item}>{children}</li>
                 <li className={css.marquee_item}>{children}</li>

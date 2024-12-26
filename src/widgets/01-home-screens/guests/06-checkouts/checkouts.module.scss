@@ -53,7 +53,7 @@
 
     svg {
         width: 100%;
-        fill: #212121
+        fill: #212121;
     }
 
     &::before {
@@ -67,7 +67,7 @@
         border-radius: 50%;
         transform: translate(-50%, -50%);
         background: getColorPrimary(0.2);
-        filter: blur(160px)
+        filter: blur(160px);
     }
 }
 .checkouts_content_title {
@@ -88,5 +88,57 @@
     }
     .checkouts_hand {
         width: 700px;
+    }
+}
+@include -screen-xxl {
+    .checkouts_title_container {
+        font-size: 10vw;
+    }
+    .checkouts_hand {
+        max-width: 60vw;
+    }
+}
+@include -screen-lg {
+    .checkouts_content_title {
+        font-size: 32px;
+    }
+    .checkouts_content_text {
+        font-size: 18px;
+    }
+}
+@include -screen-md {
+    .checkouts_hand {
+        bottom: auto;
+        top: 20%;
+        max-width: 400px;
+        margin-top: -50px;
+    }
+    .checkouts_content {
+        margin-top: 400px;
+        margin-right: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 342px;
+    }
+    .checkouts_content_text {
+        max-width: 100%;
+    }
+    .checkouts_content_bg {
+        left: 50%;
+        max-width: 280px;
+    }
+}
+@include -screen-sm {
+    .checkouts_content_text {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+}
+@include -screen-xs {
+    .checkouts_hand {
+        
+        transform: translateX(-12%);
     }
 }

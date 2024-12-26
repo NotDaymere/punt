@@ -4,9 +4,8 @@ import { useInput } from "shared/hooks/use-input";
 import { Input } from "shared/ui/Input";
 import Image from "shared/ui/Image";
 import { Button } from "shared/components/@Buttons/Button";
-import css from "./sale.module.scss";
 import testimontialCSS from "../10-testimontials/testimontials.module.scss";
-import { Starfield } from "shared/animation/Starfield";
+import css from "./sale.module.scss";
 
 export const Sale: React.FC = () => {
     const { typingValue, value, handleValue } = useInput();

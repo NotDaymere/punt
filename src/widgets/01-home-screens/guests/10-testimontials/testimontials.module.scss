@@ -3,13 +3,13 @@
 
     &:global(._animated) {
         .testimontials_item {
-            transform: translate(0,0) rotate(0deg) !important;
+            transform: translate(0, 0) rotate(0deg) !important;
         }
     }
 }
 .testimontials_container {
-    max-width: 1373px;
-    padding: 0 40px;
+    max-width: 1290px;
+    // padding: 0 40px;
     width: 100%;
     width: 100%;
     margin: 0 auto;
@@ -18,32 +18,43 @@
     position: relative;
     height: 880px;
 
-    background: #1F1F21;
     background-image: url("/img/home/testimontials-bg.webp");
     background-size: contain;
-    background-position: center bottom; 
-    border-radius: 50% 50% 0 0;
+    background-position: center bottom;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    padding: 95px 32px 70px;
+    padding: 110px 32px 70px;
 
     overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        min-width: 1200px;
+        aspect-ratio: 1;
+        border-radius: 50% 50% 0 0;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        background: #1f1f21;
+        z-index: -1;
+    }
 }
 .testimontials_lights {
     position: absolute;
     left: 50%;
     top: 2%;
-    transform: translate(-50%,-3%);
-    width: 100%;
-    min-width: 100%;
-    height: 60%;
-    object-fit: fill;
+    transform: translate(-50%, -3%);
+    width: 98%;
+    min-width: 98%;
+    min-width: 1200px;
 }
 .testimontials_header {
-    // max-width: 8.5em;
     width: 100%;
     font-size: 60px;
 
@@ -122,4 +133,36 @@
 
 .testimontials_item {
     transition: transform 1s ease;
+}
+
+@include -screen-lg {
+    .testimontials_header {
+        padding-top: 20px;
+        font-size: 52px;
+    }
+    .testimontials_swiper {
+        margin-top: 68px;
+    }
+}
+
+@include -screen-md {
+    .testimontials_wrapper {
+        padding: 80px 24px 40px;
+    }
+}
+
+@include -screen-sm {
+    .testimontials_wrapper::before,
+    .testimontials_lights {
+        min-width: 645px;
+    }
+    .testimontials_header {
+        padding-top: 0;
+        font-size: 32px;
+    }
+    .testimontials_text {
+        margin-top: 26px;
+        font-size: 16px;
+        max-width: 280px;
+    }
 }

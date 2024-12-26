@@ -3,8 +3,8 @@ import { featuredGames } from "widgets/01-home-screens/mock-data";
 import { Button } from "shared/components/@Buttons/Button";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
-import css from "./featured.module.scss";
 import LightIcon from "shared/icons/Light.icon";
+import css from "./featured.module.scss";
 
 export const Featured: React.FC = () => {
     return (

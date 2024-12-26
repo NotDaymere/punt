@@ -5,6 +5,7 @@ import { ArrowButton } from "shared/components/@Buttons/ArrowButton";
 import { CubeSlide, CubeSlider } from "shared/components/CubeSlider";
 import { CubeSliderCore } from "shared/components/CubeSlider/lib/CubeSliderCore";
 import { Title } from "shared/components/Title";
+import { useViewport } from "shared/hooks/use-viewport";
 import LightIcon from "shared/icons/Light.icon";
 import SpadeIcon from "shared/icons/Spade.icon";
 import Image from "shared/ui/Image";
@@ -13,6 +14,7 @@ import css from "./exclusives.module.scss";
 export const Exclusives: React.FC = () => {
     const cubeControllerUp = React.useRef<CubeSliderCore>(null);
     const cubeControllerDown = React.useRef<CubeSliderCore>(null);
+    const { screenWidth } = useViewport(500);
 
     const handlePrev = () => {
         if (cubeControllerUp.current) {
@@ -50,6 +52,7 @@ export const Exclusives: React.FC = () => {
                                     onInitController={(controller) =>
                                         (cubeControllerUp.current = controller)
                                     }
+                                    direction={screenWidth > 768 ? "vertical" : "horizontal"}
                                 >
                                     {exclusives.left.map((item) => (
                                         <CubeSlide className={css.slide} key={item.join()}>
@@ -87,6 +90,7 @@ export const Exclusives: React.FC = () => {
                                     onInitController={(controller) =>
                                         (cubeControllerDown.current = controller)
                                     }
+                                    direction={screenWidth > 768 ? "vertical" : "horizontal"}
                                 >
                                     {exclusives.right.map((item) => (
                                         <CubeSlide className={clsx(css.slide, css._bg)} key={item}>

@@ -18,3 +18,18 @@
     justify-content: center;
     gap: 12px;
 }
+
+@include screen-sm {
+    .games_swiper_newGame {
+        width: 136px;
+    }
+    .games_swiper_slot {
+        width: 130px;
+    }
+    .games_swiper_dealer {
+        width: 123px;
+    }
+    .games_controls {
+        margin-top: 35px;
+    }
+}

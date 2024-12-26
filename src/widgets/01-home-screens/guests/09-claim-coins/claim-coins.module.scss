@@ -71,7 +71,46 @@
     position: absolute;
     left: 50%;
     top: 50%;
+    width: 100%;
+    height: 100%;
     transform: translate(-50%, -50%);
     object-fit: cover;
     object-position: center;
+}
+
+@include -screen-lg {
+    .claim_content_title {
+        font-size: 36px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@include -screen-md {
+    .claim_wrapper {
+        display: flex;
+        flex-direction: column;
+        border-radius: 0;
+        width: auto;
+        margin: 0 (-$padding-lg);
+    }
+    .claim_animation {
+        height: 385px;
+        order: -1;
+    }
+    .claim_content_title {
+        font-size: 52px;
+    }
+}
+
+@include -screen-sm {
+    .claim_content {
+        padding: 24px;
+    }
+    .claim_content_title {
+        font-size: 36px;
+    }
+    .claim_content_text {
+        font-size: 16px;
+    }
 }

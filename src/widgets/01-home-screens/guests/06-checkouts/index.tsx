@@ -3,8 +3,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
-import css from "./checkouts.module.scss";
 import InvertedClubsIcon from "widgets/01-home-screens/_icons/InvertedClubs.icon";
+import css from "./checkouts.module.scss";
 
 export const Checkouts: React.FC = () => {
     useGSAP(() => {
@@ -12,7 +12,7 @@ export const Checkouts: React.FC = () => {
             scrollTrigger: {
                 trigger: "#checkouts",
                 start: "top 90%",
-                end: "top+=100% top",
+                end: "top+=130% top",
                 scrub: 1,
             },
             xPercent: -150

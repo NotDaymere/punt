@@ -13,9 +13,14 @@ export const Games: React.FC = () => {
                 <GameTemplate title="New Games" icons={1}>
                     <Slider
                         options={{
-                            spaceBetween: 80,
+                            spaceBetween: 32,
                             slidesPerView: "auto",
-                            allowTouchMove: false
+                            allowTouchMove: false,
+                            breakpoints: {
+                                768: {
+                                    spaceBetween: 80
+                                }
+                            }
                         }}
                         data={[
                             "/img/temp/games-1.jpg",
@@ -52,9 +57,14 @@ export const Games: React.FC = () => {
                 <GameTemplate title="Slots" icons={2}>
                     <Slider
                         options={{
-                            spaceBetween: 32,
+                            spaceBetween: 21,
                             slidesPerView: "auto",
-                            allowTouchMove: false
+                            allowTouchMove: false,
+                            breakpoints: {
+                                768: {
+                                    spaceBetween: 80
+                                }
+                            }
                         }}
                         data={[
                             "/img/temp/slot-1.jpg",
@@ -91,9 +101,14 @@ export const Games: React.FC = () => {
                 <GameTemplate title="Live Dealer" icons={3}>
                     <Slider
                         options={{
-                            spaceBetween: 24,
+                            spaceBetween: 15,
                             slidesPerView: "auto",
-                            allowTouchMove: false
+                            allowTouchMove: false,
+                            breakpoints: {
+                                768: {
+                                    spaceBetween: 24
+                                }
+                            }
                         }}
                         data={[
                             "/img/temp/dealer-1.jpg",

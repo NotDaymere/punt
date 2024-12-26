@@ -14,7 +14,7 @@
 }
 .game_title_stars_1 {
     position: absolute;
-    left: 0 ;
+    left: 0;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 147px;
@@ -106,5 +106,23 @@
 @include -screen-xxxl {
     .game_title {
         font-size: 52px;
+    }
+}
+
+@include -screen-lg {
+    .game_title {
+        font-size: 46px;
+    }
+}
+
+@include -screen-md {
+    .game_wrapper {
+        padding: 40px 0 60px;
+    }
+}
+
+@include -screen-sm {
+    .game_title {
+        font-size: 32px;
     }
 }

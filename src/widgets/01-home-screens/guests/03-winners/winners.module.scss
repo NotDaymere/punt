@@ -14,7 +14,7 @@
         width: 50%;
         height: 100%;
         background: url("/img/home/winner-lights-left.webp");
-        background-size: 612px 432px;
+        background-size: auto 100%;
         position: absolute;
         top: 0;
     }
@@ -97,5 +97,50 @@
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@include -screen-xl {
+    .winners_title {
+        font-size: 52px;
+    }
+}
+
+@include -screen-md {
+    .winners_title {
+        font-size: 44px;
+    }
+}
+
+@include -screen-sm {
+    .winners {
+        :global(.container) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .winners_box {
+        height: 380px;   
+    }
+    .winners_title {
+        font-size: 32px;
+        text-align: center;
+    }
+    .winners_liveBtn {
+        margin-top: 20px;
+    }
+    .winners_marquee {
+        margin-top: 20px;
+    }
+    .winners_content_anim{
+        width: 500px;
+        min-width: 500px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+@include -screen-xs {
+    .winners_title {
+        font-size: 26px;
     }
 }
