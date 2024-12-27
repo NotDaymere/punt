@@ -19,7 +19,7 @@
     gap: 12px;
 }
 
-@include screen-sm {
+@include -screen-sm {
     .games_swiper_newGame {
         width: 136px;
     }

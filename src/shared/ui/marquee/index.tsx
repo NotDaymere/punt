@@ -22,11 +22,11 @@ export const Marquee: React.FC<Props> = ({ children, className, ...options }) =>
             return () => instanceRef.current?.destroy();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    useEffect(() => {
-        instanceRef.current?.toConfig(options); 
     }, [options]);
+
+    // useEffect(() => {
+    //     instanceRef.current?.toConfig(options); 
+    // }, [options]);
 
     return (
         <div 

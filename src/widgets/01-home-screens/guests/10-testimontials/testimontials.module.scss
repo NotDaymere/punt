@@ -1,5 +1,6 @@
 .testimontials {
     padding-top: 68px;
+    position: relative;
 
     &:global(._animated) {
         .testimontials_item {
@@ -7,24 +8,37 @@
         }
     }
 }
+.testimontials_stars {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1076px;
+}
 .testimontials_container {
     max-width: 1290px;
     // padding: 0 40px;
     width: 100%;
     width: 100%;
     margin: 0 auto;
+    position: relative;
 }
 .testimontials_wrapper {
     position: relative;
-    height: 880px;
+    // height: 880px;
 
-    background-image: url("/img/home/testimontials-bg.webp");
+    // background-image: 
+    //     url("/img/home/testimontials-bg.webp");
+    // background: 
+    //     linear-gradient(
+    //         to bottom,
+    //         transparent,
+    //         transparent 87vh,
+    //         #1D1D1F 87vh,
+    //         #1D1D1F 100vh
+    //     );
     background-size: contain;
     background-position: center bottom;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     padding: 110px 32px 70px;
 
@@ -41,9 +55,30 @@
         left: 50%;
         top: 0;
         transform: translateX(-50%);
-        background: #1f1f21;
+        background: #1D1D1F;
         z-index: -1;
+        background-image: url("/img/home/testimontials-bg.webp");
+        
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
     }
+}
+.testimontials_eyes {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 0;
+    gap: 2px;
+
+}
+.testimontials_eyer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(100%, -50%);
+    width: 40px;
 }
 .testimontials_lights {
     position: absolute;
@@ -135,6 +170,10 @@
     transition: transform 1s ease;
 }
 
+.testimontials_controls {
+    display: none;
+}
+
 @include -screen-lg {
     .testimontials_header {
         padding-top: 20px;
@@ -149,12 +188,21 @@
     .testimontials_wrapper {
         padding: 80px 24px 40px;
     }
+    .testimontials_controls {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
 }
 
 @include -screen-sm {
     .testimontials_wrapper::before,
     .testimontials_lights {
         min-width: 645px;
+    }
+    .testimontials_wrapper::before {
+        height: 100%;
     }
     .testimontials_header {
         padding-top: 0;

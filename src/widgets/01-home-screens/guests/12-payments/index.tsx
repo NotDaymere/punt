@@ -15,9 +15,7 @@ const paymentsImages = [
 ];
 
 export const Payments: React.FC = () => {
-    const { screenWidth } = useViewport();
-
-    console.log(screenWidth)
+    const { screenWidth } = useViewport(1000);
 
     return (
         <div className={css.payments}>
@@ -41,7 +39,7 @@ export const Payments: React.FC = () => {
                             </p>
                         </div>
                         <div className={css.payments_back}>
-                            {[1, 2].map((item) => (
+                            {[1, 2].map((item, id) => (
                                 <Marquee
                                     className={css.payments_marquee}
                                     direction={
@@ -50,11 +48,11 @@ export const Payments: React.FC = () => {
                                             : (item === 1 ? "ltr" : "rtl")
                                     }
                                     speed={0.7}
-                                    key={item + "" + screenWidth}
+                                    key={id}
                                 >
                                     <ul className={css.payments_list}>
-                                        {[...paymentsImages, ...paymentsImages].map((item) => (
-                                            <li className={css.payments_list_item} key={item}>
+                                        {[...paymentsImages, ...paymentsImages].map((item, id) => (
+                                            <li className={css.payments_list_item} key={item + id}>
                                                 <div className={css.payments_list_content}>
                                                     <Image.Default src={item} alt="" />
                                                 </div>

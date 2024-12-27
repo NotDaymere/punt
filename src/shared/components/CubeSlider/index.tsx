@@ -54,6 +54,7 @@ const CubeSlider: React.FC<Props> = ({
     return (
         <div className={clsx(css.slider, className)} ref={wrapperRef}>
             {childrens}
+            {childrens.length < 4 && childrens}
         </div>
     );
 };;

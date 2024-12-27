@@ -14,7 +14,7 @@ import css from "./exclusives.module.scss";
 export const Exclusives: React.FC = () => {
     const cubeControllerUp = React.useRef<CubeSliderCore>(null);
     const cubeControllerDown = React.useRef<CubeSliderCore>(null);
-    const { screenWidth } = useViewport(500);
+    const { screenWidth } = useViewport(1000);
 
     const handlePrev = () => {
         if (cubeControllerUp.current) {

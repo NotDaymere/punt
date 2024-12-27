@@ -1,20 +1,21 @@
 import React from "react";
-import Link from "next/link";
-import Image from "shared/ui/Image";
-import { sidebarNav } from "./lib/sidebar-nav";
+import { getSidebarNav } from "./lib/sidebar-nav";
 import { NavItem } from "shared/components/NavItem";
+import { useLogged } from "shared/temp/useLogged";
 import css from "./sidebar.module.scss";
 
 export const Sidebar: React.FC = () => {
+    const isLogged = useLogged();
+
     const nav = React.useMemo(
-        () => sidebarNav,
-        []
+        () => getSidebarNav(isLogged),
+        [isLogged]
     );
 
     return (
         <aside className={css.aside}>
             <nav className={css.aside_nav}>
-                {sidebarNav.map((group, id) => (
+                {nav.map((group, id) => (
                     <div className={css.aside_nav_group} key={id}>
                         {group.map((link) => (
                             <NavItem 

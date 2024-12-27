@@ -200,13 +200,11 @@ export const exclusives = {
         ["Clover", "Cross"],
         ["Later", "Gator"], 
         ["Chosen", "One"],
-        ["Clover", "Cross"],
     ],
     right: [
         "/img/temp/e-1.jpg",
         "/img/temp/e-2.jpg",
-        "/img/temp/e-3.jpg",
-        "/img/temp/e-1.jpg",
+        "/img/temp/e-3.jpg"
     ]
 }
 

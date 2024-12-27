@@ -9,6 +9,11 @@ export const ClaimCoins: React.FC = () => {
             <div className="container">
                 <div className={css.claim_wrapper}>
                     <div className={css.claim_content}>
+                        <Image.Default 
+                            className={css.claim_content_img}
+                            src="/img/home/claim-coins.svg"
+                            alt=""
+                        />
                         <h2 className={css.claim_content_title}>
                             <span>No purchase</span> necessary
                         </h2>

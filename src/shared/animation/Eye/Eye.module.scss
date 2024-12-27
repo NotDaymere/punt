@@ -1,0 +1,20 @@
+.eye {
+    width: 30px;
+    height: 46px;
+    border-radius: 50%;
+    background: getColorWhite();
+    position: relative;
+    overflow: hidden;
+}
+.eye_point {
+    width: 14px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #1c1d22;
+
+    display: inline-block;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+}

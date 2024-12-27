@@ -8,7 +8,7 @@ const TestimontialFrameIcon: React.FC<SVGProps<SVGSVGElement>> = (props) => {
             stroke="none"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <g clip-path="url(#clip0_3175_49895)">
+            <g clipPath="url(#clip0_3175_49895)">
                 <path
                     fillRule="evenodd"
                     clipRule="evenodd"
