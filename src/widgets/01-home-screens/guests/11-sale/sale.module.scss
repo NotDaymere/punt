@@ -59,19 +59,17 @@
 }
 .sale_form_input {
     width: 100%;
+    padding: 0 24px;
+    max-width: 100%;
+    height: 45px;
+    border-radius: 100px;
+    background: #121411;
+    border-color: getColorWhite(0.15);
+    min-height: 45px;
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
 
-    input {
-        padding: 0 24px;
-        height: 45px;
-        border-radius: 100px;
-        background: #121411;
-        border-color: getColorWhite(0.15);
-        min-height: 45px;
-        @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
-
-        &::placeholder {
-            color: getColorGray();
-        }
+    &::placeholder {
+        color: getColorGray();
     }
 }
 .sale_form_submitBtn {

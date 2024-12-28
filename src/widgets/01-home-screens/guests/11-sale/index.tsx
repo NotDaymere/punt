@@ -36,7 +36,7 @@ export const Sale: React.FC = () => {
                             <span>250K</span> for free for registrations
                         </p>
                         <form className={css.sale_form} onSubmit={handleSubmit}>
-                            <Input 
+                            <input 
                                 className={css.sale_form_input}
                                 value={typingValue}
                                 onChange={handleValue}

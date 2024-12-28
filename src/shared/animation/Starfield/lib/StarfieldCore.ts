@@ -129,7 +129,6 @@ export class StarfieldCore {
         ctx.save();
         ctx.globalAlpha = 1 - config.trailLength;
         ctx.fillStyle = `rgb(${bgR}, ${bgG}, ${bgB})`;
-        console.log(`rgb(${bgR}, ${bgG}, ${bgB})`)
         ctx.fillRect(0, 0, width, height);
         ctx.restore();
 

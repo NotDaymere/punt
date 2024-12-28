@@ -1,2 +1,2 @@
-export * from './types';
-export { useForm } from './use-form';
+export { default as useForms } from './hooks/useForms';
+export * as utils from './utils';

@@ -1,0 +1,37 @@
+.switcher {
+    display: flex;
+    width: 48px;
+    height: 24px;
+    border-radius: 100px;
+    background: getColorGray();
+    border: 1px solid getColorBlack();
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: background 200ms ease;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: getColorWhite();
+        border: 1px solid getColorBlack();
+        transition: transform 200ms ease;
+    }
+
+    &._active {
+        background: getColorPrimary();
+
+        &::before {
+            transform: translate(140%, -50%);
+        }
+    }
+}
