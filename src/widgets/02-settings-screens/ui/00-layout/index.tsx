@@ -29,6 +29,11 @@ export const SettingsLayout: React.FC = () => {
         router.push({ query: qs.stringify({ ...router.query, tab }) }, undefined, {
             shallow: true,
         });
+        setTimeout(() => {
+            document.body.scrollIntoView({
+                block: "start",
+            });
+        });
     };
 
     React.useEffect(() => {

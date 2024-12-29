@@ -1,0 +1,58 @@
+.toasts {
+    position: fixed;
+    right: 30px;
+    top: 130px;
+    max-width: 333px;
+    width: 100%;
+    max-height: calc(100vh - 260px);
+    overflow: auto;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &[data-active="false"] {
+        pointer-events: none;
+    }
+
+    &[data-active="true"] {
+        padding: 20px 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        display: none;
+
+        &-thumb {
+            border-radius: 6px;
+            width: 6px;
+            background: rgba(#fff, 50%);
+        }
+    }
+
+    &:hover::-webkit-scrollbar {
+        display: block;
+    }
+}
+
+.enter {
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+.enterActive {
+    opacity: 1;
+    transform: scale(1);
+    transition: 500ms ease;
+    transition-property: opacity, transform;
+}
+
+.exit {
+    opacity: 1;
+}
+
+.exitActive {
+    opacity: 0;
+    transition: opacity 500ms ease;
+}
