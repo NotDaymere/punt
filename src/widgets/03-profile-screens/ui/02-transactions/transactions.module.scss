@@ -1,3 +1,117 @@
 .transactions {
     margin-top: 75px;
+    padding-bottom: 90px;
+}
+.transactions_title {
+    @include setFontHelveticaStd700(28px, 1.15, -0.04em, getColorWhite());
+}
+.transactions_row {
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid getColorWhite(0.15);
+}
+
+.tabs {
+    display: flex;
+    gap: 48px;
+}
+.tabs_item {
+    padding-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite(0.5));
+
+    span {
+        @include setFontPPMori600(15px, 1.5, -.01em, getColorWhite());
+        border-radius: 6px;
+        background: #2F2F32;
+        
+        padding: 0 4px;
+    }
+
+    &._active {
+        color: getColorWhite();
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to right,
+                getColorSecondary(),
+                getColorPrimary()
+            );
+        }
+    }
+}
+.transactions_form {
+    max-width: 374px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.transactions_form_input {
+    flex: 1 1 auto;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    padding-left: 8px;
+    height: 31px;
+    border-left: 2px solid getColorPrimary();
+
+    @include setFontPPMori400(24px, 1, -0.04em, getColorWhite());
+
+    &::placeholder {
+        color: getColorGray();
+    }
+}
+.transactions_form_filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 100px;
+    background: #212121;
+
+    @include setFontPPMori600(14px, 1, normal, getColorWhite());
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        stroke: getColorWhite();
+    }
+}
+.transactions_list {
+    margin-top: 32px;
+    padding: 24px 20px 0;
+    border-radius: 24px;
+    background: #171916;
+}
+
+.transactions_footer {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.transactions_displayed {
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
 }

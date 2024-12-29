@@ -251,3 +251,71 @@ export const testimontials = [
         img: "/img/temp/nayat.jpg"
     },
 ]
+
+export const transactions = [
+    {
+        id: 3949,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Completed",
+        blockchain: "Ethereum",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }, {
+        id: 3955,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Pending",
+        blockchain: "Bitcoin",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }, {
+        id: 3966,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Completed",
+        blockchain: "Binance",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }, {
+        id: 3967,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Completed",
+        blockchain: "Ethereum",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }, {
+        id: 3988,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Failed",
+        blockchain: "Solana",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }, {
+        id: 3989,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Pending",
+        blockchain: "Ethereum",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }, {
+        id: 3994,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Completed",
+        blockchain: "Ethereum",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }, {
+        id: 4001,
+        amount: 100,
+        tx_fee: 2,
+        mining_fee: 0.50,
+        status: "Completed",
+        blockchain: "Ethereum",
+        createdAt: "2024-12-29T19:32:06.427Z",
+    }
+] as const;

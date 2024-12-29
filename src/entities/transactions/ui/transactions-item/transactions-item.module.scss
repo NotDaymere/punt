@@ -1,0 +1,87 @@
+.item {
+    display: flex;
+    align-items: center;
+
+    > div {
+        flex-shrink: 0;
+        padding: 17px 0;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+.item_id {
+    min-width: 127px;
+    height: 26px;
+    border-radius: 100px;
+    background: #2F2F32;
+    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item_date {
+    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
+}
+.item_price {
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.item_status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    border-radius: 100px;
+
+    @include setFontPPMori400(14px, 1.1, normal);
+
+    svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    span {
+        transform: translateY(0.12em);
+    }
+
+    &._Completed {
+        background: getColorPrimary(0.2);
+        color: getColorPrimary();
+    }
+    &._Pending {
+        background: getColorYellow(0.2);
+        color: getColorYellow();
+    }
+    &._Failed {
+        background: getColorRed(0.2);
+        color: getColorRed();
+    }
+}
+
+.item_blockchain {
+    padding: 5px 8px;
+    border-radius: 100px;
+    background: #2F2F32;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
+
+    svg,
+    img {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+        object-position: center;
+        flex-shrink: 0;
+    }
+
+    span {
+        transform: translateY(0.12em);
+    }
+}

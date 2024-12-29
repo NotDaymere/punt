@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 import { EventsItem } from "../events-item";
-import css from "./events-list.module.scss";
 import { events } from "widgets/01-home-screens/mock-data";
+import css from "./events-list.module.scss";
 
 interface Props {
     className?: string;

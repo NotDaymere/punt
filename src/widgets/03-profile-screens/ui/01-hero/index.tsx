@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "shared/components/@Buttons/Button";
 import { Breadcrumbs } from "shared/components/Breadcrumbs";
+import { ProgressRange } from "shared/components/ProgressRange";
 import { Title } from "shared/components/Title";
 import { useToast } from "shared/components/Toast";
 import CopyIcon from "shared/icons/Copy.icon";
@@ -8,7 +9,6 @@ import WalletIcon from "shared/icons/Wallet.icon";
 import Image from "shared/ui/Image";
 import { copy } from "shared/utils/copy";
 import css from "./hero.module.scss";
-import { ProgressRange } from "shared/components/ProgressRange";
 
 export const Hero: React.FC = () => {
     const toast = useToast();
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
                         navigation={[{ name: "Home Page", href: "/" }, { name: "Profile" }]}
                     />
                     <div className={css.hero_header}>
-                        <Title className={css.hero_header_title} text="Profile" />
+                        <Title className={css.hero_header_title} level={1} text="Profile" />
                         <Button
                             className={css.hero_header_btn}
                             href="/settings"
@@ -96,11 +96,11 @@ export const Hero: React.FC = () => {
                                 className={css.rank_rank}
                                 current={{
                                     name: "COPPER",
-                                    medal: "/img/temp/medal.svg"
+                                    medal: "/img/temp/medal.svg",
                                 }}
                                 target={{
                                     name: "BRONZE",
-                                    medal: "/img/temp/bronze-medal.svg"
+                                    medal: "/img/temp/bronze-medal.svg",
                                 }}
                                 progress={60}
                             />
