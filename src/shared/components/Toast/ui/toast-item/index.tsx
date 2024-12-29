@@ -1,7 +1,7 @@
 import React from "react";
-import { ToastData, useToast } from "../../lib";
 import clsx from "clsx";
 import gsap from "gsap";
+import { ToastData, useToast } from "../../lib";
 import CrossIcon from "shared/icons/Cross.icon";
 import Image from "shared/ui/Image";
 import css from "./toast-item.module.scss";

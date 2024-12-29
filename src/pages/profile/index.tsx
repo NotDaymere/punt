@@ -1,27 +1,29 @@
 import React from "react";
 import { GetServerSideProps, NextPage } from "next";
-import { ToastProvider } from "shared/components/Toast";
+import { Hero, Transactions } from "widgets/03-profile-screens";
 import { Header } from "widgets/header";
-import NavLayout from "shared/layouts/NavLayout";
+import { ToastProvider } from "shared/components/Toast";
 import MainLayout from "shared/layouts/MainLayout";
-import { SettingsLayout } from 'widgets/02-settings-screens';
-// import css from "./settings.module.scss";
+import NavLayout from "shared/layouts/NavLayout";
 
-const Settings: NextPage = () => {
+// import css from "./profile.module.scss";
+
+const Profile: NextPage = () => {
     return (
-        <MainLayout title="Settings">
+        <MainLayout title="Profile">
             <ToastProvider>
                 <NavLayout>
                     <Header />
-                    <SettingsLayout />
+                    <Hero />
+                    <Transactions />
                 </NavLayout>
             </ToastProvider>
         </MainLayout>
     );
-}
+};
 
-export default Settings;
+export default Profile;
 
 export const getServerSideProps: GetServerSideProps = async () => {
     return { props: {} };
-}
+};

@@ -3,9 +3,14 @@
     width: 100%;
     padding: 12px 40px 80px;
     margin: 0 auto;
+
+    background: url("/img/profile-bg.webp");
+    background-size: 800px 154px;
+    background-position: right top;
+    background-repeat: no-repeat;
 }
 .layout_title {
-    margin-top: 40px;
+    margin-top: 32px;
     font-size: 48px;
 }
 .layout_wrapper {

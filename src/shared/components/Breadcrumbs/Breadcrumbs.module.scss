@@ -1,0 +1,27 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+}
+.breadcrumbs_link {
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite(0.15));
+    display: flex;
+    gap: 12px;
+
+    &:last-child {
+        color: getColorWhite();
+    }
+
+    &:not(:last-child)::after {
+        content: "";
+        display: block;
+        width: 1em;
+        aspect-ratio: 1;
+        background: url("/img/icons/arrow-right.svg");
+        background-size: contain;
+        background-position: center;
+        transform: translateY(-0.1em);
+    }
+}

@@ -1,0 +1,198 @@
+.hero_wrapper {
+    padding-top: 12px;
+    background: url("/img/profile-bg.webp");
+    background-size: 800px 154px;
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+.hero_header {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.hero_header_title {
+    font-size: 48px;
+}
+.hero_header_btn {
+    transform: translateY(6px);
+    > span {
+        padding: 4px 12px;
+        min-width: auto;
+        height: 36px;
+    }
+}
+.hero_info {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.profile,
+.rank {
+    border-radius: 24px;
+    background: #212121;
+}
+
+.profile {
+    padding: 6px;
+    padding-top: 20px;
+}
+.profile_header {
+    padding: 0 15px 23px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.profile_header_img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+
+    img {
+        @include setCoveredImage();
+    }
+}
+.profile_header_name {
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.profile_header_verified {
+    display: flex;
+    align-items: center;
+    padding: 2px 6px;
+    height: 26px;
+    border-radius: 100px;
+    background: getColorPrimary(0.2);
+
+    @include setFontPPMori400(12px, 1.1, -0.02em, getColorPrimary());
+
+    img {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+}
+.profile_header_id {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    background: #2f2f32;
+}
+.profile_header_id_copy {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 6px;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        stroke: getColorPrimary();
+    }
+}
+
+// Balance
+.profile_balance {
+    padding: 22px 15px 15px;
+    padding-left: 20px;
+    border-radius: 20px;
+    background: #2f2f32;
+}
+.profile_balance_title {
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+}
+.profile_balance_row {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.profile_balance_list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.profile_balance_sc,
+.profile_balance_gc {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+        width: 1.35em;
+        height: 1.35em;
+        object-fit: contain;
+        object-position: center;
+        transform: translateY(-0.1em);
+    }
+
+    @include setFontDxGrafik600(24px, 1.25, -0.04em);
+}
+.profile_balance_sc {
+    color: getColorSecondary();
+
+    &::after {
+        content: "";
+        margin-left: 8px;
+        display: block;
+        height: 1.35em;
+        width: 1px;
+        background: getColorWhite(0.15);
+        transform: translateY(-0.1em);
+    }
+}
+.profile_balance_gc {
+    color: getColorYellow();
+}
+.profile_balance_wallet {
+    > span {
+        padding: 2px 12px;
+        min-width: auto;
+    }
+}
+
+//Rank
+.rank {
+    padding: 24px;
+}
+.rank_header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid getColorWhite(0.15);
+}
+.rank_header_img {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    flex-shrink: 0;
+
+    img {
+        @include setCoveredImage();
+    }
+}
+.rank_header_title {
+    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
+    transform: translateY(2px)
+}
+.rank_header_rank {
+    @include setFontPPMori600(18px, 1.1, normal, getColorPrimary());
+    transform: translateY(2px)
+}
+.rank_header_btn {
+    margin-left: auto;
+    > span {
+        padding: 4px 12px;
+        height: 36px;
+    }
+}
+.rank_rank {
+    margin-top: 22px;
+}
