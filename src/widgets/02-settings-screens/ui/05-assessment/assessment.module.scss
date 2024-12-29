@@ -1,0 +1,17 @@
+.assessment {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.assessment_title {
+    margin-bottom: 40px;
+}
+
+.full {
+    max-width: 100%;
+
+    p {
+        max-width: 460px;
+    }
+}
