@@ -74,6 +74,42 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                     <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <meta property="og:type" content="business.business" />
+
+                    <link
+                        rel="preload"
+                        href="/fonts/Cubano.ttf"
+                        as="font"
+                        type="font/ttf"
+                        crossOrigin=""
+                    />
+                    <link
+                        rel="preload"
+                        href="/fonts/DxGrafik-SemiBold.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin=""
+                    />
+                    <link
+                        rel="preload"
+                        href="/fonts/Helvetica-Rounded-Lt-Std-Bold.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin=""
+                    />
+                    <link
+                        rel="preload"
+                        href="/fonts/PPMori-Regular.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin=""
+                    />
+                    <link
+                        rel="preload"
+                        href="/fonts/PPMori-SemiBold.otf"
+                        as="font"
+                        type="font/otf"
+                        crossOrigin=""
+                    />
                 </Head>
                 {children}
             </div>

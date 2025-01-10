@@ -1,0 +1,19 @@
+.games_featured {
+    border-top: 1px solid getColorWhite(0.15);
+    padding: 26px 0 32px;
+    overflow: hidden;
+}
+.games_nls {
+    border-top: 1px solid getColorWhite(0.15);
+    overflow: hidden;
+}
+.games_nls_inner {
+    padding: 65px 0 55px;
+
+    > * + * {
+        margin-top: 80px;
+    }
+}
+.games_other {
+    overflow: hidden;
+}

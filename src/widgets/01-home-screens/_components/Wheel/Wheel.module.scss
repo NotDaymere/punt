@@ -9,6 +9,15 @@
     aspect-ratio: 1;
     border-radius: 50%;
 }
+.wheel_lights {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 117%;
+    width: 117%;
+    aspect-ratio: 1;
+}
 .wheel_point {
     position: absolute;
     width: 10.8%;

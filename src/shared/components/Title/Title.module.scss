@@ -7,7 +7,7 @@
     paint-order: stroke fill;
 
     &::selection {
-        background: getColorPrimary(50%)
+        background: getColorPrimary(50%);
     }
 
     &:before {
@@ -23,6 +23,35 @@
 
     &._yellow {
         &::before {
+            -webkit-text-stroke: 0.4em getColorYellow();
+        }
+    }
+}
+
+.title_v2 {
+    @include setFontHelveticaStd700(32px, 1.15, -0.02em, getColorWhite());
+    position: relative;
+    z-index: 1;
+
+    -webkit-text-stroke: 0.18em getColorBlack();
+    paint-order: stroke fill;
+
+    &::selection {
+        background: getColorPrimary(50%);
+    }
+
+    .title_v2_span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-text-stroke: 0.3em getColorPrimary();
+        font-style: inherit;
+        paint-order: stroke fill;
+        z-index: -1;
+    }
+
+    &._yellow {
+        .title_v2_span {
             -webkit-text-stroke: 0.4em getColorYellow();
         }
     }

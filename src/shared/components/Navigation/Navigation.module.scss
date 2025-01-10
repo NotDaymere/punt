@@ -1,0 +1,16 @@
+.navigation_list {
+    display: flex;
+    gap: 22px;
+    position: relative;
+}
+.navigation_line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 4px;
+    background: linear-gradient(to right, getColorSecondary(), getColorPrimary());
+    transition: transform 300ms ease;
+    transform-origin: left center;
+    opacity: 0;
+}

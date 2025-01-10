@@ -1,0 +1,38 @@
+.select {
+    position: relative;
+
+    &._active {
+        z-index: 100;
+
+        .select_btn {
+            svg {
+                stroke: getColorPrimary();
+            }
+        }
+    }
+
+    @media screen and (max-width: 1600px) {
+        .select_dropdown {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+.select_btn {
+    padding: 8px 12px;
+    border-radius: 100px;
+    background: #2f2f32;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include setFontPPMori600(14px, 1, normal, getColorWhite());
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        stroke: getColorGray();
+    }
+}

@@ -1,0 +1,158 @@
+.hero {
+    padding-top: 32px;
+
+    background: url("/img/games/hero-bg.webp");
+    background-position: center bottom;
+    background-size: 1160px auto;
+    background-repeat:repeat-x;
+}
+.hero_nav {
+    border-bottom: 1px solid getColorWhite(0.15);
+}
+.hero_nav_list {
+    white-space: nowrap;
+    overflow: auto;
+    padding: 0 $padding-xxl;
+    margin: 0 (-$padding-xxl);
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.hero_wrapper {
+    padding: 40px 0 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero_filters {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+.hero_filter_input {
+    flex-grow: 1;
+}
+.hero_title {
+    margin-top: 55px;
+
+    @include setFontHelveticaStd700(60px, 1, -0.04em, getColorWhite());
+    max-width: 12.5em;
+    text-align: center;
+
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.9em;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: .0666em solid #000;
+        outline: .08em solid #d7ff82;
+        transform: translateY(-0.1em);
+        user-select: none;
+
+        + img {
+            margin-left: -0.12em;
+        }
+    }
+}
+.hero_text {
+    margin-top: 36px;
+    max-width: 350px;
+    text-align: center;
+    @include setFontPPMori600(18px, 1.1, normal, getColorWhite());
+}
+.hero_categories {
+    margin-top: 62px;
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(9, 1fr);
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 182px;
+        height: 71px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        background: getColorPrimary();
+        filter: blur(130PX);
+    }
+}
+.hero_categories_item {
+    position: relative;
+    height: 114px;
+    border-radius: 12px;
+    padding: 12px;
+    overflow: hidden;
+
+    @include setFontPPMori600(18px, 1.1, normal);
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include setCoveredImage();
+    }
+
+    span {
+        position: relative;
+    }
+}
+.hero_filters_buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.hero_filters_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        stroke: getColorGray();
+    }
+
+    + .hero_filters_item {
+        padding-left: 17px;
+        position: relative;
+    
+        &::before {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 20.5px;
+            background: getColorGray();
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+.hero_filters_name {
+    white-space: nowrap;
+    @include setFontPPMori600(14px, 1, normal, getColorGray());
+    margin-right: 8px;
+    user-select: none;
+}
+@include -screen-xl {
+    .hero_nav_list {
+        padding: 0 $padding-xl;
+        margin: 0 (-$padding-xl);
+    }
+}
+@include -screen-lg {
+    .hero_nav_list {
+        padding: 0 $padding-lg;
+        margin: 0 (-$padding-lg);
+    }
+}

@@ -20,10 +20,15 @@ export const Wheel = React.forwardRef<HTMLImageElement, Props>(
                     <div className={css.wheel_wheel}>
                         <Image.Default 
                             ref={ref} 
-                            src="/img/home/wheel/wheel-full.webp" 
+                            src="/img/home/wheel/wheel-main@2x.webp" 
                             alt="" 
                         />
                     </div>
+                    <Image.Default 
+                        className={css.wheel_lights}
+                        src="/img/home/wheel/lights.webp"
+                        alt=""
+                    />
                     <Image.Default
                         className={css.wheel_point}
                         src="/img/home/wheel/point.png"
