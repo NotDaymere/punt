@@ -12,7 +12,11 @@ interface Props {
 
 export const LiveDealer: React.FC<Props> = (props) => {
     return (
-        <Link className={clsx(css.dealer, props.className)} href="/">
+        <Link
+            className={clsx(css.dealer, props.className)}
+            href="/game/gates-of-olympus"
+            prefetch={false}
+        >
             <span className={css.dealer_content} data-aspect>
                 <Image.Default className={css.dealer_img} src={props.img} alt="" />
             </span>

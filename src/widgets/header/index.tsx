@@ -30,7 +30,10 @@ export const Header: React.FC = () => {
                                 <Image.Default src="/img/header-stars.png" alt="" />
                             </div>
                             <Button
-                                onClick={() => router.push({ query: "logged=yes" })}
+                                onClick={() => router.push({ 
+                                    pathname: router.asPath, 
+                                    query: "logged=yes" 
+                                })}
                                 variant="black"
                                 circle
                             >

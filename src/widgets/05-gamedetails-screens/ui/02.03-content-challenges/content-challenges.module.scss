@@ -1,0 +1,93 @@
+.challenges {
+    margin-top: 24px;
+}
+.challenges_label {
+    display: inline-block;
+}
+.challenges_available {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 24px;
+    border-radius: 100px;
+    background: #212121;
+
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+
+    img {
+        width: 1.25em;
+        height: 1.25em;
+        flex-shrink: 0;
+    }
+
+    span {
+        margin-left: -4px;
+    }
+}
+
+.challenges_list {
+    margin-top: 12px;
+}
+
+.challenges_list_item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 288px 160px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: #171916;
+
+    + .challenges_list_item {
+        margin-top: 12px;
+    }
+}
+
+.challenges_name {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+
+    svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        fill: getColorGray();
+    }
+}
+
+.challenges_referral {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+
+    span {
+        color: getColorYellow();
+    }
+
+    svg {
+        margin-left: 2px;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        fill: getColorWhite();
+        transform: translateY(-2px);
+    }
+}
+.challenges_reward {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+
+    img {
+        width: 1.35em;
+        height: 1.35em;
+        flex-shrink: 0;
+        transform: translateY(-0.2em);
+    }
+}

@@ -13,7 +13,7 @@ interface Props {
 
 export const NewGame: React.FC<Props> = ({ img, className }) => {
     return (
-        <Link href="/" className={clsx(css.game, className)}>
+        <Link className={clsx(css.game, className)} href="/game/gates-of-olympus" prefetch={false}>
             <span className={css.game_content} data-aspect>
                 <Image.Default className={css.game_img} src={img} alt="" />
                 <span className={css.game_marquee}>

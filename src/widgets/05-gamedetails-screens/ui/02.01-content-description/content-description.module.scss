@@ -1,0 +1,33 @@
+.description {
+    padding-top: 79px;
+}
+.description_content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+.description_content_item {
+    display: grid;
+    grid-template-columns: 160px auto;
+    gap: 80px;
+
+    &::before {
+        content: attr(data-title);
+        @include setFontHelveticaStd700(32px, 1, -0.04em, getColorWhite());
+    }
+}
+
+.markdown {
+    @include setFontPPMori600(16px, 1.2, normal, getColorWhite());
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    ul {
+        list-style: disc inside;
+    }
+
+    img {
+        border-radius: 16px;
+    }
+}

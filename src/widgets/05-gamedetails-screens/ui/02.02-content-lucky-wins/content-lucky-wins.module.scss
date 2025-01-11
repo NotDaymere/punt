@@ -1,0 +1,49 @@
+.lucky {
+    padding-top: 24px;
+}
+.lucky_table_row {
+    display: grid;
+    grid-template-columns: auto 252px 207px 171px 159px 124px;
+}
+.column {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.img {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.game_name,
+.value {
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.game_name {
+    margin-left: 8px;
+}
+.user_name {
+    margin-left: 8px;
+}
+.user_name,
+.date {
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+}
+.date {
+    color: getColorGray();
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+
+    &:is(svg) {
+        fill: getColorGray();
+        stroke: getColorGray();
+    }
+    &:is(img) {
+        object-fit: contain;
+        object-position: center;
+    }
+}

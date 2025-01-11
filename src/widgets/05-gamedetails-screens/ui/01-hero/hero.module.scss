@@ -1,0 +1,33 @@
+.hero {
+    padding-top: 14px;
+    padding-bottom: 36px;
+}
+.hero_image_container {
+    margin-top: 24px;
+
+    height: 728px;
+    max-height: 90vh;
+    width: 100%;
+    border-radius: 24px;
+
+    position: relative;
+}
+.hero_image {
+    @include setCoveredImage();
+    user-select: none;
+    pointer-events: none;
+}
+.hero_image_btn {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+
+    > span {
+        min-width: auto;
+    }
+
+    svg {
+        stroke: #141414;
+        transform: translateY(-1px) scaleX(-1);
+    }
+}
