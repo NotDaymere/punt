@@ -1,7 +1,7 @@
 export const CATEGORIES_ENUM = {
     ALL_GAMES: "all-games",
     FEATURED: "featured",
-    NEW_REALESES: "new-realeses",
+    NEW_REALESES: "new-releases",
     MINE: "mine",
     SLOT_GAMES: "slot-games",
     LIVE_DEALERS: "live-dealers",

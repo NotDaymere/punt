@@ -3,7 +3,8 @@
     aspect-ratio: 1 / 1.32;
     background: url("/img/components/slot-frame.png");
     background-position: center;
-    background-size: contain;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
     display: flex;
     flex-direction: column;
@@ -13,6 +14,12 @@
     &:hover {
         .slot_glare {
             opacity: 0;
+        }
+        .slot_img {
+            filter: brightness(0.5);
+        }
+        .slot_btn {
+            opacity: 1;
         }
     }
 }
@@ -26,6 +33,7 @@
     object-position: center;
     transform: translateY(1.5%);
     overflow: hidden;
+    transition: filter 200ms ease;
 }
 
 .slot_glare {
@@ -35,4 +43,19 @@
     transform: translate(-50%, -48%);
     width: 80%;
     transition: opacity 500ms ease;
+}
+
+.slot_btn {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+    white-space: nowrap;
+
+    > span {
+        min-width: auto;
+    }
 }

@@ -1,0 +1,31 @@
+.hero {
+    padding-top: 32px;
+}
+.hero_nav {
+    border-bottom: 1px solid getColorWhite(0.15);
+}
+.hero_nav_list {
+    white-space: nowrap;
+    overflow: auto;
+    padding: 0 $padding-xxl;
+    margin: 0 (-$padding-xxl);
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.hero_wrapper {
+    padding-top: 40px;
+}
+
+@include -screen-xl {
+    .hero_nav_list {
+        padding: 0 $padding-xl;
+        margin: 0 (-$padding-xl);
+    }
+}
+@include -screen-lg {
+    .hero_nav_list {
+        padding: 0 $padding-lg;
+        margin: 0 (-$padding-lg);
+    }
+}

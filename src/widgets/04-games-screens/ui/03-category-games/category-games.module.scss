@@ -1,0 +1,84 @@
+.games {
+    padding-top: 32px;
+    padding-bottom: 62px;
+}
+.games_title_wrapper {
+    display: inline-block;
+    position: relative;
+}
+.games_title {
+    font-size: 48px;
+}
+.games_label {
+    z-index: 2;
+    width: 112px;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-8%, -50%);
+}
+.games_list {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 30px 20px;
+
+    &[data-type="new-realeses"] {
+        gap: 30px;
+    }
+    &[data-type="live-dealers"] {
+        gap: 32px 20px;
+    }
+}
+.games_list_item {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 196px;
+
+    .slot {
+        height: 100%;
+    }
+
+    &:nth-child(12),
+    &:nth-child(17) {
+        grid-column: span 3;
+        grid-row: span 2;
+        height: 424px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > * {
+            width: 100%;
+        }
+
+        .newGame {
+            max-width: 260px;
+            &::before {
+                display: none;
+            }
+        }
+
+        .leaveDealer {
+            max-width: 274px;
+        }
+
+        .slot {
+            max-width: 293px;
+        }
+
+        .game {
+            max-width: 287px;
+        }
+    }
+
+    [data-aspect] {
+        aspect-ratio: unset;
+    }
+}
+.games_count {
+    margin-top: 48px;
+    text-align: center;
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}

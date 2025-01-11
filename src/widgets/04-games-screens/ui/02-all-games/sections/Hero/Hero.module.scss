@@ -1,0 +1,84 @@
+.hero {
+    background: url("/img/games/hero-bg.webp");
+    background-position: center bottom;
+    background-size: 1160px auto;
+    background-repeat: repeat-x;
+}
+.hero_wrapper {
+    padding-bottom: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero_title {
+    margin-top: 55px;
+
+    @include setFontHelveticaStd700(60px, 1, -0.04em, getColorWhite());
+    max-width: 12.5em;
+    text-align: center;
+
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.9em;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 0.0666em solid #000;
+        outline: 0.08em solid #d7ff82;
+        transform: translateY(-0.1em);
+        user-select: none;
+
+        + img {
+            margin-left: -0.12em;
+        }
+    }
+}
+.hero_text {
+    margin-top: 36px;
+    max-width: 350px;
+    text-align: center;
+    @include setFontPPMori600(18px, 1.1, normal, getColorWhite());
+}
+.hero_categories {
+    margin-top: 62px;
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(9, 1fr);
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 182px;
+        height: 71px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        background: getColorPrimary();
+        filter: blur(130px);
+    }
+}
+.hero_categories_item {
+    position: relative;
+    height: 114px;
+    border-radius: 12px;
+    padding: 12px;
+    overflow: hidden;
+
+    @include setFontPPMori600(18px, 1.1, normal);
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include setCoveredImage();
+    }
+
+    span {
+        position: relative;
+    }
+}

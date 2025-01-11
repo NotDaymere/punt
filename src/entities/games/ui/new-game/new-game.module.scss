@@ -21,6 +21,15 @@
     &:hover::before {
         transform: rotate(0);
     }
+
+    &:hover {
+        .game_img {
+            filter: brightness(0.5);
+        }
+        .game_btn {
+            opacity: 1;
+        }
+    }
 }
 
 .game_content {
@@ -33,10 +42,11 @@
     border-radius: 12px;
 
     overflow: hidden;
+}
 
-    img {
-        @include setCoveredImage();
-    }
+.game_img {
+    @include setCoveredImage();
+    transition: filter 200ms ease;
 }
 
 .game_marquee {
@@ -63,13 +73,28 @@
     gap: 8px;
     height: 20px;
 
-    @include setFontPPMori600(10px, 1.2, normal, #2A2A2C);
+    @include setFontPPMori600(10px, 1.2, normal, #2a2a2c);
     text-transform: uppercase;
 
     svg {
         width: 10px;
         flex-shrink: 0;
-        fill: #2A2A2C;
+        fill: #2a2a2c;
+    }
+}
+
+.game_btn {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+    white-space: nowrap;
+
+    > span {
+        min-width: auto;
     }
 }
 

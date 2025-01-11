@@ -47,7 +47,7 @@ export const NavItem: React.FC<NavItemProps> = ({
 
     if(!children) {
         return href ?(
-            <Link href={href} className={css.link_btn}>
+            <Link href={href} className={css.link_btn} prefetch={false}>
                 {Inside}
             </Link>
         ) : (

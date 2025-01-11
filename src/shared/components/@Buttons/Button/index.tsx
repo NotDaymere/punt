@@ -16,7 +16,11 @@ interface Button {
     onClick?: (ev: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-type Props = (Anchor | Button) & {
+interface Span {
+    component?: "span";
+}
+
+type Props = (Anchor | Button | Span) & {
     className?: string;
     variant?: "white" | "green" | "black";
     circle?: boolean;

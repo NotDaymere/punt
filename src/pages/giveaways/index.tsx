@@ -1,27 +1,24 @@
 import React from "react";
 import { GetServerSideProps, NextPage } from "next";
-import { AllGames, Filters, useGamesNav } from "widgets/04-games-screens";
 import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
 import MainLayout from "shared/layouts/MainLayout";
 import NavLayout from "shared/layouts/NavLayout";
-import css from "./games.module.scss";
+import css from "./giveaways.module.scss";
 
-const Games: NextPage = () => {
+const Giveaways: NextPage = () => {
     return (
-        <MainLayout title="All Games">
+        <MainLayout title="Giveaways">
             <NavLayout>
                 <Header />
-                <Filters />
-                <AllGames />
             </NavLayout>
             <Footer />
         </MainLayout>
     );
 };
 
-export default Games;
+export default Giveaways;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     return { props: {} };
 };

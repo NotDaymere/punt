@@ -1,21 +1,21 @@
 import React from "react";
-import css from "./new-game.module.scss";
-import Image from "shared/ui/Image";
 import Link from "next/link";
+import clsx from "clsx";
+import { Button } from "shared/components/@Buttons/Button";
 import SpadeIcon from "shared/icons/Spade.icon";
+import Image from "shared/ui/Image";
+import css from "./new-game.module.scss";
 
 interface Props {
     img: string;
+    className?: string;
 }
 
-export const NewGame: React.FC<Props> = (props) => {
+export const NewGame: React.FC<Props> = ({ img, className }) => {
     return (
-        <Link href="/" className={css.game}>
-            <span className={css.game_content}>
-                <Image.Default 
-                    src={props.img}
-                    alt=""
-                />
+        <Link href="/" className={clsx(css.game, className)}>
+            <span className={css.game_content} data-aspect>
+                <Image.Default className={css.game_img} src={img} alt="" />
                 <span className={css.game_marquee}>
                     <span className={css.game_marquee_item}>
                         <span className={css.game_marquee_content}>
@@ -40,6 +40,9 @@ export const NewGame: React.FC<Props> = (props) => {
                         </span>
                     </span>
                 </span>
+                <Button className={css.game_btn} component="span" variant="green" circle>
+                    Play now
+                </Button>
             </span>
         </Link>
     );

@@ -1,23 +1,23 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Button } from "shared/components/@Buttons/Button";
 import { IconButton } from "shared/components/@Buttons/IconButton";
 import { Progress } from "shared/components/Progress";
 import { UserInfo } from "shared/components/UserInfo";
-import Image from "shared/ui/Image";
+import ArrowRightIcon from "shared/icons/ArrowRight.icon";
 import InfoIcon from "shared/icons/Info.icon";
 import NotificationIcon from "shared/icons/Notification.icon";
 import WalletIcon from "shared/icons/Wallet.icon";
-import ArrowRightIcon from "shared/icons/ArrowRight.icon";
-import css from "./header.module.scss";
 import { useLogged } from "shared/temp/useLogged";
-import { useRouter } from "next/router";
+import Image from "shared/ui/Image";
+import css from "./header.module.scss";
 
 export const Header: React.FC = () => {
     const router = useRouter();
     const isLogged = useLogged();
 
-    if(!isLogged) {
+    if (!isLogged) {
         return (
             <header className={css.header} id="header">
                 <div className="container">
@@ -27,14 +27,11 @@ export const Header: React.FC = () => {
                         </Link>
                         <div className={css.header_auth}>
                             <div className={css.header_stars}>
-                                <Image.Default 
-                                    src="/img/header-stars.png"
-                                    alt=""
-                                />
+                                <Image.Default src="/img/header-stars.png" alt="" />
                             </div>
-                            <Button 
+                            <Button
                                 onClick={() => router.push({ query: "logged=yes" })}
-                                variant="black" 
+                                variant="black"
                                 circle
                             >
                                 Sign In
@@ -46,7 +43,7 @@ export const Header: React.FC = () => {
                     </div>
                 </div>
             </header>
-        )
+        );
     }
 
     return (

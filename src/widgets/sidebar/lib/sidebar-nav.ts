@@ -36,10 +36,12 @@ export function getSidebarNav(logged = false): NavItemProps[][] {
         nav.push([
             {
                 name: "Favorites",
+                href: "/favorites",
                 icon: "/img/icons/sidebar-favorites.svg",
             },
             {
                 name: "Recent",
+                href: "/recent",
                 icon: "/img/icons/sidebar-recent.svg",
             },
             {
@@ -48,6 +50,7 @@ export function getSidebarNav(logged = false): NavItemProps[][] {
             },
             {
                 name: "Giveaways",
+                href: "/giveaways",
                 icon: "/img/icons/sidebar-giveaways.svg",
             },
             {
@@ -75,6 +78,7 @@ export function getSidebarNav(logged = false): NavItemProps[][] {
             },
             {
                 name: "Giveaways",
+                href: "/giveaways",
                 icon: "/img/icons/sidebar-giveaways.svg",
             }
         ])
@@ -87,52 +91,52 @@ export function getSidebarNav(logged = false): NavItemProps[][] {
                 children: [
                     {
                         name: "Featured",
-                        href: "#",
+                        href: "/games/featured",
                         icon: "/img/icons/sidebar-games-featured.svg",
                     },
                     {
                         name: "New Releases",
-                        href: "#",
+                        href: "/games/new-releases",
                         icon: "/img/icons/sidebar-games-new-releases.svg",
                     },
                     {
                         name: "Slot Games",
-                        href: "#",
+                        href: "/games/slot-games",
                         icon: "/img/icons/sidebar-games-slot.svg",
                     },
                     {
                         name: "Live Dealers",
-                        href: "#",
+                        href: "/games/live-dealers",
                         icon: "/img/icons/sidebar-games-live-dealers.svg",
                     },
                     {
                         name: "Table Games",
-                        href: "#",
+                        href: "/games/table-games",
                         icon: "/img/icons/sidebar-games-table.svg",
                     },
                     {
                         name: "Blackjack",
-                        href: "#",
+                        href: "/games/blackjack",
                         icon: "/img/icons/sidebar-games-blackjack.svg",
                     },
                     {
                         name: "Baccarat",
-                        href: "#",
+                        href: "/games/baccarat",
                         icon: "/img/icons/sidebar-games-baccarat.svg",
                     },
                     {
                         name: "Roulette",
-                        href: "#",
+                        href: "/games/roulette",
                         icon: "/img/icons/sidebar-games-roulette.svg",
                     },
                     {
                         name: "Scratch Cards",
-                        href: "#",
+                        href: "/games/scratch-cards",
                         icon: "/img/icons/sidebar-games-scratch.svg",
                     },
                     {
                         name: "All Games",
-                        href: "#",
+                        href: "/games",
                         icon: "/img/icons/sidebar-games-all.svg",
                     },
                 ],

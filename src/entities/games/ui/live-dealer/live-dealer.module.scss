@@ -9,9 +9,15 @@
     display: flex;
     flex-direction: column;
 
+    position: relative;
+
     &:hover {
         .dealer_img {
             transform: scale(1.1) rotate(1.5deg);
+            filter: brightness(0.5);
+        }
+        .dealer_btn {
+            opacity: 1;
         }
     }
 }
@@ -26,5 +32,22 @@
 
 .dealer_img {
     @include setCoveredImage();
-    transition: transform 500ms ease;
+    transition: 
+        transform 500ms ease,
+        filter 200ms ease;
+}
+
+.dealer_btn {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+    white-space: nowrap;
+
+    > span {
+        min-width: auto;
+    }
 }

@@ -1,3 +1,4 @@
+export { Hero } from './Hero';
 export { Featured } from './Featured';
 export { LiveDealers } from './LiveDealers';
 export { NewGames } from './NewGames';

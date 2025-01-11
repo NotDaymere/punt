@@ -1,0 +1,49 @@
+.hero_filters {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+.hero_filter_input {
+    flex-grow: 1;
+}
+.hero_filters_buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.hero_filters_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        stroke: getColorGray();
+    }
+
+    + .hero_filters_item {
+        padding-left: 17px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 20.5px;
+            background: getColorGray();
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+.hero_filters_name {
+    white-space: nowrap;
+    @include setFontPPMori600(14px, 1, normal, getColorGray());
+    margin-right: 8px;
+    user-select: none;
+}

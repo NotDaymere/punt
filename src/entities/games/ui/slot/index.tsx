@@ -3,6 +3,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import Image from "shared/ui/Image";
 import css from "./slot.module.scss";
+import { Button } from "shared/components/@Buttons/Button";
 
 interface Props {
     img: string;
@@ -14,6 +15,7 @@ export const Slot: React.FC<Props> = (props) => {
         <Link 
             className={clsx(css.slot, props.className)}
             href="/" 
+            data-aspect
         >
             <Image.Default 
                 className={css.slot_img}
@@ -25,6 +27,9 @@ export const Slot: React.FC<Props> = (props) => {
                 src="/img/components/slot-glare.png"
                 alt=""
             />
+            <Button className={css.slot_btn} component="span" variant="green" circle>
+                Play now
+            </Button>
         </Link>
     );
 };
