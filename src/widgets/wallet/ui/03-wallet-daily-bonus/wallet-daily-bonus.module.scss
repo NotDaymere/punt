@@ -1,0 +1,310 @@
+.bonus {
+    padding: 36px 36px 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    background: url("/img/temp/claim-bg.webp");
+    background-size: 981px auto;
+    background-position: center 40px;
+    background-repeat: no-repeat
+}
+
+.bonus_title {
+    @include setFontHelveticaStd700(32px, 1, -0.04em);
+    @include setTextGradient(linear-gradient(145deg, #f9f9f9 40%, #d7ff82));
+}
+
+.bonus_text {
+    margin-top: 24px;
+    text-align: center;
+    max-width: 350px;
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+
+.bonus_streak {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include setFontPPMori400(14px, 1.2, normal, getColorWhite());
+}
+
+.bonus_streak_coins {
+    padding: 7px 10px;
+    border-radius: 100px;
+    background: #2f2f32;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include setFontPPMori600(14px, 1.1, normal, getColorWhite());
+
+    img {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+}
+
+.bonus_bonuses {
+    margin-top: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 9px;
+}
+// Award
+.award {
+    border-radius: 19px;
+    // height: 226px;
+    padding: 3px 1px 1px;
+    @include setStrokeGradient(
+        linear-gradient(#181717, #181717),
+        linear-gradient(to bottom, #636b51, #303426)
+    );
+    border-width: 4px;
+    outline: 1px solid #121411;
+
+    position: relative;
+
+    &._gone {
+        .award_inner {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 47px;
+            height: 52px;
+            object-fit: contain;
+            object-position: center;
+            background: url("/img/icons/award-mark.svg");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &._today {
+        .award_inner {
+            background: #BFDBFF;
+        }
+        .award_day {
+            color: #121411;
+        }
+    }
+}
+
+.award_inner {
+    border-radius: 15px;
+    padding: 14px 6px 19px;
+    background: #1c1b1c;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.award_day {
+    @include setFontPPMori600(14px, 1, normal, getColorWhite());
+    text-align: center;
+}
+
+.award_award {
+    margin-top: 20px;
+    padding: 4px 4px 2px;
+    border-radius: 100px;
+    background: getColorWhite();
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    position: relative;
+
+    @include setFontPPMori600(12px, 1.25, -0.02em, getColorBlack());
+
+    img {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 9px;
+        height: 9px;
+        background: url("/img/icons/triangle-hint.svg");
+        object-fit: contain;
+        object-position: center;
+    
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -2px) scaleY(-1);
+    }
+}
+
+.award_img {
+    margin: 12px 0;
+
+    max-width: 102px;
+    height: 86px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.award_p {
+    margin-top: 20px;
+    padding: 6px 6px 2px;
+    border-radius: 100px;
+    background: getColorWhite();
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    position: relative;
+
+    @include setFontPPMori600(12px, 1.25, -0.02em, getColorBlack());
+
+    img {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 9px;
+        height: 9px;
+        background: url("/img/icons/triangle-hint.svg");
+        object-fit: contain;
+        object-position: center;
+    
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        transform: translate(-50%, 2px);
+    }
+}
+
+.bonus_claim {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bonus_claim_title {
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+    text-align: center;
+}
+
+.bonus_timer {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+
+    @include setFontPPMori600(16px, 1.1, -0.01em, getColorWhite(0.5));
+
+    > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        font-weight: 400;
+        color: getColorWhite();
+
+        width: 0.93em;
+        height: 1.57em;
+        border-radius: 0.214em;
+        border: 1px solid getColorWhite(0.1);
+        background: radial-gradient(getColorWhite(0.6), getColorWhite(0));
+        box-shadow: inset 0 4px 12px getColorWhite(0.15) inset 1.2px 1.2px 4.8px getColorWhite(0.15);
+        backdrop-filter: blur(25px);
+    }
+
+    strong {
+        margin-left: 2px;
+        margin-right: 2px;
+        font-size: 28px;
+        font-weight: 400;
+        color: getColorWhite();
+    }
+}
+
+.bonus_claim_btn_wrapper {
+    margin: 58px auto 0;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 169px;
+        height: 67px;
+        border-radius: 50%;
+        background: getColorPrimary();
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        filter: blur(120px);
+    }
+}
+
+.bonus_claim_btn_outlines {
+    outline-offset: 4px;
+
+    &,
+    &::after,
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
+        outline: 0.62 solid getColorPrimary();
+    }
+
+    &::after,
+    &::before {
+        content: "";
+        display: block;
+    }
+
+    &::after {
+        outline-offset: 10px;
+        opacity: 0.3;
+    }
+
+    &::before {
+        outline-offset: 15px;
+        opacity: 0.1;
+    }
+}
+
+.bonus_claim_btn {
+    > span {
+        @include setFontPPMori600(18px, 1.05, normal, getColorBlack());
+        padding: 2px 40px !important;
+        height: 44px !important;
+    }
+}

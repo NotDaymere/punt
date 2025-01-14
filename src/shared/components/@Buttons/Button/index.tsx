@@ -22,7 +22,7 @@ interface Span {
 
 type Props = (Anchor | Button | Span) & {
     className?: string;
-    variant?: "white" | "green" | "black";
+    variant?: "white" | "green" | "black" | "big-green";
     circle?: boolean;
     children?: React.ReactNode;
 };

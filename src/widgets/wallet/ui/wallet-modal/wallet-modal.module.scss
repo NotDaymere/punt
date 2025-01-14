@@ -1,0 +1,79 @@
+.window {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 250;
+    background: rgba(#262626, 0.8);
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.modal {
+    margin: auto;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1080px;
+    width: 100%;
+    border-radius: 32px;
+    background: #121411;
+
+    position: relative;
+}
+
+.modal_header {
+    padding: 32px 40px 0;
+}
+
+.modal_header_title {
+    font-size: 32px;
+}
+
+.modal_closeBtn {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: getColorWhite();
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 70%;
+        height: 70%;
+        stroke: #000;
+
+        transition: transform 150ms ease;
+    }
+
+    &:hover {
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.modal_wallet {
+    margin-top: 46px;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+@include -screen-xxxl {
+    .window {
+        padding: 24px;
+    }
+}

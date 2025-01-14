@@ -6,7 +6,6 @@
 
     @include setFontPPMori600(14px, 1, normal, getColorBlack());
 
-
     &::after {
         content: "";
         display: block;
@@ -37,7 +36,7 @@
         gap: 8px;
 
         transition: transform 200ms ease;
-        
+
         transform: translateY(-5px);
 
         svg {
@@ -69,15 +68,15 @@
         span {
             background: getColorPrimary();
         }
-        
+
         &::after {
-            background: #97BA4A;
+            background: #97ba4a;
         }
     }
 
     &._black {
         span {
-            background: #2F2F32;
+            background: #2f2f32;
             color: getColorWhite();
 
             &::before {
@@ -86,6 +85,19 @@
         }
         &::after {
             background: #212121;
+        }
+    }
+
+    &._big-green {
+        span {
+            background: getColorPrimary();
+            @include setFontPPMori600(18px, 1.05, normal, getColorBlack());
+            padding: 2px 36px;
+            height: 44px;
+        }
+
+        &::after {
+            background: #97ba4a;
         }
     }
 }

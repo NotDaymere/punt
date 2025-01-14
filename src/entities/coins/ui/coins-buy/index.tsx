@@ -1,18 +1,19 @@
 import React from "react";
 import { Button } from "shared/components/@Buttons/Button";
+import { Discount } from "shared/components/Discount";
 import Image from "shared/ui/Image";
 import { formatNumberWithSeparator } from "shared/utils/format";
 import css from "./coins-buy.module.scss";
-import { Discount } from "shared/components/Discount";
 
 interface Props {
     discount: string | number;
     amount: string | number;
     price: string | number;
     img: string;
+    onBuy?: () => void;
 }
 
-export const CoinsBuy: React.FC<Props> = ({ amount, discount, price, img }) => {
+export const CoinsBuy: React.FC<Props> = ({ amount, discount, price, img, onBuy }) => {
     return (
         <div className={css.coinBuy}>
             <div className={css.coinBuy_img}>
@@ -33,7 +34,7 @@ export const CoinsBuy: React.FC<Props> = ({ amount, discount, price, img }) => {
                 <p className={css.coinBuy_price}>
                     <span>{price}</span>
                 </p>
-                <Button className={css.coinBuy_buyBtn} circle>
+                <Button className={css.coinBuy_buyBtn} onClick={onBuy} circle>
                     Buy
                 </Button>
             </div>

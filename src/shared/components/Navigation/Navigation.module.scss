@@ -10,7 +10,8 @@
     width: 1px;
     height: 4px;
     background: linear-gradient(to right, getColorSecondary(), getColorPrimary());
-    transition: transform 300ms ease;
+    transition: 300ms ease;
+    transition-property: transform, width;
     transform-origin: left center;
     opacity: 0;
 }

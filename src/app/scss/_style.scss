@@ -19,6 +19,20 @@ body {
     margin: 0 auto;
 }
 
+.glow-bg {
+    background-image: 
+        linear-gradient(
+            -35deg,
+            rgba(#F9F9F9, 0.03) 0%,
+            rgba(#F9F9F9, 0.03) 10%,
+            transparent 10%,
+            transparent 15%,
+            rgba(#F9F9F9, 0.03) 15%,
+            rgba(#F9F9F9, 0.03) 42%,
+            transparent 42%
+        );
+}
+
 @include screen-lg {
     .container {
         padding: 0 $padding-xl

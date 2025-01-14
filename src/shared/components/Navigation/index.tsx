@@ -33,11 +33,14 @@ export const Navigation: React.FC<Props> = ({
         const line = lineRef.current;
         if(container && line) {
             const element = container.querySelector(`[data-nav-id="${activeId}"]`) as HTMLElement;
-            const left = element.getBoundingClientRect().left - container.getBoundingClientRect().left;
             if(element) {
-                line.style.transition = transition ? "" : "0s";
-                line.style.opacity = "1";
-                line.style.transform = `translateX(${left}px) scaleX(${element.offsetWidth})`;
+                const left = element.getBoundingClientRect().left - container.getBoundingClientRect().left;
+                if(element) {
+                    line.style.transition = transition ? "" : "0s";
+                    line.style.opacity = "1";
+                    line.style.transform = `translateX(${left}px)`;
+                    line.style.width = element.offsetWidth + "px";
+                }
             }
         }
     }
