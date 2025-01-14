@@ -72,6 +72,21 @@
     flex-direction: column;
 }
 
+.enter {
+    opacity: 0;
+}
+.enterActive {
+    opacity: 1;
+    transition: opacity 350ms ease;
+}
+.exit {
+    opacity: 1;
+}
+.exitActive {
+    opacity: 0;
+    transition: opacity 350ms ease;
+}
+
 @include -screen-xxxl {
     .window {
         padding: 24px;

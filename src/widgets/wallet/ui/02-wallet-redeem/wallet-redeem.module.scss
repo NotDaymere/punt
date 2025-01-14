@@ -197,7 +197,6 @@
 
 .redeem_payment_add {
     width: 100%;
-    margin-top: 8px;
     padding: 19px;
     border-radius: 16px;
     background: #212121;
@@ -230,7 +229,18 @@
 .redeem_payment {
     margin-top: 40px;
     width: 100%;
+
 }
 .redeem_payment_title {
     @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+    margin-bottom: 16px;
+}
+
+.redeem_payment_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.redeem_payment_add {
+    margin-top: 8px;
 }
