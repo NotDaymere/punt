@@ -1,0 +1,1 @@
+export { SkewCard } from "./skew-card";

@@ -1,0 +1,117 @@
+.challenge {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+
+    &:hover {
+        .challenge_block {
+            transform: scale(1.1);
+        }
+        position: relative;
+        z-index: 20;
+    }
+}
+
+.challenge_animation {
+    transition: transform 300ms ease;
+    pointer-events: none;
+}
+
+.challenge_block {
+    border-radius: 38px;
+    @include setStrokeGradient(
+        linear-gradient(#181717, #181717),
+        linear-gradient(to bottom, #636b51, #303426)
+    );
+    border-width: 8px;
+    pointer-events: none;
+
+    transition: transform 350ms ease;
+}
+
+.challenge_inner {
+    border: 1px solid #121411;
+    border-top-width: 4px;
+    border-radius: 30px;
+    padding: 16px 20px 36px;
+    background-image: url("/img/figures/challenge-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 85% auto;
+    background-position: right bottom;
+}
+
+.challenge_img_container {
+    position: relative;
+    display: inline-block;
+}
+.challenge_img {
+    width: 116px;
+    height: 151px;
+    border-radius: 14px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.challenge_discount {
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    transform: translate(-20%, -50%) rotate(20deg);
+    width: 98px;
+    height: 98px;
+}
+.challenge_discount_text {
+    @include setFontPPMori600(14px, 1, normal, getColorBlack());
+
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    img {
+        width: 1.25em;
+        height: 1.25em;
+    }
+}
+.challenge_discount_prize {
+    margin-top: 6px;
+    @include setFontDxGrafik600(16px, 1.25, -0.04em, getColorBlack());
+}
+
+.challenge_title {
+    margin-top: 50px;
+    @include setFontPPMori600(24px, 1.25, -0.04em, getColorWhite());
+}
+.challenge_text {
+    margin-top: 16px;
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+
+    img {
+        display: inline;
+        width: 1.1em;
+        height: 1.1em;
+        vertical-align: middle;
+    }
+
+    span {
+        @include setFontPPMori600(18px, 1.1, normal, getColorBlack());
+        background: getColorSecondary();
+    }
+}
+
+.challenge_claimedBy {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid getColorWhite(0.15);
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: space-between;
+
+    @include setFontPPMori600(16px, 1.1, normal, getColorGray());
+}
+.challenge_claimedBy_title {
+}
+.challenge_claimedBy_username {
+    color: getColorWhite();
+}

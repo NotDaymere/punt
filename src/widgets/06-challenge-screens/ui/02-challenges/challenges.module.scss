@@ -1,0 +1,68 @@
+.challenge {
+    padding-bottom: 50px;
+}
+.challenge_filters {
+    border-bottom: 1px solid getColorWhite(0.15);
+}
+.challenge_filters_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.challenge_nav {
+    align-self: flex-end;
+
+    > div {
+        gap: 48px;
+    }
+}
+.input {
+    margin-bottom: 7px;
+    width: 100%;
+    max-width: 360px;
+
+    position: relative;
+}
+.input_icon {
+    width: 24px;
+    height: 24px;
+    fill: getColorWhite();
+    pointer-events: none;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input_input {
+    padding: 2px 16px;
+    padding-left: 48px;
+    border-radius: 10px;
+    height: 40px;
+    background: #212121;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+
+    &::placeholder {
+        color: getColorGray();
+    }
+}
+
+.challenge_content {
+    margin-top: 30px;
+}
+.challenge_content_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.challenge_displaying {
+    margin-top: 48px;
+    text-align: center;
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.challenge_loadMore {
+    margin: 24px auto 0;
+}
