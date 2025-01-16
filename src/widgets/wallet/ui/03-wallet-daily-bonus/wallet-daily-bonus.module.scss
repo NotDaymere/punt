@@ -100,6 +100,10 @@
     &._today {
         .award_inner {
             background: #BFDBFF;
+
+            &::before {
+                display: none;
+            }
         }
         .award_day {
             color: #121411;
@@ -115,6 +119,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 102px;
+        height: 46px;
+        border-radius: 50%;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        background: linear-gradient(
+            to bottom, 
+            getColorSecondary(),
+            getColorSecondary(0)
+        );
+
+        filter: blur(40px);
+    }
+}
+
+.award_light {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 451px;
+    min-width: 451px;
+    max-width: 451px;
+    aspect-ratio: 1
 }
 
 .award_day {

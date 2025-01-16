@@ -6,6 +6,7 @@ import { Button } from "shared/components/@Buttons/Button";
 import Image from "shared/ui/Image";
 import { formatNumberWithSeparator } from "shared/utils/format";
 import css from "./wallet-daily-bonus.module.scss";
+import LightIcon from "shared/icons/Light.icon";
 
 export const WalletDailyBonus: React.FC = () => {
     const [claimActive, setClaimActive] = React.useState(false);
@@ -37,6 +38,7 @@ export const WalletDailyBonus: React.FC = () => {
                         key={award.id}
                     >
                         <div className={css.award_inner}>
+                            <LightIcon className={css.award_light} />
                             <p className={css.award_day}>Day {index + 1}</p>
                             <p className={css.award_award}>
                                 <Image.Default src="/img/icons/gc.svg" alt="" />+{" "}
