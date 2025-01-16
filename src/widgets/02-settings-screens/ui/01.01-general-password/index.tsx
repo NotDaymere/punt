@@ -1,5 +1,5 @@
 import React from "react";
-import { useForms } from "shared/hooks/use-form";
+import { useForms } from "@axseee/react-form";
 import { Input } from "shared/ui/Input";
 import css from "../01-general/general.module.scss";
 
@@ -15,7 +15,8 @@ export const GeneralPassword: React.FC = () => {
             confirm_password: "",
             new_password: "",
             old_password: "",
-        }
+        },
+        submit: (_, event) => event.preventDefault()
     });
 
     return (

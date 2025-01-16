@@ -1,0 +1,25 @@
+.success_mark {
+    width: 40px;
+}
+
+.success_title {
+    margin-top: 26px;
+    font-size: 20px !important;
+}
+
+.success_text {
+    margin-top: 18px;
+    max-width: 254px;
+    text-align: center;
+
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+
+    img {
+        display: inline;
+        width: 0.9375em;
+    }
+}
+
+.success_okBtn {
+    margin-top: 40px;
+}

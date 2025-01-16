@@ -1,6 +1,6 @@
 import React from "react";
+import { useForms } from "@axseee/react-form";
 import { Button } from "shared/components/@Buttons/Button";
-import { useForms } from "shared/hooks/use-form";
 import Image from "shared/ui/Image";
 import { Input } from "shared/ui/Input";
 import { useToast } from "shared/components/Toast";
@@ -13,8 +13,8 @@ const Offers: React.FC = () => {
         initialValues: {
             code: "",
         },
-        submit: (values) => {
-            console.log('sds')
+        submit: (values, event) => {
+            event.preventDefault();
             if(values.code === "1") {
                 toast.push({
                     type: "error",

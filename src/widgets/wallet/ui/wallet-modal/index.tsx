@@ -30,7 +30,7 @@ export const WalletModal: React.FC<Props> = ({ active, onClose }) => {
             nodeRef={nodeRef}
         >
             <div className={css.window} ref={nodeRef}>
-                <div className={css.modal} ref={ref}>
+                <div className={css.modal} id="wallet-modal" ref={ref}>
                     <button className={css.modal_closeBtn} onClick={onClose}>
                         <CrossIcon />
                     </button>

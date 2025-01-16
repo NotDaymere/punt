@@ -40,6 +40,7 @@
         background: linear-gradient(to bottom, getColorPrimary(0), getColorPrimary(0.3) 120%);
         opacity: 0;
         transition: opacity 200ms ease;
+        pointer-events: none;
     }
 }
 .card_radio {

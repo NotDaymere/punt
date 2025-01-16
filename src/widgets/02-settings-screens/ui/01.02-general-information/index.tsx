@@ -1,5 +1,5 @@
 import React from "react";
-import { useForms } from "shared/hooks/use-form";
+import { useForms } from "@axseee/react-form";
 import EmailIcon from "shared/icons/Email.icon";
 import UserIcon from "shared/icons/User.icon";
 import { Input } from "shared/ui/Input";
@@ -16,6 +16,7 @@ export const GeneralInformation: React.FC = () => {
             email: "",
             username: "",
         },
+        submit: (_, event) => event.preventDefault()
     });
 
     return (
