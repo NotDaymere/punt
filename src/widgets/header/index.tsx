@@ -4,9 +4,8 @@ import { useRouter } from "next/router";
 import { WalletModal } from "widgets/wallet";
 import { Button } from "shared/components/@Buttons/Button";
 import { IconButton } from "shared/components/@Buttons/IconButton";
+import { HeaderAccount } from "./ui";
 import { Progress } from "shared/components/Progress";
-import { UserInfo } from "shared/components/UserInfo";
-import ArrowRightIcon from "shared/icons/ArrowRight.icon";
 import InfoIcon from "shared/icons/Info.icon";
 import NotificationIcon from "shared/icons/Notification.icon";
 import WalletIcon from "shared/icons/Wallet.icon";
@@ -90,10 +89,7 @@ export const Header: React.FC = () => {
                     {/* Account */}
                     <div className={css.header_account}>
                         <IconButton icon={NotificationIcon} />
-                        <button className={css.user_btn}>
-                            <UserInfo img="/img/temp/user.jpg" name="Linda" username="VTRAIN83" />
-                            <ArrowRightIcon className={css.user_btn_arrow} />
-                        </button>
+                        <HeaderAccount />
                     </div>
                 </div>
             </div>

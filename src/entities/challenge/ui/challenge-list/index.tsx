@@ -8,9 +8,10 @@ interface Props {
     data: (typeof challangeMock)[number][];
     claimed?: boolean;
     className?: string;
+    onJoin?: (item: any) => void;
 }
 
-export const ChallengeList: React.FC<Props> = ({ data, className, claimed }) => {
+export const ChallengeList: React.FC<Props> = ({ data, className, claimed, onJoin }) => {
     return (
         <ul className={clsx(css.list, className)}>
             {data.map((item) => (
@@ -21,6 +22,7 @@ export const ChallengeList: React.FC<Props> = ({ data, className, claimed }) => 
                         text={item.text}
                         title={item.title}
                         claimedBy={claimed ? "Jbipolar92" : undefined}
+                        onJoin={onJoin}
                     />
                 </li>
             ))}

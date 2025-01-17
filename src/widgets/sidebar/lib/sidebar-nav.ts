@@ -46,6 +46,7 @@ export function getSidebarNav(logged = false): NavItemProps[][] {
             },
             {
                 name: "Challenges",
+                href: "/challenges",
                 icon: "/img/icons/sidebar-challenges.svg",
             },
             {
@@ -74,6 +75,7 @@ export function getSidebarNav(logged = false): NavItemProps[][] {
         nav.push([
             {
                 name: "Challenges",
+                href: "/challenges",
                 icon: "/img/icons/sidebar-challenges.svg",
             },
             {

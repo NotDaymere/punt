@@ -4,7 +4,7 @@
     top: 0;
     background: #121411;
     z-index: 50;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .header_wrapper {
@@ -141,19 +141,6 @@
     display: flex;
     align-items: center;
     gap: 24px;
-}
-
-.user_btn {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.user_btn_arrow {
-    width: 16px;
-    height: 16px;
-    transform: rotate(90deg);
-    stroke: getColorWhite();
 }
 
 // Auth

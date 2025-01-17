@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { SkewCard } from "entities/challenge/lib";
 import { Discount } from "shared/components/Discount";
+import { Button } from "shared/components/@Buttons/Button";
 import Image from "shared/ui/Image";
 import css from "./challenge-item.module.scss";
 
@@ -12,6 +13,7 @@ interface Props {
     text: string;
     className?: string;
     claimedBy?: string;
+    onJoin?: (item: any) => void;
 }
 
 export const ChallengeItem: React.FC<Props> = ({
@@ -21,6 +23,7 @@ export const ChallengeItem: React.FC<Props> = ({
     title,
     claimedBy,
     className,
+    onJoin
 }) => {
     const skewRef = React.useRef<HTMLDivElement>(null);
 
@@ -50,17 +53,28 @@ export const ChallengeItem: React.FC<Props> = ({
                                 </span>
                             </Discount>
                         </div>
-                        <p className={css.challenge_title}>{title}</p>
-                        <p
-                            className={css.challenge_text}
-                            dangerouslySetInnerHTML={{ __html: text }}
-                        />
-                        {claimedBy && (
-                            <div className={css.challenge_claimedBy}>
-                                <p className={css.challenge_claimedBy_title}>Claimed By</p>
-                                <p className={css.challenge_claimedBy_username}>Jbipolar92</p>
-                            </div>
-                        )}
+                        <div className={css.challenge_content}>
+                            <p className={css.challenge_title}>{title}</p>
+                            <p
+                                className={css.challenge_text}
+                                dangerouslySetInnerHTML={{ __html: text }}
+                            />
+                            {claimedBy && (
+                                <div className={css.challenge_claimedBy}>
+                                    <p className={css.challenge_claimedBy_title}>Claimed By</p>
+                                    <p className={css.challenge_claimedBy_username}>Jbipolar92</p>
+                                </div>
+                            )}
+                            {onJoin && (
+                                <Button 
+                                    className={css.challenge_joinBtn}
+                                    variant="green"
+                                    circle
+                                >
+                                    Join
+                                </Button>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

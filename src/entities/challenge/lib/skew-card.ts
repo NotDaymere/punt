@@ -15,16 +15,25 @@ export class SkewCard {
     }
 
     onMouseEnter() { 
+        if(!this._isActive) {
+            return;
+        }
         this.target.style.transition = "50ms";
     }
 
     onMouseLeave() {
+        if(!this._isActive) {
+            return;
+        }
         this.target.style.transition = "";
         this.clear();
         this.draw();
     }
 
     onMouseMove(event: MouseEvent) {
+        if(!this._isActive) {
+            return;
+        }
         this.x = (event.offsetX - this.container.offsetWidth / 2) * 0.25;
         this.y = (event.offsetY - this.container.offsetHeight / 2) * -0.15;
         this.draw();
@@ -38,6 +47,10 @@ export class SkewCard {
     draw() {
         this.target.style.transform =
             "rotateX(" + this.y.toFixed(2) + "deg) rotateY(" + this.x.toFixed(2) + "deg)";
+    }
+
+    get _isActive() {
+        return window.innerWidth > 1024;
     }
 
     setup() {

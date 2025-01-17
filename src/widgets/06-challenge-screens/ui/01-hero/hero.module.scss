@@ -11,7 +11,7 @@
     display: inline-block;
 }
 .hero_title {
-    font-size: 48px;
+    font-size: 48px !important;
 }
 .hero_title_join {
     width: 110px;
@@ -19,4 +19,33 @@
     left: 100%;
     top: 50%;
     transform: translate(-5%, -50%) rotate(40deg);
+}
+
+@include -screen-lg {
+    .hero_title_container {
+        margin-top: 32px;
+    }
+    .hero_title {
+        font-size: 42px !important;
+    }
+    .hero_title_join {
+        width: 80px;
+    }
+}
+
+@include -screen-sm {
+    .hero {
+        background-size: 305px auto;
+        background-position: right top;
+        padding-bottom: 30px;
+    }
+    .hero_title_container {
+        margin-top: 24px;
+    }
+    .hero_title {
+        font-size: 6.15vw !important;
+    }
+    .hero_title_join {
+        width: 15vw;
+    }
 }
