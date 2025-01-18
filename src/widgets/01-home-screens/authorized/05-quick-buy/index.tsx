@@ -22,6 +22,7 @@ export const QuickBuy: React.FC = () => {
                     getKey={(item) => item.amount}
                     renderItem={(item) => (
                         <CoinsBuy
+                            className={css.quickBuy_coinsBuy}
                             amount={item.amount}
                             discount={item.discount}
                             img={item.img}
@@ -37,7 +38,7 @@ export const QuickBuy: React.FC = () => {
                                 {/* Left */}
                                 <div className={css.quickBuy_header_left}>
                                     <div className={css.quickBuy_header_title}>
-                                        <Title text="Quick Buy" />
+                                        <Title className={css.quickBuy_title} text="Quick Buy" />
                                         <p className={css.quickBuy_header_label}>
                                             <span>#</span> Securely
                                         </p>

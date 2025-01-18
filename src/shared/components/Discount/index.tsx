@@ -16,7 +16,7 @@ export const Discount: React.FC<Props> = ({
     classNameContent,
 }) => {
     return (
-        <div className={clsx(css.discount, className, css["_" + variant])}>
+        <div className={clsx(css.discount, className, css["_" + variant])} data-discount>
             <svg
                 className={css.discount_icon}
                 viewBox="0 0 71 73"

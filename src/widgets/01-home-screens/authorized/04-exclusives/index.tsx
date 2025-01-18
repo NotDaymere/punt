@@ -10,6 +10,7 @@ export const Exclusives: React.FC = () => {
         <section className={css.exclusives} id="exclusives">
             <div className="container">
                 <Title 
+                    className={css.exclusives_title}
                     text={getCoreConfig().siteName + " Exclusives"} 
                 />
                 <div className={css.exclusives_content}>

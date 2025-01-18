@@ -10,9 +10,14 @@ export const Slots: React.FC = () => {
     return (
         <Slider
             options={{
-                spaceBetween: 32,
+                spaceBetween: 12,
                 slidesPerView: "auto",
-                allowTouchMove: false
+                allowTouchMove: false,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 32
+                    }
+                }
             }}
             data={[
                 "/img/temp/slot-1.jpg",
@@ -41,7 +46,7 @@ export const Slots: React.FC = () => {
                                 src="/img/home/green-clubs.svg" 
                                 alt="" 
                             />
-                            <Title text="Slots" />
+                            <Title className={css.games_title} text="Slots" />
                         </div>
                         <div className={css.games_header_right}>
                             <ArrowButton  

@@ -46,3 +46,37 @@
 .games_swiper_slide {
     width: 192px;
 }
+
+@include -screen-lg {
+    .games_title {
+        font-size: 26px;
+    }
+    .games_header {
+        margin-bottom: 24px;
+    }
+    .games_swiper_slide {
+        width: 140px;
+    }
+    .games_header_bc {
+        width: 30px;
+        left: 120%;
+        bottom: 0%;
+        transform: translateY(30%);
+    }
+    .games_header_gc {
+        width: 40px;
+        left: 170%;
+        transform: translateY(-10%);
+    }
+}
+@include -screen-sm {
+    .games_title {
+        font-size: 20px;
+    }
+    .games_header {
+        margin-bottom: 12px;
+    }
+    .games_swiper_slide {
+        width: 110px;
+    }
+}

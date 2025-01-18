@@ -93,3 +93,30 @@
     width: 100%;
     object-fit: contain;
 }
+
+@include -screen-md {
+    .featured {
+        padding-top: 13px;
+        border-bottom: none;
+    }
+    .featured_light {
+        display: none;
+    }
+    .featured_title {
+        font-size: 20px;
+    }
+    .featured_header_title::before {
+        display: none;
+    }
+    .featured_swiper_item {
+        width: 110px;
+    }
+    .featured_header_viewBtn {
+        margin: 0;
+    }
+    .featured_footer {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+    }
+}

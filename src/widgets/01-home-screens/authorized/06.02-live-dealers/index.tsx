@@ -9,9 +9,14 @@ export const LiveDealers: React.FC = () => {
     return (
         <Slider
             options={{
-                spaceBetween: 24,
+                spaceBetween: 10,
                 slidesPerView: "auto",
-                allowTouchMove: false
+                allowTouchMove: false,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 24
+                    }
+                }
             }}
             data={[
                 "/img/temp/dealer-1.jpg",
@@ -22,14 +27,14 @@ export const LiveDealers: React.FC = () => {
                 "/img/temp/dealer-6.jpg",
             ]}
             getKey={(item) => item}
-            renderItem={(item) => <LiveDealer img={item} />}
+            renderItem={(item) => <LiveDealer className={css.dealer} img={item} />}
             className={css.games_swiper}
             classNameSlide={css.games_swiper_slide}
         >
             {({ Slider, isBegin, isEnd, prevSlide, nextSlide }) => (
                 <div className={css.games}>
                     <div className={css.games_header}>
-                        <Title text="Live Dealer" />
+                        <Title className={css.games_title} text="Live Dealer" />
                         <div className={css.games_header_right}>
                             <ArrowButton  
                                 disabled={isBegin}

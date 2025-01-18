@@ -55,3 +55,42 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+@include -screen-lg {
+    .games_title {
+        font-size: 26px;
+    }
+    .games_header {
+        margin-bottom: 24px;
+    }
+    .games_swiper_slide {
+        width: 130px;
+    }
+    .games_header_clubs {
+        width: 40px;
+        position: absolute;
+        left: 120%;
+        top: auto;
+        bottom: 0;
+        transform: translateY(-10%);
+    }
+    .games_header_hearts {
+        width: 25px;
+        left: 127%;
+        transform: translateY(25%) rotate(45deg);
+    }
+    .games_header_star {
+        display: none;
+    }
+}
+@include -screen-sm {
+    .games_title {
+        font-size: 20px;
+    }
+    .games_header {
+        margin-bottom: 12px;
+    }
+    .games_swiper_slide {
+        width: 101px;
+    }
+}

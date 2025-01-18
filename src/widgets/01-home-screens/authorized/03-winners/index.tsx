@@ -27,23 +27,23 @@ export const Winners: React.FC = () => {
         return () => window.removeEventListener("resize", setSticky);
     });
 
-    useGSAP(() => {
-        ScrollTrigger.create({
-            trigger: rootRef.current,
-            start: "top 90px",
-            markers: false,
-            onEnter: () => {
-                if(!rootRef.current?.classList.contains('_fixed')) {
-                    rootRef.current?.classList.add('_fixed')
-                }
-            },
-            onLeaveBack: () => {
-                if(rootRef.current?.classList.contains('_fixed')) {
-                    rootRef.current?.classList.remove('_fixed')
-                }
-            },
-        })
-    });
+    // useGSAP(() => {
+    //     ScrollTrigger.create({
+    //         trigger: rootRef.current,
+    //         start: "top 90px",
+    //         markers: false,
+    //         onEnter: () => {
+    //             if(!rootRef.current?.classList.contains('_fixed')) {
+    //                 rootRef.current?.classList.add('_fixed')
+    //             }
+    //         },
+    //         onLeaveBack: () => {
+    //             if(rootRef.current?.classList.contains('_fixed')) {
+    //                 rootRef.current?.classList.remove('_fixed')
+    //             }
+    //         },
+    //     })
+    // });
 
     return (
         <div className={css.winners} ref={rootRef}>

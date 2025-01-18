@@ -106,3 +106,32 @@
     width: 248px;
     flex-shrink: 0;
 }
+
+@include -screen-md {
+    .quickBuy_title {
+        font-size: 26px;
+    }
+    .quickBuy_header_text,
+    .quickBuy_header_center {
+        display: none;
+    }
+}
+@include -screen-sm {
+    .quickBuy_title {
+        font-size: 20px;
+    }
+    .quickBuy_header_label {
+        padding: 2px;
+        height: 20px;
+        font-size: 12px;
+        transform: translate(-30%, -100%) rotate(16deg);
+    }
+    .quickBuy_swiper_slide {
+        width: 170px;
+    }
+    .quickBuy_coinsBuy {
+        [data-discount] {
+            transform: translate(15%, 20%) rotate(20deg);
+        }
+    }
+}

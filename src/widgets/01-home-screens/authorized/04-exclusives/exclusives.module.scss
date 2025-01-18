@@ -1,4 +1,4 @@
-.exclusives{
+.exclusives {
     padding: 52px 0 32px;
     border-bottom: 1px solid getColorWhite(20%);
 }
@@ -22,4 +22,28 @@
     transform: translateY(-55%);
     z-index: 2;
     pointer-events: none;
+}
+
+@include -screen-xl {
+    .exclusives_list {
+        gap: 16px;
+    }
+}
+
+@include -screen-md {
+    .exclusives_list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include -screen-sm {
+    .exclusives {
+        border-bottom: none;
+    }
+    .exclusives_title {
+        font-size: 20px;
+    }
+    .exclusives_list {
+        grid-template-columns: 1fr;
+    }
 }

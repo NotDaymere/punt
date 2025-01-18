@@ -7,3 +7,11 @@
         margin-top: 102px;
     }
 }
+
+@include -screen-md {
+    .games_type {
+        + .games_type {
+            margin-top: 51px;
+        }
+    }
+}

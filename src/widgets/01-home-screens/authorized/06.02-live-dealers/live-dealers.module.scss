@@ -32,3 +32,34 @@
 .games_swiper_slide {
     width: 198px;
 }
+
+@include -screen-lg {
+    .games_title {
+        font-size: 26px;
+    }
+    .games_header {
+        margin-bottom: 24px;
+    }
+    .games_swiper_slide {
+        width: 140px;
+    }
+}
+@include -screen-sm {
+    .games_title {
+        font-size: 20px;
+    }
+    .games_header {
+        margin-bottom: 12px;
+    }
+    .games_swiper_slide {
+        width: 110px;
+    }
+    .dealer {
+        border-radius: 12px;
+        padding: 3px;
+
+        > * {
+            border-radius: 9px;
+        }
+    }
+}

@@ -104,3 +104,39 @@
 
     @include setFontPPMori600(16px, 1.05, normal, getColorBlack());
 }
+
+@include -screen-xxl {
+    .chapter_image {
+        width: 80px;
+        right: 4px;
+    }
+}
+
+@include -screen-sm {
+    .chapter {
+        height: 100%;
+    }
+    .chapter_content {
+        padding: 70px 13px 14px;
+        height: 100%;
+        align-items: center;
+    }
+    .chapter_image {
+        width: 80px;
+        right: auto;
+        top: 6px;
+        left: 50%;
+        height: auto;
+        transform: translateX(-50%);
+        object-position: center;
+    }
+    .chapter_content_label {
+        font-size: 8px;
+        height: 12px;
+    }
+    .chapter_content_title {
+        margin-top: 6px;
+        font-size: 12px;
+        text-align: center;
+    }
+}

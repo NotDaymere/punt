@@ -160,6 +160,7 @@
 
 .winners_winner_container {
     height: 168px;
+    max-height: 70%;
     max-width: 204px;
     width: 100%;
     border-radius: 12px;
@@ -182,4 +183,97 @@
     transform: translate(-50%, -55%);
     flex-shrink: 0;
     min-width: 142%;
+}
+
+@include -screen-xxl {
+    .winners_content_gameOn {
+        right: 10px;
+        bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .welcome_title {
+        font-size: 38px;
+    }
+    .main_wrapper {
+        grid-template-columns: 1fr;
+    }
+    .rank_rank {
+        margin-top: 16px;
+    }
+}
+
+@include -screen-md {
+    .main {
+        border-bottom: none;
+    }
+    .welcome_title {
+        font-size: 32px;
+    }
+    .welcome_label {
+        display: none;
+    }
+    .welcome_suits {
+        width: 55px;
+        transform: translate(20%, -70%) rotate(-18deg);
+    }
+    .winners_content {
+        padding: 14px;
+    }
+    .winners_content_title {
+        font-size: 26px;
+        max-width: 6em;
+    }
+    .winners_content_text {
+        max-width: 12em;
+    }
+    .winners_content_gameOn {
+        width: 50px;
+        inset: auto;
+        top: 14px;
+        right: 10px;
+    }
+    .winners_winner_icons {
+        min-width: 120%;
+    }
+    .rank_title {
+        font-size: 12px;
+    }
+    .rank_title_icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+    .rank_title_value {
+        font-size: 12px;
+    }
+}
+
+@include -screen-sm {
+    .news {
+        gap: 8px;
+    }
+    .winners_content_title {
+        font-size: 20px;
+    }
+    .winners_content_text {
+        font-size: 10px;
+    }
+}
+@include -screen-xs {
+    .winners {
+        display: flex;
+        flex-direction: column;
+    }
+    .winners_content_title {
+        font-size: 26px;
+    }
+    .winners_content_text {
+        font-size: 12px;
+        max-width: 200px;
+    }
+    .winners_winner {
+        border-radius: 0 0 23px 23px;
+    }
 }

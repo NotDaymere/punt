@@ -6,6 +6,7 @@ import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
 import css from "./featured.module.scss";
 import StarIcon from "shared/icons/Star.icon";
+import { MediaQuery } from "shared/ui/MediaQuery";
 
 export const Featured: React.FC = () => {
     return (
@@ -46,7 +47,7 @@ export const Featured: React.FC = () => {
                         <>
                             <div className={css.featured_header}>
                                 <div className={css.featured_header_title}>
-                                    <Title text="Featured Games" />
+                                    <Title className={css.featured_title} text="Featured Games" />
                                     <StarIcon className={css.featured_header_star} />
                                     <StarIcon className={`${css.featured_header_star} ${css._small}`} />
                                 </div>
@@ -60,12 +61,27 @@ export const Featured: React.FC = () => {
                                         onClick={nextSlide}
                                         disabled={isEnd}
                                     />
-                                    <Button className={css.featured_header_viewBtn} circle>
-                                        View All Games
-                                    </Button>
+                                    <MediaQuery 
+                                        size="min.md"
+                                            children={
+                                                <Button className={css.featured_header_viewBtn} circle>
+                                                    View All Games
+                                                </Button>
+                                            }
+                                    />
                                 </div>
                             </div>
                             {Slider}
+                            <MediaQuery 
+                                size="max.md"
+                                children={
+                                    <div className={css.featured_footer}>
+                                        <Button className={css.featured_header_viewBtn} circle>
+                                            View All Games
+                                        </Button>
+                                    </div>
+                                }
+                            />
                         </>
                     )}
                 </Slider>

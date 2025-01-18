@@ -21,13 +21,13 @@ const Home = () => {
                 <div className={css.main}>
                     {isLogged ? (
                         <>
-                            {/* <Authorized.Main /> */}
-                            {/* <Authorized.Featured /> */}
-                            {/* <Authorized.Winners /> */}
-                            {/* <Authorized.Exclusives /> */}
-                            {/* <Authorized.QuickBuy /> */}
-                            {/* <Authorized.Games /> */}
-                            {/* <Authorized.Jackpot /> */}
+                            <Authorized.Main />
+                            <Authorized.Featured />
+                            <Authorized.Winners />
+                            <Authorized.Exclusives />
+                            <Authorized.QuickBuy />
+                            <Authorized.Games />
+                            <Authorized.Jackpot />
                             {/* <Authorized.TrendingSlots /> */}
                             {/* <Authorized.Providers /> */}
                             {/* <Authorized.Challenges /> */}

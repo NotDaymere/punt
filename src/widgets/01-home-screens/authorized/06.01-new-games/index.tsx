@@ -11,9 +11,14 @@ export const NewGames: React.FC = () => {
     return (
         <Slider
             options={{
-                spaceBetween: 40,
+                spaceBetween: 20,
                 slidesPerView: "auto",
-                allowTouchMove: false
+                allowTouchMove: false,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 40
+                    }
+                }
             }}
             data={[
                 "/img/temp/games-1.jpg",
@@ -34,7 +39,7 @@ export const NewGames: React.FC = () => {
                         <StarIcon className={css.games_header_star} />
                         <StarIcon className={`${css.games_header_star} ${css._small}`} />
                         <div className={css.games_header_title}>
-                            <Title text="New Games" />
+                            <Title className={css.games_title} text="New Games" />
                             <Image.Default 
                                 className={css.games_header_clubs}
                                 src="/img/home/clubs.svg"
