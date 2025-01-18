@@ -1,0 +1,97 @@
+.tabbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(#1c1d22, 0%), #1c1d22);
+    padding: 9px;
+}
+
+.tabbar_inner {
+    height: 100%;
+    border-radius: 16px;
+    background: #212121;
+
+    display: flex;
+    justify-content: center;
+}
+
+.tabbar_tabs {
+    padding: 8px;
+    max-width: 356px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.tabbar_tabs_item {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 6px;
+    border-radius: 15px;
+
+    &._active {
+        background: #2f2f32;
+    }
+
+    img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    span {
+        margin-top: 6px;
+        @include setFontPPMori600(12px, 1.25, normal, getColorWhite());
+        text-align: center;
+    }
+}
+.tabbar_wallet {
+    background: getColorPrimary();
+    border-radius: 15px;
+    border: 1px solid getColorBlack();
+    box-shadow: 
+        0 4px 20px getColorPrimary(0.5),
+        0 5px 0 #97BA4A,
+        0 6px 0 #141414;
+    margin-bottom: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 8px;
+
+    background: url("/img/icons/wallet-bg-2.svg");
+    background-size: cover;
+    background-position: center;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        stroke: #141414;
+    }
+
+    span {
+        @include setFontPPMori600(12px, 1.2, normal, getColorBlack());
+    }
+}
+
+@include -screen-md {
+    :global(body) {
+        padding-bottom: 100px;
+    }
+}

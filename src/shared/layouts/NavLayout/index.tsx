@@ -1,9 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Sidebar } from "widgets/sidebar";
 import { PlayFree } from "shared/components/PlayFree";
+import { MediaQuery } from "shared/ui/MediaQuery";
 import Image from "shared/ui/Image";
 import css from "./NavLayout.module.scss";
+
+const TabBar = dynamic(() => import("widgets/tabbar"), { ssr: false });
 
 interface Props {
     children: React.ReactNode;
@@ -26,6 +30,9 @@ const NavLayout: React.FC<Props> = ({ children }) => {
                     {children}
                 </div>
             </div>
+            <MediaQuery size="max.md">
+                <TabBar />
+            </MediaQuery>
         </div>
     );
 };
