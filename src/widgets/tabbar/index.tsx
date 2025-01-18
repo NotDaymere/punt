@@ -1,10 +1,11 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import { useLogged } from "shared/temp/useLogged";
-import css from "./tabbar.module.scss";
 import Link from "next/link";
 import Image from "shared/ui/Image";
 import WalletIcon from "shared/icons/Wallet.icon";
+import css from "./tabbar.module.scss";
+import "./tabbar.global.scss"
 
 const Tabbar: React.FC = () => {
     const isLogged = useLogged();
