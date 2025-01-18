@@ -55,7 +55,7 @@
     }
 
     &:hover {
-        background: #2F2F32;
+        background: #2f2f32;
     }
 }
 
@@ -80,4 +80,32 @@
     transform-origin: top center;
     transition: 250ms ease;
     transition-property: opacity, transform;
+}
+
+@include -screen-md {
+    .account_btn {
+        height: 36px;
+        gap: 4px;
+        padding: 2px 4px;
+        background: #212121;
+        border-radius: 10px;
+        border: 1px solid getColorWhite(0.15);
+    }
+    .account_btn_arrow {
+        width: 12px;
+        height: 12px;
+    }
+    .account_btn_info {
+        [data-img] {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+        }
+        [data-info] {
+            display: none;
+        }
+    }
+    .account_menu {
+        top: calc(100% + 10px);
+    }
 }

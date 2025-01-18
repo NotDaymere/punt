@@ -89,44 +89,6 @@
     gap: 16px;
 }
 
-.header_balance_tabs {
-    background: #2f2f32;
-    border-radius: 100px;
-    display: flex;
-}
-
-.header_balance_item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px;
-    padding-right: 8px;
-    border-radius: inherit;
-
-    @include setFontPPMori400(14px, 1.05, normal, getColorWhite(40%));
-
-    img {
-        width: 28px;
-        height: 28px;
-    }
-
-    svg {
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-        fill: getColorWhite();
-    }
-
-    &._active {
-        background: getColorWhite();
-        color: getColorBlack();
-
-        svg {
-            fill: getColorBlack();
-        }
-    }
-}
-
 .header_balance_wallet {
     span {
         background: url("/img/icons/wallet-bg.svg") !important;
@@ -141,6 +103,10 @@
     display: flex;
     align-items: center;
     gap: 24px;
+}
+
+.header_search {
+    display: none;
 }
 
 // Auth
@@ -182,6 +148,29 @@
     .header_logo {
         display: block;
     }
+    .header_progress {
+        display: none;
+    }
+}
+
+@include -screen-md {
+    .header_wrapper {
+        gap: 6px;
+    }
+    .header_balance_wallet {
+        display: none;
+    }
+    .header_account {
+        gap: 6px;
+    }
+    .header_search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header_balance {
+        margin-right: 0;
+    }
 }
 
 @include -screen-sm {
@@ -198,5 +187,14 @@
                 font-size: 12px;
             }
         }
+    }
+}
+
+@include -screen-xs {
+    .header_logo {
+        width: 50px;
+    }
+    .header_notification {
+        display: none;
     }
 }

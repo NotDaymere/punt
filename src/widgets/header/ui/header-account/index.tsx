@@ -21,7 +21,12 @@ export const HeaderAccount: React.FC<Props> = (props) => {
     return (
         <div className={clsx(css.account, activeMenu && css._active)} ref={ref}>
             <button className={css.account_btn} onClick={toggleMenu}>
-                <UserInfo img="/img/temp/user.jpg" username="VTRAIN83" name="Linda" />
+                <UserInfo 
+                    className={css.account_btn_info}
+                    img="/img/temp/user.jpg" 
+                    username="VTRAIN83" 
+                    name="Linda" 
+                />
                 <ArrowRightIcon
                     className={css.account_btn_arrow}
                     style={{ transform: activeMenu ? "rotate(-90deg)" : "" }}

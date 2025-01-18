@@ -1,0 +1,84 @@
+.balance {
+    background: #2f2f32;
+    border-radius: 100px;
+    display: flex;
+}
+
+.balance_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    padding-right: 8px;
+    border-radius: inherit;
+
+    @include setFontPPMori400(14px, 1.05, normal, getColorWhite(40%));
+
+    img {
+        width: 28px;
+        height: 28px;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        fill: getColorWhite();
+    }
+
+    &._active {
+        background: getColorWhite();
+        color: getColorBlack();
+
+        svg {
+            fill: getColorBlack();
+        }
+    }
+}
+
+// Mobile balance
+.mbalance {
+    position: relative;
+}
+.mbalance_btn {
+    height: 36px;
+    border-radius: 12px;
+    padding: 3px 10px;
+    background: #212121;
+    border: 1px solid getColorWhite(0.15);
+    svg {
+        margin-left: 6px;
+        width: 12px;
+        height: 12px;
+        stroke: getColorWhite();
+        transform: rotate(90deg);
+        flex-shrink: 0;
+    }
+}
+.mbalance_menu_item,
+.mbalance_btn {
+    display: flex;
+    align-items: center;
+    gap: 2;
+
+    @include setFontPPMori600(12px, 1.1, normal, getColorWhite());
+
+    img {
+        width: 22px;
+        height: 22px;
+    }
+}
+.mbalance_menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    min-width: 100%;
+    border-radius: 12px;
+    background: #212121;
+    border: 1px solid getColorBlack();
+    padding: 8px;
+    box-shadow: 4px 4px 0 #000;
+}
+.mbalance_menu_item{
+    gap: 6px;
+}
