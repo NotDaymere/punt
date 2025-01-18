@@ -32,9 +32,11 @@ export const Leaderboard: React.FC = () => {
                 />
                 <div className={css.leaderboard_header}>
                     <Title 
+                        className={css.leaderboard_title}
                         text="Leaderboard" 
                     />
                     <Tabs 
+                        className={css.leaderboard_tabs}
                         data={[
                             { name: "Daily", value: 'daily' },
                             { name: "Monthly", value: 'monthly' }

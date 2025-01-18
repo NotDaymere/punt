@@ -1,6 +1,6 @@
 import React from "react";
-import css from "./invitation.module.scss";
 import { Button } from "shared/components/@Buttons/Button";
+import css from "./invitation.module.scss";
 
 export const Invitation: React.FC = () => {
     return (

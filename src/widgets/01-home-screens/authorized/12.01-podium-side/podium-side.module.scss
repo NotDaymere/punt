@@ -8,6 +8,7 @@
 
     &:hover {
         transform: scale(1.1);
+        z-index: 5;
     }
 }
 .podium_user {
@@ -72,7 +73,7 @@
     height: 98px;
 
     &._place-2 > svg {
-        fill: getColorYellow()
+        fill: getColorYellow();
     }
 }
 .podium_prize_up {
@@ -86,4 +87,58 @@
 }
 .podium_prize_down {
     @include setFontDxGrafik600(16px, 1.25, -0.04em, getColorBlack());
+}
+@include -screen-md {
+    .podium {
+        .podium_prize {
+            width: 65px;
+            height: 65px;
+            z-index: 10;
+        }
+    }
+    .podium_prize {
+        right: 0;
+        top: 0;
+        transform: translate(20%, 20%) rotate(20deg);
+    }
+    .podium_prize_up {
+        font-size: 8px;
+    }
+    .podium_prize_down {
+        margin-top: 4px;
+        font-size: 10px;
+    }
+    .podium_podium_label {
+        position: absolute;
+        bottom: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+    }
+}
+
+@include -screen-sm {
+    .podium_user {
+        width: 70px;
+    }
+    .podium_user_name {
+        font-size: 12px;
+    }
+}
+
+@include -screen-xs {
+    .podium {
+        .podium_prize {
+            width: 48px;
+            height: 48px;
+            z-index: 10;
+        }
+    }
+    .podium_podium {
+        margin-top: 12px;
+    }
+    .podium_prize_down {
+        font-size: 8px;
+    }
 }

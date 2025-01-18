@@ -32,7 +32,7 @@ export const Providers: React.FC = () => {
                         src="/img/home/poker-chip.svg"
                         alt=""
                     />
-                    <Title text="Providers" />
+                    <Title className={css.providers_title} text="Providers" />
                 </div>
                 <ul className={css.providers_list}>
                     {providers.map((provider, id) => (

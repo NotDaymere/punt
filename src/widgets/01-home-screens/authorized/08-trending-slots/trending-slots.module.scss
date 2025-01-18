@@ -175,3 +175,63 @@
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+@include -screen-md {
+    .trending_box {
+        padding-top: 217px;
+        padding-bottom: 210px;
+    }
+    .trending_title {
+        margin-top: 38px;
+        font-size: 26px;
+    }
+    .trending_text {
+        margin-top: 24px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .trending_button_container {
+        margin-top: 40px;
+    }
+    .trending_slots_item {
+        width: 80px;
+        border-radius: 10px;
+        padding: 2px;
+
+        > * {
+            border-radius: 8px;
+            border-width: 1px;
+            border-top-width: 2px;
+            border-bottom-width: 3px;
+        }
+    }
+    .trending_slots {
+        grid-template-columns: repeat(6, 1fr);
+        mask: linear-gradient(to right, transparent, black, transparent) !important;
+        
+        &._left {
+            top: auto;
+            bottom: 100%;
+            right: auto;
+            left: 50%;
+            transform: translate(-50%, -25px);
+        }
+        &._right {
+            top: 100%;
+            bottom: auto;
+            right: auto;
+            left: 50%;
+            transform: translate(-50%, 50px);
+        }
+    }
+    .trending_slots_item {
+        transform: none !important;
+
+        &:nth-child(even) {
+            transform: translateY(-16px) !important;
+        }
+        &:nth-child(n + 6) {
+            display: none;
+        }
+    }
+}

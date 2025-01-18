@@ -101,3 +101,14 @@
         background: getColorPrimary(70%);
     }
 }
+
+@include -screen-md {
+    .ribbon {
+        height: 60px;
+    }
+    .ribbon_label_value {
+        font-size: 16px;
+        padding-left: 27px;
+        padding-right: 27px;
+    }
+}

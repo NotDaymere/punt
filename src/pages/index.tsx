@@ -28,12 +28,12 @@ const Home = () => {
                             <Authorized.QuickBuy />
                             <Authorized.Games />
                             <Authorized.Jackpot />
-                            {/* <Authorized.TrendingSlots /> */}
-                            {/* <Authorized.Providers /> */}
-                            {/* <Authorized.Challenges /> */}
-                            {/* <Authorized.Invitation /> */}
-                            {/* <Authorized.Leaderboard /> */}
-                            {/* <Authorized.Events /> */}
+                            <Authorized.TrendingSlots />
+                            <Authorized.Providers />
+                            <Authorized.Challenges />
+                            <Authorized.Invitation />
+                            <Authorized.Leaderboard />
+                            <Authorized.Events />
                         </>
                     ) : (
                         <>

@@ -36,11 +36,18 @@ export const PodiumCenter: React.FC<Props> = ({ name, prize, img }) => {
                 <p className={css.podium_user_name}>{name}</p>
             </div>
             <div className={css.podium_podium}>
-                <Image.Default
-                    className={css.podium_podium_main}
-                    src="/img/home/podium-center.png"
-                    alt=""
-                />
+                <picture>
+                    <source 
+                        media="(max-width: 768px)" 
+                        srcSet="/img/home/podium-center@mob.png" 
+                        type="image/png" 
+                    />
+                    <img
+                        className={css.podium_podium_main}
+                        src="/img/home/podium-center.png"
+                        alt=""
+                    />
+                </picture>
                 <Image.Default
                     className={css.podium_podium_label}
                     src="/img/home/podium-first.png"

@@ -29,7 +29,8 @@
 
     @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
 
-    svg {
+    svg,
+    img {
         width: 19px;
     }
 }
@@ -69,4 +70,35 @@
 .leader_prize {
     justify-content: flex-end;
     text-align: right;
+}
+
+@include -screen-sm {
+    .leader {
+        padding: 10px 0;
+    }
+    .leader_col_pos {
+        width: 50px;
+    }
+    .leader_user,
+    .leader_wager,
+    .leader_prize {
+        font-size: 12px;
+    }
+    .leader_pos {
+        font-size: 12px;
+        img {
+            width: 14px;
+        }
+    }
+    .leader_user {
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+        }
+    }
+    .leader_col_wager,
+    .leader_col_prize {
+        width: 25%;
+    }
 }

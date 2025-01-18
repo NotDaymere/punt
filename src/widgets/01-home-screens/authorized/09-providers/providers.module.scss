@@ -40,10 +40,20 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
+    overflow: auto;
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .providers_item {
     position: relative;
+    min-width: 133px;
 
     &::before {
         content: "";
@@ -68,6 +78,8 @@
 
 .providers_item_content {
     height: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: 0.8px solid #000;
     border-radius: 16px;
     background: #212121;
@@ -79,5 +91,59 @@
 
 .providers_item_img {
     @include setCoveredImage();
-    object-fit: cover;
+    object-fit: contain;
+}
+
+@include -screen-xl {
+    .providers_list {
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@include -screen-lg {
+    .providers_list {
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@include -screen-md {
+    .providers_pocker_chip_1,
+    .providers_pocker_chip_2,
+    .providers_pocker_chip_3 {
+        width: 50px;
+    }
+    .providers_pocker_chip_1 {
+        right: auto;
+        left: calc(50% + 100px);
+    }
+    .providers_pocker_chip_2 {
+        left: calc(50% - 120px);
+    }
+    .providers_pocker_chip_3 {
+        left: calc(50% - 150px);
+    }
+    .providers_title {
+        font-size: 26px;
+    }
+    .providers_list {
+        margin-top: 24px;
+    }
+    .providers_item:before {
+        border-radius: 10px;
+    }
+    .providers_item_content {
+        height: 70px;
+        border-radius: 10px;
+    }
+}
+@include -screen-sm {
+    .providers_title {
+        font-size: 20px;
+    }
 }

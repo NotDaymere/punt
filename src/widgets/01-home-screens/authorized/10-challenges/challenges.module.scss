@@ -19,3 +19,20 @@
 .challenges_swiper_slide {
     width: 331px;
 }
+
+@include -screen-md {
+    .challenges_title {
+        font-size: 26px;
+    }
+    .challenges_footer {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@include -screen-sm {
+    .challenges_title {
+        font-size: 20px;
+    }
+}

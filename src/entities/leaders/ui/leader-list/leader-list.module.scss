@@ -22,3 +22,16 @@
 .leader_title_prize {
     text-align: right;
 }
+
+@include -screen-sm {
+    .leader_title {
+        padding-bottom: 12px;
+    }
+    .leader_title_pos {
+        width: 50px;
+    }
+    .leader_title_wager,
+    .leader_title_prize {
+        width: 25%;
+    }
+}

@@ -24,7 +24,7 @@
     text-align: center;
     @include setFontHelveticaStd700(40px, 1.1, -0.04em, #121411);
     span {
-        color: #478A14;
+        color: #478a14;
     }
 }
 
@@ -34,5 +34,44 @@
 
     > span {
         font-size: 18px;
+    }
+}
+
+@include -screen-lg {
+    .invitation_banner {
+        height: auto;
+        background: url("/img/home/invite-banner@mob.v2.webp");
+        background-color: getColorPrimary();
+        background-size: auto 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+    .invitation_content {
+        padding-top: 56px;
+        padding-bottom: 24px;
+    }
+    .invitation_title {
+        font-size: 32px;
+        max-width: 8em;
+    }
+}
+@include -screen-md {
+    .invitation_title {
+        font-size: 26px;
+    }
+    .invitation_btn {
+        > span {
+            font-size: 14px;
+            padding-left: 24px;
+            padding-right: 24px;
+            min-width: auto;
+            height: 36px;
+        }
+    }
+}
+
+@include -screen-sm {
+    .invitation_title {
+        font-size: 20px;
     }
 }
