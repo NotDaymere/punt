@@ -90,6 +90,7 @@
     transform: translateX(-50%);
     z-index: -1;
     flex-shrink: 0;
+    mix-blend-mode: screen;
 }
 @keyframes winnersMarquee {
     0% {

@@ -11,10 +11,13 @@ export const Winners: React.FC = () => {
             <div className="container">
                 <div className={css.winners_box}>
                     <div className={css.winners_content}>
-                        <Image.Default 
+                        <video
                             className={css.winners_content_anim}
-                            src="/img/home/winners-anim.png"
-                            alt=""
+                            src="/img/home/media/winners.mp4"
+                            playsInline
+                            autoPlay
+                            loop
+                            muted
                         />
                         <Title
                             className={css.winners_title} 

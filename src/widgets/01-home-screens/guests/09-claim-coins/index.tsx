@@ -27,10 +27,13 @@ export const ClaimCoins: React.FC = () => {
                         </p>
                     </div>
                     <div className={css.claim_animation}>
-                        <Image.Default 
+                        <video
                             className={css.claim_animation_img}
-                            src="/img/temp/claim-scissors.jpg"
-                            alt=""
+                            src="/img/home/media/scissors.mp4"
+                            playsInline
+                            autoPlay
+                            muted
+                            loop
                         />
                     </div>
                 </div>

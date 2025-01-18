@@ -1,5 +1,30 @@
 .events_list {
     overflow-x: auto;
+    padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        
+
+        &-thumb {
+            border-radius: 12px;
+            background: transparent;
+        }
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background: #2F2F32;
+        }
+    }
+
+    @include -screen-lg {
+        &::-webkit-scrollbar-thumb {
+            background: #2F2F32;
+        }
+
+    } 
 }
 
 .events_title {
