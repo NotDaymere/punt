@@ -33,6 +33,13 @@
     -ms-interpolation-mode: nearest-neighbor;
 }
 
+@mixin setSubMargin($px) {
+    margin-left: -$px;
+    margin-right: -$px;
+    padding-left: $px;
+    padding-right: $px;
+}
+
 @mixin setCoveredImage {
     width: 100%;
     height: 100%;

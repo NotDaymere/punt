@@ -6,6 +6,20 @@
     background: #212121;
     display: flex;
     flex-direction: column;
+
+    .coinBuy_img_discount {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translate(40%, 20%) rotate(20deg);
+    }
+
+    .coinBuy_buyBtn {
+        > span {
+            min-width: auto;
+            height: 36px;
+        }
+    }
 }
 
 .coinBuy_img {
@@ -24,13 +38,6 @@
     user-select: none;
     object-fit: contain;
     object-position: center bottom;
-}
-
-.coinBuy_img_discount {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: translate(40%, 20%) rotate(20deg);
 }
 
 .coinBuy_img_discount_text {
@@ -83,14 +90,18 @@
     }
 }
 
-.coinBuy_buyBtn {
-    > span {
-        min-width: auto;
-        height: 36px;
-    }
-}
-
 @include -screen-sm {
+    .coinBuy {
+        .coinBuy_img_discount {
+            font-size: 16px;
+            width: 65px;
+            height: 65px;
+
+            > * {
+                font-size: 10px !important;
+            }
+        }
+    }
     .coinBuy_amount_value {
         font-size: 18px;
     }
@@ -99,14 +110,5 @@
     }
     .coinBuy_price {
         font-size: 16px;
-    }
-    .coinBuy_img_discount {
-        font-size: 16px;
-        width: 65px;
-        height: 65px;
-
-        > * {
-            font-size: 10px !important;
-        }
     }
 }

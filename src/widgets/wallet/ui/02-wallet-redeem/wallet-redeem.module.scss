@@ -1,5 +1,6 @@
 .redeem {
     padding: 90px 40px 20px;
+    height: 100%;
 
     background: url("/img/temp/redeem-bg.webp"), url("/img/temp/redeem-bg-chips.webp");
     background-size:
@@ -7,7 +8,7 @@
         317px auto;
     background-position:
         center 42px,
-        right 25px bottom;
+        right 25px bottom 50px;
     background-repeat: no-repeat;
 
     display: flex;
@@ -243,4 +244,74 @@
 }
 .redeem_payment_add {
     margin-top: 8px;
+}
+
+@include -screen-md {
+    .redeem_title {
+        font-size: 26px;
+    }
+}
+
+@include -screen-sm {
+    .redeem {
+        padding: 32px 20px;
+
+        background:  url("/img/temp/redeem-bg-chips.webp");
+        background-size: 170px auto;
+        background-position: right 12px bottom 16px;
+        background-repeat: no-repeat;
+    }
+    .redeem_title,
+    .redeem_text {
+        text-align: left;
+        align-self: flex-start;
+    }
+    .redeem_title {
+        font-size: 20px;
+
+        &._min {
+            max-width: 100%;
+        }
+    }
+    .redeem_text {
+        font-size: 14px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid getColorWhite(0.15);
+        width: 100%;
+    }
+    .redeem_methods {
+        margin-top: 32px;
+        max-width: 100%;
+        gap: 6px;
+    }
+    .redeem_methods_icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+    .redeem_methods_title {
+        margin-top: 24px;
+        font-size: 14px;
+    }
+    .redeem_methods_text {
+        max-width: 142px;
+        margin-top: 12px;
+        font-size: 12px;
+    }
+    .redeem_backBtn {
+        position: relative !important;
+        inset: auto !important;
+        margin-right: auto;
+        margin-bottom: 32px;
+    }
+    .redeem_form {
+        max-width: 100%;
+        padding-bottom: 40px;
+    }
+}
+
+@include -screen-xs {
+    .redeem_methods {
+        grid-template-columns: 1fr;
+    }
 }

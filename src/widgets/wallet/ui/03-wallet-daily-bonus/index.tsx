@@ -27,31 +27,33 @@ export const WalletDailyBonus: React.FC = () => {
                     1,0
                 </div>
             </div>
-            <div className={css.bonus_bonuses}>
-                {walletAwardsMock.map((award, index) => (
-                    <div
-                        className={clsx(
-                            css.award,
-                            index < 4 && css._gone,
-                            index === 4 && css._today
-                        )}
-                        key={award.id}
-                    >
-                        <div className={css.award_inner}>
-                            <LightIcon className={css.award_light} />
-                            <p className={css.award_day}>Day {index + 1}</p>
-                            <p className={css.award_award}>
-                                <Image.Default src="/img/icons/gc.svg" alt="" />+{" "}
-                                {formatNumberWithSeparator(award.award, " ")}
-                            </p>
-                            <Image.Default className={css.award_img} src={award.img} alt="" />
-                            <p className={css.award_p}>
-                                <Image.Default src="/img/icons/sc.svg" alt="" />+{" "}
-                                {award.p.toFixed(1).replace(".", ",")}
-                            </p>
+            <div className={css.award_bonuses_wrapper}>
+                <div className={css.bonus_bonuses}>
+                    {walletAwardsMock.map((award, index) => (
+                        <div
+                            className={clsx(
+                                css.award,
+                                index < 4 && css._gone,
+                                index === 4 && css._today
+                            )}
+                            key={award.id}
+                        >
+                            <div className={css.award_inner}>
+                                <LightIcon className={css.award_light} />
+                                <p className={css.award_day}>Day {index + 1}</p>
+                                <p className={css.award_award}>
+                                    <Image.Default src="/img/icons/gc.svg" alt="" />+{" "}
+                                    {formatNumberWithSeparator(award.award, " ")}
+                                </p>
+                                <Image.Default className={css.award_img} src={award.img} alt="" />
+                                <p className={css.award_p}>
+                                    <Image.Default src="/img/icons/sc.svg" alt="" />+{" "}
+                                    {award.p.toFixed(1).replace(".", ",")}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
             <div className={css.bonus_claim}>
                 <p className={css.bonus_claim_title}>Next Bonus Claim Available in:</p>

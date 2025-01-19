@@ -68,3 +68,9 @@
     opacity: 0;
     transition: opacity 350ms ease;
 }
+
+@include -screen-sm {
+    .window_modal {
+        padding: 24px 12px;
+    }
+}

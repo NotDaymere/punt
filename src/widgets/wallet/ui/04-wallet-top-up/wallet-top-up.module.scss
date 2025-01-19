@@ -141,7 +141,7 @@
     object-fit: fill;
 }
 
-.topup_block_discount {
+.topup .topup_block_discount {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -181,5 +181,33 @@
         width: 20px;
         height: 20px;
         fill: getColorWhite();
+    }
+}
+
+@include -screen-md {
+    .topup_title {
+        font-size: 26px;
+    }
+}
+
+@include -screen-sm {
+    .topup {
+        padding: 32px 20px;
+
+        &._submitted {
+            .topup_text {
+                max-width: 294px;
+            }
+            .topup_form_btn_container {
+                margin-top: 100px;
+            }
+        }
+    }
+    .topup_title {
+        font-size: 20px;
+    }
+    .topup_text {
+        margin-top: 16px;
+        font-size: 14px;
     }
 }

@@ -1,37 +1,22 @@
 import React from "react";
-import { createPortal } from "react-dom";
-import { CSSTransition } from "react-transition-group";
 import { Title } from "shared/components/Title";
-import { useClickOutside } from "shared/hooks/use-click-outside";
 import CrossIcon from "shared/icons/Cross.icon";
+import { Modal } from "shared/ui/Modal";
 import { Wallet } from "../wallet";
 import css from "./wallet-modal.module.scss";
 
-interface Props {
-    active: boolean;
-    onClose: () => void;
-}
+export const WalletModal: React.FC = () => {
 
-export const WalletModal: React.FC<Props> = ({ active, onClose }) => {
-    const ref = useClickOutside(onClose);
-    const nodeRef = React.useRef<HTMLDivElement>(null);
-
-    React.useEffect(() => {
-        document.documentElement.style.overflow = active ? "hidden" : "";
-    }, [active]);
-
-    const Element = (
-        <CSSTransition 
-            timeout={350} 
-            classNames={css} 
-            in={active} 
-            unmountOnExit 
-            mountOnEnter
-            nodeRef={nodeRef}
+    return (
+        <Modal 
+            name="wallet"
+            className={css.modal_window}
+            hideOnClickOutside
+            overflow
         >
-            <div className={css.window} ref={nodeRef}>
-                <div className={css.modal} id="wallet-modal" ref={ref}>
-                    <button className={css.modal_closeBtn} onClick={onClose}>
+            {({ close }) => (
+                <div className={css.modal} id="wallet-modal">
+                    <button className={css.modal_closeBtn} onClick={close}>
                         <CrossIcon />
                     </button>
                     <header className={css.modal_header}>
@@ -41,13 +26,7 @@ export const WalletModal: React.FC<Props> = ({ active, onClose }) => {
                         <Wallet />
                     </div>
                 </div>
-            </div>
-        </CSSTransition>
+            )}
+        </Modal>
     );
-
-    if (typeof document === "undefined") {
-        return null;
-    }
-
-    return createPortal(Element, document.body);
 };

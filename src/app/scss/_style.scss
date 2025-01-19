@@ -20,22 +20,34 @@ body {
 }
 
 .glow-bg {
-    background-image: 
-        linear-gradient(
+    background-image: linear-gradient(
+        -35deg,
+        rgba(#f9f9f9, 0.03) 0,
+        rgba(#f9f9f9, 0.03) 50px,
+        transparent 50px,
+        transparent 75px,
+        rgba(#f9f9f9, 0.03) 75px,
+        rgba(#f9f9f9, 0.03) 220px,
+        transparent 220px
+    );
+
+    @include -screen-sm {
+        background-image: linear-gradient(
             -35deg,
-            rgba(#F9F9F9, 0.03) 0,
-            rgba(#F9F9F9, 0.03) 50px,
-            transparent 50px,
-            transparent 75px,
-            rgba(#F9F9F9, 0.03) 75px,
-            rgba(#F9F9F9, 0.03) 220px,
-            transparent 220px
+            rgba(#f9f9f9, 0.03) 0,
+            rgba(#f9f9f9, 0.03) 35px,
+            transparent 35px,
+            transparent 60px,
+            rgba(#f9f9f9, 0.03) 60px,
+            rgba(#f9f9f9, 0.03) 160px,
+            transparent 160px
         );
+    }
 }
 
 @include screen-lg {
     .container {
-        padding: 0 $padding-xl
+        padding: 0 $padding-xl;
     }
 }
 

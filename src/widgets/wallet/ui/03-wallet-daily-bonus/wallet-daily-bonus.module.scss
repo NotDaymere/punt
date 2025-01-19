@@ -10,7 +10,7 @@
     background: url("/img/temp/claim-bg.webp");
     background-size: 981px auto;
     background-position: center 40px;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
 }
 
 .bonus_title {
@@ -52,12 +52,21 @@
     }
 }
 
+.award_bonuses_wrapper {
+    width: 100%;
+}
+
 .bonus_bonuses {
     margin-top: 40px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    @include setSubMargin(36px);
+    display: flex;
     gap: 9px;
+
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 // Award
 .award {
@@ -72,6 +81,9 @@
     outline: 1px solid #121411;
 
     position: relative;
+
+    width: 136.3px;
+    flex-shrink: 0;
 
     &._gone {
         .award_inner {
@@ -99,7 +111,7 @@
 
     &._today {
         .award_inner {
-            background: #BFDBFF;
+            background: #bfdbff;
 
             &::before {
                 display: none;
@@ -135,11 +147,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
 
-        background: linear-gradient(
-            to bottom, 
-            getColorSecondary(),
-            getColorSecondary(0)
-        );
+        background: linear-gradient(to bottom, getColorSecondary(), getColorSecondary(0));
 
         filter: blur(40px);
     }
@@ -153,7 +161,7 @@
     width: 451px;
     min-width: 451px;
     max-width: 451px;
-    aspect-ratio: 1
+    aspect-ratio: 1;
 }
 
 .award_day {
@@ -189,7 +197,7 @@
         background: url("/img/icons/triangle-hint.svg");
         object-fit: contain;
         object-position: center;
-    
+
         position: absolute;
         left: 50%;
         top: 100%;
@@ -234,7 +242,7 @@
         background: url("/img/icons/triangle-hint.svg");
         object-fit: contain;
         object-position: center;
-    
+
         position: absolute;
         left: 50%;
         bottom: 100%;
@@ -345,5 +353,72 @@
         @include setFontPPMori600(18px, 1.05, normal, getColorBlack());
         padding: 2px 40px !important;
         height: 44px !important;
+    }
+}
+
+@include -screen-md {
+    .bonus_title {
+        font-size: 26px;
+    }
+}
+
+@include -screen-sm {
+    .bonus {
+        padding: 32px 20px;
+    }
+    .bonus_title,
+    .bonus_text,
+    .bonus_streak {
+        align-self: flex-start;
+        text-align: left;
+    }
+    .bonus_title {
+        font-size: 20px;
+    }
+    .bonus_text {
+        font-size: 14px;
+    }
+    .bonus_streak {
+        margin-top: 24px;
+    }
+    .bonus_bonuses,
+    .bonus_claim {
+        margin-top: 24px;
+    }
+    .bonus_bonuses {
+        flex-direction: column;
+        @include setSubMargin(0);
+    }
+    .award {
+        width: 100%;
+    }
+    .award_day {
+        position: absolute;
+        left: 15px;
+        top: 13px;
+    }
+    .award_inner {
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 16px;
+    }
+    .award_award {
+        &::after {
+            left: auto;
+            right: 100%;
+            top: 50%;
+            transform: translate(3px, -50%) scaleY(-1) rotate(-90deg);
+        }
+    }
+    .award_p {
+        &::after {
+            left: 100%;
+            bottom: auto;
+            top: 50%;
+            transform: translate(-3px, -50%) rotate(90deg);
+        }
+    }
+    .bonus_claim_btn_wrapper {
+        margin-top: 48px;
     }
 }

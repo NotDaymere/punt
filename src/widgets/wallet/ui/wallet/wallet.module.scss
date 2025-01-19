@@ -22,3 +22,30 @@
         display: none;
     }
 }
+@include -screen-sm {
+    .wallet_nav_container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .wallet_nav {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow: auto;
+        white-space: nowrap;
+        flex-shrink: 0;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        > div {
+            gap: 24px;
+
+            button {
+                font-size: 14px;
+            }
+        }
+    }
+}

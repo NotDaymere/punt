@@ -79,6 +79,7 @@ export const WalletBuyBundle: React.FC = () => {
                 {walletCoins.map((coin) => (
                     <li className={css.bundle_coins_item} key={coin.amount}>
                         <CoinsBuy
+                            className={css.bundle_coins_coin}
                             amount={coin.amount}
                             discount={coin.discount}
                             img={coin.img}

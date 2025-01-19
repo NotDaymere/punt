@@ -27,7 +27,10 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 17px 20px;
+    gap: 16px 20px;
+}
+.bundle_coins_item {
+    overflow: hidden;
 }
 
 // Payments
@@ -94,9 +97,12 @@
     gap: 12px;
 }
 .payment_method_btn {
+    overflow: hidden;
     height: 77px;
     border-radius: 12px;
-    background: #2F2F32;
+    background: #2f2f32;
+    padding-left: 8px;
+    padding-right: 8px;
 
     display: flex;
     justify-content: center;
@@ -105,15 +111,22 @@
 
     img {
         max-width: 85px;
+        width: 100%;
         opacity: 0.5;
         transition: opacity 200ms ease;
     }
 
     &:hover {
-        background: lighten(#2F2F32, 5%);
+        background: lighten(#2f2f32, 5%);
 
         img {
             opacity: 1;
+        }
+    }
+
+    &:nth-child(2) {
+        img {
+            max-width: 60px;
         }
     }
 }
@@ -187,4 +200,98 @@
     justify-content: space-between;
     text-align: right;
     @include setFontPPMori600(14px, 1.1, normal, getColorWhite());
+}
+
+@include -screen-xl {
+    .bundle_coins {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include -screen-lg {
+    .bundle {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@include -screen-md {
+    .bundle_title {
+        align-self: flex-start;
+    }
+    .bundle_text {
+        align-self: flex-start;
+        text-align: left;
+    }
+    .bundle_coins {
+        margin-top: 24px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bundle_coins_coin {
+        aspect-ratio: unset !important;
+    }
+    .payment {
+        flex-direction: column;
+    }
+    .payment_left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+    }
+    .payment_method {
+        width: 100%;
+    }
+    .payment_title {
+        margin-top: 32px;
+    }
+    .payment_backBtn {
+        margin-top: 0;
+        order: -1;
+    }
+    .payment_divider {
+        height: 1px;
+        width: 100%;
+    }
+    .payment_detail {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@include -screen-sm {
+    .bundle {
+        padding: 32px 20px;
+    }
+    .bundle_title {
+        font-size: 20px;
+    }
+    .bundle_text {
+        font-size: 14px;
+    }
+    .bundle_coins {
+        gap: 12px;
+    }
+    .payment {
+        padding: 32px 20px;
+    }
+    .payment_method {
+        padding: 12px;
+    }
+    .payment_method_title {
+        font-size: 16px;
+    }
+    .payment_method_list {
+        margin-top: 16px;
+        gap: 6px;
+    }
+}
+
+@include -screen-xs {
+    .bundle_coins {
+        grid-template-columns: 1fr;
+    }
+    .payment_method_list {
+        grid-template-columns: 1fr;
+    }
 }

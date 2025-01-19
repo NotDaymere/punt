@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { WalletModal } from "widgets/wallet";
+import { useModals } from "shared/ui/Modal";
 import { Button } from "shared/components/@Buttons/Button";
 import { IconButton } from "shared/components/@Buttons/IconButton";
 import { Progress } from "shared/components/Progress";
@@ -16,7 +16,7 @@ import css from "./header.module.scss";
 export const Header: React.FC = () => {
     const router = useRouter();
     const isLogged = useLogged();
-    const [activeWallet, setActiveWallet] = React.useState(false);
+    const { open } = useModals();
 
     if (!isLogged) {
         return (
@@ -73,7 +73,7 @@ export const Header: React.FC = () => {
                         <HeaderBalance />
                         <Button
                             className={css.header_balance_wallet}
-                            onClick={() => setActiveWallet(true)}
+                            onClick={() => open("wallet")}
                             variant="green"
                         >
                             <WalletIcon /> Wallet
@@ -88,7 +88,6 @@ export const Header: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <WalletModal active={activeWallet} onClose={() => setActiveWallet(false)} />
         </header>
     );
 };

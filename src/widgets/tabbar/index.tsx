@@ -1,6 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import { useLogged } from "shared/temp/useLogged";
+import { useModals } from "shared/ui/Modal";
 import Link from "next/link";
 import Image from "shared/ui/Image";
 import WalletIcon from "shared/icons/Wallet.icon";
@@ -9,6 +10,7 @@ import "./tabbar.global.scss"
 
 const Tabbar: React.FC = () => {
     const isLogged = useLogged();
+    const { open } = useModals();
 
     if (typeof document === "undefined") {
         return null;
@@ -33,7 +35,10 @@ const Tabbar: React.FC = () => {
                         <span>Casino</span>
                     </Link>
                     {isLogged ? (
-                        <button className={css.tabbar_wallet}>
+                        <button 
+                            className={css.tabbar_wallet}
+                            onClick={() => open("wallet")}
+                        >
                             <WalletIcon />
                             <span>Wallet</span>
                         </button>
