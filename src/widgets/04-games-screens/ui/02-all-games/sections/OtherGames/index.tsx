@@ -18,7 +18,12 @@ export const OtherGames: React.FC = () => {
                         "/img/temp/games-6.jpg",
                     ]}
                     swiperOptions={{
-                        spaceBetween: 24,
+                        spaceBetween: 12,
+                        breakpoints: {
+                            768: {
+                                spaceBetween: 24
+                            }
+                        }
                     }}
                     renderCard={(item) => <Game img={item} />}
                     getKey={(item, id) => item + id}
@@ -39,7 +44,12 @@ export const OtherGames: React.FC = () => {
                         "/img/temp/games-6.jpg",
                     ]}
                     swiperOptions={{
-                        spaceBetween: 24,
+                        spaceBetween: 12,
+                        breakpoints: {
+                            768: {
+                                spaceBetween: 24
+                            }
+                        }
                     }}
                     renderCard={(item) => <Game img={item} />}
                     getKey={(item, id) => item + id}
@@ -60,7 +70,12 @@ export const OtherGames: React.FC = () => {
                         "/img/temp/games-2.jpg",
                     ]}
                     swiperOptions={{
-                        spaceBetween: 24,
+                        spaceBetween: 12,
+                        breakpoints: {
+                            768: {
+                                spaceBetween: 24
+                            }
+                        }
                     }}
                     renderCard={(item) => <Game img={item} />}
                     getKey={(item, id) => item + id}
@@ -81,7 +96,12 @@ export const OtherGames: React.FC = () => {
                         "/img/temp/games-3.jpg",
                     ]}
                     swiperOptions={{
-                        spaceBetween: 24,
+                        spaceBetween: 12,
+                        breakpoints: {
+                            768: {
+                                spaceBetween: 24
+                            }
+                        }
                     }}
                     renderCard={(item) => <Game img={item} />}
                     getKey={(item, id) => item + id}
@@ -102,7 +122,12 @@ export const OtherGames: React.FC = () => {
                         "/img/temp/games-4.jpg",
                     ]}
                     swiperOptions={{
-                        spaceBetween: 24,
+                        spaceBetween: 12,
+                        breakpoints: {
+                            768: {
+                                spaceBetween: 24
+                            }
+                        }
                     }}
                     renderCard={(item) => <Game img={item} />}
                     getKey={(item, id) => item + id}

@@ -9,3 +9,12 @@
 .slide {
     width: 150px;
 }
+
+@include -screen-sm {
+    .other {
+        gap: 40px;
+    }
+    .slide {
+        width: 110px;
+    }
+}

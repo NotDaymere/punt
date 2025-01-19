@@ -3,3 +3,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+@include -screen-sm {
+    .slide {
+        width: 101px;
+    }
+}

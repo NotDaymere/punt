@@ -15,7 +15,12 @@ export const NewGames: React.FC = () => {
                 "/img/temp/games-6.jpg",
             ]}
             swiperOptions={{
-                spaceBetween: 40
+                spaceBetween: 18,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 40
+                    }
+                }
             }}
             renderCard={(item) => <NewGame img={item} />}
             getKey={(item) => item}

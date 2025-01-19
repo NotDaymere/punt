@@ -17,3 +17,13 @@
 .games_other {
     overflow: hidden;
 }
+
+@include -screen-md {
+    .games_nls_inner {
+        padding: 22px 0 40px;
+
+        > * + * {
+            margin-top: 50px;
+        }
+    }
+}

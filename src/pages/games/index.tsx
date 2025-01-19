@@ -1,6 +1,6 @@
 import React from "react";
 import { GetServerSideProps, NextPage } from "next";
-import { AllGames, Filters, useGamesNav } from "widgets/04-games-screens";
+import { AllGames, Filters } from "widgets/04-games-screens";
 import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
 import MainLayout from "shared/layouts/MainLayout";

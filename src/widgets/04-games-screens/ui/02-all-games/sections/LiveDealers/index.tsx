@@ -14,7 +14,15 @@ export const LiveDealers: React.FC = () => {
                 "/img/temp/dealer-5.jpg",
                 "/img/temp/dealer-6.jpg",
             ]}
-            renderCard={(item) => <LiveDealer img={item} />}
+            swiperOptions={{
+                spaceBetween: 10,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 24
+                    }
+                }
+            }}
+            renderCard={(item) => <LiveDealer className={css.dealer} img={item} />}
             getKey={(item) => item}
             classNameSlide={css.slide}
             title="Live Dealers"

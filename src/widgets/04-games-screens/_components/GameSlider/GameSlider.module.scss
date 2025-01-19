@@ -58,3 +58,33 @@
         margin-top: -10px;
     }
 }
+
+@include -screen-md {
+    .slider {
+        .slider_header_title {
+            font-size: 26px;
+        }
+    }
+}
+
+@include -screen-sm {
+    .slider {
+        .slider_header_title {
+            font-size: 20px;
+        }
+    }
+    .slider_header {
+        margin-bottom: 18px;
+    }
+
+    .icon {
+        width: 68px;
+    
+        &._suits {
+            width: 80px;
+        }
+        &._chips {
+            width: 82px;
+        }
+    }
+}

@@ -1,3 +1,17 @@
 .slide {
     width: 198px;
 }
+
+@include -screen-sm {
+    .slide {
+        width: 110px;
+    }
+    .dealer {
+        border-radius: 12px;
+        padding: 3px;
+
+        > * {
+            border-radius: 9px;
+        }
+    }
+}

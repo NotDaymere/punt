@@ -62,7 +62,7 @@ export function GameSlider<T>({
             <div className="container">
                 <div className={clsx(css.slider_header, classNameHeader)}>
                     <div className={css.slider_header_wrapper}>
-                        {title && <Title.V2>{title}</Title.V2>}
+                        {title && <Title.V2 className={css.slider_header_title}>{title}</Title.V2>}
                         {icon && (
                             <Image.Default
                                 className={clsx(css.icon, css["_" + icon])}

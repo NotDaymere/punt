@@ -15,7 +15,7 @@ export const SortGamesBy: React.FC<Props> = (props) => {
     const toggle = () => setActive(!active);
 
     return (
-        <div className={clsx(css.select, active && css._active)} ref={ref}>
+        <div className={clsx(css.select, active && css._active)} ref={ref} data-filter>
             <button className={css.select_btn} onClick={toggle}>
                 Featured
                 <ArrowSmallUpIcon style={{ transform: active ? undefined : "scaleY(-1)" }} />

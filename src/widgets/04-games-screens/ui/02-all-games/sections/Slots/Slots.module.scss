@@ -1,3 +1,9 @@
 .slide {
     width: 192px;
 }
+
+@include -screen-sm {
+    .slide {
+        width: 110px;
+    }
+}

@@ -14,6 +14,14 @@ export const Slots: React.FC = () => {
                 "/img/temp/slot-5.jpg",
                 "/img/temp/slot-6.jpg",
             ]}
+            swiperOptions={{
+                spaceBetween: 10,
+                breakpoints: {
+                    768: {
+                        spaceBetween: 24
+                    }
+                }
+            }}
             renderCard={(item) => <Slot img={item} />}
             getKey={(item) => item}
             classNameSlide={css.slide}

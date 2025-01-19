@@ -82,3 +82,49 @@
         position: relative;
     }
 }
+
+@include -screen-xl {
+    .hero_title {
+        font-size: 48px;
+    }
+}
+
+@include -screen-lg {
+    .hero_title {
+        font-size: 42px;
+        max-width: 10.5em;
+    }
+    .hero_categories {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include -screen-md {
+    .hero_wrapper {
+        padding-bottom: 64px;
+    }
+    .hero_title {
+        margin-top: 48px;
+        font-size: 36px;
+    }
+    .hero_text {
+        margin-top: 26px;
+        font-weight: 400;
+        font-size: 14px;
+        max-width: 280px;
+    }
+    .hero_categories {
+        margin-top: 52px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include -screen-sm {
+    .hero_title {
+        font-size: 32px;
+    }
+    .hero_categories_item {
+        font-size: 14px;
+        height: 114px;
+    }
+}

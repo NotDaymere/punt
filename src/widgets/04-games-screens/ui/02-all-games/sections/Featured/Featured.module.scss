@@ -4,3 +4,9 @@
 .header {
     margin-bottom: 12px;
 }
+
+@include -screen-sm {
+    .slide {
+        width: 110px;
+    }
+}
