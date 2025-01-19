@@ -21,7 +21,7 @@
     margin-top: 48px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 30px 20px;
+    gap: 30px 30px;
 
     &[data-type="new-realeses"] {
         gap: 30px;
@@ -33,52 +33,85 @@
 .games_list_item {
     grid-column: span 1;
     grid-row: span 1;
-    height: 196px;
 
-    .slot {
-        height: 100%;
-    }
-
-    &:nth-child(12),
-    &:nth-child(17) {
-        grid-column: span 3;
-        grid-row: span 2;
-        height: 424px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        > * {
-            width: 100%;
-        }
-
-        .newGame {
-            max-width: 260px;
-            &::before {
-                display: none;
+    @include screen-lg {
+        &:nth-child(12),
+        &:nth-child(17) {
+            grid-column: span 3;
+            grid-row: span 2;
+            // height: 424px;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            > * {
+                width: 100%;
+            }
+    
+            .newGame {
+                max-width: 260px;
+                &::before {
+                    display: none;
+                }
+            }
+    
+            .leaveDealer {
+                max-width: 274px;
+            }
+    
+            .slot {
+                max-width: 293px;
+            }
+    
+            .game {
+                max-width: 287px;
             }
         }
-
-        .leaveDealer {
-            max-width: 274px;
-        }
-
-        .slot {
-            max-width: 293px;
-        }
-
-        .game {
-            max-width: 287px;
-        }
-    }
-
-    [data-aspect] {
-        aspect-ratio: unset;
     }
 }
 .games_count {
     margin-top: 48px;
     text-align: center;
     @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+
+@include -screen-xxl {
+    .games_title {
+        font-size: 36px;
+    }
+}
+
+@include -screen-lg {
+    .games_list {
+        gap: 24px !important;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include -screen-md {
+    .games_title {
+        font-size: 32px;
+    }
+    .games_list {
+        margin-top: 26px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include -screen-sm {
+    .games_title {
+        font-size: 24px;
+    }
+    .games_list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px 10px !important;
+    }
+}
+
+@media screen and (max-width: 389.98px) {
+    .games_list {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px !important;
+    }
 }

@@ -26,7 +26,6 @@ export const CategoryGames: React.FC = () => {
         }
     
         return <Game className={css.game} img={img} />;
-
     }, [navActive.id])
 
     return (
