@@ -1,8 +1,9 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
+import { CSSTransitionClassNames } from "react-transition-group/CSSTransition";
 import { useModalStore } from "../../lib";
-import clsx from "clsx";
 import { ModalContext } from "../../lib/context";
+import clsx from "clsx";
 import css from "./Modal.module.scss";
 
 interface ChildrenProps {
@@ -17,6 +18,7 @@ interface Props {
     children: ChildrenFunction | React.ReactNode;
     timeout?: number;
     className?: string;
+    transitionCSS?: string | CSSTransitionClassNames | undefined;
     hideOnClickOutside?: boolean;
     overflow?: boolean;
 }
@@ -25,9 +27,10 @@ export const Modal: React.FC<Props> = ({
     name,
     className,
     timeout = 300,
+    transitionCSS = css,
     hideOnClickOutside = false,
     children,
-    overflow
+    overflow,
 }) => {
     const nodeRef = React.useRef<HTMLDivElement>(null);
     const mouseDown = React.useRef(false);
@@ -42,19 +45,19 @@ export const Modal: React.FC<Props> = ({
     };
 
     const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
-        if(hideOnClickOutside) {
-            if(event.currentTarget === event.target && event.button !== 2) {
+        if (hideOnClickOutside) {
+            if (event.currentTarget === event.target && event.button !== 2) {
                 mouseDown.current = true;
             }
         }
     };
 
     const handleMouseUp = (event: React.MouseEvent<HTMLDivElement>) => {
-        if(hideOnClickOutside && mouseDown.current) {
-            if(event.currentTarget === event.target && event.button !== 2) {
+        if (hideOnClickOutside && mouseDown.current) {
+            if (event.currentTarget === event.target && event.button !== 2) {
                 close();
                 mouseDown.current = false;
-            } 
+            }
         }
     };
 
@@ -71,24 +74,19 @@ export const Modal: React.FC<Props> = ({
     }, [name]);
 
     React.useEffect(() => {
-        if(overflow) {
-            const openLength = store.modals.reduce(
-                (acc, item) => acc + +item.active, 
-                0
-            );
-            document.documentElement.style.overflow = openLength > 0
-                ? "hidden"
-                : "";
+        if (overflow) {
+            const openLength = store.modals.reduce((acc, item) => acc + +item.active, 0);
+            document.documentElement.style.overflow = openLength > 0 ? "hidden" : "";
         }
     }, [name, store.modals, overflow]);
 
-    if(!data) {
+    if (!data) {
         return null;
     }
 
     return (
         <CSSTransition
-            classNames={css}
+            classNames={transitionCSS}
             in={data.active}
             timeout={timeout}
             nodeRef={nodeRef}
@@ -96,8 +94,8 @@ export const Modal: React.FC<Props> = ({
             mountOnEnter
         >
             <ModalContext.Provider value={{ close, payload: data.payload }}>
-                <div 
-                    className={clsx(css.modal_window, className)} 
+                <div
+                    className={clsx(css.modal_window, className)}
                     onMouseDown={handleMouseDown}
                     onMouseUp={handleMouseUp}
                     ref={nodeRef}

@@ -10,6 +10,7 @@ export const WalletModal: React.FC = () => {
     return (
         <Modal 
             name="wallet"
+            transitionCSS={css}
             className={css.modal_window}
             hideOnClickOutside
             overflow
