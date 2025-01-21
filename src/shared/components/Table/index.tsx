@@ -33,26 +33,28 @@ function Component<T>({
     classNameRow
 }: Props<T>) {
     return (
-        <div className={clsx(className, css.table)}>
-            <div className={css.table_body}>
-                <ul className={clsx(css.table_head, classNameRow)}>
-                    {title.map((item) => (
-                        <li className={css.table_head_title} key={item}>{item}</li>
-                    ))}
-                </ul>
-                <ul className={css.table_content}>
-                    {data.map((item, index) => (
-                        <li 
-                            className={clsx(
-                                css.table_content_item,
-                                classNameRow
-                            )} 
-                            key={getKey(item, index)}
-                        >
-                           {renderRow(item, index)}
-                        </li>
-                    ))}
-                </ul>
+        <div className={clsx(className,  css.table)}>
+            <div className={clsx(css.table_inner, "scrollbar")}>
+                <div className={css.table_body}>
+                    <ul className={clsx(css.table_head, classNameRow)}>
+                        {title.map((item) => (
+                            <li className={css.table_head_title} key={item}>{item}</li>
+                        ))}
+                    </ul>
+                    <ul className={css.table_content}>
+                        {data.map((item, index) => (
+                            <li 
+                                className={clsx(
+                                    css.table_content_item,
+                                    classNameRow
+                                )} 
+                                key={getKey(item, index)}
+                            >
+                            {renderRow(item, index)}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );

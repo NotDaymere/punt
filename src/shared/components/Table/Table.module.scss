@@ -2,9 +2,13 @@
     padding: 25px 20px 8px;
     border-radius: 24px;
     background: #171916;
+}
+.table_inner {
+    padding-bottom: 8px;
     overflow-x: auto;
 }
 .table_head {
+    width: fit-content;
     display: flex;
     align-items: center;
     padding-bottom: 20px;
@@ -24,11 +28,19 @@
         padding-left: 16px;
     }
 }
-
+.table_content {
+    width: fit-content;
+}
 .table_content_item {
     display: flex;
     align-items: center;
     padding-top: 14px;
     padding-bottom: 14px;
     border-bottom: 1px solid getColorWhite(0.15);
+}
+
+@include -screen-md {
+    .table {
+        border-radius: 16px;
+    }
 }

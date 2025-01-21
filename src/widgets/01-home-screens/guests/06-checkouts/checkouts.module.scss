@@ -2,6 +2,16 @@
     position: relative;
     padding-bottom: 330px;
 }
+.checkouts_coin {
+    overflow: hidden;
+}
+.checkouts_coin_mover {
+    mix-blend-mode: screen;
+
+}
+.checkouts_coin_img {
+    width: 261px;
+}
 .checkouts_hand {
     position: absolute;
     left: -20px;
@@ -15,6 +25,7 @@
     padding: 0 40px;
 }
 .checkouts_title_container {
+    margin-top: 60px;
     display: flex;
     align-items: center;
     font-size: 200px;
@@ -94,6 +105,9 @@
     .checkouts_title_container {
         font-size: 10vw;
     }
+    .checkouts_coin_img {
+        width: 220px;
+    }
     .checkouts_hand {
         max-width: 60vw;
     }
@@ -104,6 +118,12 @@
     }
     .checkouts_content_text {
         font-size: 18px;
+    }
+    .checkouts_coin_img {
+        width: 160px;
+    }
+    .checkouts_title_container {
+        margin-top: 24px;
     }
 }
 @include -screen-md {

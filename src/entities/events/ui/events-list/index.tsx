@@ -10,7 +10,7 @@ interface Props {
 
 export const EventsList: React.FC<Props> = ({ className }) => {
     return (
-        <div className={clsx(css.events, className)}>
+        <div className={clsx(css.events,  className)}>
             <ul className={css.events_title}>
                 <li className={css.events_title_main}>Event Name</li>
                 <li className={css.events_title_date}>Date & Time</li>

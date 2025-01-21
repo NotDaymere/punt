@@ -31,3 +31,44 @@
         transform: translateY(-1px) scaleX(-1);
     }
 }
+
+@include -screen-lg {
+    .hero_image_container {
+        height: 580px;
+    }
+    .hero_breadcrumbs_container {
+        @include setSubMargin(16px);
+        overflow: auto;
+    }
+    .hero_breadcrumbs {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+}
+
+@include -screen-md {
+    .hero_image_container {
+        height: auto;
+        border-radius: 0;
+        max-height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+    .hero_image_btn {
+        position: relative !important;
+        inset: auto !important;
+    }
+    .hero_image {
+        border-radius: 24px;
+        height: 57vw;
+    }
+}
+
+@include -screen-sm {
+    .hero_image {
+        border-radius: 12px;
+    }
+}

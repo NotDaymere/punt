@@ -10,15 +10,17 @@ export const Hero: React.FC = () => {
     return (
         <div className={css.hero}>
             <div className="container">
-                <Breadcrumbs
-                    navigation={[
-                        { name: "Home Page", href: "/" },
-                        { name: "Slot Games", href: `/games/${CATEGORIES_ENUM.SLOT_GAMES}` },
-                        { name: "Gates of Olympus" },
-                    ]}
-                />
+                <div className={css.hero_breadcrumbs_container}>
+                    <Breadcrumbs
+                        className={css.hero_breadcrumbs}
+                        navigation={[
+                            { name: "Home Page", href: "/" },
+                            { name: "Slot Games", href: `/games/${CATEGORIES_ENUM.SLOT_GAMES}` },
+                            { name: "Gates of Olympus" },
+                        ]}
+                    />
+                </div>
                 <div className={css.hero_image_container}>
-                    <Image.Default className={css.hero_image} src="/img/temp/buffalo.jpg" alt="" />
                     <Button
                         className={css.hero_image_btn}
                         href={`/games/${CATEGORIES_ENUM.SLOT_GAMES}`}
@@ -27,6 +29,7 @@ export const Hero: React.FC = () => {
                         <ArrowRightMediumIcon />
                         Back
                     </Button>
+                    <Image.Default className={css.hero_image} src="/img/temp/buffalo.jpg" alt="" />
                 </div>
             </div>
         </div>

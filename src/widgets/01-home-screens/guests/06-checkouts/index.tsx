@@ -4,9 +4,18 @@ import gsap from "gsap";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
 import InvertedClubsIcon from "widgets/01-home-screens/_icons/InvertedClubs.icon";
+import { Framer } from "shared/components/Framer";
+import { formatNumberWithZero } from "shared/utils/format";
+import { FramerCore } from "shared/components/Framer/lib";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import css from "./checkouts.module.scss";
 
+const coinFrames = Array.from({ length: 90 })
+    .map((_, id) => `/img/coin-frames/frame_${formatNumberWithZero(id + 1)}.jpg`)
+
 export const Checkouts: React.FC = () => {
+    const framer = React.useRef<FramerCore | null>(null);
+
     useGSAP(() => {
         gsap.to("#checkouts-title", {
             scrollTrigger: {
@@ -16,6 +25,26 @@ export const Checkouts: React.FC = () => {
                 scrub: 1,
             },
             xPercent: -150
+        });
+
+        gsap.to("#checkouts-mover", {
+            scrollTrigger: {
+                trigger: "#checkouts-title",
+                start: "top 90%",
+                end: "bottom top",
+                scrub: 2,
+                onUpdate(self) {
+                },
+            },
+            xPercent: 100,
+            onUpdate() {
+                const fr = framer.current;
+                if(fr) {
+                    const current = Math.floor(fr.countFrames * this.ratio);
+                    const frame = current % fr.countFrames;
+                    fr.setFrame(frame);
+                }
+            }
         })
     });
 
@@ -26,6 +55,15 @@ export const Checkouts: React.FC = () => {
                 src="/img/temp/hand.webp"
                 alt=""
             />
+            <div className={css.checkouts_coin}>
+                <div className={css.checkouts_coin_mover} id="checkouts-mover">
+                    <Framer 
+                        ref={framer}
+                        frames={coinFrames}
+                        className={css.checkouts_coin_img}
+                    />
+                </div>
+            </div>
             <div className={css.checkouts_container}>
                 <div className={css.checkouts_title_container} id="checkouts-title">
                     <Title 

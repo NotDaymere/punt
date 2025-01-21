@@ -2,10 +2,10 @@ import React from "react";
 import { Title } from "shared/components/Title";
 import { Button } from "shared/components/@Buttons/Button";
 import { WinnersList } from "widgets/01-home-screens/_components/WinnersList";
-import Image from "shared/ui/Image";
 import css from "./winners.module.scss";
 
 export const Winners: React.FC = () => {
+    
     return (
         <section className={css.winners} id="winners">
             <div className="container">
@@ -13,7 +13,7 @@ export const Winners: React.FC = () => {
                     <div className={css.winners_content}>
                         <video
                             className={css.winners_content_anim}
-                            src="/img/home/media/winners.mp4"
+                            src="/img/home/media/stickers.mp4"
                             playsInline
                             autoPlay
                             loop

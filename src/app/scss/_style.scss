@@ -45,6 +45,30 @@ body {
     }
 }
 
+.scrollbar {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+
+        &-thumb {
+            border-radius: 12px;
+            background: transparent;
+        }
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background: #2f2f32;
+        }
+    }
+
+    @include -screen-lg {
+        &::-webkit-scrollbar-thumb {
+            background: #2f2f32;
+        }
+    }
+}
+
 @include screen-lg {
     .container {
         padding: 0 $padding-xl;

@@ -4,3 +4,12 @@
 .content_nav {
     border-bottom: 1px solid getColorWhite(0.15);
 }
+
+@include -screen-sm {
+    .content_nav_navigation {
+        @include setSubMargin(16px);
+        overflow: auto;
+        white-space: nowrap;
+        display: flex;
+    }
+}

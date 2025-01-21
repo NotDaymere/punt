@@ -23,6 +23,7 @@ export const Content: React.FC = () => {
             <div className={css.content_nav}>
                 <div className="container">
                     <Navigation
+                        className={css.content_nav_navigation}
                         activeId={currentTab}
                         data={Object.values(Tabs).map((item) => ({
                             id: item,
