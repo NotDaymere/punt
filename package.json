@@ -36,6 +36,7 @@
     "@types/react-transition-group": "^4.4.12",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
+    "eslint-plugin-svg-jsx": "^1.2.4",
     "sass": "^1.77.6",
     "typescript": "^5"
   }

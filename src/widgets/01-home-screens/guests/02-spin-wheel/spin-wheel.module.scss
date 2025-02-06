@@ -54,15 +54,14 @@
     transform: translateX(-50%);
 }
 .spinWheel_figures_light {
-    width: 282%;
+    width: 250%;
     aspect-ratio: 1;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
-    animation: rayRotation 30s linear infinite;
 }
+
 .spinWheel_figures_text {
     width: 100%;
     @include setFontHelveticaStd700(40px, 1.1, normal, getColorWhite());
@@ -130,7 +129,7 @@
 }
 // Animation
 .spinWheel_wheel_container {
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 .spinWheel_wheel {
     width: 100%;
@@ -169,14 +168,6 @@
         :global(.wheel-button-arrow) {
             opacity: 1;
         }
-    }
-}
-@keyframes rayRotation {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 @include -screen-xxxl {

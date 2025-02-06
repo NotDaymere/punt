@@ -4,7 +4,7 @@
       "prettier",
       "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "svg-jsx"],
   "parserOptions": {
       "ecmaFeatures": {
           "jsx": true
@@ -21,6 +21,9 @@
       "react/no-children-prop": "off",
       "require-await": "warn",
       "react-hooks/exhaustive-deps": "off",
-      "react/display-name": "off"
+      "react/display-name": "off",
+      "svg-jsx/camel-case-dash": "warn",
+      "svg-jsx/camel-case-colon": "warn",
+      "svg-jsx/no-style-string": "warn"
   }
 }

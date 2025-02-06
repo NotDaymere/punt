@@ -14,17 +14,19 @@ export const RealWins: React.FC = () => {
         ScrollTrigger.create({
             trigger: rootRef.current,
             start: "top top",
-            end: "bottom+=200% bottom",
+            end: "bottom+=150% bottom",
             pin: true,
-            pinSpacing: true
+            pinSpacing: true,
+            invalidateOnRefresh: true,
         });
 
         gsap.to(`.${css.wins_cards_item}`, {
             scrollTrigger: {
                 trigger: rootRef.current,
                 start: "top bottom",
-                end: "bottom+=150% bottom",
-                scrub: 1
+                end: "bottom+=100% bottom",
+                scrub: 1,
+                invalidateOnRefresh: true,
             },
             y: 0
         })

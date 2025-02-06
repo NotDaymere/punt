@@ -25,7 +25,12 @@ export const Wheel = React.forwardRef<HTMLImageElement, Props>(
                         />
                     </div>
                     <Image.Default 
-                        className={css.wheel_lights}
+                        className={`${css.wheel_lights} wheel-lights`}
+                        src="/img/home/wheel/lights.webp"
+                        alt=""
+                    />
+                    <Image.Default 
+                        className={`${css.wheel_lights} ${css._rotated} wheel-lights wheel-lights-delayed`}
                         src="/img/home/wheel/lights.webp"
                         alt=""
                     />

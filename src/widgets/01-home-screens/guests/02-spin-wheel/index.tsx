@@ -1,20 +1,21 @@
 import React from "react";
-import clsx from "clsx";
 import { useGSAP } from "@gsap/react";
+import clsx from "clsx";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Wheel } from "widgets/01-home-screens/_components/Wheel";
+import WheelLightIcon from "widgets/01-home-screens/_icons/WheelLight";
+import { useHomeActions } from "widgets/01-home-screens/lib";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
-import LightIcon from "shared/icons/Light.icon";
 import css from "./spin-wheel.module.scss";
 
 export const SpinWheel: React.FC = () => {
     const imageRef = React.useRef<HTMLImageElement>(null);
     const rootRef = React.useRef<HTMLDivElement>(null);
     const tween = React.useRef<gsap.core.Tween>(null);
-    const activeRotation = React.useRef(false);
     const [activeButton, setActiveButton] = React.useState(false);
+    const { toggleSpinAnimation } = useHomeActions();
 
     useGSAP(() => {
         tween.current = gsap.to(imageRef.current, {
@@ -58,36 +59,51 @@ export const SpinWheel: React.FC = () => {
                     delay: 0.9,
                     onStart: () => {
                         setActiveButton(true);
-                    }
+                    },
                 },
                 "main"
             )
             .to("#spin-wheel-bonus", {
-                duration: 3,
+                duration: 0.5,
             })
-            .to("#spin-wheel-bonus", {
-                opacity: 0,
-                visibility: "hidden",
-                duration: 1,
-                onStart: () => {
-                    rootRef.current?.classList.add("_animated");
+            .to(
+                `.${css.spinWheel_bonus_title}`,
+                {
+                    scale: 0.4,
+                    duration: 0.7,
                 },
-            });
+                "finish"
+            )
+            .to(
+                "#spin-wheel-bonus",
+                {
+                    opacity: 0,
+                    visibility: "hidden",
+                    duration: 0.7,
+                    onStart: () => {
+                        rootRef.current?.classList.add("_animated");
+                    },
+                    onComplete() {
+                        toggleSpinAnimation(true);
+                    },
+                },
+                "finish"
+            );
     }, []);
 
     const handleClick = () => {
-        if(!activeButton) {
+        if (!activeButton) {
             return;
         }
         setActiveButton(false);
 
-        const DURATION = 9; // seconds
-        const RESUME_DELAY = 3; // seconds
-        const MINIMAL_ROTATION = 360 * 8; // * count wheel revolution 
+        const DURATION = 4.5; // seconds
+        const RESUME_DELAY = 1.5; // seconds
+        const MINIMAL_ROTATION = 360 * 10; // * count wheel revolution
         const CELL_DEGREE = 360 / 5; // / count cells (games)
         const RANDOM_CELL = Math.floor(Math.random() * 5); // Get random cell
 
-        const rotation = MINIMAL_ROTATION + (CELL_DEGREE * RANDOM_CELL);
+        const rotation = MINIMAL_ROTATION + CELL_DEGREE * RANDOM_CELL;
 
         tween.current?.pause();
 
@@ -95,65 +111,76 @@ export const SpinWheel: React.FC = () => {
             rotate: rotation,
             duration: DURATION,
             ease: "power4.inOut",
-            onStart: () => {
-                rootRef.current?.classList.remove('_animated');
-            }
+            onStart() {
+                rootRef.current?.classList.remove("_animated");
+                gsap.set(".wheel-lights", { animationDuration: 0.5 });
+                gsap.set(".wheel-lights-delayed", { animationDelay: 0.25 });
+            },
+            onComplete() {
+                gsap.set(".wheel-lights", { animationDuration: 1 });
+                gsap.set(".wheel-lights-delayed", { animationDelay: 0.5 });
+            },
         });
-        
-        setTimeout(() => {
-            tween.current?.progress((rotation % 360) / 360);
-            tween.current?.resume();
-            setActiveButton(true);
-        }, (DURATION + RESUME_DELAY) * 1000);
+
+        setTimeout(
+            () => {
+                tween.current?.progress((rotation % 360) / 360);
+                tween.current?.resume();
+                setActiveButton(true);
+            },
+            (DURATION + RESUME_DELAY) * 1000
+        );
     };
 
     return (
         <section className={css.spinWheel} id="spin-wheel" ref={rootRef}>
             <div className={css.spinWheel_figures}>
-                <LightIcon className={css.spinWheel_figures_light} />
-                <p className={clsx(css.spinWheel_figures_text, css._left, !activeButton && css._hidden)}>
-                    <span>Spin</span> the<br/> Wheel
+                <WheelLightIcon className={css.spinWheel_figures_light} />
+                <p className={clsx(css.spinWheel_figures_text, css._left)}>
+                    <span>Spin</span> the
+                    <br /> Wheel
                 </p>
-                <p className={clsx(css.spinWheel_figures_text, css._right, !activeButton && css._hidden)}>
-                    Win <span>Free</span><br/> Spins!
+                <p className={clsx(css.spinWheel_figures_text, css._right)}>
+                    Win <span>Free</span>
+                    <br /> Spins!
                 </p>
-                <Image.Default 
+                <Image.Default
                     className={css.spinWheel_sc_coin}
                     src="/img/figures/sc-coin.png"
-                    alt="" 
+                    alt=""
                 />
-                <Image.Default 
+                <Image.Default
                     className={css.spinWheel_sc_coin_sm}
                     src="/img/figures/sc-coin.png"
-                    alt="" 
+                    alt=""
                 />
-                <Image.Default 
+                <Image.Default
                     className={css.spinWheel_gc_coin}
                     src="/img/figures/gc-coin.png"
-                    alt="" 
+                    alt=""
                 />
-                <Image.Default 
+                <Image.Default
                     className={css.spinWheel_gc_coin_sm}
                     src="/img/figures/gc-coin.png"
-                    alt="" 
+                    alt=""
                 />
-                <Image.Default 
+                <Image.Default
                     className={css.spinWheel_chips_right}
                     src="/img/home/chips_right.png"
-                    alt="" 
+                    alt=""
                 />
-                <Image.Default 
+                <Image.Default
                     className={css.spinWheel_chips_left}
                     src="/img/home/chips_left.png"
-                    alt="" 
+                    alt=""
                 />
             </div>
             <div className={css.spinWheel_wheel_container} id="spin-wheel-transform">
-                <Wheel 
-                    ref={imageRef} 
-                    className={css.spinWheel_wheel} 
+                <Wheel
+                    ref={imageRef}
+                    className={css.spinWheel_wheel}
                     disabled={!activeButton}
-                    onClickButton={handleClick} 
+                    onClickButton={handleClick}
                 />
             </div>
             <div className={css.spinWheel_bonus} id="spin-wheel-bonus">
