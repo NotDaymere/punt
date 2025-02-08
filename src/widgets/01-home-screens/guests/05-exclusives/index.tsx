@@ -1,9 +1,13 @@
 import React from "react";
+import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
+import gsap from "gsap";
 import { exclusives } from "widgets/01-home-screens/mock-data";
+import { getTimeline } from "shared/animation/utils";
 import { ArrowButton } from "shared/components/@Buttons/ArrowButton";
 import { CubeSlide, CubeSlider } from "shared/components/CubeSlider";
 import { CubeSliderCore } from "shared/components/CubeSlider/lib/CubeSliderCore";
+import { PuntImageText } from "shared/components/PuntImageText";
 import { Title } from "shared/components/Title";
 import { useViewport } from "shared/hooks/use-viewport";
 import LightIcon from "shared/icons/Light.icon";
@@ -12,6 +16,8 @@ import Image from "shared/ui/Image";
 import css from "./exclusives.module.scss";
 
 export const Exclusives: React.FC = () => {
+    const rootRef = React.useRef<HTMLDivElement>(null);
+    const timeline = React.useRef<gsap.core.Timeline>(null);
     const cubeControllerUp = React.useRef<CubeSliderCore>(null);
     const cubeControllerDown = React.useRef<CubeSliderCore>(null);
     const { screenWidth } = useViewport(1000);
@@ -34,17 +40,59 @@ export const Exclusives: React.FC = () => {
         }
     };
 
+    useGSAP(
+        () => {
+            const textAnimation = {
+                ease: "back.out(3)",
+                duration: 1,
+                scale: 1,
+                opacity: 1,
+                stagger: 0.05,
+            }
+            getTimeline(rootRef.current)
+                .to(
+                    ".exclusives-sliders, .exclusives-controls",
+                    {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1,
+                        x: 0,
+                        y: 0,
+                    },
+                    0
+                )
+                .to(
+                    ".exclusives-logo span, .title-span-1 span",
+                    textAnimation,
+                    0
+                )
+                .to(
+                    ".title-span-2 span",
+                    {
+                        ...textAnimation,
+                        delay: 0.2,
+                    },
+                    0
+                )
+        },
+        { scope: rootRef }
+    );
+
     return (
-        <section className={css.exclusives} id="exclusives">
+        <section className={css.exclusives} id="exclusives" ref={rootRef}>
             <div className="container">
                 <div className={css.exclusives_wrapper}>
                     {/* Title */}
                     <div className={css.exclusives_title_container}>
-                        <Image.Default className={css.exclusives_logo} src="/img/logo.png" alt="" />
-                        <Title className={css.exclusives_title} text="Exclusives" />
+                        <PuntImageText className={`${css.exclusives_logo} exclusives-logo`} />
+                        <Title
+                            className={css.exclusives_title}
+                            text="Exclusives"
+                            animated="manual"
+                        />
                     </div>
                     <div className={css.exclusives_content}>
-                        <div className={css.exclusives_sliders}>
+                        <div className={`${css.exclusives_sliders} exclusives-sliders`}>
                             {/* Slider left */}
                             <div className={css.exclusives_sliders_slider}>
                                 <CubeSlider
@@ -117,16 +165,18 @@ export const Exclusives: React.FC = () => {
                             </div>
                         </div>
                         {/* Controls */}
-                        <div className={css.exclusives_controls}>
-                            <ArrowButton
-                                className={css.exclusives_controls_button}
-                                onClick={handlePrev}
-                                variant="prev"
-                            />
-                            <ArrowButton
-                                className={css.exclusives_controls_button}
-                                onClick={handleNext}
-                            />
+                        <div className={`${css.exclusives_controls}`}>
+                            <div className={`${css.exclusives_controls_inner} exclusives-controls`}>
+                                <ArrowButton
+                                    className={css.exclusives_controls_button}
+                                    onClick={handlePrev}
+                                    variant="prev"
+                                />
+                                <ArrowButton
+                                    className={css.exclusives_controls_button}
+                                    onClick={handleNext}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

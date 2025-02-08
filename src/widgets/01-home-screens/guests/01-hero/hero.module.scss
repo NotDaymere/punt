@@ -25,7 +25,7 @@
 .hero_figure_star_2,
 .hero_figure_star_3,
 .hero_figure_star_4 {
-    fill: rgba(#E9E9E9, 40%);
+    fill: rgba(#e9e9e9, 40%);
     position: absolute;
 }
 .hero_figure_star_1 {
@@ -108,7 +108,7 @@
 }
 .hero_button_smile {
     position: absolute;
-    width: 5.60em;
+    width: 5.6em;
     left: 100%;
     top: 100%;
     pointer-events: none;
@@ -160,6 +160,19 @@
     }
 }
 
+.hero_btn_box {
+    margin-top: 60px;
+    transform: rotate(-6deg);
+}
+
+.hero_btn {
+}
+
+.hero_btn_animation {
+    opacity: 0;
+    transform: scale(0);
+}
+
 @include -screen-xxxl {
     .hero {
         padding-top: 120px;
@@ -187,26 +200,14 @@
 }
 @include -screen-sm {
     .hero_title_box {
-        font-size: 44px;
-    }
-    .hero_button_container {
-        font-size: 18px;
-    }
-    .hero_button {
-        > span {
-            min-height: 44px;
-        }
-    }
-    .hero_title {
-        &::before {
-            -webkit-text-stroke: 18px getColorPrimary() !important;
-        }
+        font-size: 10vw;
     }
     .hero_casino {
-        margin-top: 12px;
-        &::before {
-            -webkit-text-stroke: 12px getColorYellow() !important;
-        }
+        margin-top: 6px;
+        font-size: 6.15vw !important;
+    }
+    .hero_btn {
+        font-size: 18px;
     }
     .hero_figure_hearts {
         top: 0;
@@ -219,8 +220,8 @@
         transform: translateX(-73%) rotate(20deg);
     }
 }
-@include -screen-xs {
-    .hero_title_box {
-        font-size: 34px;
-    }
-}
+// @include -screen-xs {
+//     .hero_title_box {
+//         font-size: 34px;
+//     }
+// }

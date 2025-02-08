@@ -35,7 +35,7 @@ export const GameTemplate: React.FC<Props> = ({
                             alt=""
                         />
                         <div className={css.game_title_box}>
-                            <Title className={css.game_title} text={title} />
+                            <Title className={css.game_title} text={title} animated />
                             {icons === 1 && (
                                 <>
                                     <Image.Default 

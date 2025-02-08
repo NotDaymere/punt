@@ -1,29 +1,115 @@
 .title {
-    @include setFontHelveticaStd700(32px, 1.15, -0.02em, getColorWhite());
+    @include setFontHelveticaStd700(32px, 1.15, 0em, getColorWhite());
     position: relative;
-    z-index: 1;
 
-    -webkit-text-stroke: 0.18em getColorBlack();
-    paint-order: stroke fill;
-
-    &::selection {
-        background: getColorPrimary(50%);
-    }
-
-    &:before {
-        content: attr(data-title);
-        display: block;
-        font: inherit;
-        color: getColorYellow();
-        position: absolute;
-        z-index: -1;
-        -webkit-text-stroke: 0.3em getColorPrimary();
+    &:not(._animated) {
+        -webkit-text-stroke: 0.18em getColorBlack();
         paint-order: stroke fill;
+        word-spacing: normal;
+
+        &:before {
+            content: attr(data-title);
+            display: block;
+            font: inherit;
+            color: getColorYellow();
+            position: absolute;
+            z-index: -1;
+            -webkit-text-stroke: 0.3em getColorPrimary();
+            paint-order: stroke fill;
+            z-index: -1;
+        }
+
+        &._yellow {
+            &::before {
+                -webkit-text-stroke: 0.4em getColorYellow();
+            }
+        }
     }
 
-    &._yellow {
+    &._animated {
+        z-index: 1;
+        white-space-collapse: preserve;
+
+        &._yellow {
+            .title_back span::before {
+                -webkit-text-stroke: 0.3em getColorYellow();
+            }
+        }
+    }
+}
+
+.title_main,
+.title_back {
+    span {
+        position: relative;
+        display: inline-block;
+        -webkit-text-stroke: 0.18em getColorBlack();
+        paint-order: stroke fill;
+        word-spacing: normal;
+
+        &:before {
+            content: attr(data-title);
+            display: block;
+            font: inherit;
+            color: getColorYellow();
+            position: absolute;
+            z-index: -1;
+            -webkit-text-stroke: 0.3em getColorPrimary();
+            paint-order: stroke fill;
+            z-index: -1;
+        }
+    }
+
+    :global(.title-span) span {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+.title_main {
+    span {
         &::before {
-            -webkit-text-stroke: 0.4em getColorYellow();
+            opacity: 0;
+        }
+    }
+}
+
+.title_back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: inherit;
+}
+
+@include -screen-sm {
+    .title {
+        &:not(._animated) {
+            &:before {
+                -webkit-text-stroke: 0.4em getColorPrimary();
+            }
+
+            &._yellow {
+                &::before {
+                    -webkit-text-stroke: 0.4em getColorYellow();
+                }
+            }
+        }
+
+        &._animated {
+            &._yellow {
+                .title_back span::before {
+                    -webkit-text-stroke: 0.4em getColorYellow();
+                }
+            }
+        }
+    }
+
+    .title_main,
+    .title_back {
+        span {
+            &:before {
+                -webkit-text-stroke: 0.4em getColorPrimary();
+            }
         }
     }
 }

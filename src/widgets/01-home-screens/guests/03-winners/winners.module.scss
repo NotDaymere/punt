@@ -6,6 +6,8 @@
     height: 432px;
     padding: 50px;
     position: relative;
+    transform: scale(0.4);
+    opacity: 0;
 
     &::before,
     &::after {

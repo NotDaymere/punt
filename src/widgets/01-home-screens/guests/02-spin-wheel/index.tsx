@@ -30,7 +30,7 @@ export const SpinWheel: React.FC = () => {
         ScrollTrigger.create({
             trigger: "#spin-wheel",
             start: "top top",
-            end: "bottom+=100% bottom",
+            end: "bottom+=50% bottom",
             pin: true,
             pinSpacing: true,
         });
@@ -133,59 +133,65 @@ export const SpinWheel: React.FC = () => {
     };
 
     return (
-        <section className={css.spinWheel} id="spin-wheel" ref={rootRef}>
-            <div className={css.spinWheel_figures}>
-                <WheelLightIcon className={css.spinWheel_figures_light} />
-                <p className={clsx(css.spinWheel_figures_text, css._left)}>
-                    <span>Spin</span> the
-                    <br /> Wheel
-                </p>
-                <p className={clsx(css.spinWheel_figures_text, css._right)}>
-                    Win <span>Free</span>
-                    <br /> Spins!
-                </p>
-                <Image.Default
-                    className={css.spinWheel_sc_coin}
-                    src="/img/figures/sc-coin.png"
-                    alt=""
-                />
-                <Image.Default
-                    className={css.spinWheel_sc_coin_sm}
-                    src="/img/figures/sc-coin.png"
-                    alt=""
-                />
-                <Image.Default
-                    className={css.spinWheel_gc_coin}
-                    src="/img/figures/gc-coin.png"
-                    alt=""
-                />
-                <Image.Default
-                    className={css.spinWheel_gc_coin_sm}
-                    src="/img/figures/gc-coin.png"
-                    alt=""
-                />
-                <Image.Default
-                    className={css.spinWheel_chips_right}
-                    src="/img/home/chips_right.png"
-                    alt=""
-                />
-                <Image.Default
-                    className={css.spinWheel_chips_left}
-                    src="/img/home/chips_left.png"
-                    alt=""
-                />
-            </div>
-            <div className={css.spinWheel_wheel_container} id="spin-wheel-transform">
-                <Wheel
-                    ref={imageRef}
-                    className={css.spinWheel_wheel}
-                    disabled={!activeButton}
-                    onClickButton={handleClick}
-                />
-            </div>
-            <div className={css.spinWheel_bonus} id="spin-wheel-bonus">
-                <Title className={css.spinWheel_bonus_title} text="Welcome Bonus" />
-                <Image.Default className={css.spinWheel_bonus_logo} src="/img/logo.png" alt="" />
+        <section className={`${css.spinWheel_section} spin-wheel-section`}>
+            <div className={css.spinWheel} id="spin-wheel" ref={rootRef}>
+                <div className={css.spinWheel_figures}>
+                    <WheelLightIcon className={css.spinWheel_figures_light} />
+                    <p className={clsx(css.spinWheel_figures_text, css._left)}>
+                        <span>Spin</span> the
+                        <br /> Wheel
+                    </p>
+                    <p className={clsx(css.spinWheel_figures_text, css._right)}>
+                        Win <span>Free</span>
+                        <br /> Spins!
+                    </p>
+                    <Image.Default
+                        className={css.spinWheel_sc_coin}
+                        src="/img/figures/sc-coin.png"
+                        alt=""
+                    />
+                    <Image.Default
+                        className={css.spinWheel_sc_coin_sm}
+                        src="/img/figures/sc-coin.png"
+                        alt=""
+                    />
+                    <Image.Default
+                        className={css.spinWheel_gc_coin}
+                        src="/img/figures/gc-coin.png"
+                        alt=""
+                    />
+                    <Image.Default
+                        className={css.spinWheel_gc_coin_sm}
+                        src="/img/figures/gc-coin.png"
+                        alt=""
+                    />
+                    <Image.Default
+                        className={css.spinWheel_chips_right}
+                        src="/img/home/chips_right.png"
+                        alt=""
+                    />
+                    <Image.Default
+                        className={css.spinWheel_chips_left}
+                        src="/img/home/chips_left.png"
+                        alt=""
+                    />
+                </div>
+                <div className={css.spinWheel_wheel_container} id="spin-wheel-transform">
+                    <Wheel
+                        ref={imageRef}
+                        className={css.spinWheel_wheel}
+                        disabled={!activeButton}
+                        onClickButton={handleClick}
+                    />
+                </div>
+                <div className={css.spinWheel_bonus} id="spin-wheel-bonus">
+                    <Title className={css.spinWheel_bonus_title} text="Welcome Bonus" />
+                    <Image.Default
+                        className={css.spinWheel_bonus_logo}
+                        src="/img/logo.png"
+                        alt=""
+                    />
+                </div>
             </div>
         </section>
     );

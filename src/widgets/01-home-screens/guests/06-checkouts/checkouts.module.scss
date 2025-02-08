@@ -7,7 +7,7 @@
 }
 .checkouts_coin_mover {
     mix-blend-mode: screen;
-
+    transform: translateX(10%);
 }
 .checkouts_coin_img {
     width: 261px;
@@ -17,6 +17,90 @@
     left: -20px;
     bottom: 60px;
     width: 800px;
+
+    &._animated {
+        .checkouts_hand_container {
+            transform: translateX(0px) rotate(0deg);
+        }
+        .checkouts_hand_rays {
+            opacity: 1;
+        }
+        .checkouts_hand_card {
+            transform: rotate(22deg) translateX(0px);
+            img {
+                animation: cardRotation infinite 5s linear 1.5s;
+            }
+        }
+    }
+}
+.checkouts_hand_image {
+    width: 100%;
+}
+.checkouts_hand_container {
+    width: 100%;
+    height: 100%;
+    transform-origin: left bottom;
+    transform: translateX(-10%) rotate(26deg);
+    transition: transform 1s ease;
+}
+.checkouts_hand_rays {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.checkouts_hand_display {
+    position: absolute;
+    right: 28.7%;
+    top: 11.3%;
+    border-radius: 10px;
+    background: rgba(#fff, 0.8);
+    width: 22%;
+    height: 54.7%;
+    transform: rotate(34deg);
+    animation: flicker 1.5s linear infinite;
+
+    @keyframes flicker {
+        0%,
+        100% {
+            background: rgba(#fff, 0);
+        }
+        50% {
+            background: rgba(#fff, 0.8);
+        }
+    }
+
+    img {
+        position: absolute;
+        left: 50%;
+        bottom: 20%;
+        transform: translateX(-50%);
+        width: 60%;
+    }
+}
+.checkouts_hand_card {
+    position: absolute;
+    width: 32.54%;
+    top: 22%;
+    right: 6%;
+    transform: rotate(22deg) translateX(40%);
+    transition: transform 1s ease;
+
+    img {
+        width: 100%;
+        transform-origin: 10% 10%;
+
+        @keyframes cardRotation {
+            0% {
+                transform: rotate(0deg) translateX(-10px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(-10px) rotate(-360deg);
+            }
+        }
+    }
 }
 .checkouts_container {
     max-width: 1054px;
@@ -65,6 +149,9 @@
     svg {
         width: 100%;
         fill: #212121;
+        transform-origin: center;
+        transform: scale(0.4);
+        opacity: 0;
     }
 
     &::before {
@@ -75,6 +162,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
+        z-index: 2;
         border-radius: 50%;
         transform: translate(-50%, -50%);
         background: getColorPrimary(0.2);
@@ -83,11 +171,24 @@
 }
 .checkouts_content_title {
     @include setFontHelveticaStd700(40px, 1.2, -0.04em, getColorWhite());
+    white-space-collapse: preserve;
+
+    span {
+        transform: scale(0);
+        opacity: 0;
+        display: inline-block;
+    }
 }
 .checkouts_content_text {
     margin-top: 32px;
     max-width: 271px;
     @include setFontPPMori600(20px, 1.2, normal, getColorWhite());
+
+    span {
+        display: inline-block;
+        transform: translateY(50%);
+        opacity: 0;
+    }
 }
 
 @include -screen-xxxl {
@@ -158,7 +259,6 @@
 }
 @include -screen-xs {
     .checkouts_hand {
-        
         transform: translateX(-12%);
     }
 }

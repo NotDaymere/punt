@@ -1,0 +1,26 @@
+.punt {
+    font-size: inherit;
+    display: flex;
+}
+.punt_letter {
+    height: 1em;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+    &:nth-child(1) { 
+        aspect-ratio: 0.88 / 1; 
+        background-position: 0 bottom;
+    }
+    &:nth-child(2) { 
+        aspect-ratio: 0.75 / 1; 
+        background-position: 41% bottom;
+    }
+    &:nth-child(3) { 
+        aspect-ratio: 0.75 / 1; 
+        background-position: 76% bottom;
+    }
+    &:nth-child(4) { 
+        aspect-ratio: 0.5 / 1; 
+        background-position: 100% bottom;
+    }
+}

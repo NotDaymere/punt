@@ -14,13 +14,6 @@
     transform: translate(-50%, -30%);
     width: 1260px;
     min-width: 1260px;
-    animation: lightRotation 20s linear infinite;
-    
-
-    @keyframes lightRotation {
-        0% { transform: translate(-50%, -30%) rotate(0deg); }
-        100% { transform:translate(-50%, -30%) rotate(360deg); }
-    }
 }
 .featured_games {
     background: red;
@@ -38,15 +31,15 @@
 
     img {
         width: 100%;
+        opacity: 0;
+        transition:
+            transform 1s ease,
+            opacity 500ms ease;
     }
 }
 .featured_content {
-    max-width: 480px;
+    // max-width: 490px;
     width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     position: relative;
 
@@ -64,68 +57,38 @@
         filter: blur(130px);
     }
 }
+.featured_content_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
 .featured_content_title {
     display: flex;
     justify-content: center;
     font-size: 60px;
 }
 .featured_content_text {
+    max-width: 480px;
     margin-top: 36px;
     text-align: center;
 
+    opacity: 0;
+    transform: translateY(20px);
+
     @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
 }
-
-.featured_button_container {
-    margin-top: 62px;
+.featured_btn_box {
+    margin-top: 52px;
     transform: rotate(-4.2deg);
-
-    position: relative;
 }
-
-.featured_button_outlines {
-    outline-offset: 4px;
-    // transform: translateY(5px);
-
-    &,
-    &::after,
-    &::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 100px;
-        outline: 0.62 solid getColorPrimary();
-    }
-
-    &::after,
-    &::before {
-        content: "";
-        display: block;
-    }
-
-    &::after {
-        outline-offset: 10px;
-        opacity: 0.3;
-    }
-
-    &::before {
-        outline-offset: 15px;
-        opacity: 0.1;
-    }
+.featured_btn_animation {
+    transform: scale(0);
 }
-
-.featured_button {
-    > span {
-        @include setFontPPMori600(18px, 1.05, normal, getColorBlack());
-        padding: 2px 32px;
-        height: 44px;
-        background-image: url("/img/home/button-stars.png") !important;
-        background-size: contain !important;
-        background-position: left center !important;
-        background-repeat: no-repeat !important;
-    }
+.featured_btn {
+    font-size: 18px;
 }
 
 @include -screen-xl {

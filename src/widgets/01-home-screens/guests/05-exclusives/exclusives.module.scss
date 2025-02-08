@@ -11,9 +11,13 @@
     z-index: 2;
 }
 .exclusives_logo {
-    width: 2.86em;
-    transform: translateY(0.1em);
+    font-size: inherit;
     pointer-events: none;
+
+    span {
+        opacity: 0;
+        transform: scale(0);
+    }
 }
 .exclusives_title {
     font-size: inherit;
@@ -25,6 +29,8 @@
 .exclusives_sliders {
     display: flex;
     perspective: 1000px;
+    transform: scale(0.4);
+    opacity: 0;
 }
 .exclusives_content {
     max-width: 966px;
@@ -208,14 +214,18 @@
 
 // Controls
 .exclusives_controls {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
     position: absolute;
     left: 100%;
     top: 50%;
     transform: translate(50px, -50%);
+}
+.exclusives_controls_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    transform: translate(100%, 100%);
+    opacity: 0;
 }
 .exclusives_controls_button {
     &:nth-child(1) {
@@ -250,7 +260,8 @@
         inset: 0;
         position: relative;
         transform: translate(0);
-        
+    }
+    .exclusives_controls_inner {
         flex-direction: row;
         justify-content: center;
     }
@@ -288,7 +299,7 @@
                 border-radius: 20px 20px 0 0;
             }
         }
-    
+
         &:last-child {
             .slide {
                 border-radius: 0 0 20px 20px;
