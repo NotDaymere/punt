@@ -11,6 +11,7 @@ import { testimontials } from "widgets/01-home-screens/mock-data";
 import { TestimontialItem } from "entities/testimontial";
 import css from "./testimontials.module.scss";
 import EyeRIcon from "widgets/01-home-screens/_icons/EyeR.icon";
+import { getTimeline, getTitleAnimationOptions } from "shared/animation/utils";
 
 const colors = [
     "black",
@@ -23,20 +24,42 @@ const colors = [
 export const Testimontials: React.FC = () => {
     const [swiperCore, setSwiperCore] = React.useState<SwiperCore>();
     const [activeIndex, setActiveIndex] = React.useState(0);
+    const rootRef = React.useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         ScrollTrigger.create({
-            trigger: "#testimontials",
+            trigger: rootRef.current,
             start: "top 30%",
             once: true,
             onEnter: function() {
                 document.getElementById("testimontials")?.classList.add("_animated");
             }
+        });
+
+        getTimeline(rootRef.current, {
+            start: "top 50%"
         })
-    }, []);
+            .to(
+                ".testi-title .title-span-1 span, .testi-img",
+                getTitleAnimationOptions(),
+                "testi"
+            )
+            .to(
+                ".testi-title .title-span-2 span, .testi-img",
+                getTitleAnimationOptions(),
+                "testi"
+            )
+            .to(".testi-text", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+            }, "testi+=50%")
+    }, {
+        scope: rootRef
+    });
 
     return (
-        <section className={css.testimontials} id="testimontials">
+        <section className={css.testimontials} ref={rootRef} id="testimontials">
             <Image.Default 
                 className={css.testimontials_stars}
                 src="/img/home/testimontials-stars.webp"
@@ -52,31 +75,34 @@ export const Testimontials: React.FC = () => {
                     <div className={css.testimontials_header}>
                         <div className={css.testimontials_header_row}>
                             <Title 
-                                className={css.testimontials_header_title} 
+                                className={`${css.testimontials_header_title} testi-title`} 
                                 text="Check"
+                                animated="manual"
                             />
                             <Image.Default 
-                                className={css.testimontials_header_img} 
+                                className={`${css.testimontials_header_img} testi-img`} 
                                 src="/img/home/testimontials-person-1.png"
                                 alt=""
                             />
                             <Image.Default 
-                                className={css.testimontials_header_img} 
+                                className={`${css.testimontials_header_img} testi-img`} 
                                 src="/img/home/testimontials-person-2.png"
                                 alt=""
                             />
                             <Title 
-                                className={css.testimontials_header_title} 
+                                className={`${css.testimontials_header_title} testi-title`} 
                                 text="out our"
+                                animated="manual"
                             />
                         </div>
                         <Title 
-                            className={css.testimontials_header_title} 
+                            className={`${css.testimontials_header_title} testi-title`} 
                             text="testimonials"
+                            animated="manual"
                         />
                     </div>
-                    <p className={css.testimontials_text}>
-                        Magnify our satisfied customers' triumphs and big wins
+                    <p className={`${css.testimontials_text} testi-text`}>
+                        Magnify our satisfied customers&apos; triumphs and big wins
                     </p>
                     <Swiper
                         className={css.testimontials_swiper}

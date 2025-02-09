@@ -7,6 +7,7 @@ import { BigButton } from "shared/components/@Buttons/BigButton";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
 import css from "./featured.module.scss";
+import clsx from "clsx";
 
 export const Featured: React.FC = () => {
     const rootRef = React.useRef<HTMLDivElement>(null);
@@ -48,7 +49,9 @@ export const Featured: React.FC = () => {
         <section className={css.featured} ref={rootRef} id="featured">
             <div className="container">
                 <div className={css.featured_wrapper}>
-                    <WheelLightIcon className={css.featured_light} />
+                    <WheelLightIcon 
+                        className={clsx(css.featured_light, isAnimated && css._animated)} 
+                    />
                     <div className={css.featured_games}>
                         {featuredGames.map((item, id) => {
                             const offset = id - (featuredGames.length - 1) / 2;

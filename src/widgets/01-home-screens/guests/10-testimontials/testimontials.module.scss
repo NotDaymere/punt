@@ -5,6 +5,7 @@
     &:global(._animated) {
         .testimontials_item {
             transform: translate(0, 0) rotate(0deg) !important;
+            opacity: 1;
         }
     }
 }
@@ -113,7 +114,8 @@
     border: 0.0666em solid #000000;
     outline: 0.08em solid getColorPrimary();
 
-    transform: translateY(0.1em);
+    transform: translateY(0.1em) scale(0);
+    opacity: 0;
 
     + .testimontials_header_img {
         margin-left: -0.2em;
@@ -123,6 +125,9 @@
     margin: 34px auto 0;
     max-width: 348px;
     text-align: center;
+
+    transform: translateY(30px);
+    opacity: 0;
 
     @include setFontPPMori600(18px, 1.1, normal, getColorWhite(0.8));
 }
@@ -167,7 +172,8 @@
 }
 
 .testimontials_item {
-    transition: transform 1s ease;
+    transition: transform 1s ease, opacity 500ms ease;
+    opacity: 0;
 }
 
 .testimontials_controls {

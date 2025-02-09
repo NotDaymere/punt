@@ -11,9 +11,17 @@
     position: absolute;
     left: 50%;
     top: 0;
-    transform: translate(-50%, -30%);
-    width: 1260px;
-    min-width: 1260px;
+    transform: translate(-50%, -30%) scale(0.2);
+    opacity: 0;
+    width: 1000px;
+    min-width: 1000px;
+    transition: 1000ms ease;
+    transition-property: transform, opacity;
+
+    &._animated {
+        transform: translate(-50%, -30%);
+        opacity: 1;
+    }
 }
 .featured_games {
     background: red;

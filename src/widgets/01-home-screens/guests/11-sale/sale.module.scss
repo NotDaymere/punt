@@ -37,13 +37,15 @@
 }
 .sale_title {
     font-size: 60px;
-    max-width: 450px;
+    max-width: 470px;
     text-align: center;
 }
 .sale_text {
     margin-top: 44px;
     text-align: center;
     @include setFontPPMori600(20px, 1.2, normal, getColorWhite());
+
+    opacity: 0;
 
     span {
         font-size: 1.6em;
@@ -56,6 +58,9 @@
     display: flex;
     align-items: center;
     gap: 14px;
+
+    transform: scale(0);
+    opacity: 0;
 }
 .sale_form_input {
     width: 100%;
@@ -78,6 +83,7 @@
     margin-top: 36px;
     @include setFontPPMori600(16px, 1.1, normal, getColorGray());
     text-align: center;
+    opacity: 0;
 }
 .socials {
     margin-top: 36px;
@@ -90,6 +96,8 @@
 
 .socials_item {
     gap: 8px;
+    opacity: 0;
+    transform: scale(0);
 
     > span {
         padding: 0 12px;

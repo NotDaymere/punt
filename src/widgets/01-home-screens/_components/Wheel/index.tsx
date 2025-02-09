@@ -36,21 +36,33 @@ export const Wheel = React.forwardRef<HTMLImageElement, Props>(
                     />
                     <Image.Default
                         className={css.wheel_point}
-                        src="/img/home/wheel/point.png"
+                        src="/img/home/wheel/point.webp"
                         alt=""
                     />
                     <div className={css.wheel_button_container}>
                         <Image.Default
                             className={`${css.wheel_button_arrow} wheel-button-arrow`}
-                            src="/img/home/wheel/arrow.svg"
+                            src="/img/home/wheel/arrow.webp"
                             alt=""
                         />
+                        <div className={`${css.wheel_button_sparks} wheel-button-sparks`}>
+                            <Image.Default 
+                                className={css.wheel_sparks_1}
+                                src="/img/home/wheel/sparks-1.png"
+                                alt=""
+                            />
+                            <Image.Default 
+                                className={css.wheel_sparks_2}
+                                src="/img/home/wheel/sparks-2.png"
+                                alt=""
+                            />
+                        </div>
                         <button 
                             className={css.wheel_button} 
                             onClick={onClickButton}
                             disabled={disabled}
                         >
-                            <Image.Default src="/img/home/wheel/button.png" alt="" />
+                            <Image.Default src="/img/home/wheel/button.webp" alt="" />
                         </button>
                     </div>
                 </div>

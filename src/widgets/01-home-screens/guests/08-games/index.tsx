@@ -1,13 +1,34 @@
 import React from "react";
+import { useGSAP } from "@gsap/react";
+import clsx from "clsx";
+import gsap from "gsap";
 import { GameTemplate } from "widgets/01-home-screens/_components/GameTemplate";
-import { ArrowButton } from "shared/components/@Buttons/ArrowButton";
 import { LiveDealer, NewGame, Slot } from "entities/games";
+import { getTimeline } from "shared/animation/utils";
+import { ArrowButton } from "shared/components/@Buttons/ArrowButton";
 import { Slider } from "shared/components/Slider";
 import css from "./games.module.scss";
 
 export const Games: React.FC = () => {
+    const rootRef = React.useRef<HTMLDivElement>(null);
+
+    useGSAP(
+        () => {
+            const elements = gsap.utils.toArray(".slider-swiper") as HTMLElement[];
+            for (const trigger of elements) {
+                getTimeline(trigger, {
+                    trigger,
+                    onEnter() {
+                        trigger.classList.add(css._animated);
+                    },
+                });
+            }
+        },
+        { scope: rootRef }
+    );
+
     return (
-        <section className={css.games} id="games">
+        <section className={css.games} ref={rootRef} id="games">
             <div className="container">
                 {/* New Games */}
                 <GameTemplate title="New Games" icons={1}>
@@ -18,9 +39,9 @@ export const Games: React.FC = () => {
                             allowTouchMove: false,
                             breakpoints: {
                                 768: {
-                                    spaceBetween: 80
-                                }
-                            }
+                                    spaceBetween: 80,
+                                },
+                            },
                         }}
                         data={[
                             "/img/temp/games-1.jpg",
@@ -31,7 +52,7 @@ export const Games: React.FC = () => {
                             "/img/temp/games-6.jpg",
                         ]}
                         getKey={(item) => item}
-                        renderItem={(item) => <NewGame img={item} />}
+                        renderItem={(item) => <NewGame className={css.newGame} img={item} />}
                         className={css.games_swiper}
                         classNameSlide={css.games_swiper_newGame}
                     >
@@ -44,10 +65,7 @@ export const Games: React.FC = () => {
                                         variant="prev"
                                         onClick={prevSlide}
                                     />
-                                    <ArrowButton  
-                                        disabled={isEnd}
-                                        onClick={nextSlide}
-                                    />
+                                    <ArrowButton disabled={isEnd} onClick={nextSlide} />
                                 </div>
                             </>
                         )}
@@ -62,9 +80,9 @@ export const Games: React.FC = () => {
                             allowTouchMove: false,
                             breakpoints: {
                                 768: {
-                                    spaceBetween: 80
-                                }
-                            }
+                                    spaceBetween: 40,
+                                },
+                            },
                         }}
                         data={[
                             "/img/temp/slot-1.jpg",
@@ -75,7 +93,7 @@ export const Games: React.FC = () => {
                             "/img/temp/slot-6.jpg",
                         ]}
                         getKey={(item) => item}
-                        renderItem={(item) => <Slot img={item} />}
+                        renderItem={(item) => <Slot className={css.games_item} img={item} />}
                         className={css.games_swiper}
                         classNameSlide={css.games_swiper_slot}
                     >
@@ -88,10 +106,7 @@ export const Games: React.FC = () => {
                                         variant="prev"
                                         onClick={prevSlide}
                                     />
-                                    <ArrowButton  
-                                        disabled={isEnd}
-                                        onClick={nextSlide}
-                                    />
+                                    <ArrowButton disabled={isEnd} onClick={nextSlide} />
                                 </div>
                             </>
                         )}
@@ -106,9 +121,9 @@ export const Games: React.FC = () => {
                             allowTouchMove: false,
                             breakpoints: {
                                 768: {
-                                    spaceBetween: 24
-                                }
-                            }
+                                    spaceBetween: 24,
+                                },
+                            },
                         }}
                         data={[
                             "/img/temp/dealer-1.jpg",
@@ -119,7 +134,12 @@ export const Games: React.FC = () => {
                             "/img/temp/dealer-6.jpg",
                         ]}
                         getKey={(item) => item}
-                        renderItem={(item) => <LiveDealer img={item} />}
+                        renderItem={(item) => (
+                            <LiveDealer
+                                className={clsx(css.games_dealer, css.games_item)}
+                                img={item}
+                            />
+                        )}
                         className={css.games_swiper}
                         classNameSlide={css.games_swiper_dealer}
                     >
@@ -132,10 +152,7 @@ export const Games: React.FC = () => {
                                         variant="prev"
                                         onClick={prevSlide}
                                     />
-                                    <ArrowButton  
-                                        disabled={isEnd}
-                                        onClick={nextSlide}
-                                    />
+                                    <ArrowButton disabled={isEnd} onClick={nextSlide} />
                                 </div>
                             </>
                         )}

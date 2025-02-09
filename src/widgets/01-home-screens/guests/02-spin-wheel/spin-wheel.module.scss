@@ -1,5 +1,6 @@
 .spinWheel_section {
     // transform: translateY(50%);
+    opacity: 0;
 }
 
 .spinWheel {
@@ -169,7 +170,8 @@
             opacity: 1;
             visibility: visible;
         }
-        :global(.wheel-button-arrow) {
+        :global(.wheel-button-arrow),
+        :global(.wheel-button-sparks) {
             opacity: 1;
         }
     }

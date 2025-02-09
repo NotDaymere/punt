@@ -80,7 +80,7 @@ export const GameTemplate: React.FC<Props> = ({
                             )}
                         </div>
                     </div>
-                    <div className={css.game_content}>
+                    <div className={`${css.game_content} game-template-content`}>
                         {children}
                     </div>
                 </div>

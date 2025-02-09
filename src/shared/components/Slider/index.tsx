@@ -48,7 +48,7 @@ export function Slider<T>({
     const Component = (
         <Swiper 
             {...options}
-            className={className}
+            className={`${className} slider-swiper`}
             onInit={setSwiperCore}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         >

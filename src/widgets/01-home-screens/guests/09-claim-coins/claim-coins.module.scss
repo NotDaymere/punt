@@ -9,6 +9,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
+
+    transform: scale(0);
 }
 
 .claim_content {
@@ -29,14 +31,17 @@
     right: 10%;
     bottom: 130px;
     z-index: -1;
+    transform: rotate(80deg)
 }
 
 .claim_content_title {
     @include setFontHelveticaStd700(60px, 1, -0.04em, getColorBlack());
 
-    span {
+    > strong {
         position: relative;
         z-index: 1;
+
+        white-space: nowrap;
 
         &::before {
             content: "";
@@ -52,15 +57,27 @@
             background: getColorPrimary();
         }
     }
+
+    :global(.claim-content-segments) {
+        white-space-collapse: preserve;
+        span {
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
 }
 
 .claim_content_text {
     margin-top: 16px;
     @include setFontPPMori600(18px, 1.05, normal, rgba(#141414, 0.8));
+    opacity: 0;
 }
 
 .claim_content_btn {
     margin-top: 32px;
+    opacity: 0;
+    transform: scale(0);
 
     > span {
         min-width: 185px;

@@ -27,10 +27,11 @@ export const Checkouts: React.FC = () => {
         () => {
             gsap.to("#checkouts-title", {
                 scrollTrigger: {
-                    trigger: "#checkouts",
+                    trigger: rootRef.current,
                     start: "top 90%",
                     end: "top+=130% top",
                     scrub: 1,
+                    invalidateOnRefresh: true,
                 },
                 xPercent: -150,
             });
@@ -41,6 +42,7 @@ export const Checkouts: React.FC = () => {
                     start: "top 90%",
                     end: "bottom top",
                     scrub: 2,
+                    invalidateOnRefresh: true,
                 },
                 // xPercent: 100,
                 onUpdate() {

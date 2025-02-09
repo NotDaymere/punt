@@ -18,6 +18,90 @@
     justify-content: center;
     gap: 12px;
 }
+.games_swiper_slot,
+.games_swiper_dealer {
+    overflow: hidden;
+
+    &:nth-child(2) .games_item {
+        transition-delay: 0.1s;
+    }
+    &:nth-child(3) .games_item {
+        transition-delay: 0.2s;
+    }
+    &:nth-child(4) .games_item {
+        transition-delay: 0.3s;
+    }
+    &:nth-child(5) .games_item {
+        transition-delay: 0.4s;
+    }
+    &:nth-child(6) .games_item {
+        transition-delay: 0.5s;
+    }
+}
+.games_item {
+    transform: translate(50%, 110%);
+    transition: transform 800ms ease;
+}
+
+.games_swiper._animated {
+    .games_item {
+        transform: translate(0, 0);
+    }
+    .newGame {
+        transform: scale(1);
+        opacity: 1;
+
+        :global(.newGame-content) {
+            opacity: 1;
+        }
+    }
+}
+
+.games_swiper_newGame {
+    &:nth-child(2) .newGame {
+        transition-delay: 0.1s;
+        :global(.newGame-content) {
+            transition-delay: 350ms;
+        }
+    }
+    &:nth-child(3) .newGame {
+        transition-delay: 0.2s;
+        :global(.newGame-content) {
+            transition-delay: 450ms;
+        }
+    }
+    &:nth-child(4) .newGame {
+        transition-delay: 0.3s;
+        :global(.newGame-content) {
+            transition-delay: 550ms;
+        }
+    }
+    &:nth-child(5) .newGame {
+        transition-delay: 0.4s;
+        :global(.newGame-content) {
+            transition-delay: 650ms;
+        }
+    }
+    &:nth-child(6) .newGame {
+        transition-delay: 0.5s;
+        :global(.newGame-content) {
+            transition-delay: 750ms;
+        }
+    }
+}
+
+.newGame {
+    transform: scale(0);
+    opacity: 0;
+    transition:
+        transform 500ms cubic-bezier(.14,1.34,.49,1.06),
+        opacity 200ms ease;
+
+    :global(.newGame-content) {
+        opacity: 0;
+        transition: opacity 300ms ease 250ms;
+    }
+}
 
 @include -screen-sm {
     .games_swiper_newGame {

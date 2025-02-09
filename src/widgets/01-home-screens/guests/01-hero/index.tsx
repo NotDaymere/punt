@@ -35,30 +35,30 @@ export const Hero: React.FC = () => {
                 duration: 1.5,
                 ease: "back.out(2)",
             }, "heroAnimation+=70%")
-            // .to(
-            //     ".spin-wheel-section", 
-            //     { 
-            //         y: 0, 
-            //         duration: 1
-            //     }, 
-            //     "heroAnimation+=95%"
-            // );
+            .to(
+                ".spin-wheel-section", 
+                { 
+                    opacity: 1, 
+                    duration: 1
+                }, 
+                "heroAnimation+=95%"
+            );
     }, []);
 
-    // React.useEffect(() => {
-    //     if (activeSection && !spinAnimated) {
-    //         const timer = inactivityTimer();
+    React.useEffect(() => {
+        if (activeSection && !spinAnimated) {
+            const timer = inactivityTimer();
 
-    //         timer.start(() => {
-    //             document.getElementById("spin-wheel")?.scrollIntoView({
-    //                 block: "start",
-    //                 behavior: "smooth",
-    //             });
-    //         }, 5000);
+            timer.start(() => {
+                document.getElementById("spin-wheel")?.scrollIntoView({
+                    block: "start",
+                    behavior: "smooth",
+                });
+            }, 5000);
 
-    //         return () => timer.destroy();
-    //     }
-    // }, [activeSection, spinAnimated]);
+            return () => timer.destroy();
+        }
+    }, [activeSection, spinAnimated]);
 
     return (
         <div className={css.hero} id="hero">
