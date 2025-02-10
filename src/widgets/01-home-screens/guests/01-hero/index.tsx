@@ -27,20 +27,48 @@ export const Hero: React.FC = () => {
         gsap.timeline({ defaults: { delay: 0 } })
             .to(".hero-title .title-span-1 span", getTitleAnimationOptions(), "heroAnimation")
             .to(".hero-title .title-span-2 span", getTitleAnimationOptions(), "heroAnimation")
-            .to(".hero-casino .title-span-1 span", getTitleAnimationOptions(), "heroAnimation+=50%")
-            .to(".hero-casino .title-span-2 span", getTitleAnimationOptions(), "heroAnimation+=50%")
-            .to(".hero-btn", {
+            .to(
+                ".hero-star",
+                { opacity: 1, scale: 1, duration: 0.8, stagger: 0.05, ease: "back.out(3)" },
+                "heroAnimation+=30%"
+            )
+            .to(".hero-club", {
                 opacity: 1,
                 scale: 1,
-                duration: 1.5,
-                ease: "back.out(2)",
-            }, "heroAnimation+=70%")
+                rotate: 20,
+                duration: 1,
+                ease: "back.out(3)"
+            }, "heroAnimation+=30%")
+            .to(".hero-hearts", {
+                opacity: 1,
+                scale: 1,
+                rotate: -18,
+                duration: 1,
+                ease: "back.out(4)"
+            }, "heroAnimation+=30%")
+            .to(".hero-square", {
+                opacity: 1,
+                duration: 1,
+                ease: "back.out(4)"
+            }, "heroAnimation+=30%")
+            .to(".hero-casino .title-span-1 span", getTitleAnimationOptions(), "heroAnimation+=50%")
+            .to(".hero-casino .title-span-2 span", getTitleAnimationOptions(), "heroAnimation+=50%")
             .to(
-                ".spin-wheel-section", 
-                { 
-                    opacity: 1, 
-                    duration: 1
-                }, 
+                ".hero-btn",
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1.5,
+                    ease: "back.out(2)",
+                },
+                "heroAnimation+=70%"
+            )
+            .to(
+                ".spin-wheel-section",
+                {
+                    opacity: 1,
+                    duration: 1,
+                },
                 "heroAnimation+=95%"
             );
     }, []);
@@ -65,24 +93,24 @@ export const Hero: React.FC = () => {
             <div className="container">
                 {/* UI / Figures */}
                 <Image.Default
-                    className={css.hero_figure_square}
+                    className={`${css.hero_figure_square} hero-square`}
                     src="/img/figures/square.svg"
                     alt=""
                 />
                 <Image.Default
-                    className={css.hero_figure_clubs}
+                    className={`${css.hero_figure_clubs} hero-club`}
                     src="/img/figures/clubs.svg"
                     alt=""
                 />
                 <Image.Default
-                    className={css.hero_figure_hearts}
+                    className={`${css.hero_figure_hearts} hero-hearts`}
                     src="/img/figures/hearts.svg"
                     alt=""
                 />
-                <StarIcon className={css.hero_figure_star_1} />
-                <StarIcon className={css.hero_figure_star_2} />
-                <StarIcon className={css.hero_figure_star_3} />
-                <StarIcon className={css.hero_figure_star_4} />
+                <StarIcon className={`${css.hero_figure_star_1} hero-star`} />
+                <StarIcon className={`${css.hero_figure_star_2} hero-star`} />
+                <StarIcon className={`${css.hero_figure_star_3} hero-star`} />
+                <StarIcon className={`${css.hero_figure_star_4} hero-star`} />
                 {/* Content */}
                 <div className={css.hero_wrapper}>
                     <div className={css.hero_title_box}>

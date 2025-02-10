@@ -1,7 +1,8 @@
 .sale {
 }
 .sale_wrapper {
-    background: #1D1D1F;
+    // background: #1D1D1F;
+    background: #1F1F21;
     padding: 424px 0 118px;
 
     display: flex;
@@ -18,6 +19,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    // mix-blend-mode: screen;
 }
 .sale_wheel {
     position: absolute;
@@ -25,6 +27,11 @@
     top: 50%;
     transform: translate(-50%, -90%);
     max-width: 505px;
+
+    img {
+        transform: translateY(75%);
+        opacity: 0;
+    }
 }
 .sale_content {
     max-width: 500px;

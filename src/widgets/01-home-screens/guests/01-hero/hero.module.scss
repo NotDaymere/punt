@@ -20,6 +20,7 @@
     top: 0;
     transform: translate(-50%, -50%) rotate(-30deg);
     width: 77px;
+    opacity: 0;
 }
 .hero_figure_star_1,
 .hero_figure_star_2,
@@ -27,6 +28,8 @@
 .hero_figure_star_4 {
     fill: rgba(#e9e9e9, 40%);
     position: absolute;
+    transform: scale(0);
+    opacity: 0;
 }
 .hero_figure_star_1 {
     width: 0.95em;
@@ -42,7 +45,7 @@
     width: 1.2em;
     right: 6%;
     top: 0;
-    transform: translateY(-100%);
+    transform: translateY(-100%) scale(0);
 }
 .hero_figure_star_4 {
     width: 0.95em;
@@ -54,14 +57,16 @@
     left: 8%;
     bottom: 20%;
     width: 5.2em;
-    transform: rotate(20deg);
+    transform: rotate(80deg) scale(0);
+    opacity: 0;
 }
 .hero_figure_hearts {
     position: absolute;
     right: 0;
     top: 30%;
     width: 3.3em;
-    transform: rotate(-18deg);
+    transform: rotate(-120deg) scale(0);
+    opacity: 0;
 }
 .hero_wrapper {
     display: flex;

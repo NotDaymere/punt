@@ -4,7 +4,7 @@ export function getTimeline(trigger: HTMLElement | null, options: ScrollTrigger.
     return gsap.timeline({
         scrollTrigger: {
             trigger,
-            start: "start 75%",
+            start: "start 65%",
             once: true,
             invalidateOnRefresh: true,
             ...options,

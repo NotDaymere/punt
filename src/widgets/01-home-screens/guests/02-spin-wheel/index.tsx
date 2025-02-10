@@ -6,6 +6,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Wheel } from "widgets/01-home-screens/_components/Wheel";
 import WheelLightIcon from "widgets/01-home-screens/_icons/WheelLight";
 import { useHomeActions } from "widgets/01-home-screens/lib";
+import { Chips } from "shared/animation/Chips";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
 import css from "./spin-wheel.module.scss";
@@ -145,36 +146,20 @@ export const SpinWheel: React.FC = () => {
                         Win <span>Free</span>
                         <br /> Spins!
                     </p>
-                    <Image.Default
-                        className={css.spinWheel_sc_coin}
-                        src="/img/figures/sc-coin.png"
-                        alt=""
-                    />
-                    <Image.Default
-                        className={css.spinWheel_sc_coin_sm}
-                        src="/img/figures/sc-coin.png"
-                        alt=""
-                    />
-                    <Image.Default
-                        className={css.spinWheel_gc_coin}
-                        src="/img/figures/gc-coin.png"
-                        alt=""
-                    />
-                    <Image.Default
-                        className={css.spinWheel_gc_coin_sm}
-                        src="/img/figures/gc-coin.png"
-                        alt=""
-                    />
-                    <Image.Default
-                        className={css.spinWheel_chips_right}
-                        src="/img/home/chips_right.png"
-                        alt=""
-                    />
-                    <Image.Default
-                        className={css.spinWheel_chips_left}
-                        src="/img/home/chips_left.png"
-                        alt=""
-                    />
+                    <div className={css.spinWheel_sc_coin}>
+                        <Image.Default src="/img/figures/sc-coin.png" alt="" />
+                    </div>
+                    <div className={css.spinWheel_sc_coin_sm}>
+                        <Image.Default src="/img/figures/sc-coin.png" alt="" />
+                    </div>
+                    <div className={css.spinWheel_gc_coin}>
+                        <Image.Default src="/img/figures/gc-coin.png" alt="" />
+                    </div>
+                    <div className={css.spinWheel_gc_coin_sm}>
+                        <Image.Default src="/img/figures/gc-coin.png" alt="" />
+                    </div>
+                    <Chips className={css.spinWheel_chips_right} count={4} />
+                    <Chips className={css.spinWheel_chips_left} count={3} />
                 </div>
                 <div className={css.spinWheel_wheel_container} id="spin-wheel-transform">
                     <Wheel

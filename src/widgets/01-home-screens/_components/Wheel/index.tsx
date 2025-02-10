@@ -4,6 +4,7 @@ import clsx from "clsx";
 import gsap from "gsap";
 import Image from "shared/ui/Image";
 import css from "./Wheel.module.scss";
+import { WheelButton } from "../WheelButton";
 
 interface Props {
     id?: string;
@@ -20,7 +21,7 @@ export const Wheel = React.forwardRef<HTMLImageElement, Props>(
                     <div className={css.wheel_wheel}>
                         <Image.Default 
                             ref={ref} 
-                            src="/img/home/wheel/wheel-main@2x.webp" 
+                            src="/img/home/wheel/wheel.webp" 
                             alt="" 
                         />
                     </div>
@@ -57,13 +58,11 @@ export const Wheel = React.forwardRef<HTMLImageElement, Props>(
                                 alt=""
                             />
                         </div>
-                        <button 
+                        <WheelButton 
                             className={css.wheel_button} 
                             onClick={onClickButton}
                             disabled={disabled}
-                        >
-                            <Image.Default src="/img/home/wheel/button.webp" alt="" />
-                        </button>
+                        />
                     </div>
                 </div>
                 <div className={css.wheel_leg}>

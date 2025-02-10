@@ -36,7 +36,13 @@ export const Sale: React.FC = () => {
                     duration: 1,
                     stagger: 0.1,
                     ease: "back.out(3)",
-                }, "sale+=120%");
+                }, "sale+=120%")
+                .to(".sale-wheel", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                    ease: "back.out"
+                }, "sale+=80%");
         },
         {
             scope: rootRef,
@@ -48,16 +54,21 @@ export const Sale: React.FC = () => {
             <div className={testimontialCSS.testimontials_container}>
                 <div className={css.sale_wrapper}>
                     {/* <Starfield className={css.sale_starfield} /> */}
-                    <Image.Default
+                    <video
                         className={css.sale_starfield}
-                        src="/img/temp/sale-bg.webp"
-                        alt=""
+                        src="/img/home/media/star-falling.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                     />
-                    <Image.Default
-                        className={css.sale_wheel}
-                        src="/img/home/sale-wheel.webp"
-                        alt=""
-                    />
+                    <div className={css.sale_wheel}>
+                        <Image.Default
+                            className="sale-wheel"
+                            src="/img/home/sale-wheel.webp"
+                            alt=""
+                        />
+                    </div>
                     <div className={`${css.sale_content} sale-content`}>
                         <Title
                             className={`${css.sale_title} sale-title`}

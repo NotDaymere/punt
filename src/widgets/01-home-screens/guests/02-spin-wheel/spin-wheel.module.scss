@@ -119,6 +119,25 @@
     left: 100%;
     transform: translate(100%, 0);
 }
+.spinWheel_sc_coin,
+.spinWheel_gc_coin,
+.spinWheel_sc_coin_sm,
+.spinWheel_gc_coin_sm {
+    z-index: 2;
+    img {
+        animation: rotationCoin 6s linear infinite;
+    }
+}
+.spinWheel_gc_coin img {
+    animation-delay: 3.5s;
+}
+.spinWheel_sc_coin_sm img {
+    animation-direction: reverse;
+}
+.spinWheel_gc_coin_sm img {
+    animation-direction: reverse;
+    animation-delay: 2s;
+}
 .spinWheel_chips_right {
     left: 100%;
     width: 186px;
@@ -131,6 +150,7 @@
     width: 231px;
     bottom: 100px;
     position: absolute;
+    transform: rotate(-90deg) translateX(-25%);
 }
 // Animation
 .spinWheel_wheel_container {

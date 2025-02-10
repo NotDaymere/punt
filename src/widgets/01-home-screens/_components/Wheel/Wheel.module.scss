@@ -45,7 +45,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -58%);
+    transform: translate(-50%, -50%);
     width: 21.9%;
     z-index: 6;
 }
@@ -55,14 +55,14 @@
     z-index: 2;
     transition: filter 500ms ease;
 
-    &:disabled {
-        pointer-events: none;
-        filter: brightness(0.7);
-    }
+    // &:disabled {
+    //     pointer-events: none;
+    //     filter: brightness(0.7);
+    // }
 }
 .wheel_button_sparks {
     position: absolute;
-    width: 62px;
+    width: 57%;
     aspect-ratio: 1 / 0.935;
     right: 0;
     top: 0;
