@@ -25,6 +25,7 @@ export function inactivityTimer() {
         reset();
         document.addEventListener("mousemove", reset);
         document.addEventListener("keypress", reset);
+        document.addEventListener("touchmove", reset);
         window.addEventListener("blur", clear);
         window.addEventListener("focus", reset);
     };
@@ -33,6 +34,7 @@ export function inactivityTimer() {
         clear();
         document.removeEventListener("mousemove", reset);
         document.removeEventListener("keypress", reset);
+        document.removeEventListener("touchmove", reset);
         window.removeEventListener("blur", clear);
         window.removeEventListener("focus", reset);
     };

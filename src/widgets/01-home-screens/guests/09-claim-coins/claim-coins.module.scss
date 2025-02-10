@@ -111,6 +111,10 @@
         font-size: 36px;
         display: flex;
         flex-direction: column;
+
+        br {
+            display: none;
+        }
     }
 }
 
