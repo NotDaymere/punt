@@ -4,9 +4,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { getTitleAnimationOptions } from "shared/animation/utils";
 import { Title } from "shared/components/Title";
+import { useAppStore } from "shared/store";
 import Image from "shared/ui/Image";
 import css from "./preloader.module.scss";
-import { useAppStore } from "shared/store";
 
 const config = {
     counter: {
@@ -43,21 +43,45 @@ export const Preloader: React.FC = () => {
                     config.documentOverflow(false);
                 },
                 onStart() {
-                    if(nodeRef.current) {
+                    if (nodeRef.current) {
                         nodeRef.current.classList.add(css._animated);
                     }
-                }
+                },
             })
-                // Title appear
+                // Punt appear
                 .to(
-                    ".preloaded-content-title .title-span-1 span, .preloader-content-text .title-span-1 span",
-                    getTitleAnimationOptions({ delay: 2 }),
+                    ".preloader-punt",
+                    {
+                        opacity: 1,
+                        duration: 1.5,
+                        scale: () => {
+                            return window.innerWidth < 656 ? 2 : 3
+                        },
+                    },
                     "counter"
                 )
                 .to(
-                    ".preloaded-content-title .title-span-2 span, .preloader-content-text .title-span-2 span",
-                    getTitleAnimationOptions({ delay: 2 }),
-                    "counter"
+                    ".preloader-punt",
+                    {
+                        xPercent: 0,
+                        bottom: 0,
+                        left: () => {
+                            return window.innerWidth > 1124 ? 70 : 36
+                        },
+                        y: () => {
+                            if(window.innerWidth < 656) {
+                                return -160;
+                            }
+                            if(window.innerWidth < 991) {
+                                return -180;
+                            }
+                            const vwvh = (window.innerWidth + window.innerHeight) * 0.01;
+                            return vwvh * -9;
+                        },
+                        scale: 1,
+                        duration: 1,
+                    },
+                    "counter+=3"
                 )
                 // Background appear
                 .to(
@@ -103,6 +127,22 @@ export const Preloader: React.FC = () => {
                         },
                     },
                     "counter"
+                )
+                // Title appear
+                .to(
+                    ".preloaded-content-title .title-span-1 span, .preloader-content-text .title-span-1 span",
+                    getTitleAnimationOptions({ delay: 2 }),
+                    "counter+=2"
+                )
+                .to(
+                    ".preloaded-content-title .title-span-2 span, .preloader-content-text .title-span-2 span",
+                    getTitleAnimationOptions({ delay: 2 }),
+                    "counter+=2"
+                )
+                .to(
+                    ".preloader-content-club",
+                    { opacity: 1, duration: 1 },
+                    "counter+=5"
                 );
         },
         { scope: nodeRef }
@@ -112,8 +152,7 @@ export const Preloader: React.FC = () => {
         <CSSTransition
             classNames={css}
             timeout={800}
-            // in={prealoderActive}
-            in
+            in={prealoderActive}
             unmountOnExit
             mountOnEnter
             nodeRef={nodeRef}
@@ -126,53 +165,55 @@ export const Preloader: React.FC = () => {
                 />
                 <div className={css.preloader_animation}>
                     <div className={css.preloader_animation_card_1}>
-                        <Image.Default 
-                            src="/img/home/preloader/card.webp"
-                            alt=""
-                        />
+                        <Image.Default src="/img/home/preloader/card.webp" alt="" />
                     </div>
                     <div className={css.preloader_animation_card_2}>
-                        <Image.Default 
-                            src="/img/home/preloader/card.webp"
-                            alt=""
-                        />
+                        <Image.Default src="/img/home/preloader/card.webp" alt="" />
                     </div>
                     <div className={css.preloader_animation_chip_black}>
-                        <Image.Default 
-                            src="/img/home/preloader/chip-black.webp"
-                            alt=""
-                        />
+                        <Image.Default src="/img/home/preloader/chip-black.webp" alt="" />
                     </div>
                     <div className={css.preloader_animation_chip_green}>
-                        <Image.Default 
-                            src="/img/home/preloader/chip-green.webp"
+                        <Image.Default src="/img/home/preloader/chip-green.webp" alt="" />
+                    </div>
+                </div>
+                <div className={css.preloader_wrapper}>
+                    <div className={css.preloader_content}>
+                        <Title
+                            className={`${css.preloader_content_title} preloaded-content-title`}
+                            text="America's"
+                            animated="manual"
+                        />
+                        <Title
+                            className={`${css.preloader_content_text} preloader-content-text`}
+                            text="#1 Social Casino"
+                            variant="yellow"
+                            animated="manual"
+                        />
+                        <div className={`${css.preloader_content_club} preloader-content-club`}>
+                            <Image.Default 
+                                src="/img/home/preloader/club.svg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div className={`${css.prealoder_punt} preloader-punt`}>
+                        <Image.Default
+                            src="/img/home/preloader/punt-text.png"
                             alt=""
                         />
                     </div>
-                </div>
-                <div className={css.preloader_content}>
-                    <Title
-                        className={`${css.preloader_content_title} preloaded-content-title`}
-                        text="America's"
-                        animated="manual"
-                    />
-                    <Title
-                        className={`${css.preloader_content_text} preloader-content-text`}
-                        text="#1 Social Casino"
-                        variant="yellow"
-                        animated="manual"
-                    />
-                </div>
-                <div className={css.preloader_progress}>
-                    <div className={css.preloader_progress_counter}>
-                        <p
-                            className={`${css.preloader_progress_counter_wrapper} preloader-progress-counter`}
-                        >
-                            <span ref={counterRef}>0%</span>
-                        </p>
-                    </div>
-                    <div className={css.preloader_progress_wrapper}>
-                        <div className={`${css.preloader_progress_line} preloader-progress-line`} />
+                    <div className={css.preloader_progress}>
+                        <div className={css.preloader_progress_counter}>
+                            <p
+                                className={`${css.preloader_progress_counter_wrapper} preloader-progress-counter`}
+                            >
+                                <span ref={counterRef}>0%</span>
+                            </p>
+                        </div>
+                        <div className={css.preloader_progress_wrapper}>
+                            <div className={`${css.preloader_progress_line} preloader-progress-line`} />
+                        </div>
                     </div>
                 </div>
             </div>

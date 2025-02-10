@@ -16,18 +16,33 @@
         .preloader_animation_chip_black img,
         .preloader_animation_chip_green img {
             transform: translate(0, 0) rotate(0deg);
-            transition: transform 0.5s cubic-bezier(0.28, 1.42, 0.7, 1.07) 2s;
+            transition: transform 0.5s cubic-bezier(0.28, 1.42, 0.7, 1.07) 3.5s;
         }
         .preloader_animation_card_2 img {
             transition-duration: 0.75s;
-            transition-delay: 2.05s;
+            transition-delay: 3.55s;
         }
         .preloader_animation_chip_black img {
-            transition-delay: 2.2s;
+            transition-delay: 3.7s;
         }
         .preloader_animation_chip_green img {
-            transition-delay: 2.3s;
+            transition-delay: 3.8s;
         }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 200px;
+        aspect-ratio: 1 / 0.33;
+        border-radius: 50%;
+        z-index: -1;
+        position: absolute;
+        left: 30%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        background: getColorPrimary();
+        filter: blur(250px);
     }
 }
 .preloader_animation {
@@ -121,6 +136,14 @@
     opacity: 0;
     z-index: 4;
 }
+.preloader_wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
 .preloader_content {
     position: relative;
     z-index: 5;
@@ -133,6 +156,18 @@
     padding-left: 84px;
     font-size: 28px;
 }
+.preloader_content_club {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 100px;
+    transform: translate(15%, 50%);
+    opacity: 0;
+
+    img {
+        animation: rotationCoin 6s linear infinite
+    }
+}
 .preloader_progress_counter_wrapper {
     @include setFontHelveticaStd700(48px, 1, -0.04em, getColorPrimary());
 
@@ -141,10 +176,20 @@
         transform: translateX(-50%);
     }
 }
+.prealoder_punt {
+    max-width: 372px;
+    min-width: 180px;
+    width: 20vw;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    z-index: 5;
+}
 .preloader_progress {
     position: relative;
     z-index: 5;
-    margin-top: auto;
     width: 100%;
 }
 .preloader_progress_wrapper {
@@ -167,6 +212,14 @@
 .exitActive {
     opacity: 0;
     transition: opacity 800ms ease-in;
+}
+
+@include -screen-xxxl {
+    .prealoder_punt {
+        img {
+            // width: 280px;
+        }
+    }
 }
 
 @include -screen-xl {
@@ -196,25 +249,25 @@
     .preloader_animation_card_1 {
         right: 30%;
         top: 32%;
-    
+
         img {
             transform: translate(-250%, 70%) rotate(-30deg);
         }
     }
-    
+
     .preloader_animation_card_2 {
         right: 20%;
         top: 48%;
-    
+
         img {
             transform: translateY(-350%) rotate(100deg);
         }
     }
-    
+
     .preloader_animation_chip_black {
         right: 12%;
         top: 44%;
-    
+
         img {
             transform: translateY(-500%);
         }
@@ -223,7 +276,7 @@
         right: 0%;
         top: 40%;
         transform: translate(16%, -10%);
-    
+
         img {
             transform: translateY(-500%);
         }
@@ -241,5 +294,8 @@
         margin-top: 2px;
         font-size: 20px;
         padding-left: 40px;
+    }
+    .preloader_content_club {
+        width: 60px;
     }
 }
