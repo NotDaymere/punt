@@ -1,6 +1,7 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import { Preloader } from "widgets/preloader";
 import clsx from "clsx";
 import { getCoreConfig } from "shared/config/core.config";
 import css from "./main-layout.module.scss";
@@ -111,6 +112,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                         crossOrigin=""
                     />
                 </Head>
+                <Preloader />
                 {children}
             </div>
         </div>

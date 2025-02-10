@@ -70,6 +70,10 @@ body {
     }
 }
 
+html.hidden {
+    overflow: hidden !important;
+}
+
 @include screen-lg {
     .container {
         padding: 0 $padding-xl;

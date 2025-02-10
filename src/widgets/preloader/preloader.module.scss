@@ -1,0 +1,245 @@
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: #121411;
+    z-index: 200;
+    padding: 150px 70px 75px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &._animated {
+        .preloader_animation_card_1 img,
+        .preloader_animation_card_2 img,
+        .preloader_animation_chip_black img,
+        .preloader_animation_chip_green img {
+            transform: translate(0, 0) rotate(0deg);
+            transition: transform 0.5s cubic-bezier(0.28, 1.42, 0.7, 1.07) 2s;
+        }
+        .preloader_animation_card_2 img {
+            transition-duration: 0.75s;
+            transition-delay: 2.05s;
+        }
+        .preloader_animation_chip_black img {
+            transition-delay: 2.2s;
+        }
+        .preloader_animation_chip_green img {
+            transition-delay: 2.3s;
+        }
+    }
+}
+.preloader_animation {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        background: #121410;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+        clip-path: polygon(0 0, 90% 0, 0 65%, 0 0);
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #121410;
+        opacity: 0.7;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+        clip-path: polygon(100% 15%, 100% 100%, 65% 100%, 100% 15%);
+    }
+}
+.preloader_animation_card_1,
+.preloader_animation_card_2 {
+    width: calc((1vw + 1vh) * 12);
+    position: absolute;
+}
+
+.preloader_animation_card_1 {
+    right: 24%;
+    top: 0;
+    transform: translateY(-45%) rotate(105deg) skewY(10deg);
+
+    img {
+        transform: translate(-60%, 50%) rotate(-30deg);
+    }
+}
+
+.preloader_animation_card_2 {
+    position: absolute;
+    right: 18%;
+    top: 26%;
+
+    img {
+        transform: translateY(-200%) rotate(100deg);
+    }
+}
+
+.preloader_animation_chip_black {
+    width: calc((1vw + 1vh) * 8.5);
+    position: absolute;
+    right: 14%;
+    top: 16%;
+
+    img {
+        transform: translateY(-220%);
+    }
+}
+.preloader_animation_chip_green {
+    width: calc((1vw + 1vh) * 8.2);
+    position: absolute;
+    right: 5.5%;
+    top: 5.5%;
+
+    img {
+        transform: translateY(-220%);
+    }
+}
+
+.preloader_image {
+    position: absolute;
+    width: 805px;
+    left: 60px;
+    top: 20px;
+    opacity: 0;
+    z-index: 4;
+}
+.preloader_content {
+    position: relative;
+    z-index: 5;
+}
+.preloader_content_title {
+    font-size: 48px;
+}
+.preloader_content_text {
+    margin-top: 8px;
+    padding-left: 84px;
+    font-size: 28px;
+}
+.preloader_progress_counter_wrapper {
+    @include setFontHelveticaStd700(48px, 1, -0.04em, getColorPrimary());
+
+    span {
+        display: inline-block;
+        transform: translateX(-50%);
+    }
+}
+.preloader_progress {
+    position: relative;
+    z-index: 5;
+    margin-top: auto;
+    width: 100%;
+}
+.preloader_progress_wrapper {
+    margin-top: 24px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.preloader_progress_line {
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(to right, #dde1d4, #e4fcb1);
+    box-shadow: 0 4px 0 0 #525b3f;
+    transform-origin: center left;
+    transform: scaleX(0);
+}
+
+.exit {
+    opacity: 1;
+}
+.exitActive {
+    opacity: 0;
+    transition: opacity 800ms ease-in;
+}
+
+@include -screen-xl {
+    .preloader {
+        padding: 100px 36px 40px;
+    }
+    .preloader_progress_counter_wrapper {
+        font-size: 36px;
+
+        span {
+            transform: translateX(-60%);
+        }
+    }
+}
+
+@include -screen-lg {
+    .preloader_animation {
+        &::before {
+            clip-path: polygon(0 0, 100% 0%, 100% 30%, 0 50%);
+        }
+
+        &::after {
+            clip-path: polygon(100% 55%, 100% 100%, 50% 100%, 100% 55%);
+        }
+    }
+
+    .preloader_animation_card_1 {
+        right: 30%;
+        top: 32%;
+    
+        img {
+            transform: translate(-250%, 70%) rotate(-30deg);
+        }
+    }
+    
+    .preloader_animation_card_2 {
+        right: 20%;
+        top: 48%;
+    
+        img {
+            transform: translateY(-350%) rotate(100deg);
+        }
+    }
+    
+    .preloader_animation_chip_black {
+        right: 12%;
+        top: 44%;
+    
+        img {
+            transform: translateY(-500%);
+        }
+    }
+    .preloader_animation_chip_green {
+        right: 0%;
+        top: 40%;
+        transform: translate(16%, -10%);
+    
+        img {
+            transform: translateY(-500%);
+        }
+    }
+}
+
+@include -screen-sm {
+    .preloader {
+        padding-top: 56px;
+    }
+    .preloader_content_title {
+        font-size: 32px;
+    }
+    .preloader_content_text {
+        margin-top: 2px;
+        font-size: 20px;
+        padding-left: 40px;
+    }
+}
