@@ -36,19 +36,20 @@ export const RealWins: React.FC = () => {
             // Club and title animation
             getTimeline(rootRef.current, {
                 start: "start 60%",
-            }).to(
-                ".real-wins-club",
-                {
-                    duration: 1,
-                    opacity: 1,
-                    rotate: 0,
-                    scale: 1,
-                },
-                0
-            )
-            
-            .to(".title-span-1 span", getTitleAnimationOptions(), 0)
-            .to(".title-span-2 span", getTitleAnimationOptions(), 0)
+            })
+                .to(
+                    ".real-wins-club",
+                    {
+                        duration: 1,
+                        opacity: 1,
+                        rotate: 0,
+                        scale: 1,
+                    },
+                    0
+                )
+
+                .to(".title-span-1 span", getTitleAnimationOptions(), 0)
+                .to(".title-span-2 span", getTitleAnimationOptions(), 0);
         },
         { scope: rootRef }
     );
@@ -59,31 +60,31 @@ export const RealWins: React.FC = () => {
                 <div className={css.wins_back_svg}>
                     <WinClubsIcon className="real-wins-club" />
                 </div>
-                <Title
-                    text="Real People."
-                    className={css.wins_back_title}
-                    animated="manual"
-                />
-                <Title
-                    text="Real Wins"
-                    className={css.wins_back_title}
-                    animated="manual"
-                />
+                <Title text="Real People." className={css.wins_back_title} animated="manual" />
+                <Title text="Real Wins" className={css.wins_back_title} animated="manual" />
             </div>
             <div className="container">
                 <div className={css.wins_content}>
                     <div className={css.wins_cards}>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
-                            <Image.Default src="/img/temp/videos/v-1.jpg" alt="" />
+                            <div className={css.wins_cards_video}>
+                                <Image.Default src="/img/temp/videos/v-1.jpg" alt="" />
+                            </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
-                            <Image.Default src="/img/temp/videos/v-2.jpg" alt="" />
+                            <div className={css.wins_cards_video}>
+                                <Image.Default src="/img/temp/videos/v-2.jpg" alt="" />
+                            </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
-                            <Image.Default src="/img/temp/videos/v-3.jpg" alt="" />
+                            <div className={css.wins_cards_video}>
+                                <Image.Default src="/img/temp/videos/v-3.jpg" alt="" />
+                            </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
-                            <Image.Default src="/img/temp/videos/v-4.jpg" alt="" />
+                            <div className={css.wins_cards_video}>
+                                <Image.Default src="/img/temp/videos/v-4.jpg" alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
