@@ -103,6 +103,22 @@
     transform: translateY(-25%) rotate(-30deg);
 }
 
+.game_box_clubs,
+.game_box_blueChip,
+.game_box_clubsRight {
+    img {
+        animation: rotationCoin 5s ease-in-out infinite;
+    }
+}
+
+.game_box_hearts,
+.game_box_greenChip,
+.game_box_square {
+    img {
+        animation: rotationCoin 8s linear infinite reverse -2s
+    }
+}
+
 @include -screen-xxxl {
     .game_title {
         font-size: 52px;
