@@ -202,9 +202,9 @@ export const exclusives = {
         ["Chosen", "One"],
     ],
     right: [
-        "/img/temp/e-1.jpg",
-        "/img/temp/e-2.jpg",
-        "/img/temp/e-3.jpg"
+        "/media/clovercross@compressed.mp4",
+        "/media/latergator@compressed.mp4",
+        "/media/chosenone@compressed.mp4"
     ]
 }
 

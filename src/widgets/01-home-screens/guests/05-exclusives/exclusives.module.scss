@@ -1,3 +1,8 @@
+@keyframes starRotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .exclusives_wrapper {
     padding: 55px 0 130px;
 }
@@ -135,6 +140,31 @@
     top: 50%;
     transform: translate(-60%, -50%);
     width: 60%;
+    aspect-ratio: 1 / 0.937;
+
+    img {
+        &:first-child {
+            width: 7%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            animation: starRotation 2s linear infinite reverse;
+        }
+        &:nth-child(2) {
+            width: 7%;
+            position: absolute;
+            left: 16.35%;
+            bottom: 0;
+            animation: starRotation 3s linear infinite ;
+        }
+        &:nth-child(3) {
+            width: 11.3%;
+            position: absolute;
+            left: 0%;
+            bottom: 11.7;
+            animation: starRotation 8s linear infinite reverse;
+        }
+    }
 }
 .slide_text {
     @include setFontHelveticaStd700(48px, 1.1, -0.04em, getColorWhite());
@@ -196,13 +226,49 @@
     width: 100%;
     height: 100%;
     border-radius: inherit;
+    object-fit: cover;
+
+    &:hover + .slide_image_cursor {
+        opacity: 0;
+    }
+}
+.slide_image_cursor {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 51px;
+    transform: translate(0, 70%);
+    transition: opacity 500ms ease;
+
+    img {
+        animation: rotationCoin 5s linear infinite;
+    }
 }
 .slide_image_stars {
     width: 63px;
+    aspect-ratio: 1 / 0.9;
     position: absolute;
     right: 18px;
     bottom: 100%;
     transform: translateY(-20px);
+
+    img {
+        position: absolute;
+
+        &:first-child {
+            left: 0;
+            top: 0;
+            width: 55.5555%;
+            animation: starRotation 3s linear infinite;
+        }
+
+        &:last-child {
+            right: 0;
+            bottom: 0;
+            width: 35%;
+            animation: starRotation 4s linear infinite reverse
+        }
+    }
 }
 .slide_image_join {
     position: absolute;
@@ -210,6 +276,7 @@
     left: 0;
     top: 0;
     transform: translate(-30%, -50%);
+    pointer-events: none;
 }
 
 // Controls

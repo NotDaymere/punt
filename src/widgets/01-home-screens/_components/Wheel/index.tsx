@@ -18,10 +18,26 @@ export const Wheel = React.forwardRef<HTMLImageElement, Props>(
         return (
             <div className={clsx(css.wheel, className)} id={id}>
                 <div className={css.wheel_circle}>
-                    <div className={css.wheel_wheel}>
+                    <div 
+                        className={css.wheel_wheel} 
+                        ref={ref}
+                    >
                         <Image.Default 
-                            ref={ref} 
-                            src="/img/home/wheel/wheel.webp" 
+                            className={css.wheel_wheel_main}
+                            src="/img/home/wheel/wheel-border.webp" 
+                            alt="" 
+                        />
+                        <video 
+                            className={css.wheel_wheel_video}
+                            src="/media/wheel-games@compressed.mp4"
+                            playsInline
+                            autoPlay
+                            muted 
+                            loop
+                        />
+                        <Image.Default 
+                            className={css.wheel_wheel_ribs}
+                            src="/img/home/wheel/ribs.webp" 
                             alt="" 
                         />
                     </div>

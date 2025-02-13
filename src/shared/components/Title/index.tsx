@@ -31,39 +31,39 @@ const TitleDef = React.forwardRef<gsap.core.Timeline, Props>(({
     useGSAP(
         () => {
             if (animated === true) {
-                // const animationOptions = {
-                //     ...getTitleAnimationOptions(),
-                //     delay: animationDelay,
-                // };
+                const animationOptions = {
+                    ...getTitleAnimationOptions(),
+                    delay: animationDelay,
+                };
 
-                // const timeline = gsap
-                //     .timeline({
-                //         scrollTrigger: {
-                //             trigger: ref.current,
-                //             start: "top 70%",
-                //             invalidateOnRefresh: true,
-                //             once: true,
-                //         },
-                //     })
-                //     .to(
-                //         ".title-span-1 span", 
-                //         animationOptions, 
-                //         animationLabel
-                //     )
-                //     .to(
-                //         ".title-span-2 span", 
-                //         animationOptions, 
-                //         animationLabel
-                //     );
+                const timeline = gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ref.current,
+                            start: "top 70%",
+                            invalidateOnRefresh: true,
+                            once: true,
+                        },
+                    })
+                    .to(
+                        ".title-span-1 span", 
+                        animationOptions, 
+                        animationLabel
+                    )
+                    .to(
+                        ".title-span-2 span", 
+                        animationOptions, 
+                        animationLabel
+                    );
 
-                // if(outRef) {
-                //     if(typeof outRef === "object") {
-                //         outRef.current = timeline;
-                //     }
-                //     if(typeof outRef === "function") {
-                //         outRef(timeline);
-                //     }
-                // }
+                if(outRef) {
+                    if(typeof outRef === "object") {
+                        outRef.current = timeline;
+                    }
+                    if(typeof outRef === "function") {
+                        outRef(timeline);
+                    }
+                }
                 
             }
         },
@@ -73,13 +73,10 @@ const TitleDef = React.forwardRef<gsap.core.Timeline, Props>(({
     return (
         <Tag
             ref={ref}
-            // className={clsx(css.title, css["_" + variant], className, animated && css._animated)}
-            className={clsx(css.title, css["_" + variant], className)}
-            // data-title={animated ? undefined : text}
-            data-title={text}
+            className={clsx(css.title, css["_" + variant], className, animated && css._animated)}
+            data-title={animated ? undefined : text}
         >
-            {text}
-            {/* {!animated && text}
+            {!animated && text}
             {animated && (
                 <>
                     <span className={css.title_back}>
@@ -99,7 +96,7 @@ const TitleDef = React.forwardRef<gsap.core.Timeline, Props>(({
                         />
                     </span>
                 </>
-            )} */}
+            )}
         </Tag>
     );
 });

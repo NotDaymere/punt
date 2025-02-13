@@ -42,7 +42,7 @@ const Home = () => {
                                 <Guests.Hero />
                                 <Guests.SpinWheel />
                                 <Guests.Winners />
-                                <Guests.RealWins />
+                                {/* <Guests.RealWins /> */}
                                 <Guests.Exclusives />
                                 <Guests.Checkouts />
                                 <Guests.Featured />

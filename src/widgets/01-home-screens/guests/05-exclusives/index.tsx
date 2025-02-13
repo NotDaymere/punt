@@ -14,6 +14,7 @@ import LightIcon from "shared/icons/Light.icon";
 import SpadeIcon from "shared/icons/Spade.icon";
 import Image from "shared/ui/Image";
 import css from "./exclusives.module.scss";
+import { VideoHover } from "shared/components/VideoHover";
 
 export const Exclusives: React.FC = () => {
     const rootRef = React.useRef<HTMLDivElement>(null);
@@ -103,7 +104,10 @@ export const Exclusives: React.FC = () => {
                                     direction={screenWidth > 768 ? "vertical" : "horizontal"}
                                 >
                                     {exclusives.left.map((item) => (
-                                        <CubeSlide className={css.slide} key={item.join()}>
+                                        <CubeSlide 
+                                            className={css.slide}     
+                                            key={item.join()}
+                                        >
                                             <ul className={css.slide_marquee}>
                                                 <li className={css.slide_marquee_item}>
                                                     Punt Exclusives <SpadeIcon />
@@ -119,12 +123,27 @@ export const Exclusives: React.FC = () => {
                                                 </li>
                                             </ul>
                                             <LightIcon className={css.slide_light} />
-                                            <Image.Default
+                                            <div className={css.slide_stars}>
+                                                <Image.Default 
+                                                    src="/img/home/exc-star.png"
+                                                    alt=""
+                                                />
+                                                <Image.Default 
+                                                    src="/img/home/exc-star.png"
+                                                    alt=""
+                                                />
+                                                <Image.Default 
+                                                    src="/img/home/exc-star-orange.png"
+                                                    alt=""
+                                                />
+
+                                            </div>
+                                            {/* <Image.Default
                                                 className={css.slide_stars}
                                                 src="/img/home/cube-stars.png"
                                                 loading="lazy"
                                                 alt=""
-                                            />
+                                            /> */}
                                             <p className={css.slide_text}>
                                                 {item[0]} {item[1] && <span>{item[1]}</span>}
                                             </p>
@@ -144,18 +163,26 @@ export const Exclusives: React.FC = () => {
                                     {exclusives.right.map((item) => (
                                         <CubeSlide className={clsx(css.slide, css._bg)} key={item}>
                                             <div className={css.slide_image}>
-                                                <Image.Default
-                                                    className={css.slide_image_stars}
-                                                    src="/img/home/exclusives-stars.png"
-                                                    loading="lazy"
-                                                    alt=""
-                                                />
-                                                <Image.Default
-                                                    className={css.slide_image_game}
+                                                <div className={css.slide_image_stars}>
+                                                    <Image.Default 
+                                                        src="/img/home/exc-star.png"
+                                                        alt=""
+                                                    />
+                                                    <Image.Default 
+                                                        src="/img/home/exc-star.png"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <VideoHover 
                                                     src={item}
-                                                    loading="lazy"
-                                                    alt=""
+                                                    className={css.slide_image_game}
                                                 />
+                                                <div className={css.slide_image_cursor}>
+                                                    <Image.Default
+                                                        src="/img/home/exc-cursor.png"
+                                                        alt=""
+                                                    />
+                                                </div>
                                                 <Image.Default
                                                     className={css.slide_image_join}
                                                     src="/img/figures/join-game.svg"

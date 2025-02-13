@@ -91,6 +91,8 @@ export class CubeSliderCore {
                   ? 0
                   : slideIndex;
 
+        this._onSlideChange(this);
+
         this.update();
     }
 

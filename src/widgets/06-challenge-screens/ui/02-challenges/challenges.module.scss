@@ -52,6 +52,7 @@
     width: 100%;
     max-width: 100%;
     overflow: hidden;
+    padding-top: 4px;
 
     @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
 
