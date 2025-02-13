@@ -52,17 +52,6 @@ export const Preloader: React.FC = () => {
                 .to(
                     ".preloader-punt",
                     {
-                        opacity: 1,
-                        duration: 1.5,
-                        scale: () => {
-                            return window.innerWidth < 656 ? 2 : 3
-                        },
-                    },
-                    "counter"
-                )
-                .to(
-                    ".preloader-punt",
-                    {
                         xPercent: 0,
                         bottom: 0,
                         left: () => {
@@ -79,9 +68,9 @@ export const Preloader: React.FC = () => {
                             return vwvh * -9;
                         },
                         scale: 1,
-                        duration: 1,
+                        duration: 0.6,
                     },
-                    "counter+=3"
+                    "counter+=4.5"
                 )
                 // Background appear
                 .to(
@@ -197,11 +186,31 @@ export const Preloader: React.FC = () => {
                             />
                         </div>
                     </div>
-                    <div className={`${css.prealoder_punt} preloader-punt`}>
-                        <Image.Default
+                    <div className={`${css.prealoder_punt}  preloader-punt`}>
+                        <p className={`${css.prealoder_punt_text}`}>
+                            <span>
+                                <span 
+                                    className={css.preloader_punt_firstLetter}
+                                />
+                                <Image.Default 
+                                    className={css.prealoder_punt_shoe}
+                                    src="/img/home/punt/shoe.webp"
+                                    alt=""
+                                />
+                                <Image.Default 
+                                    className={css.prealoder_punt_dice}
+                                    src="/img/home/punt/dice.webp"
+                                    alt=""
+                                />
+                            </span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </p>
+                        {/* <Image.Default
                             src="/img/home/preloader/punt-text.png"
                             alt=""
-                        />
+                        /> */}
                     </div>
                     <div className={css.preloader_progress}>
                         <div className={css.preloader_progress_counter}>

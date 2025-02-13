@@ -16,17 +16,39 @@
         .preloader_animation_chip_black img,
         .preloader_animation_chip_green img {
             transform: translate(0, 0) rotate(0deg);
-            transition: transform 0.5s cubic-bezier(0.28, 1.42, 0.7, 1.07) 3.5s;
+            transition: transform 0.5s cubic-bezier(0.28, 1.42, 0.7, 1.07) 4.2s;
         }
         .preloader_animation_card_2 img {
             transition-duration: 0.75s;
-            transition-delay: 3.55s;
+            transition-delay: 4.25s;
         }
         .preloader_animation_chip_black img {
-            transition-delay: 3.7s;
+            transition-delay: 4.4s;
         }
         .preloader_animation_chip_green img {
-            transition-delay: 3.8s;
+            transition-delay: 4.5s;
+        }
+
+        .preloader_punt_firstLetter {
+            animation: letterOne 1.4s ease forwards 1s;
+        }
+        .prealoder_punt_shoe {
+            animation: foot 1.4s ease forwards 1s;
+        }
+        .prealoder_punt_dice {
+            animation: dice 1.4s ease forwards 1s;
+        }
+        .prealoder_punt_text > span {
+            &:nth-child(1) {
+                transform: translateX(0);
+            }
+            &:nth-child(2) {
+                transform: translateX(0%) scale(1) rotate(0deg);
+            }
+            &:nth-child(3),
+            &:nth-child(4) {
+                transform: scale(1) rotate(0deg);
+            }
         }
     }
 
@@ -165,7 +187,7 @@
     opacity: 0;
 
     img {
-        animation: rotationCoin 6s linear infinite
+        animation: rotationCoin 6s linear infinite;
     }
 }
 .preloader_progress_counter_wrapper {
@@ -183,10 +205,126 @@
     position: absolute;
     left: 50%;
     bottom: 50%;
-    transform: translate(-50%, 50%);
-    opacity: 0;
+    transform: translate(-50%, 50%) scale(3);
     z-index: 5;
+
+    font-size: 16px;
 }
+.prealoder_punt_text {
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+    aspect-ratio: 1 / 0.3135;
+
+    display: flex;
+
+    $duration: 4s;
+
+    > span {
+        height: 100%;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-image: url("/img/home/punt/logo.webp");
+        position: relative;
+
+        &:nth-child(1) {
+            aspect-ratio: 0.94 / 1;
+            background: none !important;
+            transform: translateX(130%);
+            transition: transform 0.55s ease 2.4s;
+        }
+        &:nth-child(2) {
+            aspect-ratio: 0.85 / 1;
+            background-position: 40% bottom;
+            transform: translateX(70%) scale(0);
+            animation: letterTwo $duration linear forwards;
+            transform-origin: right center;
+            transition: transform 0.6s ease 2.4s;
+        }
+
+        &:nth-child(3) {
+            aspect-ratio: 0.82 / 1;
+            background-position: 75% bottom;
+            transform: scale(0) rotate(-150deg);
+            transition: transform 0.5s ease 2.5s;
+        }
+        &:nth-child(4) {
+            aspect-ratio: 0.58 / 1;
+            background-position: 100% bottom;
+            transform: scale(0) rotate(-150deg);
+            transition: transform 0.5s ease 2.6s;
+        }
+    }
+}
+.preloader_punt_firstLetter {
+    background-position: left bottom;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url("/img/home/punt/logo.webp");
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: scale(0);
+
+    @keyframes letterOne {
+        0%,
+        15% {
+            transform: scale(0);
+        }
+        45%,
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+.prealoder_punt_shoe {
+    position: absolute;
+    left: -12%;
+    top: -3%;
+    width: 50%;
+    transform: translateX(-18vw) rotate(30deg);
+
+    @keyframes foot {
+        0% {
+            transform: translateX(-18vw) rotate(30deg);
+        }
+        40% {
+            transform: translateX(0) rotate(30deg);
+        }
+        55% {
+            transform: translateX(0) rotate(-30deg);
+        }
+        70%,
+        100% {
+            transform: translateX(0) rotate(0deg);
+        }
+    }
+}
+.prealoder_punt_dice {
+    width: 40%;
+    position: absolute;
+    left: 28%;
+    top: 18%;
+    transform: translateY(-50vh);
+
+    @keyframes dice {
+        0%,
+        15% {
+            transform: translateY(-30vh);
+        }
+        52% {
+            transform: translateY(70%);
+        }
+        70% {
+            transform: translate(30%, -100%);
+        }
+        80%,
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+}
+// End animation
 .preloader_progress {
     position: relative;
     z-index: 5;
@@ -297,5 +435,8 @@
     }
     .preloader_content_club {
         width: 60px;
+    }
+    .prealoder_punt {
+        transform: translate(-50%, 50%) scale(2);
     }
 }
