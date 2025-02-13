@@ -38,7 +38,6 @@ const CubeSlider: React.FC<Props> = ({
             const controller = new CubeSliderCore(wrapperRef.current, {
                 onSlideChange(core) {
                     setActiveIndex(core.activeIndex);
-                    console.log(core.activeIndex)
                 },
                 direction,
             });
@@ -55,19 +54,20 @@ const CubeSlider: React.FC<Props> = ({
         }
     });
 
+    const renderChildrens = childrens.length < 4 ? [...childrens, ...childrens] : childrens;
+
     return (
         <div className={clsx(css.slider, className)} ref={wrapperRef}>
-            {React.Children.map(childrens, (child: any, index) => {
+            {React.Children.map(renderChildrens, (child: any, index) => {
+                console.log(activeIndex, index)
                 return React.cloneElement(child, {
                     className: clsx(
                         child.props.className,
                         index === activeIndex && [classNameActive],
-                        index + 1 === activeIndex && [classNamePrev],
-                        index - 1 === activeIndex && [classNameNext]
                     ),
+                    index
                 })
             })}
-            {childrens.length < 4 && childrens}
         </div>
     );
 };

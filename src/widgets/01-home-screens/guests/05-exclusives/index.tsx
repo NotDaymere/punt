@@ -9,12 +9,13 @@ import { CubeSlide, CubeSlider } from "shared/components/CubeSlider";
 import { CubeSliderCore } from "shared/components/CubeSlider/lib/CubeSliderCore";
 import { PuntImageText } from "shared/components/PuntImageText";
 import { Title } from "shared/components/Title";
+import { VideoHover } from "shared/components/VideoHover";
 import { useViewport } from "shared/hooks/use-viewport";
 import LightIcon from "shared/icons/Light.icon";
 import SpadeIcon from "shared/icons/Spade.icon";
 import Image from "shared/ui/Image";
+import { executeOnReadyPage } from "shared/utils/browser";
 import css from "./exclusives.module.scss";
-import { VideoHover } from "shared/components/VideoHover";
 
 export const Exclusives: React.FC = () => {
     const rootRef = React.useRef<HTMLDivElement>(null);
@@ -23,6 +24,26 @@ export const Exclusives: React.FC = () => {
     const cubeControllerDown = React.useRef<CubeSliderCore>(null);
     const { screenWidth } = useViewport(1000);
 
+    const toggleVideo = () => {
+        if (window.innerWidth > 1024) {
+            return;
+        }
+        const els = Array.from(document.querySelectorAll(`.${css.slide}`));
+
+        for (const item of els) {
+            const video = item.querySelector("video");
+
+            if (video) {
+                if (item.classList.contains("cube-active-slide")) {
+                    console.log(video);
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        }
+    };
+
     const handlePrev = () => {
         if (cubeControllerUp.current) {
             cubeControllerUp.current.slidePrev();
@@ -30,6 +51,8 @@ export const Exclusives: React.FC = () => {
         if (cubeControllerDown.current) {
             cubeControllerDown.current.slideNext();
         }
+
+        setTimeout(toggleVideo, 100);
     };
 
     const handleNext = () => {
@@ -39,6 +62,8 @@ export const Exclusives: React.FC = () => {
         if (cubeControllerDown.current) {
             cubeControllerDown.current.slidePrev();
         }
+
+        setTimeout(toggleVideo, 100);
     };
 
     useGSAP(
@@ -49,7 +74,7 @@ export const Exclusives: React.FC = () => {
                 scale: 1,
                 opacity: 1,
                 stagger: 0.05,
-            }
+            };
             getTimeline(rootRef.current)
                 .to(
                     ".exclusives-sliders, .exclusives-controls",
@@ -62,11 +87,7 @@ export const Exclusives: React.FC = () => {
                     },
                     0
                 )
-                .to(
-                    ".exclusives-logo span, .title-span-1 span",
-                    textAnimation,
-                    0
-                )
+                .to(".exclusives-logo span, .title-span-1 span", textAnimation, 0)
                 .to(
                     ".title-span-2 span",
                     {
@@ -74,10 +95,15 @@ export const Exclusives: React.FC = () => {
                         delay: 0.2,
                     },
                     0
-                )
+                );
         },
         { scope: rootRef }
     );
+
+    React.useEffect(() => {
+        toggleVideo();
+        executeOnReadyPage(toggleVideo);
+    }, []);
 
     return (
         <section className={css.exclusives} id="exclusives" ref={rootRef}>
@@ -104,10 +130,7 @@ export const Exclusives: React.FC = () => {
                                     direction={screenWidth > 768 ? "vertical" : "horizontal"}
                                 >
                                     {exclusives.left.map((item) => (
-                                        <CubeSlide 
-                                            className={css.slide}     
-                                            key={item.join()}
-                                        >
+                                        <CubeSlide className={css.slide} key={item.join()}>
                                             <ul className={css.slide_marquee}>
                                                 <li className={css.slide_marquee_item}>
                                                     Punt Exclusives <SpadeIcon />
@@ -124,26 +147,19 @@ export const Exclusives: React.FC = () => {
                                             </ul>
                                             <LightIcon className={css.slide_light} />
                                             <div className={css.slide_stars}>
-                                                <Image.Default 
+                                                <Image.Default
                                                     src="/img/home/exc-star.png"
                                                     alt=""
                                                 />
-                                                <Image.Default 
+                                                <Image.Default
                                                     src="/img/home/exc-star.png"
                                                     alt=""
                                                 />
-                                                <Image.Default 
+                                                <Image.Default
                                                     src="/img/home/exc-star-orange.png"
                                                     alt=""
                                                 />
-
                                             </div>
-                                            {/* <Image.Default
-                                                className={css.slide_stars}
-                                                src="/img/home/cube-stars.png"
-                                                loading="lazy"
-                                                alt=""
-                                            /> */}
                                             <p className={css.slide_text}>
                                                 {item[0]} {item[1] && <span>{item[1]}</span>}
                                             </p>
@@ -158,22 +174,23 @@ export const Exclusives: React.FC = () => {
                                     onInitController={(controller) =>
                                         (cubeControllerDown.current = controller)
                                     }
+                                    classNameActive="cube-active-slide"
                                     direction={screenWidth > 768 ? "vertical" : "horizontal"}
                                 >
                                     {exclusives.right.map((item) => (
                                         <CubeSlide className={clsx(css.slide, css._bg)} key={item}>
                                             <div className={css.slide_image}>
                                                 <div className={css.slide_image_stars}>
-                                                    <Image.Default 
+                                                    <Image.Default
                                                         src="/img/home/exc-star.png"
                                                         alt=""
                                                     />
-                                                    <Image.Default 
+                                                    <Image.Default
                                                         src="/img/home/exc-star.png"
                                                         alt=""
                                                     />
                                                 </div>
-                                                <VideoHover 
+                                                <VideoHover
                                                     src={item}
                                                     className={css.slide_image_game}
                                                 />
