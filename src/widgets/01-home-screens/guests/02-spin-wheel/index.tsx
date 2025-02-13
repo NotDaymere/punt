@@ -112,15 +112,15 @@ export const SpinWheel: React.FC = () => {
             rotate: rotation,
             duration: DURATION,
             ease: "power4.inOut",
-            // onStart() {
-            //     rootRef.current?.classList.remove("_animated");
-            //     gsap.set(".wheel-lights", { animationDuration: 0.5 });
-            //     gsap.set(".wheel-lights-delayed", { animationDelay: 0.25 });
-            // },
-            // onComplete() {
-            //     gsap.set(".wheel-lights", { animationDuration: 1 });
-            //     gsap.set(".wheel-lights-delayed", { animationDelay: 0.5 });
-            // },
+            onStart() {
+                rootRef.current?.classList.remove("_animated");
+                gsap.set(".wheel-lights", { animationDuration: 0.5 });
+                gsap.set(".wheel-lights-delayed", { animationDelay: 0.25 });
+            },
+            onComplete() {
+                gsap.set(".wheel-lights", { animationDuration: 1 });
+                gsap.set(".wheel-lights-delayed", { animationDelay: 0.5 });
+            },
         });
 
         setTimeout(

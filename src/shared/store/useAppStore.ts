@@ -7,7 +7,7 @@ interface AppState {
 
 export const useAppStore = create<AppState>()(
     (set) => ({
-        prealoderActive: true,
+        prealoderActive: false,
         changePreloaderState: (prealoderActive) => set(() => ({ prealoderActive }))
     })
 )

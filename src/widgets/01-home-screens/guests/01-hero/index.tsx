@@ -111,20 +111,20 @@ export const Hero: React.FC = () => {
         }
     );
 
-    React.useEffect(() => {
-        if (activeSection && !spinAnimated && !prealoderActive) {
-            const timer = inactivityTimer();
+    // React.useEffect(() => {
+    //     if (activeSection && !spinAnimated && !prealoderActive) {
+    //         const timer = inactivityTimer();
 
-            timer.start(() => {
-                document.getElementById("spin-wheel")?.scrollIntoView({
-                    block: "start",
-                    behavior: "smooth",
-                });
-            }, 5000);
+    //         timer.start(() => {
+    //             document.getElementById("spin-wheel")?.scrollIntoView({
+    //                 block: "start",
+    //                 behavior: "smooth",
+    //             });
+    //         }, 5000);
 
-            return () => timer.destroy();
-        }
-    }, [activeSection, spinAnimated, prealoderActive]);
+    //         return () => timer.destroy();
+    //     }
+    // }, [activeSection, spinAnimated, prealoderActive]);
 
     return (
         <div className={css.hero} id="hero">
