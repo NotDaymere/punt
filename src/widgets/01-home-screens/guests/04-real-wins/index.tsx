@@ -58,7 +58,12 @@ export const RealWins: React.FC = () => {
         <section className={css.wins} ref={rootRef} id="real-wins">
             <div className={css.wins_back}>
                 <div className={css.wins_back_svg}>
-                    <WinClubsIcon className="real-wins-club" />
+                    {/* <WinClubsIcon  /> */}
+                    <Image.Default 
+                        className="real-wins-club"
+                        src="/img/home/clubs-big.webp"
+                        alt="" 
+                    />
                 </div>
                 <Title text="Real People." className={css.wins_back_title} animated="manual" />
                 <Title text="Real Wins" className={css.wins_back_title} animated="manual" />
@@ -68,22 +73,22 @@ export const RealWins: React.FC = () => {
                     <div className={css.wins_cards}>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-1.jpg" alt="" />
+                                <Image.Default src="/img/temp/videos/v-1.webp" alt="" />
                             </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-2.jpg" alt="" />
+                                <Image.Default src="/img/temp/videos/v-2.webp" alt="" />
                             </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-3.jpg" alt="" />
+                                <Image.Default src="/img/temp/videos/v-3.webp" alt="" />
                             </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-4.jpg" alt="" />
+                                <Image.Default src="/img/temp/videos/v-4.webp" alt="" />
                             </div>
                         </div>
                     </div>

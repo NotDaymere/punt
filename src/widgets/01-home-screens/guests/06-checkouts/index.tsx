@@ -68,7 +68,7 @@ export const Checkouts: React.FC = () => {
                     },
                     "checkoutsTitle+=80%"
                 )
-                .to(".checkouts-content-club svg", {
+                .to(".checkouts-content-club img", {
                     opacity: 1,
                     scale: 1,
                     duration: 1,
@@ -103,12 +103,16 @@ export const Checkouts: React.FC = () => {
                     <CheckoutRays className={css.checkouts_hand_rays} />
                 </div>
                 <div className={css.checkouts_hand_card}>
-                    <Image.Default src="/img/home/checkouts/card.svg" alt="" />
+                    <Image.Default src="/img/home/checkouts/card.webp" alt="" />
                 </div>
             </div>
             <div className={css.checkouts_coin}>
                 <div className={css.checkouts_coin_mover} id="checkouts-mover">
-                    <Framer ref={framer} frames={coinFrames} className={css.checkouts_coin_img} />
+                    <Framer 
+                        ref={framer} 
+                        frames={coinFrames} 
+                        className={css.checkouts_coin_img} 
+                    />
                 </div>
             </div>
             <div className={css.checkouts_container}>
@@ -123,7 +127,11 @@ export const Checkouts: React.FC = () => {
                 </div>
                 <div className={`${css.checkouts_content} checkouts-content`}>
                     <div className={`${css.checkouts_content_bg} checkouts-content-club`}>
-                        <InvertedClubsIcon />
+                        {/* <InvertedClubsIcon /> */}
+                        <Image.Default 
+                            src="/img/home/inverted-clubs.webp"
+                            alt=""
+                        />
                     </div>
                     <TextSplitter
                         className={`${css.checkouts_content_title} checkouts-content-title`}
