@@ -1,13 +1,13 @@
 import React from "react";
+import { useGSAP } from "@gsap/react";
 import BankIcon from "widgets/01-home-screens/_icons/Bank.icon";
+import { getTimeline, getTitleAnimationOptions } from "shared/animation/utils";
 import { useViewport } from "shared/hooks/use-viewport";
 import Image from "shared/ui/Image";
 import { TextSplitter } from "shared/ui/TextSplitter";
 import { Marquee } from "shared/ui/marquee";
 import testimontialCSS from "../10-testimontials/testimontials.module.scss";
 import css from "./payments.module.scss";
-import { useGSAP } from "@gsap/react";
-import { getTimeline, getTitleAnimationOptions } from "shared/animation/utils";
 
 const paymentsImages = [
     "/img/payments/p-1.svg",
@@ -21,35 +21,26 @@ export const Payments: React.FC = () => {
     const rootRef = React.useRef<HTMLDivElement>(null);
     const { screenWidth } = useViewport(1000);
 
-    useGSAP(() => {
-        getTimeline(rootRef.current)
-            .to(".payments-box", {
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                ease: "back.out(1)"
-            }, "payments")
-            .to(
-                ".payments-title span", 
-                getTitleAnimationOptions(),
-                "payments"
-            )
-            .to(
-                ".payments-title span", 
-                getTitleAnimationOptions(),
-                "payments" 
-            )
-            .to(
-                ".payments-text",
-                { opacity: 1, duration: 1 },
-                "payments+=90%"
-            )
-            .to(
-                ".payments-bottom-text",
-                { opacity: 1, y: 0, duration: 0.8 },
-                "payments+=120%"
-            )
-    }, { scope: rootRef });
+    useGSAP(
+        () => {
+            getTimeline(rootRef.current)
+                .to(
+                    ".payments-box",
+                    {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1,
+                        ease: "back.out(1)",
+                    },
+                    "payments"
+                )
+                .to(".payments-title span", getTitleAnimationOptions(), "payments")
+                .to(".payments-title span", getTitleAnimationOptions(), "payments")
+                .to(".payments-text", { opacity: 1, duration: 1 }, "payments+=90%")
+                .to(".payments-bottom-text", { opacity: 1, y: 0, duration: 0.8 }, "payments+=120%");
+        },
+        { scope: rootRef }
+    );
 
     return (
         <div className={css.payments} ref={rootRef}>
@@ -60,7 +51,7 @@ export const Payments: React.FC = () => {
                             <div className={css.payments_content_icon}>
                                 <BankIcon />
                             </div>
-                            <h2 className={css.payments_content_title}> 
+                            <h2 className={css.payments_content_title}>
                                 <strong>
                                     <TextSplitter
                                         className="payments-title"
@@ -105,7 +96,11 @@ export const Payments: React.FC = () => {
                                         {[...paymentsImages, ...paymentsImages].map((item, id) => (
                                             <li className={css.payments_list_item} key={item + id}>
                                                 <div className={css.payments_list_content}>
-                                                    <Image.Default src={item} alt="" />
+                                                    <Image.Default
+                                                        src={item}
+                                                        loading="lazy"
+                                                        alt=""
+                                                    />
                                                 </div>
                                             </li>
                                         ))}

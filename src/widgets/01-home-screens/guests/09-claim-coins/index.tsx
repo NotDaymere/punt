@@ -47,6 +47,7 @@ export const ClaimCoins: React.FC = () => {
                         <Image.Default
                             className={`${css.claim_content_img} claim-content-img`}
                             src="/img/home/claim-coins.svg"
+                            loading="lazy"
                             alt=""
                         />
                         <h2 className={css.claim_content_title}>

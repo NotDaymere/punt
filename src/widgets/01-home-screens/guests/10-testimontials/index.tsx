@@ -64,6 +64,7 @@ export const Testimontials: React.FC = () => {
             <Image.Default
                 className={css.testimontials_stars}
                 src="/img/home/testimontials-stars.webp"
+                loading="lazy"
                 alt=""
             />
             <div className={css.testimontials_container}>
@@ -71,6 +72,7 @@ export const Testimontials: React.FC = () => {
                     <Image.Default
                         className={css.testimontials_lights}
                         src="/img/home/testimontials-light.webp"
+                        loading="lazy"
                         alt=""
                     />
                     <div className={css.testimontials_header}>
@@ -83,11 +85,13 @@ export const Testimontials: React.FC = () => {
                             <Image.Default
                                 className={`${css.testimontials_header_img} testi-img`}
                                 src="/img/home/testimontials-person-1.png"
+                                loading="lazy"
                                 alt=""
                             />
                             <Image.Default
                                 className={`${css.testimontials_header_img} testi-img`}
                                 src="/img/home/testimontials-person-2.png"
+                                loading="lazy"
                                 alt=""
                             />
                             <Title

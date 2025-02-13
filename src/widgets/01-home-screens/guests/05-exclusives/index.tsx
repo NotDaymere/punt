@@ -122,6 +122,7 @@ export const Exclusives: React.FC = () => {
                                             <Image.Default
                                                 className={css.slide_stars}
                                                 src="/img/home/cube-stars.png"
+                                                loading="lazy"
                                                 alt=""
                                             />
                                             <p className={css.slide_text}>
@@ -146,17 +147,20 @@ export const Exclusives: React.FC = () => {
                                                 <Image.Default
                                                     className={css.slide_image_stars}
                                                     src="/img/home/exclusives-stars.png"
+                                                    loading="lazy"
                                                     alt=""
                                                 />
                                                 <Image.Default
                                                     className={css.slide_image_game}
                                                     src={item}
+                                                    loading="lazy"
                                                     alt=""
                                                 />
                                                 <Image.Default
                                                     className={css.slide_image_join}
                                                     src="/img/figures/join-game.svg"
                                                     alt="join the game"
+                                                    loading="lazy"
                                                 />
                                             </div>
                                         </CubeSlide>

@@ -13,25 +13,24 @@ export const RealWins: React.FC = () => {
     useGSAP(
         () => {
             // Cards appear
-            gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: rootRef.current,
-                        start: "top top",
-                        end: "top+=160% top",
-                        pin: true,
-                        pinSpacing: true,
-                        scrub: 1,
-                        invalidateOnRefresh: true
-                    }
-                })
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: rootRef.current,
+                    start: "top top",
+                    end: "top+=160% top",
+                    pin: true,
+                    pinSpacing: true,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                },
+            })
                 .to(".real-wins-card", {
                     y: 0,
-                    duration: 1.5
+                    duration: 1.5,
                 })
                 .to(".real-wins-card", {
-                    duration: 0.5
-                })
+                    duration: 0.5,
+                });
 
             // Club and title animation
             getTimeline(rootRef.current, {
@@ -59,10 +58,11 @@ export const RealWins: React.FC = () => {
             <div className={css.wins_back}>
                 <div className={css.wins_back_svg}>
                     {/* <WinClubsIcon  /> */}
-                    <Image.Default 
+                    <Image.Default
                         className="real-wins-club"
                         src="/img/home/clubs-big.webp"
-                        alt="" 
+                        loading="lazy"
+                        alt=""
                     />
                 </div>
                 <Title text="Real People." className={css.wins_back_title} animated="manual" />
@@ -73,22 +73,38 @@ export const RealWins: React.FC = () => {
                     <div className={css.wins_cards}>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-1.webp" alt="" />
+                                <Image.Default
+                                    src="/img/temp/videos/v-1.webp"
+                                    loading="lazy"
+                                    alt=""
+                                />
                             </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-2.webp" alt="" />
+                                <Image.Default
+                                    src="/img/temp/videos/v-2.webp"
+                                    loading="lazy"
+                                    alt=""
+                                />
                             </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-3.webp" alt="" />
+                                <Image.Default
+                                    src="/img/temp/videos/v-3.webp"
+                                    loading="lazy"
+                                    alt=""
+                                />
                             </div>
                         </div>
                         <div className={`${css.wins_cards_item} real-wins-card`}>
                             <div className={css.wins_cards_video}>
-                                <Image.Default src="/img/temp/videos/v-4.webp" alt="" />
+                                <Image.Default
+                                    src="/img/temp/videos/v-4.webp"
+                                    loading="lazy"
+                                    alt=""
+                                />
                             </div>
                         </div>
                     </div>

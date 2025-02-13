@@ -64,6 +64,7 @@ export const Featured: React.FC = () => {
                                             transform: `rotate(${offset * 6}deg) translate(${offset * 100}%, ${isAnimated ? -70 : 70}%) rotate(${offset * 6}deg)`,
                                             opacity: isAnimated ? 1 : 0,
                                         }}
+                                        loading="lazy"
                                         src={item}
                                         alt=""
                                     />

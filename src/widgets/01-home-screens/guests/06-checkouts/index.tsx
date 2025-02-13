@@ -68,11 +68,15 @@ export const Checkouts: React.FC = () => {
                     },
                     "checkoutsTitle+=80%"
                 )
-                .to(".checkouts-content-club img", {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1,
-                }, "checkoutsTitle+=50%");
+                .to(
+                    ".checkouts-content-club img",
+                    {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1,
+                    },
+                    "checkoutsTitle+=50%"
+                );
 
             ScrollTrigger.create({
                 trigger: ".checkouts-hand",
@@ -95,24 +99,25 @@ export const Checkouts: React.FC = () => {
                     <Image.Default
                         className={css.checkouts_hand_image}
                         src="/img/home/checkouts/hand.webp"
+                        loading="lazy"
                         alt=""
                     />
                     <div className={css.checkouts_hand_display}>
-                        <Image.Default src="/img/home/checkouts/checkouts-mark.svg" alt="" />
+                        <Image.Default
+                            src="/img/home/checkouts/checkouts-mark.svg"
+                            loading="lazy"
+                            alt=""
+                        />
                     </div>
                     <CheckoutRays className={css.checkouts_hand_rays} />
                 </div>
                 <div className={css.checkouts_hand_card}>
-                    <Image.Default src="/img/home/checkouts/card.webp" alt="" />
+                    <Image.Default src="/img/home/checkouts/card.webp" loading="lazy" alt="" />
                 </div>
             </div>
             <div className={css.checkouts_coin}>
                 <div className={css.checkouts_coin_mover} id="checkouts-mover">
-                    <Framer 
-                        ref={framer} 
-                        frames={coinFrames} 
-                        className={css.checkouts_coin_img} 
-                    />
+                    <Framer ref={framer} frames={coinFrames} className={css.checkouts_coin_img} />
                 </div>
             </div>
             <div className={css.checkouts_container}>
@@ -121,6 +126,7 @@ export const Checkouts: React.FC = () => {
                     <Image.Default
                         className={css.checkouts_icon}
                         src="/img/home/instant-checkouts-icon.svg"
+                        loading="lazy"
                         alt=""
                     />
                     <Title className={css.checkouts_title} text="Checkouts" />
@@ -128,10 +134,7 @@ export const Checkouts: React.FC = () => {
                 <div className={`${css.checkouts_content} checkouts-content`}>
                     <div className={`${css.checkouts_content_bg} checkouts-content-club`}>
                         {/* <InvertedClubsIcon /> */}
-                        <Image.Default 
-                            src="/img/home/inverted-clubs.webp"
-                            alt=""
-                        />
+                        <Image.Default src="/img/home/inverted-clubs.webp" loading="lazy" alt="" />
                     </div>
                     <TextSplitter
                         className={`${css.checkouts_content_title} checkouts-content-title`}
