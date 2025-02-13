@@ -66,6 +66,7 @@ export const Sale: React.FC = () => {
                         <Image.Default
                             className="sale-wheel"
                             src="/img/home/sale-wheel.webp"
+                            loading="lazy"
                             alt=""
                         />
                     </div>
