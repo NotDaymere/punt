@@ -346,6 +346,9 @@
     .exclusives_title_container {
         font-size: 46px;
     }
+    .slide_image {
+        pointer-events: none;
+    }
 }
 
 @include -screen-md {
