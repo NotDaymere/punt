@@ -59,7 +59,6 @@ const CubeSlider: React.FC<Props> = ({
     return (
         <div className={clsx(css.slider, className)} ref={wrapperRef}>
             {React.Children.map(renderChildrens, (child: any, index) => {
-                console.log(activeIndex, index)
                 return React.cloneElement(child, {
                     className: clsx(
                         child.props.className,

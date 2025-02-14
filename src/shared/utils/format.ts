@@ -10,7 +10,6 @@ export const formatNumberWithSeparator = (n: number | string, replacer = ",") =>
 
 export const formatDate = (date: string) => {
     if (dayjs(date).isToday()) {
-        console.log(dayjs(date).diff())
         if (dayjs(date).diff() < -3600000) {
             return {
                 date: dayjs(date).format("H:mm A"),

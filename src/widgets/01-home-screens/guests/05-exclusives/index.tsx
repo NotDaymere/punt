@@ -35,7 +35,6 @@ export const Exclusives: React.FC = () => {
 
             if (video) {
                 if (item.classList.contains("cube-active-slide")) {
-                    console.log(video);
                     video.play();
                 } else {
                     video.pause();

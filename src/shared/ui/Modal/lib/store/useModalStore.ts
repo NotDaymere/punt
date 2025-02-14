@@ -32,8 +32,6 @@ const useModalStore = create<ModalState>()(
                         item.name === name ? { ...item, active: true, payload } : item
                     );
 
-                    console.log(modals)
-
                     return { modals };
                 });
             },

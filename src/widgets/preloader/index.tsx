@@ -43,9 +43,11 @@ export const Preloader: React.FC = () => {
                     config.documentOverflow(false);
                 },
                 onStart() {
-                    if (nodeRef.current) {
-                        nodeRef.current.classList.add(css._animated);
-                    }
+                    setTimeout(() => {
+                        if(nodeRef.current) {
+                            nodeRef.current.classList.add(css._animated);
+                        }
+                    }, 50);
                 },
             })
                 // Punt appear
