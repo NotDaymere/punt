@@ -112,7 +112,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                         crossOrigin=""
                     />
                 </Head>
-                <Preloader />
+                {/* <Preloader /> */}
                 {children}
             </div>
         </div>

@@ -37,7 +37,7 @@ export const Modal: React.FC<Props> = ({
     const store = useModalStore();
 
     const data = React.useMemo(() => {
-        return store.modals.find((modal) => modal.name)!;
+        return store.modals.find((modal) => modal.name === name)!;
     }, [name, store.modals]);
 
     const close = () => {

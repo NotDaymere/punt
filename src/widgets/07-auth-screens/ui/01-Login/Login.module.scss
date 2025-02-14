@@ -1,0 +1,44 @@
+.login {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+.auth_title {
+    
+}
+
+.login_with {
+    margin-top: 30px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(#FFF, 0.15);
+}
+.login_form {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.login_form_item {
+    margin-top: 32px;
+    width: 100%;
+
+    + .login_form_item {
+        margin-top: 16px;
+    }
+}
+.login_form_forgot {
+    margin-top: 8px;
+    @include setFontPPMori400(14px, 1.1, normal, getColorYellow());
+}
+.login_form_submitBtn {
+    margin-top: 32px;
+}
+.login_form_alternative {
+    margin-top: 48px;
+    text-align: center;
+}
+.login_form_privacy {
+    margin: 48px auto 0;
+    text-align: center;
+    max-width: 309px;
+}

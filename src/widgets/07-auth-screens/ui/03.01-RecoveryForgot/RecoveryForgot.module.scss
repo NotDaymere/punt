@@ -1,0 +1,50 @@
+.rec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rec_text {
+    margin-top: 24px;
+
+    @include setFontPPMori600(16px, 1.1, normal, getColorGray());
+    text-align: center;
+
+    span {
+        color: getColorWhite();
+    }
+}
+
+.rec_form {
+    margin-top: 48px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.rec_form_controls {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.rec_form_controls_btn {
+    svg {
+        stroke: #000;
+        transform: scaleX(-1);
+    }
+}
+.rec_form_notReceive {
+    margin-top: 48px;
+    text-align: center;
+
+    @include setFontPPMori600(14px, 1, normal, getColorWhite());
+
+    button {
+        font: inherit;
+        color: getColorPrimary();
+        text-decoration: underline;;
+    }
+}

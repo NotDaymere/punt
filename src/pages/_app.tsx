@@ -4,8 +4,8 @@ import 'app/scss/index.scss';
 import { useState } from 'react';
 import { HydrationBoundary, QueryClient, QueryClientProvider  } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
-import { Modal } from 'shared/ui/Modal';
 import { WalletModal } from 'widgets/wallet';
+import { AuthModal } from 'widgets/07-auth-screens';
 
 export default function App({ Component, pageProps }: AppProps) {
     const [queryClient] = useState(
@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <HydrationBoundary state={pageProps.dehydratedState}>
                 <Component {...pageProps} />
                 <WalletModal />
+                <AuthModal />
             </HydrationBoundary>
         </QueryClientProvider>
     );

@@ -1,0 +1,68 @@
+.modal_window {
+    padding: 80px 40px;
+    overflow-y: auto;
+}
+
+.enter {
+    opacity: 0;
+}
+.enterActive {
+    opacity: 1;
+    transition: opacity 350ms ease;
+}
+.exit {
+    opacity: 1;
+}
+.exitActive {
+    opacity: 0;
+    transition: opacity 350ms ease;
+}
+
+@include -screen-xxxl {
+    .modal_window {
+        padding: 40px;
+    }
+}
+
+@include -screen-lg {
+    .modal_window {
+        padding: 0 !important;
+    }
+
+    .enter {
+        opacity: 1;
+        background: rgba(#262626, 0) !important;
+
+        // .modal {
+        //     transform: translateY(100%);
+        // }
+    }
+    .enterActive {
+        opacity: 1;
+        background: rgba(#262626, 0.8) !important;
+        transition: background 350ms ease;
+
+        // .modal {
+        //     transform: translateY(0%);
+        //     transition: transform 350ms ease;
+        // }
+    }
+    .exit {
+        opacity: 1;
+        background: rgba(#262626, 0.8) !important;
+
+        // .modal {
+        //     transform: translateY(0%);
+        // }
+    }
+    .exitActive {
+        opacity: 1;
+        background: rgba(#262626, 0) !important;
+        transition: background 350ms ease;
+
+        // .modal {
+        //     transform: translateY(100%);
+        //     transition: transform 350ms ease;
+        // }
+    }
+}

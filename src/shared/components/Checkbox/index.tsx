@@ -28,7 +28,7 @@ export const Checkbox: React.FC<Props> = ({
                 className={css.checkbox_input}
                 checked={checked}
                 value={value}
-                onChange={(ev) => onChange?.(ev.target.value as any)}
+                onChange={() => onChange?.(!checked)}
                 id={id}
                 type="checkbox"
             />
@@ -36,7 +36,9 @@ export const Checkbox: React.FC<Props> = ({
                 <div className={css.checkbox_block}>
                     <MarkIcon />
                 </div>
-                {text && <p className={css.checkbox_text}>{text}</p>}
+                {text && (
+                    <p className={css.checkbox_text} dangerouslySetInnerHTML={{ __html: text }} />
+                )}
             </div>
         </label>
     );

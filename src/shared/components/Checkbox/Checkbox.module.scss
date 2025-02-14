@@ -54,4 +54,8 @@
 }
 .checkbox_text {
     @include setFontPPMori600(14px, 1, normal, getColorGray());
+
+    a {
+        text-decoration: underline;
+    }
 }

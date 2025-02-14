@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useModals } from "shared/ui/Modal";
+import { AuthModalEnum } from "widgets/07-auth-screens/lib";
 import { Button } from "shared/components/@Buttons/Button";
 import { IconButton } from "shared/components/@Buttons/IconButton";
 import { Progress } from "shared/components/Progress";
@@ -10,11 +9,11 @@ import SearchIcon from "shared/icons/Search.icon";
 import WalletIcon from "shared/icons/Wallet.icon";
 import { useLogged } from "shared/temp/useLogged";
 import Image from "shared/ui/Image";
+import { useModals } from "shared/ui/Modal";
 import { HeaderAccount, HeaderBalance } from "./ui";
 import css from "./header.module.scss";
 
 export const Header: React.FC = () => {
-    const router = useRouter();
     const isLogged = useLogged();
     const { open } = useModals();
 
@@ -31,18 +30,21 @@ export const Header: React.FC = () => {
                                 <Image.Default src="/img/header-stars.png" alt="" />
                             </div>
                             <Button
-                                onClick={() =>
-                                    router.push({
-                                        pathname: router.asPath,
-                                        query: "logged=yes",
-                                    })
-                                }
+                                onClick={() => open(AuthModalEnum.AUTH_MODAL, {
+                                    type: AuthModalEnum.SIGN_IN
+                                })}
                                 variant="black"
                                 circle
                             >
                                 Sign In
                             </Button>
-                            <Button variant="white" circle>
+                            <Button
+                                onClick={() => open(AuthModalEnum.AUTH_MODAL, {
+                                    type: AuthModalEnum.SIGN_UP
+                                })}
+                                variant="white"
+                                circle
+                            >
                                 Sign Up
                             </Button>
                         </div>

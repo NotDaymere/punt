@@ -1,0 +1,72 @@
+.reg {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+.reg_slider {
+    margin: 0 -100px;
+    overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+    // flex-direction: column;
+}
+.reg_slider_item {
+    padding: 0 100px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    transition: transform 300ms ease;
+    min-width: 100%;
+}
+.reg_form {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+.reg_form_birthday {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 96px auto 96px;
+    gap: 8px;
+    align-items: flex-end;
+}
+.reg_form_checkbox {
+    margin-top: 12px;
+}
+.reg_form_input {
+    width: 100%;
+}
+.reg_form_submitBtn {
+    margin-top: 16px;
+}
+.reg_alternative {
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+}
+.reg_privacy {
+    max-width: 309px;
+    text-align: center;
+    margin: auto auto 0;
+}
+.reg_form_controls {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &_btn {
+        svg {
+            stroke: #141414;
+            transform: scaleX(-1);
+        }
+    }
+}

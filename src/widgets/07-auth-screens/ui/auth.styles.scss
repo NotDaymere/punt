@@ -1,0 +1,24 @@
+.auth-title {
+    font-size: 48px !important;
+}
+.auth-suptitle {
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.auth-btn {
+    height: 36px;
+    width: 100%;
+}
+.auth-alternative {
+    @include setFontPPMori600(14px, 1, normal, getColorWhite());
+
+    a,button {
+        color: getColorPrimary();
+    }
+}
+.auth-privacy {
+    @include setFontPPMori600(12px, 1.25, -0.02em, getColorGray());
+
+    a, button {
+        color: getColorWhite();
+    }
+}
