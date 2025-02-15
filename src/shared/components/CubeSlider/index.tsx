@@ -64,7 +64,8 @@ const CubeSlider: React.FC<Props> = ({
                         child.props.className,
                         index === activeIndex && [classNameActive],
                     ),
-                    index
+                    index,
+                    key: child?.key + index
                 })
             })}
         </div>

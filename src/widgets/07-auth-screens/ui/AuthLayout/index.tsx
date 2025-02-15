@@ -19,7 +19,7 @@ export const AuthLayout: React.FC<Props> = ({
     onClose
 }) => {
     return (
-        <div className={css.layout}>
+        <div className={`${css.layout} auth-layout`}>
             <div className={css.layout_picture}>
                 <p className={css.layout_picture_suptitle}>
                     {suptitle}

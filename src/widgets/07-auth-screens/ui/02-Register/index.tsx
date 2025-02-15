@@ -1,6 +1,7 @@
 import React from "react";
 import { Onboarding } from "../02.01-Onboarding";
 import { useForms } from "@axseee/react-form";
+import { AuthSlider } from "widgets/07-auth-screens/_components";
 import { AuthModalEnum } from "widgets/07-auth-screens/lib";
 import { Button } from "shared/components/@Buttons/Button";
 import { Checkbox } from "shared/components/Checkbox";
@@ -120,8 +121,6 @@ export const Register: React.FC = () => {
         []
     );
 
-    const itemTranform = React.useMemo(() => `translateX(${-step * 100}%)`, [step]);
-
     return (
         <AuthLayout
             suptitle="No suit required for this casino!"
@@ -130,9 +129,8 @@ export const Register: React.FC = () => {
             onClose={modal.close}
         >
             <div className={css.reg}>
-                <div className={css.reg_slider}>
-                    {/* Main */}
-                    <div className={css.reg_slider_item} style={{ transform: itemTranform }}>
+                <AuthSlider slide={step}>
+                    <AuthSlider.Slide>
                         <Title.V2 className="auth-title">Register</Title.V2>
                         <div className={css.reg_form}>
                             <Input
@@ -212,9 +210,8 @@ export const Register: React.FC = () => {
                             {Alternative}
                             {Privacy}
                         </div>
-                    </div>
-                    {/* Extra */}
-                    <div className={css.reg_slider_item} style={{ transform: itemTranform }}>
+                    </AuthSlider.Slide>
+                    <AuthSlider.Slide>
                         <Title.V2 className="auth-title">Register</Title.V2>
                         <div className={css.reg_form}>
                             <div className={css.reg_form_birthday}>
@@ -300,12 +297,11 @@ export const Register: React.FC = () => {
                             {Alternative}
                             {Privacy}
                         </div>
-                    </div>
-                    {/* Onboarding */}
-                    <div className={css.reg_slider_item} style={{ transform: itemTranform }}>
+                    </AuthSlider.Slide>
+                    <AuthSlider.Slide>
                         <Onboarding interactive={step === 2} />
-                    </div>
-                </div>
+                    </AuthSlider.Slide>
+                </AuthSlider>
             </div>
         </AuthLayout>
     );

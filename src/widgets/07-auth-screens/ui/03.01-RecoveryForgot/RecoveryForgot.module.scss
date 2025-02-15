@@ -4,6 +4,11 @@
     align-items: center;
 }
 
+.rec_slide {
+    align-items: center;
+    justify-content: center;
+}
+
 .rec_text {
     margin-top: 24px;
 
@@ -46,5 +51,17 @@
         font: inherit;
         color: getColorPrimary();
         text-decoration: underline;;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .rec {
+        justify-content: flex-start;
+        height: 100%;
+        padding-top: 64px;
+    }
+    .rec_slide {
+        justify-content: flex-start;
+        padding-top: 64px;
     }
 }
