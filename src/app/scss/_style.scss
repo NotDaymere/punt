@@ -13,11 +13,17 @@ body {
     max-width: 1165px + ($padding-xxl * 2);
 }
 
-
 .container {
     width: 100%;
     padding: 0 $padding-lg;
     margin: 0 auto;
+}
+
+.hat {
+    background: url("/img/profile-bg.webp");
+    background-size: 800px 154px;
+    background-position: right top;
+    background-repeat: no-repeat;
 }
 
 .glow-bg {

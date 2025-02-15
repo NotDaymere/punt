@@ -1,0 +1,282 @@
+.content {
+    padding: 60px 0;
+}
+.content_note {
+    max-width: 1228px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px;
+
+    position: relative;
+}
+
+.content_note_lights {
+    background: url("/img/lights.webp");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 812px auto;
+    width: 50%;
+    height: 50%;
+
+    position: absolute;
+
+    &:nth-of-type(1) {
+        left: 0;
+        top: 0;
+    }
+
+    &:nth-of-type(2) {
+        right: 0;
+        top: 0;
+        transform: scaleX(-1);
+    }
+
+    &:nth-of-type(3) {
+        right: 0;
+        bottom: 0;
+        transform: scale(-1);
+    }
+
+    &:nth-of-type(4) {
+        left: 0;
+        bottom: 0;
+        transform: scaleY(-1);
+    }
+}
+.content_note_box {
+    padding: 40px;
+    border-radius: 32px;
+    border: 1px solid getColorWhite(0.15);
+    background: url("/img/home/rhombus-winner.svg");
+    background-size: 34px 46px;
+
+    position: relative;
+}
+.content_container {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+}
+.content_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.content_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    @include setFontPPMori400(16px, 1.5, normal, getColorWhite());
+
+    > h3 {
+        counter-increment: content;
+        counter-reset: sub-content;
+    }
+
+    > h2 {
+        counter-reset: content;
+    }
+
+    p {
+        font: inherit;
+
+        strong {
+            @include setFontPPMori600(1em, 1.5, normal, getColorWhite());
+        }
+    }
+
+    blockquote {
+        color: getColorWhite(0.7);
+        padding-left: 1.5em;
+    }
+
+    ol,
+    ul {
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25em;
+        }
+    }
+
+    > ol {
+        counter-reset: sub-content;
+        list-style: none;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        > li {
+            counter-increment: sub-content;
+            padding-left: 50px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: counter(content) "." counter(sub-content);
+                padding: 2px 8px 0px;
+                background: #212121;
+                border-radius: 4px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                @include setFontPPMori600(1em, 1.2, normal, getColorPrimary());
+            }
+
+            > ol {
+                list-style: none;
+                counter-reset: letter-counter;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5em;
+
+                > li {
+                    counter-increment: letter-counter;
+                    position: relative;
+                    padding-left: 1.4em;
+
+                    &::before {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        content: counter(letter-counter, lower-alpha) ")";
+                    }
+                }
+            }
+        }
+    }
+
+     ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+
+        > li {
+            position: relative;
+            padding-left: 24px;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 12px;
+                height: 12px;
+                background: url("/img/icons/ul-list-marker.svg");
+                object-position: center;
+                object-fit: contain;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform: translateY(5px);
+            }
+
+            > ul {
+                list-style: disc;
+                list-style-position: inside;
+
+                > li {
+                    display: list-item;
+                }
+            }
+        }
+    }
+
+    h2 + *,
+    h3 + *,
+    h4 + *,
+    * + h2,
+    * + h3,
+    * + h4 {
+        margin-top: 1.5em;
+    }
+
+    > {
+        h1,
+        h2,
+        h3 {
+            @include setFontHelveticaStd700(1.75em, 1.15, -0.02em, getColorWhite());
+            position: relative;
+            z-index: 1;
+
+            -webkit-text-stroke: 0.18em getColorBlack();
+            paint-order: stroke fill;
+
+            &::selection {
+                background: getColorPrimary(50%);
+            }
+
+            &:after {
+                content: attr(data-title);
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                -webkit-text-stroke: 0.3em getColorPrimary();
+                font-style: inherit;
+                paint-order: stroke fill;
+                z-index: -1;
+            }
+        }
+
+        h2 {
+            font-size: 3em;
+        }
+    }
+
+    s {
+        text-decoration: none;
+        color: getColorYellow();
+    }
+}
+
+@include -screen-md {
+    .content {
+        padding: 32px 0;
+    }
+}
+
+@include -screen-sm {
+    .content_note {
+        padding: 24px;
+    }
+    .content_note_box {
+        padding: 16px;
+        padding-bottom: 24px;
+        border-radius: 16px;
+    }
+    .content_content {
+        gap: 1em;
+        h2 {
+            font-size: 24px;
+        }
+
+        h2 + *,
+        h3 + *,
+        h4 + *,
+        * + h2,
+        * + h3,
+        * + h4 {
+            margin-top: 1em;
+        }
+
+        ol,
+        ul {
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8em;
+            }
+        }
+
+        > ol {
+            gap: 1em;
+        }
+    }
+}

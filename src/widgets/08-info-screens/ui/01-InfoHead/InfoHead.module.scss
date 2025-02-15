@@ -1,0 +1,53 @@
+.head {
+    border-bottom: 1px solid getColorWhite(0.15);
+
+    .head_title {
+        margin-top: 36px;
+        font-size: 48px;
+    }
+}
+.head_wrapper {
+    padding: 12px 0 20px;
+}
+.head_lastUpdate {
+    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
+
+    span {
+        color: getColorWhite();
+    }
+}
+
+.head_row {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.head_btn {
+    white-space: nowrap;
+}
+
+@include -screen-lg {
+    .head {
+        .head_title {
+            font-size: 42px;
+        }
+    }
+}
+
+@include -screen-sm {
+    .head {
+        .head_title {
+            margin-top: 24px;
+            font-size: 24px;
+        }
+    }
+    .head_lastUpdate {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}

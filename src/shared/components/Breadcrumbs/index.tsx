@@ -3,7 +3,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import css from "./Breadcrumbs.module.scss";
 
-interface BreadcrumbsItem {
+export interface BreadcrumbsItem {
     name: string;
     href?: string;
 }
