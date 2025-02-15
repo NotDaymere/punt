@@ -191,6 +191,22 @@
     }
 }
 
+@mixin -screen-h-870 {
+    @include screen-lg {
+        @media screen and (max-height: 870px) {
+            @content;       
+        }
+    }
+}
+
+@mixin -screen-h-720 {
+    @include screen-lg {
+        @media screen and (max-height: 720px) {
+            @content;       
+        }
+    }
+}
+
 // Colors
 
 @function getColorPrimary($opacity: 1) {

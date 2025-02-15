@@ -90,9 +90,10 @@ export const Register: React.FC = () => {
     const modal = useModalContext();
     const { open } = useModals();
 
-    const toggleLogin = () => open(AuthModalEnum.AUTH_MODAL, {
-        type: AuthModalEnum.SIGN_IN
-    });
+    const toggleLogin = () =>
+        open(AuthModalEnum.AUTH_MODAL, {
+            type: AuthModalEnum.SIGN_IN,
+        });
 
     const toMain = () => setStep(0);
 
@@ -302,7 +303,7 @@ export const Register: React.FC = () => {
                     </div>
                     {/* Onboarding */}
                     <div className={css.reg_slider_item} style={{ transform: itemTranform }}>
-                        <Onboarding />
+                        <Onboarding interactive={step === 2} />
                     </div>
                 </div>
             </div>

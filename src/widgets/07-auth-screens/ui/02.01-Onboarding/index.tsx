@@ -1,11 +1,16 @@
 import React from "react";
 import { Button } from "shared/components/@Buttons/Button";
+import { StepProgress } from "shared/components/StepProgress";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
 import { useModalContext } from "shared/ui/Modal";
 import css from "./Onboarding.module.scss";
 
-export const Onboarding: React.FC = () => {
+interface Props {
+    interactive?: boolean;
+}
+
+export const Onboarding: React.FC<Props> = ({ interactive }) => {
     const [step, setStep] = React.useState(0);
     const { close } = useModalContext();
 
@@ -43,8 +48,21 @@ export const Onboarding: React.FC = () => {
                     {/* Step 1 */}
                     <div className={css.onboarding_item} style={{ transform: itemTranform }}>
                         <p className={css.onboarding_steptitle}>Step {step + 1}</p>
+                        <StepProgress
+                            className={css.onboarding_progress}
+                            onClick={setStep}
+                            onComplete={() => setStep(1)}
+                            active={step === 0 && interactive}
+                            currentStep={0}
+                            steps={4}
+                        />
                         <Title.V2 className={css.onboarding_title}>Welcome Bonus</Title.V2>
                         <div className={css.onboarding_wheel}>
+                            <Image.Default 
+                                className={css.onboarding_wheel_light}
+                                src="/img/auth/light.webp"
+                                alt=""
+                            />
                             <Image.Default
                                 onDragStart={(ev) => ev.preventDefault()}
                                 src="/img/auth/wheel.webp"
@@ -60,6 +78,14 @@ export const Onboarding: React.FC = () => {
                     {/* Step 2 */}
                     <div className={css.onboarding_item} style={{ transform: itemTranform }}>
                         <p className={css.onboarding_steptitle}>Step {step + 1}</p>
+                        <StepProgress
+                            className={css.onboarding_progress}
+                            onClick={setStep}
+                            onComplete={() => setStep(2)}
+                            active={step === 1}
+                            currentStep={1}
+                            steps={4}
+                        />
                         <Title.V2 className={css.onboarding_title}>What are SC and GC?</Title.V2>
                         <div className={css.onboarding_scgc}>
                             <Image.Default
@@ -70,13 +96,23 @@ export const Onboarding: React.FC = () => {
                         </div>
                         <p className={css.onboarding_text}>
                             Instead of using real money, you play games on Punt.com with virtual
-                            currencies known as <Image.Default src="/img/icons/gc.svg" alt="" /> Gold Coins and <Image.Default src="/img/icons/sc.svg" alt="" /> Sweep Coins.
+                            currencies known as <Image.Default src="/img/icons/gc.svg" alt="" />{" "}
+                            Gold Coins and <Image.Default src="/img/icons/sc.svg" alt="" /> Sweep
+                            Coins.
                         </p>
                         <Controls />
                     </div>
                     {/* Step 3 */}
                     <div className={css.onboarding_item} style={{ transform: itemTranform }}>
                         <p className={css.onboarding_steptitle}>Step {step + 1}</p>
+                        <StepProgress
+                            className={css.onboarding_progress}
+                            onClick={setStep}
+                            onComplete={() => setStep(3)}
+                            active={step === 2}
+                            currentStep={2}
+                            steps={4}
+                        />
                         <Title.V2 className={css.onboarding_title}>Daily bonus</Title.V2>
                         <div className={css.onboarding_bonus}>
                             <Image.Default
@@ -95,6 +131,13 @@ export const Onboarding: React.FC = () => {
                     {/* Step 4 */}
                     <div className={css.onboarding_item} style={{ transform: itemTranform }}>
                         <p className={css.onboarding_steptitle}>Step {step + 1}</p>
+                        <StepProgress
+                            className={css.onboarding_progress}
+                            onClick={setStep}
+                            active={step === 3}
+                            currentStep={3}
+                            steps={4}
+                        />
                         <Title.V2 className={css.onboarding_title}>Casino games for free</Title.V2>
                         <div className={css.onboarding_categories}>
                             <Image.Default

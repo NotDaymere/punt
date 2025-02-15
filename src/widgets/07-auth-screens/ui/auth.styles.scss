@@ -22,3 +22,9 @@
         color: getColorWhite();
     }
 }
+
+@include -screen-h-870 {
+    .auth-title {
+        font-size: 42px !important;
+    }
+}

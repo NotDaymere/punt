@@ -51,6 +51,23 @@
 }
 .onboarding_wheel {
     max-width: 380px;
+    position: relative;
+
+    img {
+        &:last-of-type {
+            mix-blend-mode: overlay;
+        }
+    }
+}
+.onboarding_wheel_light {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    min-width: 200%;
+    z-index: -1;
+    pointer-events: none;
 }
 .onboarding_scgc {
     max-width: 450px;
@@ -86,4 +103,9 @@
     img {
         width: 100%;
     }
+}
+
+.onboarding_progress {
+    margin-top: 34px;
+    width: 100%;
 }
