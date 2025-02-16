@@ -21,7 +21,7 @@ export const PromotionItem: React.FC<Props> = ({
 }) => {
     return (
         <Link className={clsx(css.promo, className)} href={url || "#"}>
-            <span className={css.promo_img}>
+            <span className={`${css.promo_img} promo-img`}>
                 <Image.Default src={image} alt="" />
             </span>
             <span className={css.promo_deadline}>{deadline}</span>

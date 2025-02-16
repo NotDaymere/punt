@@ -52,7 +52,7 @@ export const PromotionContent: React.FC = () => {
                             image={promo.img}
                             title={promo.title}
                             deadline={promo.deadline}
-                            url="#"
+                            url="/promotions/stakes-weekly-raffle"
                             key={id}
                         />
                     ))}
