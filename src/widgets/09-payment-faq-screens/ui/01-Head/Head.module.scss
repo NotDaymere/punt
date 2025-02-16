@@ -1,0 +1,35 @@
+.head {
+    border-bottom: 1px solid getColorWhite(0.15);
+
+    .head_title {
+        margin-top: 36px;
+        font-size: 48px;
+    }
+}
+.head_wrapper {
+    padding: 12px 0 48px;
+}
+
+@include -screen-lg {
+    .head {
+        .head_title {
+            font-size: 42px;
+        }
+    }
+}
+@include -screen-md {
+    .head {
+        border-bottom: none;
+    }
+    .head_wrapper {
+        padding-bottom: 12px;
+    }
+}
+@include -screen-sm {
+    .head {
+        .head_title {
+            margin-top: 24px;
+            font-size: 24px;
+        }
+    }
+}

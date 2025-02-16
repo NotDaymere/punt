@@ -2446,10 +2446,6 @@ const Terms: NextPage = () => {
                     />
                 </NavLayout>
                 <Footer />
-
-                <div>
-                    
-                </div>
             </HomeProvider>
         </MainLayout>
     );
@@ -2457,6 +2453,6 @@ const Terms: NextPage = () => {
 
 export default Terms;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
     return { props: {} };
 };

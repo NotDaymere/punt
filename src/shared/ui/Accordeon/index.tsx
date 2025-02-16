@@ -91,6 +91,7 @@ const Accordeon: React.FC<AccordeonProps> = ({
                 css.accordeon,
                 disabled && css.accordeon_disabled,
                 smooth && css.accordeon_smooth,
+                active && "accordeon-active",
                 className
             )}
             ref={rootRef}
