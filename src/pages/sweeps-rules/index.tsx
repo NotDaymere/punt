@@ -21,6 +21,7 @@ const SweepsRules: NextPage = () => {
                         ]}
                         title="Punt Sweeps Rules"
                         lastUpdate="March 2nd, 2024"
+                        download=""
                     />
                     <Screens.InfoContent
                         note={`

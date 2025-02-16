@@ -9,13 +9,6 @@
 .head_wrapper {
     padding: 12px 0 20px;
 }
-.head_lastUpdate {
-    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
-
-    span {
-        color: getColorWhite();
-    }
-}
 
 .head_row {
     margin-top: 28px;
@@ -23,6 +16,26 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+}
+
+.head_info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 32px;
+
+    &._whiteSpace {
+        .head_text {
+            display: block !important
+        }
+    }
+}
+
+.head_text {
+    @include setFontPPMori400(14px, 1.1, normal, getColorGray());
+
+    span {
+        color: getColorWhite();
+    }
 }
 
 .head_btn {
@@ -44,7 +57,7 @@
             font-size: 24px;
         }
     }
-    .head_lastUpdate {
+    .head_text {
         display: flex;
         flex-direction: column;
         align-items: flex-start;

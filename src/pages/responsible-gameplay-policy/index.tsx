@@ -21,6 +21,7 @@ const ResponsibleGameplayPolicy: NextPage = () => {
                         ]}
                         title="Responsible Gameplay Policy"
                         lastUpdate="16 November, 2022"
+                        download=""
                     />
                     <Screens.InfoContent
                         content={`

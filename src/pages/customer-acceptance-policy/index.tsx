@@ -21,6 +21,7 @@ const CustomerAcceptancePolicy: NextPage = () => {
                         ]}
                         title="Customer Acceptance Policy"
                         lastUpdate="July 30, 2024"
+                        download=""
                     />
                     <Screens.InfoContent
                         content={`

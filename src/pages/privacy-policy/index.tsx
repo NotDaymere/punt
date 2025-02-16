@@ -18,6 +18,7 @@ const PrivacyPolicy: NextPage = () => {
                         breadcrumbs={[{ name: "Home Page", href: "/" }, { name: "Privacy Policy" }]}
                         title="Privacy Policy"
                         lastUpdate="Nov 16, 2022"
+                        download=""
                     />
                     <Screens.InfoContent content={`
                         <p>

@@ -234,6 +234,33 @@
         text-decoration: none;
         color: getColorYellow();
     }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6em;
+
+        a {
+            font-size: 14px;
+            color: getColorPrimary();
+
+            &::after {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                width: 1em;
+                height: 1em;
+                background: url("/img/icons/arrow-link-primary.svg");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+
+    :global(.content-list-start) {
+        margin-left: -3em;
+    }
 }
 
 @include -screen-md {
