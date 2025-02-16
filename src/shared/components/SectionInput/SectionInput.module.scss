@@ -1,0 +1,33 @@
+.input {
+    width: 100%;
+
+    position: relative;
+}
+.input_icon {
+    width: 24px;
+    height: 24px;
+    fill: getColorWhite();
+    pointer-events: none;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input_input {
+    padding: 2px 16px;
+    padding-left: 48px;
+    border-radius: 10px;
+    height: 40px;
+    background: #212121;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding-top: 4px;
+
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+
+    &::placeholder {
+        color: getColorGray();
+    }
+}

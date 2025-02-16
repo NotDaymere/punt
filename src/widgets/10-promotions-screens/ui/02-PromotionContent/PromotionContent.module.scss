@@ -1,0 +1,21 @@
+.content {
+    padding: 40px 0 50px;
+}
+.content_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 26px;
+}
+
+@media screen and (max-width: 900px) {
+    .content_list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include -screen-sm {
+    .content_list {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
