@@ -80,6 +80,78 @@ html.hidden {
     overflow: hidden !important;
 }
 
+.modal-window {
+}
+.modal-component {
+    margin: auto;
+
+    width: 100%;
+
+    position: relative;
+}
+
+.modal-enter {
+    opacity: 0;
+}
+.modal-enter-active {
+    opacity: 1;
+    transition: opacity 350ms ease;
+}
+.modal-exit {
+    opacity: 1;
+}
+.modal-exit-active {
+    opacity: 0;
+    transition: opacity 350ms ease;
+}
+
+@include -screen-lg {
+    .modal-window {
+        padding: 0;
+    }
+
+    .modal-component {
+        height: 100%;
+    }
+
+    .modal-enter {
+        opacity: 1;
+        background: rgba(#262626, 0) !important;
+
+        .modal-component {
+            transform: translateY(100%);
+        }
+    }
+    .modal-enter-active {
+        opacity: 1;
+        background: rgba(#262626, 0.8) !important;
+        transition: background 350ms ease;
+
+        .modal-component {
+            transform: translateY(0%);
+            transition: transform 350ms ease;
+        }
+    }
+    .modal-exit {
+        opacity: 1;
+        background: rgba(#262626, 0.8) !important;
+
+        .modal-component {
+            transform: translateY(0%);
+        }
+    }
+    .modal-exit-active {
+        opacity: 1;
+        background: rgba(#262626, 0) !important;
+        transition: background 350ms ease;
+
+        .modal-component {
+            transform: translateY(100%);
+            transition: transform 350ms ease;
+        }
+    }
+}
+
 @include screen-lg {
     .container {
         padding: 0 $padding-xl;

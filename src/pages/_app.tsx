@@ -4,8 +4,11 @@ import 'app/scss/index.scss';
 import { useState } from 'react';
 import { HydrationBoundary, QueryClient, QueryClientProvider  } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
+
+// Change to dynamic
 import { WalletModal } from 'widgets/wallet';
 import { AuthModal } from 'widgets/07-auth-screens';
+import { Raffle50 } from 'widgets/raffle50';
 
 export default function App({ Component, pageProps }: AppProps) {
     const [queryClient] = useState(
@@ -25,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <Component {...pageProps} />
                 <WalletModal />
                 <AuthModal />
+                <Raffle50 />
             </HydrationBoundary>
         </QueryClientProvider>
     );

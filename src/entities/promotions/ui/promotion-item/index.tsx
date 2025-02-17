@@ -1,8 +1,8 @@
 import React from "react";
-import css from "./promotion-item.module.scss";
 import Link from "next/link";
 import clsx from "clsx";
 import Image from "shared/ui/Image";
+import css from "./promotion-item.module.scss";
 
 interface Props {
     image: string;
@@ -12,15 +12,9 @@ interface Props {
     className?: string;
 }
 
-export const PromotionItem: React.FC<Props> = ({
-    deadline,
-    image,
-    title,
-    url,
-    className
-}) => {
+export const PromotionItem: React.FC<Props> = ({ deadline, image, title, url, className }) => {
     return (
-        <Link className={clsx(css.promo, className)} href={url || "#"}>
+        <Link className={clsx(css.promo, className)} href={url || "#"} prefetch={false}>
             <span className={`${css.promo_img} promo-img`}>
                 <Image.Default src={image} alt="" />
             </span>

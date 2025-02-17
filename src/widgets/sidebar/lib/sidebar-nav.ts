@@ -69,6 +69,13 @@ export function getSidebarNav(logged = false): NavItemProps[][] {
             {
                 name: "Promotions",
                 icon: "/img/icons/sidebar-promotions.svg",
+                children: [
+                    {
+                        name: "5,000 SC Weekly Raffle",
+                        modal: "raffle50",
+                        icon: "/img/icons/sidebar-50scgc.svg"
+                    }
+                ]
             },
         ])
     } else {

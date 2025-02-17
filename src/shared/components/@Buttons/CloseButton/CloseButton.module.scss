@@ -1,0 +1,23 @@
+.closeBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: getColorWhite();
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: filter 150ms ease;
+
+    svg {
+        width: 70%;
+        height: 70%;
+        stroke: #000;
+    }
+
+    &:hover {
+        filter: brightness(0.8);
+    }
+}

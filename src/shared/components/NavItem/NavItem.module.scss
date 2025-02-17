@@ -76,6 +76,10 @@
 
     position: relative;
 
+    cursor: pointer;
+
+    @include setFontPPMori600(14px, 1, normal, getColorGray());
+
     &:hover:not(._active) {
         background: rgba(#212121, 50%);
     }

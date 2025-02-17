@@ -1,0 +1,276 @@
+.modal_window {
+    padding: 20px;
+    overflow: auto;
+}
+.modal {
+    border-radius: 32px;
+    background: #121411;
+    padding: 12px;
+    max-width: 1127px;
+    position: relative;
+
+    display: flex;
+}
+.modal_close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.picture {
+    width: 473px;
+    height: 650px;
+    flex-shrink: 0;
+    border-radius: 24px;
+
+    img {
+        @include setCoveredImage();
+    }
+}
+
+.content {
+    width: calc(100% - 473px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+
+    min-height: 100%;
+}
+
+.content_title {
+    text-align: center;
+}
+
+.content_container {
+    max-width: 388px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content_timer {
+    margin-top: 48px;
+    position: relative;
+}
+
+.content_nextTicket {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 169px;
+        height: 67px;
+        border-radius: 50%;
+        background: getColorPrimary();
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        transform: translateX(-50%);
+        z-index: -1;
+        filter: blur(120px);
+    }
+}
+
+.content_nextTicket_left {
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+
+.content_nextTicket_right {
+    @include setFontPPMori400(14px, 1.1, normal, getColorWhite());
+
+    img {
+        display: inline;
+        vertical-align: middle;
+        width: 1.24em;
+        height: 1.42em;
+        object-position: center;
+        object-fit: contain;
+    }
+}
+
+.content_progress {
+    margin-top: 8px;
+    width: 100%;
+    height: 6px;
+    background: getColorWhite(0.15);
+    overflow: hidden;
+
+    span {
+        transform: translateX(-30%);
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(110deg, #bfdbff, #b9ff82);
+    }
+}
+
+.content_numberEntries {
+    margin-top: 8px;
+    @include setFontPPMori400(14px, 1.2, normal, getColorWhite());
+}
+
+.content_text {
+    margin-top: 40px;
+    @include setFontPPMori400(14px, 1.2, normal, getColorWhite());
+}
+
+.content_btn {
+    margin-top: 38px;
+    width: 100%;
+}
+
+.modal_title {
+    display: none;
+}
+
+@include -screen-lg {
+    .modal_window {
+        padding: 0 !important;
+        padding-top: 60px !important;
+        overflow: hidden;
+    }
+    .modal {
+        border-radius: 16px 16px 0 0;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 24px;
+        overflow: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .modal_close {
+        top: 24px;
+    }
+    .picture {
+        min-height: auto;
+        margin-top: 20px;
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 0.72;
+        overflow: hidden;
+
+        img {
+            object-position: center 15%;
+        }
+    }
+    .modal_title {
+        display: block;
+    }
+    .content {
+        padding: 40px 0;
+        width: 100%;
+        max-width: 450px;
+        min-height: auto;
+    }
+}
+
+.upcoming_title {
+    font-size: 28px !important;
+    text-align: center;
+}
+
+.upcoming_text {
+    margin-top: 18px;
+    text-align: center;
+    @include setFontPPMori400(14px, 1.2, normal, getColorWhite());
+}
+
+.upcoming_table {
+    margin-top: 38px;
+    border-radius: 24px;
+    background: #171916;
+    padding: 22px 20px 28px;
+}
+.upcoming_table_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid getColorWhite(0.15);
+
+    @include setFontPPMori400(14px, 1.2, normal, getColorWhite());
+
+    p {
+        padding: 16px;
+
+        strong {
+            padding: 8px 33px;
+            background: #2F2F32;
+            border-radius: 100px;
+        }
+    }
+}
+.upcoming_table_title {
+    padding-bottom: 22px;
+    border-bottom: 1px solid getColorWhite(0.15);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include setFontPPMori400(14px, 1.2, normal, getColorWhite(0.5));
+
+    span {
+        padding: 0 16px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+}
+
+.upcoming_btn {
+    margin-top: 36px;
+    width: 100%;
+
+    svg {
+        stroke: #141414;
+        transform: scaleX(-1);
+    }
+}
+
+@include -screen-h-720 {
+    .picture {
+        width: 420px;
+        height: 577px;
+    }
+    .content {
+        width: calc(100% - 420px);
+    }
+}
+
+@include -screen-sm {
+    .modal_title {
+        font-size: 24px !important;
+        text-align: left;
+        width: 100%;
+        padding-right: 40px;
+    }
+    .modal_close {
+        top: 20px;
+    }
+    .content_title,
+    .upcoming_title {
+        font-size: 20px !important;
+    }
+    .upcoming_table {
+        margin-top: 16px;
+    }
+    .upcoming_text {
+        margin-top: 10px;
+    }
+    .content_timer {
+        margin-top: 32px;
+    }
+    .content_nextTicket {
+        margin-top: 28px;
+    }
+    .content_text {
+        margin-top: 24px;
+    }
+}
