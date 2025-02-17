@@ -1,0 +1,204 @@
+.giveaway {
+    border: 1.5px solid #121411;
+    border-radius: 38px;
+    background: linear-gradient(to bottom, #636b51, #303426);
+    box-shadow: 3px 0 0 #2f3c14;
+    padding: 8px;
+
+    &:hover {
+        .giveaway_hover {
+            opacity: 1;
+        }
+    }
+
+    &._finished {
+        opacity: 0.4;
+    }
+}
+
+.giveaway_wrapper {
+    border-radius: 30px;
+    background: #181717;
+    border: 1px solid #121411;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+
+    padding: 6px;
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.giveaway_light {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    min-width: 450px;
+    flex-shrink: 0;
+}
+
+.giveaway_info {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.giveaway_info_item {
+    @include setFontABeeZee400(14px, 1.1, normal, getColorGray());
+
+    span,
+    strong {
+        color: getColorWhite();
+    }
+
+    strong {
+        @include setFontPPMori600(16px, 1.1, normal);
+    }
+}
+
+.giveaway_block {
+    margin-top: 36px;
+    padding-bottom: 36px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 1;
+
+    &::after {
+        content: "";
+        display: block;
+        z-index: -1;
+        width: 100%;
+        height: calc(100% - 46px);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 24px;
+        background: #212121;
+    }
+}
+.giveaway_gameImage {
+    width: 90px;
+    height: 90px;
+    border-radius: 24px;
+    flex-shrink: 0;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.giveaway_title {
+    margin-top: 22px;
+    text-align: center;
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.giveaway_text {
+    margin-top: 16px;
+    text-align: center;
+
+    @include setFontPPMori600(14px, 1, normal, #121411);
+
+    img {
+        display: inline;
+        width: 1.125em;
+        height: 1.125em;
+        vertical-align: middle;
+    }
+
+    strong {
+        color: getColorWhite();
+        margin: 0 0.2em;
+    }
+
+    ._blue {
+        padding: 0 0.1em;
+        background: getColorSecondary();
+    }
+
+    ._yellow {
+        padding: 0 0.1em;
+        background: getColorYellow();
+    }
+}
+
+.giveaway_hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000000, 0.7);
+    background-image: linear-gradient(getColorPrimary(0) 50%, getColorPrimary() 150%);
+    z-index: 5;
+    border-radius: inherit;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+@media screen and (max-width: 800px) {
+    .giveaway {
+        padding: 5px;
+        border-radius: 20px;
+    }
+    .giveaway_wrapper {
+        border-radius: 15px;
+    }
+}
+
+@include -screen-sm {
+    .giveaway_info {
+        gap: 4px;
+    }
+    .giveaway_wrapper {
+        padding: 3px;
+        padding-top: 12px;
+    }
+    .giveaway_info_item {
+        font-size: 10px;
+
+        strong {
+            font-size: 10px;
+        }
+    }
+    .giveaway_block {
+        margin-top: 22px;
+        padding-bottom: 16px;
+
+        &::after {
+            border-radius: 12px;
+        }
+    }
+    .giveaway_gameImage {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+    }
+    .giveaway_title {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    .giveaway_text {
+        margin-top: 12px;
+        font-size: 10px;
+    }
+    .giveaway_hover_btn > span {
+        padding: 11px;
+        min-width: auto;
+        font-size: 14px;
+    }
+}

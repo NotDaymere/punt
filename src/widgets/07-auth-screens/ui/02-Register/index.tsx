@@ -182,7 +182,7 @@ export const Register: React.FC = () => {
                                     "Italia",
                                 ]}
                                 getKey={(item) => item}
-                                getName={(item) => item}
+                                renderButton={(item) => item}
                                 renderValue={(item) => item}
                                 onChange={(value) => form.setFieldValue("country", value)}
                                 value={form.values.country}
@@ -192,7 +192,7 @@ export const Register: React.FC = () => {
                             <FormSelect
                                 options={["AL", "AK", "AZ", "AR"]}
                                 getKey={(item) => item}
-                                getName={(item) => item}
+                                renderButton={(item) => item}
                                 renderValue={(item) => item}
                                 onChange={(value) => form.setFieldValue("state", value)}
                                 value={form.values.state}
@@ -218,7 +218,7 @@ export const Register: React.FC = () => {
                                 <FormSelect
                                     options={days}
                                     getKey={(item) => item}
-                                    getName={(item) => item}
+                                    renderButton={(item) => item}
                                     renderValue={(item) => item}
                                     onChange={(value) => form.setFieldValue("birth_dd", value)}
                                     value={form.values.birth_dd}
@@ -228,7 +228,7 @@ export const Register: React.FC = () => {
                                 <FormSelect
                                     options={months}
                                     getKey={(item) => item}
-                                    getName={(item) => item}
+                                    renderButton={(item) => item}
                                     renderValue={(item) => item}
                                     onChange={(value) => form.setFieldValue("birth_mm", value)}
                                     value={form.values.birth_mm}
@@ -237,7 +237,7 @@ export const Register: React.FC = () => {
                                 <FormSelect
                                     options={years}
                                     getKey={(item) => item}
-                                    getName={(item) => item}
+                                    renderButton={(item) => item}
                                     renderValue={(item) => item}
                                     onChange={(value) => form.setFieldValue("birth_yy", value)}
                                     value={form.values.birth_yy}

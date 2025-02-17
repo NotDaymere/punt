@@ -24,7 +24,7 @@ export const Raffle50: React.FC = () => {
                 exitActive: "modal-exit-active",
             }}
             className={clsx("modal-window", css.modal_window)}
-            timeout={500}
+            timeout={350}
             hideOnClickOutside
             overflow
         >

@@ -316,3 +316,16 @@
         color: $color;
     }
 }
+
+@mixin setFontABeeZee400(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 400 $font-size/#{$leading} $fontABeeZee;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}

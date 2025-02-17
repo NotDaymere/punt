@@ -1,0 +1,39 @@
+.giveaways {
+    padding: 32px 0 42px;
+}
+.giveaways_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.giveaways_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.giveaways_display {
+    margin-top: 64px;
+    text-align: center;
+    @include setFontPPMori600(16px, 1.15, normal, getColorWhite());
+}
+.giveaways_btn {
+    margin: 24px auto 0;
+}
+
+@include -screen-xxl {
+    .giveaways_list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .giveaways_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 6px;
+    }
+}
+
+// @media screen and (max-width: 565px) {
+//     .giveaways_list {
+//         grid-template-columns: 1fr;
+//     }
+// }

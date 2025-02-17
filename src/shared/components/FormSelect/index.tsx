@@ -10,14 +10,14 @@ interface Props<T> {
     onChange: (value: T | null) => void;
     renderValue: (value: T) => React.ReactNode;
     getKey: (value: T) => number | string;
-    getName: (value: T) => number | string;
+    renderButton: (value: T) => React.ReactNode;
     title?: string;
     placeholder?: string;
 }
 
 export function FormSelect<T>({
     getKey,
-    getName,
+    renderButton,
     onChange,
     options,
     renderValue,
@@ -38,7 +38,7 @@ export function FormSelect<T>({
                 onChange={onChange} 
             >
                 <Button className={clsx(css.select_btn, !value && css._placeholder)}>
-                    {!value ? (placeholder || "Select") : getName(value)}
+                    {!value ? (placeholder || "Select") : renderButton(value)}
                     <Image.Default src="/img/icons/arrow-down.svg" alt="" />
                 </Button>
                 {options.map((option) => (
