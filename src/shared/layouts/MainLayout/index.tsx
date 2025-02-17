@@ -5,6 +5,7 @@ import { Preloader } from "widgets/preloader";
 import clsx from "clsx";
 import { getCoreConfig } from "shared/config/core.config";
 import css from "./main-layout.module.scss";
+import dynamic from "next/dynamic";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -13,6 +14,26 @@ const inter = Inter({
     weight: ["400", "500", "600", "700"],
     display: "swap",
 });
+
+const WalletModal = dynamic(
+    () => import("widgets/wallet").then((mod) => mod.WalletModal),
+    { ssr: false }
+);
+
+const AuthModal = dynamic(
+    () => import("widgets/07-auth-screens").then((mod) => mod.AuthModal),
+    { ssr: false }
+);
+
+const Raffle50 = dynamic(
+    () => import("widgets/raffle50").then((mod) => mod.Raffle50),
+    { ssr: false }
+);
+
+const Notifications = dynamic(
+    () => import("widgets/notifications").then((mod) => mod.Notifications),
+    { ssr: false }
+);
 
 interface MainLayoutProps {
     className?: string;
@@ -113,6 +134,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                     />
                 </Head>
                 {/* <Preloader /> */}
+                <WalletModal />
+                <AuthModal />
+                <Raffle50 />
+                <Notifications />
                 {children}
             </div>
         </div>

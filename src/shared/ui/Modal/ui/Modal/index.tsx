@@ -5,6 +5,7 @@ import { useModalStore } from "../../lib";
 import { ModalContext } from "../../lib/context";
 import clsx from "clsx";
 import css from "./Modal.module.scss";
+import { useRouter } from "next/router";
 
 interface ChildrenProps {
     close: () => void;
@@ -20,7 +21,12 @@ interface Props {
     className?: string;
     transitionCSS?: string | CSSTransitionClassNames | undefined;
     hideOnClickOutside?: boolean;
+    closeOnRouterChange?: boolean;
     overflow?: boolean;
+    onEnter?: () => void;
+    onExit?: () => void;
+    onEntered?: () => void;
+    onExited?: () => void;
 }
 
 export const Modal: React.FC<Props> = ({
@@ -29,12 +35,18 @@ export const Modal: React.FC<Props> = ({
     timeout = 300,
     transitionCSS = css,
     hideOnClickOutside = false,
+    closeOnRouterChange = false,
     children,
     overflow,
+    onEntered,
+    onExited,
+    onEnter,
+    onExit,
 }) => {
     const nodeRef = React.useRef<HTMLDivElement>(null);
     const mouseDown = React.useRef(false);
     const store = useModalStore();
+    const router = useRouter();
 
     const data = React.useMemo(() => {
         return store.modals.find((modal) => modal.name === name)!;
@@ -60,6 +72,14 @@ export const Modal: React.FC<Props> = ({
             }
         }
     };
+
+    React.useEffect(() => {
+        return () => {
+            if(closeOnRouterChange) {
+                store.close(name);
+            }
+        }
+    }, [closeOnRouterChange, router.pathname])
 
     React.useEffect(() => {
         store.add({
@@ -90,6 +110,10 @@ export const Modal: React.FC<Props> = ({
             in={data.active}
             timeout={timeout}
             nodeRef={nodeRef}
+            onEntered={onEntered}
+            onExited={onExited}
+            onEnter={onEnter}
+            onExit={onExit}
             unmountOnExit
             mountOnEnter
         >

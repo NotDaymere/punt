@@ -17,6 +17,8 @@ export const Header: React.FC = () => {
     const isLogged = useLogged();
     const { open } = useModals();
 
+    const openNotifications = () => open("notifications");
+
     if (!isLogged) {
         return (
             <header className={css.header} id="header">
@@ -30,18 +32,22 @@ export const Header: React.FC = () => {
                                 <Image.Default src="/img/header-stars.png" alt="" />
                             </div>
                             <Button
-                                onClick={() => open(AuthModalEnum.AUTH_MODAL, {
-                                    type: AuthModalEnum.SIGN_IN
-                                })}
+                                onClick={() =>
+                                    open(AuthModalEnum.AUTH_MODAL, {
+                                        type: AuthModalEnum.SIGN_IN,
+                                    })
+                                }
                                 variant="black"
                                 circle
                             >
                                 Sign In
                             </Button>
                             <Button
-                                onClick={() => open(AuthModalEnum.AUTH_MODAL, {
-                                    type: AuthModalEnum.SIGN_UP
-                                })}
+                                onClick={() =>
+                                    open(AuthModalEnum.AUTH_MODAL, {
+                                        type: AuthModalEnum.SIGN_UP,
+                                    })
+                                }
                                 variant="white"
                                 circle
                             >
@@ -84,7 +90,11 @@ export const Header: React.FC = () => {
 
                     {/* Account */}
                     <div className={css.header_account}>
-                        <IconButton className={css.header_notification} icon={NotificationIcon} />
+                        <IconButton
+                            className={css.header_notification}
+                            icon={NotificationIcon}
+                            onClick={openNotifications}
+                        />
                         <IconButton className={css.header_search} icon={SearchIcon} />
                         <HeaderAccount />
                     </div>

@@ -90,6 +90,13 @@ html.hidden {
     position: relative;
 }
 
+.partials-above {
+    #header,
+    #sidebar {
+        z-index: 251;
+    }
+}
+
 .modal-enter {
     opacity: 0;
 }

@@ -17,7 +17,7 @@ const NavLayout: React.FC<Props> = ({ children }) => {
     return (
         <div className={css.nav}>
             <div className={css.nav_wrapper}>
-                <div className={css.nav_aside}>
+                <div className={css.nav_aside} id="sidebar">
                     <Link className={css.nav_logo} href="/">
                         <Image.Default src="/img/logo.png" alt="logo" />
                     </Link>

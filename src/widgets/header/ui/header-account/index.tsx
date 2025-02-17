@@ -9,9 +9,7 @@ import ArrowRightIcon from "shared/icons/ArrowRight.icon";
 import Image from "shared/ui/Image";
 import css from "./header-account.module.scss";
 
-interface Props {}
-
-export const HeaderAccount: React.FC<Props> = (props) => {
+export const HeaderAccount: React.FC = () => {
     const [activeMenu, setActiveMenu] = React.useState(false);
     const nodeRef = React.useRef<HTMLDivElement>(null);
     const ref = useClickOutside(() => setActiveMenu(false));
@@ -21,11 +19,11 @@ export const HeaderAccount: React.FC<Props> = (props) => {
     return (
         <div className={clsx(css.account, activeMenu && css._active)} ref={ref}>
             <button className={css.account_btn} onClick={toggleMenu}>
-                <UserInfo 
+                <UserInfo
                     className={css.account_btn_info}
-                    img="/img/temp/user.jpg" 
-                    username="VTRAIN83" 
-                    name="Linda" 
+                    img="/img/temp/user.jpg"
+                    username="VTRAIN83"
+                    name="Linda"
                 />
                 <ArrowRightIcon
                     className={css.account_btn_arrow}
