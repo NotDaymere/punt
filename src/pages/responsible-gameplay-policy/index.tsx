@@ -11,20 +11,19 @@ import css from "./responsible-gameplay-policy.module.scss";
 const ResponsibleGameplayPolicy: NextPage = () => {
     return (
         <MainLayout title="Responsible Gameplay Policy">
-            <HomeProvider>
-                <NavLayout>
-                    <Header />
-                    <Screens.InfoHead
-                        breadcrumbs={[
-                            { name: "Home Page", href: "/" },
-                            { name: "Responsible Gameplay Policy" },
-                        ]}
-                        title="Responsible Gameplay Policy"
-                        lastUpdate="16 November, 2022"
-                        download=""
-                    />
-                    <Screens.InfoContent
-                        content={`
+            <NavLayout>
+                <Header />
+                <Screens.InfoHead
+                    breadcrumbs={[
+                        { name: "Home Page", href: "/" },
+                        { name: "Responsible Gameplay Policy" },
+                    ]}
+                    title="Responsible Gameplay Policy"
+                    lastUpdate="16 November, 2022"
+                    download=""
+                />
+                <Screens.InfoContent
+                    content={`
                             <p>
                                 Punt is committed to endorsing responsible gameplay as a policy of customer
                                 care and social responsibility.
@@ -441,13 +440,9 @@ const ResponsibleGameplayPolicy: NextPage = () => {
                                 </li>
                             </ol>
                         `}
-                    />
-                </NavLayout>
-                <Footer />
-                <div>
-                    
-                </div>
-            </HomeProvider>
+                />
+            </NavLayout>
+            <Footer />
         </MainLayout>
     );
 };

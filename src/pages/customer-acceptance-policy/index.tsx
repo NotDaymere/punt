@@ -11,20 +11,19 @@ import css from "./customer-acceptance-policy.module.scss";
 const CustomerAcceptancePolicy: NextPage = () => {
     return (
         <MainLayout title="Customer Acceptance Policy">
-            <HomeProvider>
-                <NavLayout>
-                    <Header />
-                    <Screens.InfoHead
-                        breadcrumbs={[
-                            { name: "Home Page", href: "/" },
-                            { name: "Customer Acceptance Policy" },
-                        ]}
-                        title="Customer Acceptance Policy"
-                        lastUpdate="July 30, 2024"
-                        download=""
-                    />
-                    <Screens.InfoContent
-                        content={`
+            <NavLayout>
+                <Header />
+                <Screens.InfoHead
+                    breadcrumbs={[
+                        { name: "Home Page", href: "/" },
+                        { name: "Customer Acceptance Policy" },
+                    ]}
+                    title="Customer Acceptance Policy"
+                    lastUpdate="July 30, 2024"
+                    download=""
+                />
+                <Screens.InfoContent
+                    content={`
                             <h3 data-title="1. Who Will Punt Accept as a Customer">
                                 1. Who Will Punt Accept as a Customer
                             </h3>
@@ -121,13 +120,12 @@ const CustomerAcceptancePolicy: NextPage = () => {
                                 <li>additional local requirements applicable to Punt from time to time.</li>
                             </ul>
                         `}
-                    />
-                </NavLayout>
-                <Footer />
-            </HomeProvider>
+                />
+            </NavLayout>
+            <Footer />
         </MainLayout>
     );
-}
+};
 
 export default CustomerAcceptancePolicy;
 

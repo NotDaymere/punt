@@ -11,20 +11,19 @@ import css from "./terms.module.scss";
 const Terms: NextPage = () => {
     return (
         <MainLayout title="Punt terms and conditions">
-            <HomeProvider>
-                <NavLayout>
-                    <Header />
-                    <Screens.InfoHead
-                        breadcrumbs={[
-                            { name: "Home Page", href: "/" },
-                            { name: "Punt terms and conditions" },
-                        ]}
-                        title="Punt terms and conditions"
-                        lastUpdate="Oct 27, 2023"
-                        version="1.0"
-                    />
-                    <Screens.InfoContent
-                        note={`
+            <NavLayout>
+                <Header />
+                <Screens.InfoHead
+                    breadcrumbs={[
+                        { name: "Home Page", href: "/" },
+                        { name: "Punt terms and conditions" },
+                    ]}
+                    title="Punt terms and conditions"
+                    lastUpdate="Oct 27, 2023"
+                    version="1.0"
+                />
+                <Screens.InfoContent
+                    note={`
                             <p>These Terms and Conditions form a binding legal agreement between you and us and apply to your use of any of our Games or our Platform in any way, through any electronic device (web, mobile, tablet or any other device).</p>
                             <p>PLEASE NOTE THAT THESE TERMS AND CONDITIONS INCLUDE A PROVISION WAIVING THE RIGHT TO PURSUE ANY CLASS, GROUP OR REPRESENTATIVE CLAIM AND REQUIRING YOU TO PURSUE PAST, PENDING, AND FUTURE DISPUTES BETWEEN YOU AND US THROUGH INDIVIDUAL ARBITRATION UNLESS YOU OPT OUT WITHIN THE SPECIFIED TIME FRAME. SEE CLAUSE 23 FOR MORE INFORMATION.</p>
                             <p>You must read these Terms and Conditions carefully in their entirety before checking the box for acceptance. By checking the box for acceptance during the registration process, or by accessing the Games or creating a Customer Account, you confirm that you have read and agree to be bound by these Terms and Conditions, which include and are inseparably linked to our Privacy Policy, Sweeps Rules and other game- specific or promotion-specific terms relevant to your Participation.</p>
@@ -33,7 +32,7 @@ const Terms: NextPage = () => {
                             <p><s>ONLY PLAYERS IN THE UNITED STATES (EXCLUDING THE STATES OF IDAHO, KENTUCKY, MICHIGAN AND WASHINGTON) AND CANADA (EXCLUDING QUEBEC) ARE ELIGIBLE TO ENTER THE SWEEPSTAKES. PLEASE REFER TO CLAUSE 1.1 OF THE SWEEPS RULES TO CHECK YOUR ELIGIBILITY. </s></p>
                             <p>YOU CAN REQUEST REDEMPTION OF ANY PRIZES BY SELECTING THE “GET COINS” AND THEN THE “REDEEM” BUTTON ON THE PLATFORM. WHERE PLAYERS REDEEM PRIZES FOR GIFT CARDS, SUCH PRIZES WILL BE ALLOCATED TO THE EMAIL ADDRESS REGISTERED AGAINST THE PLAYER’S CUSTOMER ACCOUNT, AND IF THIS IS NOT TECHNICALLY POSSIBLE, THEN TO AN ALTERNATIVE EMAIL ADDRESS YOU HAVE DESIGNATED. WHERE PLAYERS REDEEM PRIZES FOR CASH, SUCH PRIZES WILL BE PAID TO THE PAYMENT MEDIUM FROM WHICH YOU PURCHASED GOLD COINS, AND IF THIS IS NOT TECHNICALLY POSSIBLE, THEN THROUGH AN ELECTRONIC PAYMENT TO THE BANK ACCOUNT YOU HAVE DESIGNATED.</p>
                         `}
-                        content={`
+                    content={`
                             <h2 data-title="DEFINITIONS">DEFINITIONS</h2>
                             <p>
                                 <s>Collective Arbitration</s> means any claim as part of a class, group,
@@ -2443,10 +2442,9 @@ const Terms: NextPage = () => {
                         </li>
                     </ol>
                         `}
-                    />
-                </NavLayout>
-                <Footer />
-            </HomeProvider>
+                />
+            </NavLayout>
+            <Footer />
         </MainLayout>
     );
 };

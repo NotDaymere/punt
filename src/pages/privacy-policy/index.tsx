@@ -11,16 +11,16 @@ import css from "./privacy-policy.module.scss";
 const PrivacyPolicy: NextPage = () => {
     return (
         <MainLayout title="Privacy Policy">
-            <HomeProvider>
-                <NavLayout>
-                    <Header />
-                    <Screens.InfoHead
-                        breadcrumbs={[{ name: "Home Page", href: "/" }, { name: "Privacy Policy" }]}
-                        title="Privacy Policy"
-                        lastUpdate="Nov 16, 2022"
-                        download=""
-                    />
-                    <Screens.InfoContent content={`
+            <NavLayout>
+                <Header />
+                <Screens.InfoHead
+                    breadcrumbs={[{ name: "Home Page", href: "/" }, { name: "Privacy Policy" }]}
+                    title="Privacy Policy"
+                    lastUpdate="Nov 16, 2022"
+                    download=""
+                />
+                <Screens.InfoContent
+                    content={`
                         <p>
                             At Punt, we are committed to protecting and respecting your privacy and
                             maintaining the confidence and trust of our customers. This privacy policy
@@ -668,10 +668,10 @@ const PrivacyPolicy: NextPage = () => {
                                 </p>
                             </li>
                         </ol>
-                    `} />
-                </NavLayout>
-                <Footer />
-            </HomeProvider>
+                    `}
+                />
+            </NavLayout>
+            <Footer />
         </MainLayout>
     );
 };

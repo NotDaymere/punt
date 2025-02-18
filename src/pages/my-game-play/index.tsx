@@ -1,27 +1,27 @@
 import React from "react";
 import { GetServerSideProps, NextPage } from "next";
-import { HomeProvider } from "widgets/01-home-screens/lib";
-import { Screens } from "widgets/10-promotions-screens";
 import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
 import MainLayout from "shared/layouts/MainLayout";
 import NavLayout from "shared/layouts/NavLayout";
-import css from "./promotions.module.scss";
+import { Screens } from "widgets/12-mygameplay-screens";
+import css from "./my-game-play.module.scss";
 
-const Promotions: NextPage = () => {
+const MyGamePlay: NextPage = () => {
     return (
-        <MainLayout title="Promotions">
+        <MainLayout title="My Game Play">
             <NavLayout>
                 <Header />
-                <Screens.Head />
-                <Screens.Content />
+                <div className={css.main}>
+                    <Screens.Hero />
+                </div>
             </NavLayout>
             <Footer />
         </MainLayout>
     );
 };
 
-export default Promotions;
+export default MyGamePlay;
 
 export const getServerSideProps: GetServerSideProps = async () => {
     return { props: {} };

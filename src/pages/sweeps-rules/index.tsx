@@ -11,20 +11,16 @@ import css from "./sweeps-rules.module.scss";
 const SweepsRules: NextPage = () => {
     return (
         <MainLayout title="Sweeps Rules">
-            <HomeProvider>
-                <NavLayout>
-                    <Header />
-                    <Screens.InfoHead
-                        breadcrumbs={[
-                            { name: "Home Page", href: "/" },
-                            { name: "Punt Sweeps Rules" },
-                        ]}
-                        title="Punt Sweeps Rules"
-                        lastUpdate="March 2nd, 2024"
-                        download=""
-                    />
-                    <Screens.InfoContent
-                        note={`
+            <NavLayout>
+                <Header />
+                <Screens.InfoHead
+                    breadcrumbs={[{ name: "Home Page", href: "/" }, { name: "Punt Sweeps Rules" }]}
+                    title="Punt Sweeps Rules"
+                    lastUpdate="March 2nd, 2024"
+                    download=""
+                />
+                <Screens.InfoContent
+                    note={`
                             <p>
                                 <s>
                                     NO PURCHASE OR PAYMENT NECESSARY TO PARTICIPATE. A PURCHASE OR PAYMENT OF ANY
@@ -55,7 +51,7 @@ const SweepsRules: NextPage = () => {
                                 MORE INFORMATION.    
                             </p>
                         `}
-                        content={`
+                    content={`
                         <h3 data-title="1. Eligibility to play Punt">1. Eligibility to play Punt</h3>
                         <ol>
                             <li>
@@ -872,10 +868,9 @@ const SweepsRules: NextPage = () => {
                             </li>
                         </ol>
                         `}
-                    />
-                </NavLayout>
-                <Footer />
-            </HomeProvider>
+                />
+            </NavLayout>
+            <Footer />
         </MainLayout>
     );
 };
