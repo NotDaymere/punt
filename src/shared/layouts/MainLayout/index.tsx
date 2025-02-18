@@ -32,7 +32,7 @@ const Raffle50 = dynamic(
 
 const Notifications = dynamic(
     () => import("widgets/notifications").then((mod) => mod.Notifications),
-    { ssr: false }
+    // { ssr: false }
 );
 
 interface MainLayoutProps {

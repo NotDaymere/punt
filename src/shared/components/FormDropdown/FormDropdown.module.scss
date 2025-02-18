@@ -1,0 +1,66 @@
+.select {
+    position: relative;
+}
+
+.select_btn {
+    padding: 8px 12px;
+    border-radius: 100px;
+    background: #2f2f32;
+    border: 1px solid transparent;
+    width: 100%;
+
+    @include setFontPPMori600(14px, 1, normal, getColorWhite());
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        stroke: getColorGray();
+    }
+
+    &._active {
+        border-color: getColorWhite(0.15);
+        color: getColorPrimary();
+    }
+}
+
+.select_dd {
+    padding: 12px;
+    border-radius: 16px;
+    background: #212121;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 15px;
+    min-width: 100%;
+    transform-origin: top center;
+}
+
+.enter {
+    transform: scaleY(0.5);
+    opacity: 0;
+}
+
+.enterActive {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: 200ms ease;
+    transition-property: opacity, transform;
+}
+
+.exit {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.exitActive {
+    transform: scaleY(0.5);
+    opacity: 0;
+    transition: 200ms ease;
+    transition-property: opacity, transform;
+}
