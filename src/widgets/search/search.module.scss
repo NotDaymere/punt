@@ -1,0 +1,80 @@
+.modal_window {
+    background: rgba(#121411, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 36px 20px 0;
+    overflow: hidden auto;
+}
+
+.modal {
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.modal_header_title {
+    @include setFontPPMori600(24px, 1.25, -0.04em, getColorWhite());
+}
+
+.modal_nav {
+    margin-top: 32px;
+    white-space: nowrap;
+    overflow: auto;
+    border-bottom: 1px solid getColorWhite(0.15);
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.modal_filters {
+    margin-top: 32px;
+}
+
+.modal_games {
+    margin-top: 20px;
+    // display: grid;
+    // grid-template-columns: repeat(9, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 17px;
+    padding-bottom: 50px;
+}
+.modal_games_item {
+    min-width: 112px;
+    flex: 1 1 112px;
+    max-width: 112px;
+}
+
+// Animation
+
+.enter {
+    opacity: 0;
+}
+
+.enterActive {
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
+.exit {
+    opacity: 1;
+}
+
+.exitActive {
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+@include -screen-xl {
+    // .modal_games {
+    //     display: grid;
+    //     grid-te
+    // }
+}

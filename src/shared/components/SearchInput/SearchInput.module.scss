@@ -4,6 +4,8 @@
     padding: 4px 16px;
     height: 40px;
     gap: 8px;
+    border: 1px solid transparent;
+    transition: border 100ms ease;
 
     background: #212121;
     border-radius: 10px;
@@ -30,5 +32,9 @@
         &::placeholder {
             color: getColorGray();
         }
+    }
+
+    &:focus-within {
+        border-color: #D7FF82;
     }
 }

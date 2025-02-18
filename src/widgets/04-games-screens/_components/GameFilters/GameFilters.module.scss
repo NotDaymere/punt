@@ -4,9 +4,75 @@
     width: 100%;
     gap: 40px;
 }
-.hero_filter_input {
+.hero_filters_field {
     flex-grow: 1;
+    position: relative;
 }
+.hero_filters_input {
+    width: 100%;
+}
+.hero_dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid getColorWhite(0.15);
+    max-width: 100%;
+    min-width: 375px;
+    z-index: 50;
+    background: #212121;
+}
+.hero_dropdown_type {
+    padding: 32px 20px;
+    text-align: center;
+    @include setFontABeeZee400(14px, 1.1, normal, getColorWhite());
+}
+.hero_dropdown_recent_title {
+    padding: 16px 12px;
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.hero_dropdown_recent_option {
+    padding: 8px 12px;
+    @include setFontPPMori600(14px, 1, normal, getColorGray());
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    button {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        padding: 2px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            stroke: getColorWhite();
+        }
+    }
+
+    &:hover {
+        background: darken(#212121, 2%);
+    }
+}
+.hero_dropdown_clearAll {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid getColorWhite(0.15);
+    border-radius: 0 0 10px 10px;
+
+    @include setFontPPMori600(14px, 1, normal, getColorPrimary());
+
+    &:hover {
+        background: darken(#212121, 2%);
+    }
+}
+
 .hero_filters_buttons {
     display: flex;
     align-items: center;
@@ -49,7 +115,7 @@
 }
 
 @include -screen-md {
-    .hero_filter_input {
+    .hero_filters_field {
         width: 100%;
     }
     .hero_filters {
@@ -97,7 +163,7 @@
         [data-filter-dropdown] {
             right: auto;
             left: 0;
-        } 
+        }
     }
     .hero_filters_item {
         > svg,
@@ -112,5 +178,5 @@
         + .hero_filters_item {
             padding-left: 0;
         }
-    }   
+    }
 }

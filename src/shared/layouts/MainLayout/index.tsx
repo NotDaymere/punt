@@ -32,7 +32,12 @@ const Raffle50 = dynamic(
 
 const Notifications = dynamic(
     () => import("widgets/notifications").then((mod) => mod.Notifications),
-    // { ssr: false }
+    { ssr: false }
+);
+
+const Search = dynamic(
+    () => import("widgets/search").then((mod) => mod.Search),
+    { ssr: false }
 );
 
 interface MainLayoutProps {
@@ -138,6 +143,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                 <AuthModal />
                 <Raffle50 />
                 <Notifications />
+                <Search />
                 {children}
             </div>
         </div>

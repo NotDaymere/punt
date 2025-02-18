@@ -19,6 +19,8 @@ export const Header: React.FC = () => {
 
     const openNotifications = () => open("notifications");
 
+    const openSearch = () => open("search");
+
     if (!isLogged) {
         return (
             <header className={css.header} id="header">
@@ -95,7 +97,11 @@ export const Header: React.FC = () => {
                             icon={NotificationIcon}
                             onClick={openNotifications}
                         />
-                        <IconButton className={css.header_search} icon={SearchIcon} />
+                        <IconButton
+                            className={css.header_search}
+                            onClick={openSearch}
+                            icon={SearchIcon}
+                        />
                         <HeaderAccount />
                     </div>
                 </div>

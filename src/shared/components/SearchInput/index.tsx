@@ -6,11 +6,20 @@ import css from "./SearchInput.module.scss";
 interface Props {
     className?: string;
     onChange?: (value: string) => void;
+    onBlur?: (ev: React.FocusEvent<HTMLInputElement>) => void;
+    onFocus?: (ev: React.FocusEvent<HTMLInputElement>) => void;
     value?: string;
     placeholder?: string;
 }
 
-export const SearchInput: React.FC<Props> = ({ className, onChange, value, placeholder }) => {
+export const SearchInput: React.FC<Props> = ({
+    className,
+    onChange,
+    value,
+    placeholder,
+    onBlur,
+    onFocus,
+}) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     const focus = () => inputRef.current?.focus();
@@ -23,6 +32,8 @@ export const SearchInput: React.FC<Props> = ({ className, onChange, value, place
                 value={value}
                 onChange={(ev) => onChange?.(ev.target?.value)}
                 placeholder={placeholder}
+                onBlur={onBlur}
+                onFocus={onFocus}
             />
         </div>
     );
