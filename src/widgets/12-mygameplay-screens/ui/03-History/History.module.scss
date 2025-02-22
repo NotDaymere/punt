@@ -1,0 +1,71 @@
+.history {
+    padding: 32px 0 78px;
+}
+
+.history_display {
+    margin-top: 48px;
+    text-align: center;
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+}
+.history_table_row {
+    display: grid;
+    grid-template-columns: 240px 240px 200px 170px 160px 100px;
+}
+.history_table_column {
+    min-width: 130px;
+
+    &:not(:last-child) {
+        padding-right: 8px;
+    }
+}
+.history_table_text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include setFontPPMori600(16px, 1.1, normal, getColorWhite());
+
+    img:not(.history_table_img) {
+        display: inline-block;
+        vertical-align: middle;
+        width: 1.25em;
+        height: 1.25em;
+    }
+}
+.history_table_date {
+    @include setFontABeeZee400(14px, 1.1, normal, getColorGray());
+}
+.history_table_img {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+.history_type {
+    padding: 4px 8px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    @include setFontABeeZee400(14px, 1.1, normal);
+
+    img {
+        width: 16px;
+        height: 16px;
+        object-position: center;
+        object-fit: contain;
+    }
+
+    &._win {
+        background: getColorPrimary(0.2);
+        color: getColorPrimary();
+    }
+
+    &._failed {
+        background: getColorRed(0.2);
+        color: getColorRed();
+    }
+}

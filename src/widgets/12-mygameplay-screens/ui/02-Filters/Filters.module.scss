@@ -1,0 +1,84 @@
+.filters {
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.filters_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.filters_head_title {
+    @include setFontHelveticaStd700(28px, 1.15, -0.04em, getColorWhite());
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.buttons_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.buttons_row_name {
+    @include setFontPPMori600(14px, 1, normal, getColorGray());
+}
+.buttons_dropdown_btn {
+    width: 190px;
+    text-align: left;
+}
+.buttons_select {
+    :global(.select-btn) {
+        min-width: 110px;
+    }
+}
+.buttons_divider {
+    width: 1px;
+    height: 21px;
+    background: getColorGray();
+}
+
+.filters_nav_box {
+    margin-top: 36px;
+    border-bottom: 1px solid getColorWhite(0.15);
+}
+.filters_nav {
+    white-space: nowrap;
+}
+
+@include -screen-lg {
+    .buttons {
+        padding-top: 20px;
+    }
+}
+
+@include -screen-md {
+    .buttons_divider {
+        display: none;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .buttons_row {
+        width: 100%;
+    }
+    .buttons_select {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@include -screen-sm {
+    .filters_head_title {
+        font-size: 20px;
+    }
+    .filters_nav_box {
+        margin-top: 20px;
+    }
+}

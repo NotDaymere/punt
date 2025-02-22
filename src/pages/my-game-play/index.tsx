@@ -14,6 +14,8 @@ const MyGamePlay: NextPage = () => {
                 <Header />
                 <div className={css.main}>
                     <Screens.Hero />
+                    <Screens.Filters />
+                    <Screens.History />
                 </div>
             </NavLayout>
             <Footer />

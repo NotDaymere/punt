@@ -35,12 +35,12 @@ export const SortBy: React.FC<Props> = ({
                 </p>
             )}
             <Select
-                className={css.select}
+                className={`${css.select} select`}
                 classNameDropdown={css.select_dd}
                 classNameOption={css.select_dd_option}
                 onChange={onChange}
             >
-                <Button className={css.select_btn}>
+                <Button className={`${css.select_btn} select-btn`}>
                     {value?.name || placeholder || "Select"} <ArrowSmallUpIcon />
                 </Button>
                 {options.map((option) => (

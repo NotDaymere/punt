@@ -1,7 +1,6 @@
 import React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import WinClubsIcon from "widgets/01-home-screens/_icons/WinClubs.icon";
 import { getTimeline, getTitleAnimationOptions } from "shared/animation/utils";
 import { Title } from "shared/components/Title";
 import Image from "shared/ui/Image";
@@ -57,7 +56,6 @@ export const RealWins: React.FC = () => {
         <section className={css.wins} ref={rootRef} id="real-wins">
             <div className={css.wins_back}>
                 <div className={css.wins_back_svg}>
-                    {/* <WinClubsIcon  /> */}
                     <Image.Default
                         className="real-wins-club"
                         src="/img/home/clubs-big.webp"

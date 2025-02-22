@@ -42,7 +42,7 @@ const Home = () => {
                                 <Guests.Hero />
                                 <Guests.SpinWheel />
                                 <Guests.Winners />
-                                {/* <Guests.RealWins /> */}
+                                <Guests.RealWins />
                                 <Guests.Exclusives />
                                 <Guests.Checkouts />
                                 <Guests.Featured />
@@ -63,6 +63,6 @@ const Home = () => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
     return { props: {} };
 };
