@@ -137,7 +137,12 @@ export const SpinWheel: React.FC = () => {
         <section className={`${css.spinWheel_section} spin-wheel-section`}>
             <div className={css.spinWheel} id="spin-wheel" ref={rootRef}>
                 <div className={css.spinWheel_figures}>
-                    <WheelLightIcon className={css.spinWheel_figures_light} />
+                    {/* <WheelLightIcon className={css.spinWheel_figures_light} /> */}
+                    <Image.Default 
+                        className={css.spinWheel_figures_light}
+                        src="/img/figures/light.webp"
+                        alt=""
+                    />
                     <p className={clsx(css.spinWheel_figures_text, css._left)}>
                         <span>Spin</span> the
                         <br /> Wheel

@@ -198,8 +198,8 @@ export const leaders = [
 export const exclusives = {
     left: [
         ["Clover", "Cross"],
-        ["Later", "Gator"], 
         ["Chosen", "One"],
+        ["Later", "Gator"], 
     ],
     right: [
         "/media/clovercross@compressed.mp4",

@@ -4,7 +4,6 @@ import clsx from "clsx";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import CheckoutRays from "widgets/01-home-screens/_icons/CheckoutRays";
-import InvertedClubsIcon from "widgets/01-home-screens/_icons/InvertedClubs.icon";
 import { getTimeline, getTitleAnimationOptions } from "shared/animation/utils";
 import { Framer } from "shared/components/Framer";
 import { FramerCore } from "shared/components/Framer/lib";
@@ -82,6 +81,7 @@ export const Checkouts: React.FC = () => {
                 trigger: ".checkouts-hand",
                 start: "top 60%",
                 once: true,
+                invalidateOnRefresh: true,
                 onEnter() {
                     setAnimated(true);
                 },
@@ -99,7 +99,7 @@ export const Checkouts: React.FC = () => {
                     <Image.Default
                         className={css.checkouts_hand_image}
                         src="/img/home/checkouts/hand.webp"
-                        loading="lazy"
+                        // loading="lazy"
                         alt=""
                     />
                     <div className={css.checkouts_hand_display}>
@@ -133,7 +133,6 @@ export const Checkouts: React.FC = () => {
                 </div>
                 <div className={`${css.checkouts_content} checkouts-content`}>
                     <div className={`${css.checkouts_content_bg} checkouts-content-club`}>
-                        {/* <InvertedClubsIcon /> */}
                         <Image.Default src="/img/home/inverted-clubs.webp" loading="lazy" alt="" />
                     </div>
                     <TextSplitter

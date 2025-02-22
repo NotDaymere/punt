@@ -14,6 +14,7 @@ import css from "./hero.module.scss";
 
 export const Hero: React.FC = () => {
     const [activeSection, setActiveSection] = React.useState(true);
+    const rootRef = React.useRef<HTMLDivElement>(null);
     const { prealoderActive } = useAppStore();
     const { spinAnimated } = useHomeContext();
 
@@ -97,6 +98,17 @@ export const Hero: React.FC = () => {
                         "heroAnimation+=70%"
                     )
                     .to(
+                        `.${css.hero_btn_smile}`,
+                        {
+                            opacity: 1,
+                            scale: 1,
+                            duration: 1,
+                            delay: 0.8,
+                            ease: "back.out(2)",
+                        },
+                        "heroAnimation+=70%"
+                    )
+                    .to(
                         ".spin-wheel-section",
                         {
                             opacity: 1,
@@ -127,7 +139,7 @@ export const Hero: React.FC = () => {
     // }, [activeSection, spinAnimated, prealoderActive]);
 
     return (
-        <div className={css.hero} id="hero">
+        <div className={css.hero} ref={rootRef} id="hero">
             <div className="container">
                 {/* UI / Figures */}
                 <Image.Default
@@ -170,6 +182,11 @@ export const Hero: React.FC = () => {
                         <div className={`${css.hero_btn_animation} hero-btn`}>
                             <BigButton className={css.hero_btn}>Play for Free!</BigButton>
                         </div>
+                        <Image.Default 
+                            className={css.hero_btn_smile}
+                            src="/img/home/hearts-smile.png"
+                            alt=""
+                        />
                     </div>
                 </div>
             </div>

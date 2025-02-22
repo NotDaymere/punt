@@ -1,6 +1,10 @@
 @keyframes starRotation {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .exclusives_wrapper {
@@ -102,20 +106,20 @@
     }
 
     &:nth-child(3n + 2) {
-        &._bg {
-            background: getColorYellow();
-        }
         &::before {
             background: getColorYellow();
         }
         .slide_marquee {
             background: getColorYellow();
         }
+        &._bg {
+            background: getColorSecondary();
+        }
     }
 
     &:nth-child(3n + 3) {
         &._bg {
-            background: getColorSecondary();
+            background: getColorYellow();
         }
         &::before {
             background: getColorSecondary();
@@ -155,7 +159,7 @@
             position: absolute;
             left: 16.35%;
             bottom: 0;
-            animation: starRotation 3s linear infinite ;
+            animation: starRotation 3s linear infinite;
         }
         &:nth-child(3) {
             width: 11.3%;
@@ -266,7 +270,7 @@
             right: 0;
             bottom: 0;
             width: 35%;
-            animation: starRotation 4s linear infinite reverse
+            animation: starRotation 4s linear infinite reverse;
         }
     }
 }

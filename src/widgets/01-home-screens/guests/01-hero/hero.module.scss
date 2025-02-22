@@ -90,84 +90,37 @@
     margin-right: 55px;
     transform: rotate(-2deg);
 }
-.hero_button_container {
+
+.hero_btn_box {
     margin-top: 60px;
     transform: rotate(-6deg);
-    font-size: 28px;
-
     position: relative;
 
     &::before {
         content: "";
         display: block;
-        width: 8.28em;
-        height: 3.25em;
+        width: 80%;
+        max-width: 230px;
+        aspect-ratio: 1 / 0.4;
         border-radius: 50%;
         background: getColorPrimary();
+
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        filter: blur(6.07em);
+        filter: blur(85px);
     }
 }
-.hero_button_smile {
+
+.hero_btn_smile {
     position: absolute;
-    width: 5.6em;
     left: 100%;
-    top: 100%;
-    pointer-events: none;
-    z-index: 2;
-    transform: translate(-40%, -50%);
-}
-.hero_button_outlines {
-    outline-offset: 0.143em;
-
-    &,
-    &::after,
-    &::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 3.57em;
-        outline: 0.62px solid getColorPrimary();
-    }
-
-    &::after,
-    &::before {
-        content: "";
-        display: block;
-    }
-
-    &::after {
-        outline-offset: 0.43em;
-        opacity: 0.3;
-    }
-
-    &::before {
-        outline-offset: 0.5714em;
-        opacity: 0.1;
-    }
-}
-
-.hero_button {
-    font-size: inherit;
-    > span {
-        @include setFontPPMori600(inherit, 1.05, normal, getColorBlack());
-        padding: 2px 1.78em;
-        height: 2.14em;
-        background-image: url("/img/home/button-stars.png") !important;
-        background-size: contain !important;
-        background-position: left center !important;
-        background-repeat: no-repeat !important;
-    }
-}
-
-.hero_btn_box {
-    margin-top: 60px;
-    transform: rotate(-6deg);
+    bottom: 0;
+    transform: translate(-25%, 50%) scale(0);
+    // width: 122px;
+    opacity: 0;
+    width: 50%;
 }
 
 .hero_btn {
@@ -184,12 +137,6 @@
     }
     .hero_title_box {
         font-size: 66px;
-    }
-    .hero_button_container {
-        font-size: 22px;
-    }
-    .hero_button_smile {
-        width: 120px;
     }
     .hero_figure_square {
         left: 5%;
@@ -212,7 +159,7 @@
         font-size: 6.15vw !important;
     }
     .hero_btn {
-        font-size: 18px;
+        font-size: 21px;
     }
     .hero_figure_hearts {
         top: 0;
