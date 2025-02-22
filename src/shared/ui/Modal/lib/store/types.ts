@@ -2,6 +2,7 @@ export interface ModalValue {
     name: string;
     payload: any;
     active: boolean;
+    overflow: boolean;
 }
 
 export interface ModalState {

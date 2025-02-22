@@ -1,3 +1,4 @@
+import React from "react";
 import { GetServerSideProps } from "next";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -5,15 +6,25 @@ import { Authorized, Guests } from "widgets/01-home-screens";
 import { HomeProvider } from "widgets/01-home-screens/lib";
 import { Footer } from "widgets/footer";
 import { Header } from "widgets/header";
+import { Tutorial } from "widgets/tutorial";
 import MainLayout from "shared/layouts/MainLayout";
 import NavLayout from "shared/layouts/NavLayout";
 import { useLogged } from "shared/temp/useLogged";
+import { useModals } from "shared/ui/Modal";
+import { executeOnReadyPage } from "shared/utils/browser";
 import css from "./home.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
     const isLogged = useLogged();
+    const modals = useModals();
+
+    React.useEffect(() => {
+        if (!isLogged) {
+            executeOnReadyPage(() => setTimeout(() => modals.open("tutorial"), 1000));
+        }
+    }, []);
 
     return (
         <MainLayout title="Home">
@@ -51,6 +62,7 @@ const Home = () => {
                                 <Guests.Testimontials />
                                 <Guests.Sale />
                                 <Guests.Payments />
+                                <Tutorial />
                             </>
                         )}
                     </div>

@@ -1,11 +1,11 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
 import { CSSTransitionClassNames } from "react-transition-group/CSSTransition";
+import { useRouter } from "next/router";
 import { useModalStore } from "../../lib";
 import { ModalContext } from "../../lib/context";
 import clsx from "clsx";
 import css from "./Modal.module.scss";
-import { useRouter } from "next/router";
 
 interface ChildrenProps {
     close: () => void;
@@ -23,6 +23,8 @@ interface Props {
     hideOnClickOutside?: boolean;
     closeOnRouterChange?: boolean;
     overflow?: boolean;
+    initialActive?: boolean;
+    initialPayload?: any;
     onEnter?: () => void;
     onExit?: () => void;
     onEntered?: () => void;
@@ -36,8 +38,10 @@ export const Modal: React.FC<Props> = ({
     transitionCSS = css,
     hideOnClickOutside = false,
     closeOnRouterChange = false,
+    initialActive = false,
+    initialPayload = null,
+    overflow = false,
     children,
-    overflow,
     onEntered,
     onExited,
     onEnter,
@@ -75,16 +79,17 @@ export const Modal: React.FC<Props> = ({
 
     React.useEffect(() => {
         return () => {
-            if(closeOnRouterChange) {
+            if (closeOnRouterChange) {
                 store.close(name);
             }
-        }
-    }, [closeOnRouterChange, router.pathname])
+        };
+    }, [closeOnRouterChange, router.pathname]);
 
     React.useEffect(() => {
         store.add({
-            payload: null,
-            active: false,
+            payload: initialPayload,
+            active: initialActive,
+            overflow,
             name,
         });
 
@@ -95,7 +100,10 @@ export const Modal: React.FC<Props> = ({
 
     React.useEffect(() => {
         if (overflow) {
-            const openLength = store.modals.reduce((acc, item) => acc + +item.active, 0);
+            const openLength = store.modals.reduce(
+                (acc, item) => acc + (item.overflow ? +item.active : 0),
+                0
+            );
             document.documentElement.style.overflow = openLength > 0 ? "hidden" : "";
         }
     }, [name, store.modals, overflow]);
